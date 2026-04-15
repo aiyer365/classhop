@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import courses from "../data/courses.json";
 
 type Semester = "Spring 2026" | "Fall 2026";
-type Meridiem = "AM" | "PM";
 type Interest =
   | "Science"
   | "Arts"
@@ -41,6 +40,9 @@ const INTEREST_OPTIONS: Interest[] = [
   "Social Science",
   "Environment"
 ];
+
+const EARLIEST_MINUTES = 7 * 60; // 7:00 AM
+const LATEST_MINUTES = 19 * 60; // 7:00 PM
 
 const allCourses: Course[] = (courses as unknown as Course[]).map((c) => ({
   ...c,
@@ -121,30 +123,42 @@ function downloadIcs(course: Course) {
   URL.revokeObjectURL(url);
 }
 
-function to24Hour(hourText: string, minuteText: string, meridiem: Meridiem): string | null {
-  const hour = Number(hourText);
-  const minute = Number(minuteText);
-  if (!Number.isFinite(hour) || !Number.isFinite(minute)) return null;
-  if (hour < 1 || hour > 12 || minute < 0 || minute > 59) return null;
-  let h24 = hour % 12;
-  if (meridiem === "PM") h24 += 12;
-  return `${String(h24).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+function snapToHalfHour(totalMinutes: number): number {
+  let total = totalMinutes;
+  const remainder = totalMinutes % 30;
+  if (remainder < 15) total -= remainder;
+  else total += 30 - remainder;
+  return total;
+}
+
+function minutesToTime24(totalMinutes: number): string {
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
+function formatMinutes12h(totalMinutes: number): string {
+  const hours24 = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  const suffix = hours24 >= 12 ? "PM" : "AM";
+  let hours12 = hours24 % 12;
+  if (hours12 === 0) hours12 = 12;
+  return `${hours12}:${String(minutes).padStart(2, "0")} ${suffix}`;
 }
 
 export default function HomePage() {
   const [semester, setSemester] = useState<Semester>("Spring 2026");
-  const [hourText, setHourText] = useState("3");
-  const [minuteText, setMinuteText] = useState("00");
-  const [meridiem, setMeridiem] = useState<Meridiem>("PM");
+  const [selectedMinutes, setSelectedMinutes] = useState(15 * 60);
   const [usingNow, setUsingNow] = useState(false);
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
   const [currentCourse, setCurrentCourse] = useState<Course | null>(null);
   const [lastPool, setLastPool] = useState<Course[]>([]);
+  const [skippedCourses, setSkippedCourses] = useState<Course[]>([]);
   const [isFinding, setIsFinding] = useState(false);
 
   const selectedTime24 = useMemo(
-    () => to24Hour(hourText, minuteText, meridiem),
-    [hourText, minuteText, meridiem]
+    () => minutesToTime24(selectedMinutes),
+    [selectedMinutes]
   );
 
   const filteredCourses = useMemo(() => {
@@ -172,20 +186,21 @@ export default function HomePage() {
 
   function handleNow() {
     const now = new Date();
-    let hour24 = now.getHours();
-    const minutes = now.getMinutes();
-    let roundedMinute = 0;
-    if (minutes < 20) roundedMinute = 0;
-    else if (minutes < 50) roundedMinute = 30;
-    else {
-      roundedMinute = 0;
-      hour24 = (hour24 + 1) % 24;
+    const nowMinutes = now.getHours() * 60 + now.getMinutes();
+    let nextMinutes: number;
+
+    // If current time is 7:30 PM to 9:00 PM, pin to 7:00 PM.
+    if (nowMinutes >= 19 * 60 + 30 && nowMinutes <= 21 * 60) {
+      nextMinutes = LATEST_MINUTES;
+    } else if (nowMinutes < EARLIEST_MINUTES || nowMinutes > LATEST_MINUTES) {
+      // Any other out-of-range time maps to 7:00 AM.
+      nextMinutes = EARLIEST_MINUTES;
+    } else {
+      nextMinutes = snapToHalfHour(nowMinutes);
+      nextMinutes = Math.max(EARLIEST_MINUTES, Math.min(LATEST_MINUTES, nextMinutes));
     }
-    let h12 = hour24 % 12;
-    if (h12 === 0) h12 = 12;
-    setHourText(String(h12));
-    setMinuteText(String(roundedMinute).padStart(2, "0"));
-    setMeridiem(hour24 >= 12 ? "PM" : "AM");
+
+    setSelectedMinutes(nextMinutes);
     setUsingNow(true);
   }
 
@@ -196,6 +211,7 @@ export default function HomePage() {
   }
 
   function handleFindClass() {
+    setSkippedCourses([]);
     setCurrentCourse(null);
     if (filteredCourses.length === 0) {
       setLastPool([]);
@@ -212,19 +228,17 @@ export default function HomePage() {
 
   function handleFindAnother() {
     if (lastPool.length === 0) return;
-    if (lastPool.length === 1) {
-      setCurrentCourse(lastPool[0]);
-      return;
+    const skippedIds = new Set(skippedCourses.map((course) => course.id));
+    if (currentCourse) skippedIds.add(currentCourse.id);
+
+    if (currentCourse && !skippedCourses.some((course) => course.id === currentCourse.id)) {
+      setSkippedCourses((prev) => [...prev, currentCourse]);
     }
-    let next: Course | null = null;
-    for (let i = 0; i < 10; i += 1) {
-      const candidate = lastPool[Math.floor(Math.random() * lastPool.length)];
-      if (!currentCourse || candidate.id !== currentCourse.id) {
-        next = candidate;
-        break;
-      }
-    }
-    if (next) setCurrentCourse(next);
+
+    const candidates = lastPool.filter((course) => !skippedIds.has(course.id));
+    if (candidates.length === 0) return;
+    const idx = Math.floor(Math.random() * candidates.length);
+    setCurrentCourse(candidates[idx]);
   }
 
   return (
@@ -237,12 +251,12 @@ export default function HomePage() {
         .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}.logo-mark{width:32px;height:32px;background:var(--navy);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}.logo-wordmark{font-weight:500;font-size:1rem;color:var(--navy);letter-spacing:-.01em}
         .semester-toggle{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
         .semester-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}.semester-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
-        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:4rem 2rem 6rem}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
+        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:2.75rem 2rem 6rem}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
         .hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,3.75rem);font-weight:300;line-height:1.08;color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem}.subheadline{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--gold-dim);margin-bottom:1.75rem}.description{font-size:1rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:3.5rem}
         .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-        .time-row{display:flex;align-items:center;gap:.5rem}.time-btn,.chip{font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.time-btn.active,.chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
-        .time-input{font-family:var(--font-mono);font-size:.95rem;width:48px;text-align:center;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem .4rem;border-radius:var(--radius-sm);outline:none}.time-sep{font-family:var(--font-mono);color:var(--muted);font-size:1.1rem;margin:0 -.1rem}
-        .ampm-group{display:flex;border:1px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;background:var(--chip-bg);margin-left:.25rem}.ampm-btn{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;padding:.5rem .85rem;border:none;background:transparent;color:var(--muted);cursor:pointer}.ampm-btn.active{background:var(--navy);color:var(--gold)}
+        .time-row{display:flex;align-items:center;gap:.8rem}.time-btn,.chip{font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.time-btn.active,.chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+        .time-slider-wrap{flex:1;display:flex;align-items:center;gap:.75rem;min-width:220px}.time-slider{flex:1;appearance:none;height:6px;border-radius:999px;background:rgba(0,40,85,.15);outline:none}.time-slider::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}.time-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}
+        .time-readout{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);min-width:72px;text-align:right}
         .chips{display:flex;flex-wrap:wrap;gap:.5rem}.cta-wrapper{margin-top:3rem}.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;background:var(--navy);color:var(--gold);border:none;border-radius:var(--radius-md);padding:1.05rem 2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.cta-btn:disabled{opacity:.6;cursor:not-allowed}
         .empty-state{margin-top:3rem;font-family:var(--font-mono);font-size:.78rem;color:var(--muted);letter-spacing:.04em;line-height:1.6}.result-section{margin-top:3rem}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
         .course-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}.card-body{padding:1.5rem 1.75rem}.card-top{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem}.card-dept{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
@@ -250,6 +264,11 @@ export default function HomePage() {
         .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500}
         .card-tags{display:flex;flex-wrap:wrap;gap:.4rem}.card-tag{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.25rem .65rem}
         .card-actions{display:flex;justify-content:flex-end;gap:.6rem;padding:1rem 1.75rem;border-top:1px solid var(--border);background:var(--cream)}.btn-secondary,.btn-primary{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-sm);padding:.6rem 1.1rem;cursor:pointer}.btn-secondary{color:var(--navy);background:transparent;border:1px solid var(--border)}.btn-primary{color:var(--gold);background:var(--navy);border:1px solid var(--navy)}
+        .skipped-section{margin-top:1rem;padding:1rem 1.25rem;border:1px solid var(--border);border-radius:var(--radius-md);background:#fff}
+        .skipped-title{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+        .skipped-list{display:flex;flex-wrap:wrap;gap:.4rem}
+        .skipped-pill{font-family:var(--font-mono);font-size:.64rem;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.22rem .55rem;cursor:pointer}
+        .skipped-pill:hover{border-color:rgba(0,40,85,.35);color:var(--navy)}
         .redesign-root footer{border-top:1px solid var(--border);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;background:var(--cream)}.footer-left{display:flex;align-items:center;gap:.85rem}.avatar{width:30px;height:30px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.68rem;color:var(--gold)}.footer-note{font-family:var(--font-mono);font-size:.65rem;color:var(--muted)}
       `}</style>
       <div className="redesign-root">
@@ -268,7 +287,6 @@ export default function HomePage() {
           </div>
         </nav>
         <main className="redesign-main">
-          <div className="eyebrow">Serendipitous learning</div>
           <h1 className="hero-title">Got a free hour?</h1>
           <p className="subheadline">Wander into a class.</p>
           <p className="description">Tell us when you&apos;re free and what sparks your curiosity. We&apos;ll find a real Berkeley class happening right now that you can quietly sit in on.</p>
@@ -277,12 +295,20 @@ export default function HomePage() {
             <div className="section-label"><span className="step-number">01</span><span className="section-title">When are you free?</span></div>
             <div className="time-row">
               <button className={`time-btn ${usingNow ? "active" : ""}`} type="button" onClick={handleNow}>Now</button>
-              <input className="time-input" type="text" maxLength={2} value={hourText} onChange={(e)=>{setHourText(e.target.value.replace(/\D/g,"").slice(0,2));setUsingNow(false);}} />
-              <span className="time-sep">:</span>
-              <input className="time-input" type="text" maxLength={2} value={minuteText} onChange={(e)=>{setMinuteText(e.target.value.replace(/\D/g,"").slice(0,2));setUsingNow(false);}} />
-              <div className="ampm-group">
-                <button className={`ampm-btn ${meridiem === "AM" ? "active" : ""}`} type="button" onClick={()=>setMeridiem("AM")}>AM</button>
-                <button className={`ampm-btn ${meridiem === "PM" ? "active" : ""}`} type="button" onClick={()=>setMeridiem("PM")}>PM</button>
+              <div className="time-slider-wrap">
+                <input
+                  className="time-slider"
+                  type="range"
+                  min={EARLIEST_MINUTES}
+                  max={LATEST_MINUTES}
+                  step={30}
+                  value={selectedMinutes}
+                  onChange={(e) => {
+                    setSelectedMinutes(snapToHalfHour(Number(e.target.value)));
+                    setUsingNow(false);
+                  }}
+                />
+                <span className="time-readout">{formatMinutes12h(selectedMinutes)}</span>
               </div>
             </div>
           </div>
@@ -316,6 +342,23 @@ export default function HomePage() {
                   <button className="btn-primary" type="button" onClick={handleFindAnother}>Find Another</button>
                 </div>
               </div>
+              {skippedCourses.length > 0 && (
+                <div className="skipped-section">
+                  <p className="skipped-title">Skipped classes</p>
+                  <div className="skipped-list">
+                    {skippedCourses.map((course) => (
+                      <button
+                        key={course.id}
+                        type="button"
+                        className="skipped-pill"
+                        onClick={() => setCurrentCourse(course)}
+                      >
+                        {course.code} - {course.title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </main>
