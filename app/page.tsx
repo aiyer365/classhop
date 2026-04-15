@@ -65,6 +65,12 @@ function buildMapsUrl(building: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
+function buildRmpUrl(instructor: string) {
+  // Strip honorifics so the search hits the right profile
+  const name = instructor.replace(/^(Prof\.|Dr\.|Professor|Adjunct Prof\.)\s*/i, "").trim();
+  return `https://www.ratemyprofessors.com/search/professors?q=${encodeURIComponent(name)}&sid=1072`;
+}
+
 function downloadIcs(course: Course) {
   const today = new Date();
   const [sh, sm] = course.startTime.split(":").map(Number);
@@ -363,7 +369,15 @@ export default function HomePage() {
                   {currentCourse.title}
                 </h2>
                 <p className="mt-1 text-[13px] text-slate-500">
-                  {currentCourse.code} · {currentCourse.instructor}
+                  {currentCourse.code} ·{" "}
+                  <a
+                    href={buildRmpUrl(currentCourse.instructor)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#003262] underline-offset-2 hover:underline"
+                  >
+                    {currentCourse.instructor}
+                  </a>
                 </p>
               </div>
 
