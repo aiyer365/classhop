@@ -46,11 +46,10 @@ body {
   animation: fadeIn 0.3s ease both;
 }
 
-a {
-  color: #003262;
-  text-underline-offset: 3px;
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
-a:hover {
-  text-decoration: underline;
+input[type="time"]::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
 }

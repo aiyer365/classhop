@@ -10,10 +10,8 @@ type Interest =
   | "Tech"
   | "History"
   | "Business"
-  | "Law"
   | "Social Science"
-  | "Environment"
-  | "Anything!";
+  | "Environment";
 
 type Course = {
   id: string;
@@ -26,8 +24,8 @@ type Course = {
   lat: number;
   lng: number;
   walkingMinutes: number;
-  startTime: string; // "HH:MM" 24h, campus local time
-  endTime: string; // "HH:MM"
+  startTime: string;
+  endTime: string;
   interests: Interest[];
   description: string;
 };
@@ -41,7 +39,6 @@ const INTEREST_OPTIONS: Interest[] = [
   "Business",
   "Social Science",
   "Environment",
-  "Anything!"
 ];
 
 function parseTimeToday(time: string): Date {
@@ -63,16 +60,9 @@ function formatTimeRange(start: string, end: string) {
   return `${to12h(start)} – ${to12h(end)}`;
 }
 
-function formatTimeRange24(start: string, end: string) {
-  const normalize = (t: string) => t.slice(0, 5); // "HH:MM"
-  return `${normalize(start)}–${normalize(end)}`;
-}
-
 function buildMapsUrl(building: string) {
   const query = `${building}, UC Berkeley`;
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    query
-  )}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function downloadIcs(course: Course) {
@@ -119,7 +109,7 @@ function downloadIcs(course: Course) {
     `DESCRIPTION:${course.description.replace(/\r?\n/g, " ")}`,
     `LOCATION:${location}`,
     "END:VEVENT",
-    "END:VCALENDAR"
+    "END:VCALENDAR",
   ].join("\r\n");
 
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
@@ -135,98 +125,48 @@ function downloadIcs(course: Course) {
 
 const allCourses: Course[] = (courses as unknown as Course[]).map((c) => ({
   ...c,
-  id: String((c as any).id)
+  id: String((c as any).id),
 }));
 
-const HOUR_OPTIONS = Array.from({ length: 12 }, (_, i) => i + 1);
-const MINUTE_OPTIONS = [0, 30];
-
-type DefaultTime = {
-  hour: number;
-  minute: number;
-  meridiem: "AM" | "PM";
-};
-
-function findNextCourseStart(now: Date): DefaultTime {
+function findNextCourseStart(now: Date): string {
   let next: Date | null = null;
 
   for (const course of allCourses) {
     const start = parseTimeToday(course.startTime);
     if (start <= now) continue;
-    if (!next || start < next) {
-      next = start;
-    }
+    if (!next || start < next) next = start;
   }
 
   if (!next) {
     for (const course of allCourses) {
       const start = parseTimeToday(course.startTime);
-      if (!next || start < next) {
-        next = start;
-      }
+      if (!next || start < next) next = start;
     }
   }
 
-  if (!next) {
-    next = now;
-  }
+  if (!next) next = now;
 
-  const hour24 = next.getHours();
-  const minute = next.getMinutes();
-  let hour12 = hour24 % 12;
-  if (hour12 === 0) hour12 = 12;
-  const meridiem: "AM" | "PM" = hour24 >= 12 ? "PM" : "AM";
-
-  return { hour: hour12, minute, meridiem };
+  const h = String(next.getHours()).padStart(2, "0");
+  const m = String(next.getMinutes()).padStart(2, "0");
+  return `${h}:${m}`;
 }
 
 export default function HomePage() {
-  const nextDefault = useMemo(() => findNextCourseStart(new Date()), []);
-  const [selectedHour, setSelectedHour] = useState<number>(nextDefault.hour);
-  const [selectedMinute, setSelectedMinute] = useState<number>(nextDefault.minute);
-  const [meridiem, setMeridiem] = useState<"AM" | "PM">(nextDefault.meridiem);
-  const [timeMode, setTimeMode] = useState<"manual" | "now">("manual");
+  const defaultTime = useMemo(() => findNextCourseStart(new Date()), []);
+  const [timeValue, setTimeValue] = useState<string>(defaultTime);
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
   const [currentCourse, setCurrentCourse] = useState<Course | null>(null);
   const [lastPool, setLastPool] = useState<Course[]>([]);
   const [isFinding, setIsFinding] = useState(false);
-
-  const activeTimeSlot = useMemo(() => {
-    let hours24 = selectedHour % 12;
-    if (meridiem === "PM") {
-      hours24 += 12;
-    }
-    const minute = selectedMinute;
-    const hourStr = String(hours24).padStart(2, "0");
-    const minuteStr = String(minute).padStart(2, "0");
-    return `${hourStr}:${minuteStr}`;
-  }, [selectedHour, selectedMinute, meridiem]);
+  const [searched, setSearched] = useState(false);
 
   const filteredCourses = useMemo(() => {
-    if (!activeTimeSlot) {
-      return allCourses.filter((course) => {
-        const effectiveInterests = selectedInterests.includes("Anything!")
-          ? []
-          : (selectedInterests.filter(
-              (i) => i !== "Anything!"
-            ) as Exclude<Interest, "Anything!">[]);
-        if (effectiveInterests.length === 0) return true;
-        return course.interests.some((i) =>
-          (effectiveInterests as Interest[]).includes(i)
-        );
-      });
-    }
-
-    const selectedMoment = parseTimeToday(activeTimeSlot);
+    const selectedMoment = parseTimeToday(timeValue);
 
     return allCourses.filter((course) => {
-      const effectiveInterests = selectedInterests.includes("Anything!")
-        ? []
-        : selectedInterests.filter((i) => i !== "Anything!");
-
-      if (effectiveInterests.length > 0) {
+      if (selectedInterests.length > 0) {
         const intersects = course.interests.some((i) =>
-          (effectiveInterests as Interest[]).includes(i)
+          (selectedInterests as Interest[]).includes(i)
         );
         if (!intersects) return false;
       }
@@ -247,7 +187,7 @@ export default function HomePage() {
 
       return startMatches || hasThirtyMinutesLeft;
     });
-  }, [activeTimeSlot, selectedInterests]);
+  }, [timeValue, selectedInterests]);
 
   function toggleInterest(interest: Interest) {
     setSelectedInterests((prev) =>
@@ -257,7 +197,28 @@ export default function HomePage() {
     );
   }
 
+  function handleNow() {
+    const now = new Date();
+    let hours24 = now.getHours();
+    const minutes = now.getMinutes();
+
+    let roundedMinutes: number;
+    if (minutes < 20) {
+      roundedMinutes = 0;
+    } else if (minutes < 50) {
+      roundedMinutes = 30;
+    } else {
+      roundedMinutes = 0;
+      hours24 = (hours24 + 1) % 24;
+    }
+
+    const h = String(hours24).padStart(2, "0");
+    const m = String(roundedMinutes).padStart(2, "0");
+    setTimeValue(`${h}:${m}`);
+  }
+
   function handleFindClass() {
+    setSearched(true);
     if (filteredCourses.length === 0) {
       setLastPool([]);
       setCurrentCourse(null);
@@ -290,296 +251,189 @@ export default function HomePage() {
       }
       attempts += 1;
     }
-    if (next) {
-      setCurrentCourse(next);
-    }
+    if (next) setCurrentCourse(next);
   }
 
-  const hasFilters =
-    selectedHour !== nextDefault.hour ||
-    selectedMinute !== nextDefault.minute ||
-    meridiem !== nextDefault.meridiem ||
-    (selectedInterests && selectedInterests.length > 0);
-
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-8">
       {/* Hero */}
-      <section className="pt-4 pb-6 sm:pt-6 sm:pb-10">
-        <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#C4622D]">
-          Serendipitous Learning
+      <section className="pt-2 pb-4">
+        <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-slate-400">
+          UC Berkeley · Free Hour Discovery
         </p>
-        <div className="mt-4 space-y-2">
-          <h2 className="font-serif text-4xl font-semibold tracking-[-0.02em] text-[#003262] sm:text-6xl lg:text-7xl">
-            Got a free hour?
-          </h2>
-          <p className="font-serif text-3xl italic text-[#C4622D] sm:text-4xl lg:text-6xl">
-            Wander into a class.
-          </p>
-        </div>
-        <p className="mt-6 max-w-xl text-sm font-mono leading-[1.8] text-[#5a5248]">
-          Tell us when you&apos;re free and what sparks your curiosity. We&apos;ll find
-          a real Berkeley class happening right now that you can quietly sit in on.
+        <h1 className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+          Wander into a class.
+        </h1>
+        <p className="mt-1.5 text-[15px] text-slate-500">
+          Pick a time, pick an interest, get a random Berkeley lecture to sit in on.
         </p>
       </section>
 
-      {/* Time picker */}
-      <section className="space-y-4">
-        <p className="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-slate-500">
-          01 — When are you free?
-        </p>
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={() => {
-              const now = new Date();
-              let hours24 = now.getHours();
-              const minutes = now.getMinutes();
-
-              // Round down to :00 if < 20 min past, up to :30 if 20–49, up to next hour if >= 50.
-              let roundedMinutes: number;
-              if (minutes < 20) {
-                roundedMinutes = 0;
-              } else if (minutes < 50) {
-                roundedMinutes = 30;
-              } else {
-                roundedMinutes = 0;
-                hours24 = (hours24 + 1) % 24;
-              }
-
-              let hour12 = hours24 % 12;
-              if (hour12 === 0) hour12 = 12;
-              setSelectedHour(hour12);
-              setSelectedMinute(roundedMinutes);
-              setMeridiem(hours24 >= 12 ? "PM" : "AM");
-              setTimeMode("now");
-            }}
-            className={`group relative inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[0.85rem] font-mono font-semibold transition-all duration-200 ${
-              timeMode === "now"
-                ? "bg-[#003262] text-[#FDB515] shadow-[0_0_0_3px_rgba(253,181,21,0.25),0_4px_16px_rgba(0,50,98,0.35)]"
-                : "bg-white text-[#003262] ring-1 ring-[#D0D0D0] shadow-sm hover:ring-[#003262] hover:shadow-[0_2px_8px_rgba(0,50,98,0.12)]"
-            }`}
-          >
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span
-                className={`absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                  timeMode === "now"
-                    ? "animate-ping bg-[#FDB515]"
-                    : "bg-[#003262]/30"
-                }`}
-              />
-              <span
-                className={`relative inline-flex h-2 w-2 rounded-full ${
-                  timeMode === "now" ? "bg-[#FDB515]" : "bg-[#003262]/40"
-                }`}
-              />
-            </span>
-            <span>Now</span>
-            {timeMode === "now" && (
-              <span className="text-[0.72rem] font-normal opacity-75">
-                {selectedHour}:{String(selectedMinute).padStart(2, "0")} {meridiem}
-              </span>
-            )}
-          </button>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <select
-              value={selectedHour}
-              onChange={(e) => {
-                setSelectedHour(Number(e.target.value));
-                setTimeMode("manual");
-              }}
-              className="w-20 appearance-none rounded-[6px] border border-[#D0D0D0] bg-white px-4 py-3 text-[0.9rem] font-mono text-[#5a5248] shadow-sm outline-none ring-0 transition-all duration-200 focus:border-[#003262] focus:ring-1 focus:ring-[#003262]"
+      {/* Discovery form */}
+      <section className="rounded-xl bg-slate-50 border border-slate-100 px-5 py-6 sm:px-7 sm:py-7 space-y-6">
+        {/* Time */}
+        <div className="space-y-2.5">
+          <label className="block text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
+            When are you free?
+          </label>
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={handleNow}
+              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-slate-700 transition-all duration-150 hover:border-slate-400 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30"
             >
-              {HOUR_OPTIONS.map((h) => (
-                <option key={h} value={h}>
-                  {h}
-                </option>
-              ))}
-            </select>
-            <span className="text-xs font-mono text-slate-400">:</span>
-            <select
-              value={selectedMinute}
-              onChange={(e) => {
-                setSelectedMinute(Number(e.target.value));
-                setTimeMode("manual");
-              }}
-              className="w-20 appearance-none rounded-[6px] border border-[#D0D0D0] bg-white px-4 py-3 text-[0.9rem] font-mono text-[#5a5248] shadow-sm outline-none ring-0 transition-all duration-200 focus:border-[#003262] focus:ring-1 focus:ring-[#003262]"
-            >
-              {MINUTE_OPTIONS.map((m) => (
-                <option key={m} value={m}>
-                  {String(m).padStart(2, "0")}
-                </option>
-              ))}
-            </select>
-            <div className="inline-flex rounded-full border border-[#D0D0D0] bg-[#F5F5F5] p-0.5 text-xs transition-all duration-200">
-              <button
-                type="button"
-                onClick={() => {
-                  setMeridiem("AM");
-                  setTimeMode("manual");
-                }}
-                className={`px-3 py-1.5 font-mono text-[0.75rem] font-semibold transition-all duration-200 ${
-                  meridiem === "AM"
-                    ? "rounded-full bg-[#003262] text-white"
-                    : "text-slate-500 hover:text-slate-900"
-                }`}
-              >
-                AM
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMeridiem("PM");
-                  setTimeMode("manual");
-                }}
-                className={`px-3 py-1.5 font-mono text-[0.75rem] font-semibold transition-all duration-200 ${
-                  meridiem === "PM"
-                    ? "rounded-full bg-[#003262] text-white"
-                    : "text-slate-500 hover:text-slate-900"
-                }`}
-              >
-                PM
-              </button>
-            </div>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Now
+            </button>
+            <input
+              type="time"
+              value={timeValue}
+              onChange={(e) => setTimeValue(e.target.value)}
+              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[14px] font-medium text-slate-900 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#003262]/20 focus:border-[#003262]/50"
+            />
           </div>
         </div>
-      </section>
 
-      {/* Interests */}
-      <section className="space-y-5">
-        <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#999999]">
-          02 — What are you into? (optional)
-        </p>
-        <div className="flex flex-wrap gap-3">
-          {INTEREST_OPTIONS.map((interest) => {
-            const active = selectedInterests.includes(interest);
-            return (
-              <button
-                key={interest}
-                type="button"
-                onClick={() => toggleInterest(interest)}
-                className={`min-h-[44px] rounded-[6px] px-6 py-[14px] text-[0.85rem] font-mono uppercase tracking-[0.05em] transition-all duration-200 ${
-                  active
-                    ? "bg-[#003262] text-white border border-[#003262]"
-                    : "bg-white text-[#333333] border border-[#D0D0D0] hover:border-[#999999]"
-                }`}
-              >
-                {interest}
-              </button>
-            );
-          })}
+        {/* Interests */}
+        <div className="space-y-2.5">
+          <label className="block text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
+            What are you into?{" "}
+            <span className="normal-case tracking-normal font-normal text-slate-400">
+              (leave blank for anything)
+            </span>
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {INTEREST_OPTIONS.map((interest) => {
+              const active = selectedInterests.includes(interest);
+              return (
+                <button
+                  key={interest}
+                  type="button"
+                  onClick={() => toggleInterest(interest)}
+                  className={`rounded-full px-4 py-1.5 text-[13px] font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30 ${
+                    active
+                      ? "bg-[#003262] text-white"
+                      : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400 hover:text-slate-900"
+                  }`}
+                >
+                  {interest}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="mt-10 sm:mt-12">
+        {/* CTA */}
         <button
           type="button"
           onClick={handleFindClass}
-          className="mx-auto flex w-full max-w-sm items-center justify-center gap-3 rounded-[6px] bg-[#003262] px-10 py-4 text-[0.85rem] font-mono font-semibold uppercase tracking-[0.2em] text-[#FDB515] shadow-md transition-transform duration-200 hover:-translate-y-[2px] hover:bg-[#002549] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FDB515]"
+          disabled={isFinding}
+          className="w-full rounded-lg bg-[#003262] px-6 py-3.5 text-[14px] font-semibold text-white tracking-tight transition-all duration-200 hover:bg-[#00284f] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/40"
         >
-          <span>⚄</span>
-          <span>Find me a class</span>
+          {isFinding ? "Finding…" : "Find me a class"}
         </button>
       </section>
 
       {/* Results */}
-      <section className="space-y-4">
-        {!currentCourse && filteredCourses.length === 0 && (
-          <p className="text-xs font-mono text-slate-500">
-            No classes match that exact combo yet. Try a different time or fewer
-            interests.
+      {searched && !currentCourse && !isFinding && (
+        <section>
+          <p className="text-[14px] text-slate-500">
+            No classes match that combo. Try a different time or fewer interests.
           </p>
-        )}
+        </section>
+      )}
 
-        {currentCourse && (
-          <div className="relative">
-            <div className="group mt-2 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-[#E0E0E0] transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-              <div className="border-b border-[#E0E0E0] bg-[#F5F5F5] px-6 py-4">
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="min-w-0 space-y-1">
-                    <p className="text-xs font-mono uppercase tracking-wide text-slate-500">
-                      {currentCourse.department}
-                    </p>
-                    <h2 className="truncate font-serif text-lg font-semibold text-[#003262] sm:text-xl">
-                      {currentCourse.title}
-                    </h2>
-                  </div>
-                  <div className="text-right text-xs font-mono text-slate-500">
-                    <p className="text-[11px] text-slate-700">
-                      {currentCourse.code}
-                    </p>
-                    <p className="mt-0.5 text-[11px]">
-                      {formatTimeRange(currentCourse.startTime, currentCourse.endTime)}
-                    </p>
-                  </div>
+      {currentCourse && !isFinding && (
+        <section className="animate-fade-slide-up">
+          <div className="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+            <div className="px-6 py-5 space-y-4">
+              {/* Top row */}
+              <div className="flex items-start justify-between gap-4">
+                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
+                  {currentCourse.department}
+                </p>
+                <span className="shrink-0 rounded-full bg-[#FDB515]/15 px-3 py-1 text-[12px] font-semibold text-[#8B6914]">
+                  {formatTimeRange(currentCourse.startTime, currentCourse.endTime)}
+                </span>
+              </div>
+
+              {/* Title + meta */}
+              <div>
+                <h2 className="text-xl font-semibold tracking-tight text-slate-900 leading-snug">
+                  {currentCourse.title}
+                </h2>
+                <p className="mt-1 text-[13px] text-slate-500">
+                  {currentCourse.code} · {currentCourse.instructor}
+                </p>
+              </div>
+
+              <div className="border-t border-slate-100" />
+
+              {/* Location */}
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-[13px] text-slate-700">
+                  <svg width="14" height="14" style={{flexShrink: 0, color: '#94a3b8'}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <a
+                    href={buildMapsUrl(currentCourse.building)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[#003262] underline-offset-2 hover:underline"
+                  >
+                    {currentCourse.building}
+                  </a>
+                  <span className="text-slate-400">Room {currentCourse.room}</span>
+                </div>
+                <div className="flex items-center gap-2 text-[13px] text-slate-500">
+                  <svg width="14" height="14" style={{flexShrink: 0, color: '#94a3b8'}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  {currentCourse.walkingMinutes} min walk from Sather Gate
                 </div>
               </div>
 
-              <div className="grid gap-x-8 gap-y-4 px-6 py-5 text-xs text-slate-700 sm:grid-cols-2">
-                <div className="space-y-1">
-                  <p className="text-[11px] font-mono uppercase tracking-wide text-slate-400">
-                    Instructor
-                  </p>
-                  <p className="text-sm text-slate-900">{currentCourse.instructor}</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-[11px] font-mono uppercase tracking-wide text-slate-400">
-                    Location
-                  </p>
-                  <p className="text-sm text-slate-900">
-                    {currentCourse.building}, room {currentCourse.room}
-                  </p>
-                  <p className="text-[11px] font-mono text-slate-500">
-                    ~{currentCourse.walkingMinutes} min walk from Sather Gate
-                  </p>
-                </div>
-                <div className="space-y-1 sm:col-span-2">
-                  <p className="text-[11px] font-mono uppercase tracking-wide text-slate-400">
-                    Description
-                  </p>
-                  <p className="text-sm leading-relaxed text-slate-800">
-                    {currentCourse.description}
-                  </p>
-                </div>
-                <div className="space-y-1 sm:col-span-2">
-                  <p className="text-[11px] font-mono uppercase tracking-wide text-slate-400">
-                    Tags
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {currentCourse.interests.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-[#F5F5F5] px-2.5 py-0.5 text-[10px] font-mono uppercase tracking-wide text-slate-700 ring-1 ring-[#E0E0E0]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              {/* Description */}
+              <p className="text-[14px] leading-relaxed text-slate-600 line-clamp-3">
+                {currentCourse.description}
+              </p>
 
-              <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E0E0E0] bg-[#F5F5F5] px-6 py-3">
-                <button
-                  type="button"
-                  onClick={() => downloadIcs(currentCourse)}
-                  className="inline-flex items-center gap-1 rounded-full bg-[#003262] px-3 py-1.5 text-[11px] font-mono font-semibold text-[#FDB515] shadow-sm transition-colors hover:bg-[#002549] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FDB515]"
-                >
-                  Add to Calendar
-                </button>
-                <button
-                  type="button"
-                  onClick={handleFindAnother}
-                  className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-[11px] font-mono font-semibold text-slate-700 shadow-sm ring-1 ring-[#E0E0E0] transition-colors hover:bg-[#F5F5F5] hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FDB515]"
-                >
-                  Find Another
-                </button>
-              </div>
+              {/* Tags */}
+              {currentCourse.interests.length > 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {currentCourse.interests.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center justify-end gap-2 border-t border-slate-100 px-6 py-3.5">
+              <button
+                type="button"
+                onClick={() => downloadIcs(currentCourse)}
+                className="rounded-lg bg-slate-100 px-4 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30"
+              >
+                Add to Calendar
+              </button>
+              <button
+                type="button"
+                onClick={handleFindAnother}
+                className="rounded-lg bg-[#003262] px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#00284f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/40"
+              >
+                Find Another
+              </button>
             </div>
           </div>
-        )}
-      </section>
+        </section>
+      )}
     </div>
   );
 }
-
