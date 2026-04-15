@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import courses from "../data/courses.json";
 
+type Semester = "Spring 2026" | "Fall 2026";
+type Meridiem = "AM" | "PM";
 type Interest =
   | "Science"
   | "Arts"
@@ -13,8 +15,6 @@ type Interest =
   | "Social Science"
   | "Environment";
 
-type Semester = "Spring 2026" | "Fall 2026";
-
 type Course = {
   id: string;
   title: string;
@@ -23,14 +23,12 @@ type Course = {
   instructor: string;
   building: string;
   room: string;
-  lat: number;
-  lng: number;
   walkingMinutes: number;
   startTime: string;
   endTime: string;
   interests: Interest[];
   description: string;
-  semester?: string;
+  semester?: Semester;
 };
 
 const INTEREST_OPTIONS: Interest[] = [
@@ -41,8 +39,13 @@ const INTEREST_OPTIONS: Interest[] = [
   "History",
   "Business",
   "Social Science",
-  "Environment",
+  "Environment"
 ];
+
+const allCourses: Course[] = (courses as unknown as Course[]).map((c) => ({
+  ...c,
+  id: String(c.id)
+}));
 
 function parseTimeToday(time: string): Date {
   const [hours, minutes] = time.split(":").map(Number);
@@ -60,18 +63,17 @@ function formatTimeRange(start: string, end: string) {
     else if (h > 12) h -= 12;
     return `${h}:${m} ${suffix}`;
   };
-  return `${to12h(start)} – ${to12h(end)}`;
+  return `${to12h(start)} - ${to12h(end)}`;
+}
+
+function getCourseSemester(course: Course): Semester {
+  return course.semester ?? "Spring 2026";
 }
 
 function buildMapsUrl(building: string) {
-  const query = `${building}, UC Berkeley`;
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
-}
-
-function buildRmpUrl(instructor: string) {
-  // Strip honorifics so the search hits the right profile
-  const name = instructor.replace(/^(Prof\.|Dr\.|Professor|Adjunct Prof\.)\s*/i, "").trim();
-  return `https://www.ratemyprofessors.com/search/professors?q=${encodeURIComponent(name)}&sid=1072`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${building}, UC Berkeley`
+  )}`;
 }
 
 function downloadIcs(course: Course) {
@@ -86,23 +88,10 @@ function downloadIcs(course: Course) {
 
   const toIcsDate = (d: Date) => {
     const pad = (n: number) => String(n).padStart(2, "0");
-    return (
-      d.getFullYear().toString() +
-      pad(d.getMonth() + 1) +
-      pad(d.getDate()) +
-      "T" +
-      pad(d.getHours()) +
-      pad(d.getMinutes()) +
-      pad(d.getSeconds())
-    );
+    return `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(
+      d.getDate()
+    )}T${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
   };
-
-  const dtStamp = toIcsDate(new Date());
-  const dtStart = toIcsDate(start);
-  const dtEnd = toIcsDate(end);
-
-  const location = `${course.building} ${course.room}`;
-  const summary = `${course.title} (${course.code})`;
 
   const ics = [
     "BEGIN:VCALENDAR",
@@ -111,14 +100,14 @@ function downloadIcs(course: Course) {
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
     `UID:${course.id}@classhop.berkeley`,
-    `DTSTAMP:${dtStamp}`,
-    `DTSTART:${dtStart}`,
-    `DTEND:${dtEnd}`,
-    `SUMMARY:${summary}`,
+    `DTSTAMP:${toIcsDate(new Date())}`,
+    `DTSTART:${toIcsDate(start)}`,
+    `DTEND:${toIcsDate(end)}`,
+    `SUMMARY:${course.title} (${course.code})`,
     `DESCRIPTION:${course.description.replace(/\r?\n/g, " ")}`,
-    `LOCATION:${location}`,
+    `LOCATION:${course.building} ${course.room}`,
     "END:VEVENT",
-    "END:VCALENDAR",
+    "END:VCALENDAR"
   ].join("\r\n");
 
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
@@ -132,358 +121,210 @@ function downloadIcs(course: Course) {
   URL.revokeObjectURL(url);
 }
 
-const allCourses: Course[] = (courses as unknown as Course[]).map((c) => ({
-  ...c,
-  id: String((c as any).id),
-}));
-
-function findNextCourseStart(now: Date): string {
-  let next: Date | null = null;
-
-  for (const course of allCourses) {
-    const start = parseTimeToday(course.startTime);
-    if (start <= now) continue;
-    if (!next || start < next) next = start;
-  }
-
-  if (!next) {
-    for (const course of allCourses) {
-      const start = parseTimeToday(course.startTime);
-      if (!next || start < next) next = start;
-    }
-  }
-
-  if (!next) next = now;
-
-  const h = String(next.getHours()).padStart(2, "0");
-  const m = String(next.getMinutes()).padStart(2, "0");
-  return `${h}:${m}`;
+function to24Hour(hourText: string, minuteText: string, meridiem: Meridiem): string | null {
+  const hour = Number(hourText);
+  const minute = Number(minuteText);
+  if (!Number.isFinite(hour) || !Number.isFinite(minute)) return null;
+  if (hour < 1 || hour > 12 || minute < 0 || minute > 59) return null;
+  let h24 = hour % 12;
+  if (meridiem === "PM") h24 += 12;
+  return `${String(h24).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 }
 
 export default function HomePage() {
-  const defaultTime = useMemo(() => findNextCourseStart(new Date()), []);
   const [semester, setSemester] = useState<Semester>("Spring 2026");
-  const [timeValue, setTimeValue] = useState<string>(defaultTime);
+  const [hourText, setHourText] = useState("3");
+  const [minuteText, setMinuteText] = useState("00");
+  const [meridiem, setMeridiem] = useState<Meridiem>("PM");
+  const [usingNow, setUsingNow] = useState(false);
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
   const [currentCourse, setCurrentCourse] = useState<Course | null>(null);
   const [lastPool, setLastPool] = useState<Course[]>([]);
   const [isFinding, setIsFinding] = useState(false);
-  const [searched, setSearched] = useState(false);
 
-  function handleSemesterChange(s: Semester) {
-    setSemester(s);
-    setCurrentCourse(null);
-    setLastPool([]);
-    setSearched(false);
-  }
+  const selectedTime24 = useMemo(
+    () => to24Hour(hourText, minuteText, meridiem),
+    [hourText, minuteText, meridiem]
+  );
 
   const filteredCourses = useMemo(() => {
-    const selectedMoment = parseTimeToday(timeValue);
-
+    if (!selectedTime24) return [];
+    const selectedMoment = parseTimeToday(selectedTime24);
     return allCourses.filter((course) => {
-      // courses without a semester field default to Spring 2026
-      const courseSemester = course.semester ?? "Spring 2026";
-      if (courseSemester !== semester) return false;
-
+      if (getCourseSemester(course) !== semester) return false;
       if (selectedInterests.length > 0) {
-        const intersects = course.interests.some((i) =>
-          (selectedInterests as Interest[]).includes(i)
-        );
+        const intersects = course.interests.some((i) => selectedInterests.includes(i));
         if (!intersects) return false;
       }
-
       const cStart = parseTimeToday(course.startTime);
       const cEnd = parseTimeToday(course.endTime);
-
       const startMatches =
         cStart.getHours() === selectedMoment.getHours() &&
         cStart.getMinutes() === selectedMoment.getMinutes();
-
       const inSession =
         selectedMoment.getTime() >= cStart.getTime() &&
         selectedMoment.getTime() < cEnd.getTime();
-
-      const remainingMs = cEnd.getTime() - selectedMoment.getTime();
-      const hasThirtyMinutesLeft = inSession && remainingMs >= 30 * 60 * 1000;
-
+      const hasThirtyMinutesLeft =
+        inSession && cEnd.getTime() - selectedMoment.getTime() >= 30 * 60 * 1000;
       return startMatches || hasThirtyMinutesLeft;
     });
-  }, [timeValue, selectedInterests, semester]);
-
-  function toggleInterest(interest: Interest) {
-    setSelectedInterests((prev) =>
-      prev.includes(interest)
-        ? prev.filter((i) => i !== interest)
-        : [...prev, interest]
-    );
-  }
+  }, [selectedTime24, selectedInterests, semester]);
 
   function handleNow() {
     const now = new Date();
-    let hours24 = now.getHours();
+    let hour24 = now.getHours();
     const minutes = now.getMinutes();
-
-    let roundedMinutes: number;
-    if (minutes < 20) {
-      roundedMinutes = 0;
-    } else if (minutes < 50) {
-      roundedMinutes = 30;
-    } else {
-      roundedMinutes = 0;
-      hours24 = (hours24 + 1) % 24;
+    let roundedMinute = 0;
+    if (minutes < 20) roundedMinute = 0;
+    else if (minutes < 50) roundedMinute = 30;
+    else {
+      roundedMinute = 0;
+      hour24 = (hour24 + 1) % 24;
     }
+    let h12 = hour24 % 12;
+    if (h12 === 0) h12 = 12;
+    setHourText(String(h12));
+    setMinuteText(String(roundedMinute).padStart(2, "0"));
+    setMeridiem(hour24 >= 12 ? "PM" : "AM");
+    setUsingNow(true);
+  }
 
-    const h = String(hours24).padStart(2, "0");
-    const m = String(roundedMinutes).padStart(2, "0");
-    setTimeValue(`${h}:${m}`);
+  function toggleInterest(interest: Interest) {
+    setSelectedInterests((prev) =>
+      prev.includes(interest) ? prev.filter((i) => i !== interest) : [...prev, interest]
+    );
   }
 
   function handleFindClass() {
-    setSearched(true);
+    setCurrentCourse(null);
     if (filteredCourses.length === 0) {
       setLastPool([]);
-      setCurrentCourse(null);
       return;
     }
-
     setIsFinding(true);
     setLastPool(filteredCourses);
-
     window.setTimeout(() => {
       const idx = Math.floor(Math.random() * filteredCourses.length);
       setCurrentCourse(filteredCourses[idx]);
       setIsFinding(false);
-    }, 350);
+    }, 300);
   }
 
   function handleFindAnother() {
-    if (!lastPool.length) return;
+    if (lastPool.length === 0) return;
     if (lastPool.length === 1) {
       setCurrentCourse(lastPool[0]);
       return;
     }
     let next: Course | null = null;
-    let attempts = 0;
-    while (!next && attempts < 10) {
-      const idx = Math.floor(Math.random() * lastPool.length);
-      const candidate = lastPool[idx];
+    for (let i = 0; i < 10; i += 1) {
+      const candidate = lastPool[Math.floor(Math.random() * lastPool.length)];
       if (!currentCourse || candidate.id !== currentCourse.id) {
         next = candidate;
+        break;
       }
-      attempts += 1;
     }
     if (next) setCurrentCourse(next);
   }
 
   return (
-    <div className="flex flex-col gap-8">
-      {/* Hero */}
-      <section className="pt-2 pb-4">
-        <div className="flex items-center justify-between">
-          <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-slate-400">
-            UC Berkeley · Free Hour Discovery
-          </p>
-          {/* Semester toggle */}
-          <div className="flex items-center gap-0.5 rounded-full border border-slate-200 bg-slate-50 p-0.5">
-            {(["Spring 2026", "Fall 2026"] as Semester[]).map((s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => handleSemesterChange(s)}
-                className={`rounded-full px-3 py-1 text-[11px] font-medium transition-all duration-150 ${
-                  s === semester
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-500 hover:text-slate-700"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-        </div>
-        <h1 className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
-          Wander into a class.
-        </h1>
-        <p className="mt-1.5 text-[15px] text-slate-500">
-          Pick a time, pick an interest, get a random Berkeley lecture to sit in on.
-        </p>
-      </section>
-
-      {/* Discovery form */}
-      <section className="rounded-xl bg-slate-50 border border-slate-100 px-5 py-6 sm:px-7 sm:py-7 space-y-6">
-        {/* Time */}
-        <div className="space-y-2.5">
-          <label className="block text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
-            When are you free?
-          </label>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={handleNow}
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-slate-700 transition-all duration-150 hover:border-slate-400 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Now
-            </button>
-            <input
-              type="time"
-              value={timeValue}
-              onChange={(e) => setTimeValue(e.target.value)}
-              className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-[14px] font-medium text-slate-900 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#003262]/20 focus:border-[#003262]/50"
-            />
-          </div>
-        </div>
-
-        {/* Interests */}
-        <div className="space-y-2.5">
-          <label className="block text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
-            What are you into?{" "}
-            <span className="normal-case tracking-normal font-normal text-slate-400">
-              (leave blank for anything)
-            </span>
-          </label>
-          <div className="flex flex-wrap gap-2">
-            {INTEREST_OPTIONS.map((interest) => {
-              const active = selectedInterests.includes(interest);
-              return (
-                <button
-                  key={interest}
-                  type="button"
-                  onClick={() => toggleInterest(interest)}
-                  className={`rounded-full px-4 py-1.5 text-[13px] font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30 ${
-                    active
-                      ? "bg-[#003262] text-white"
-                      : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400 hover:text-slate-900"
-                  }`}
-                >
-                  {interest}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <button
-          type="button"
-          onClick={handleFindClass}
-          disabled={isFinding}
-          className="w-full rounded-lg bg-[#003262] px-6 py-3.5 text-[14px] font-semibold text-white tracking-tight transition-all duration-200 hover:bg-[#00284f] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/40"
-        >
-          {isFinding ? "Finding…" : "Find me a class"}
-        </button>
-      </section>
-
-      {/* Results */}
-      {searched && !currentCourse && !isFinding && (
-        <section>
-          <p className="text-[14px] text-slate-500">
-            {semester === "Fall 2026"
-              ? "Fall 2026 courses aren't available yet — check back soon."
-              : "No classes match that combo. Try a different time or fewer interests."}
-          </p>
-        </section>
-      )}
-
-      {currentCourse && !isFinding && (
-        <section className="animate-fade-slide-up">
-          <div className="rounded-xl bg-white border border-slate-200 shadow-sm overflow-hidden">
-            <div className="px-6 py-5 space-y-4">
-              {/* Top row */}
-              <div className="flex items-start justify-between gap-4">
-                <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-400">
-                  {currentCourse.department}
-                </p>
-                <span className="shrink-0 rounded-full bg-[#FDB515]/15 px-3 py-1 text-[12px] font-semibold text-[#8B6914]">
-                  {formatTimeRange(currentCourse.startTime, currentCourse.endTime)}
-                </span>
-              </div>
-
-              {/* Title + meta */}
-              <div>
-                <h2 className="text-xl font-semibold tracking-tight text-slate-900 leading-snug">
-                  {currentCourse.title}
-                </h2>
-                <p className="mt-1 text-[13px] text-slate-500">
-                  {currentCourse.code} ·{" "}
-                  <a
-                    href={buildRmpUrl(currentCourse.instructor)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#003262] underline-offset-2 hover:underline"
-                  >
-                    {currentCourse.instructor}
-                  </a>
-                </p>
-              </div>
-
-              <div className="border-t border-slate-100" />
-
-              {/* Location */}
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-[13px] text-slate-700">
-                  <svg width="14" height="14" style={{flexShrink: 0, color: '#94a3b8'}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <a
-                    href={buildMapsUrl(currentCourse.building)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[#003262] underline-offset-2 hover:underline"
-                  >
-                    {currentCourse.building}
-                  </a>
-                  <span className="text-slate-400">Room {currentCourse.room}</span>
-                </div>
-                <div className="flex items-center gap-2 text-[13px] text-slate-500">
-                  <svg width="14" height="14" style={{flexShrink: 0, color: '#94a3b8'}} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  {currentCourse.walkingMinutes} min walk from Sather Gate
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-[14px] leading-relaxed text-slate-600 line-clamp-3">
-                {currentCourse.description}
-              </p>
-
-              {/* Tags */}
-              {currentCourse.interests.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {currentCourse.interests.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-medium text-slate-600"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
+    <>
+      <style jsx global>{`
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap");
+        :root { --navy:#002855; --navy-light:#0a3d6b; --gold:#fdb515; --gold-dim:#c98e00; --cream:#f8f5ef; --cream-dark:#ede8de; --text:#1a1612; --muted:#6b6356; --border:rgba(0,40,85,0.14); --chip-bg:#fff; --font-display:"Fraunces",Georgia,serif; --font-body:"DM Sans",system-ui,sans-serif; --font-mono:"DM Mono",monospace; --radius-sm:6px; --radius-md:12px; --radius-pill:999px;}
+        .redesign-root,.redesign-root *{box-sizing:border-box}.redesign-root{min-height:100vh;display:flex;flex-direction:column;background:var(--cream);color:var(--text);font-family:var(--font-body)}
+        .redesign-root nav{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 2.5rem;border-bottom:1px solid var(--border);background:var(--cream);position:sticky;top:0;z-index:10}
+        .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}.logo-mark{width:32px;height:32px;background:var(--navy);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}.logo-wordmark{font-weight:500;font-size:1rem;color:var(--navy);letter-spacing:-.01em}
+        .semester-toggle{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
+        .semester-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}.semester-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
+        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:4rem 2rem 6rem}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
+        .hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,3.75rem);font-weight:300;line-height:1.08;color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem}.subheadline{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--gold-dim);margin-bottom:1.75rem}.description{font-size:1rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:3.5rem}
+        .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+        .time-row{display:flex;align-items:center;gap:.5rem}.time-btn,.chip{font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.time-btn.active,.chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+        .time-input{font-family:var(--font-mono);font-size:.95rem;width:48px;text-align:center;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem .4rem;border-radius:var(--radius-sm);outline:none}.time-sep{font-family:var(--font-mono);color:var(--muted);font-size:1.1rem;margin:0 -.1rem}
+        .ampm-group{display:flex;border:1px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;background:var(--chip-bg);margin-left:.25rem}.ampm-btn{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.06em;padding:.5rem .85rem;border:none;background:transparent;color:var(--muted);cursor:pointer}.ampm-btn.active{background:var(--navy);color:var(--gold)}
+        .chips{display:flex;flex-wrap:wrap;gap:.5rem}.cta-wrapper{margin-top:3rem}.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;background:var(--navy);color:var(--gold);border:none;border-radius:var(--radius-md);padding:1.05rem 2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.cta-btn:disabled{opacity:.6;cursor:not-allowed}
+        .empty-state{margin-top:3rem;font-family:var(--font-mono);font-size:.78rem;color:var(--muted);letter-spacing:.04em;line-height:1.6}.result-section{margin-top:3rem}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+        .course-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}.card-body{padding:1.5rem 1.75rem}.card-top{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem}.card-dept{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+        .card-time-badge{font-family:var(--font-mono);font-size:.7rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.25rem .7rem;white-space:nowrap}.card-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.65rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:.4rem}
+        .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500}
+        .card-tags{display:flex;flex-wrap:wrap;gap:.4rem}.card-tag{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.25rem .65rem}
+        .card-actions{display:flex;justify-content:flex-end;gap:.6rem;padding:1rem 1.75rem;border-top:1px solid var(--border);background:var(--cream)}.btn-secondary,.btn-primary{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-sm);padding:.6rem 1.1rem;cursor:pointer}.btn-secondary{color:var(--navy);background:transparent;border:1px solid var(--border)}.btn-primary{color:var(--gold);background:var(--navy);border:1px solid var(--navy)}
+        .redesign-root footer{border-top:1px solid var(--border);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;background:var(--cream)}.footer-left{display:flex;align-items:center;gap:.85rem}.avatar{width:30px;height:30px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.68rem;color:var(--gold)}.footer-note{font-family:var(--font-mono);font-size:.65rem;color:var(--muted)}
+      `}</style>
+      <div className="redesign-root">
+        <nav>
+          <a className="logo" href="#">
+            <div className="logo-mark">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <text x="2" y="13" fontFamily="Georgia" fontSize="12" fontWeight="bold" fill="#FDB515">CH</text>
+              </svg>
             </div>
-
-            {/* Actions */}
-            <div className="flex items-center justify-end gap-2 border-t border-slate-100 px-6 py-3.5">
-              <button
-                type="button"
-                onClick={() => downloadIcs(currentCourse)}
-                className="rounded-lg bg-slate-100 px-4 py-2 text-[13px] font-medium text-slate-700 transition-colors hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/30"
-              >
-                Add to Calendar
-              </button>
-              <button
-                type="button"
-                onClick={handleFindAnother}
-                className="rounded-lg bg-[#003262] px-4 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#00284f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#003262]/40"
-              >
-                Find Another
-              </button>
+            <span className="logo-wordmark">ClassHop</span>
+          </a>
+          <div className="semester-toggle">
+            <button className={`semester-btn ${semester === "Spring 2026" ? "active" : ""}`} onClick={() => setSemester("Spring 2026")} type="button">Spring 2026</button>
+            <button className={`semester-btn ${semester === "Fall 2026" ? "active" : ""}`} onClick={() => setSemester("Fall 2026")} type="button">Fall 2026</button>
+          </div>
+        </nav>
+        <main className="redesign-main">
+          <div className="eyebrow">Serendipitous learning</div>
+          <h1 className="hero-title">Got a free hour?</h1>
+          <p className="subheadline">Wander into a class.</p>
+          <p className="description">Tell us when you&apos;re free and what sparks your curiosity. We&apos;ll find a real Berkeley class happening right now that you can quietly sit in on.</p>
+          <div className="divider" />
+          <div className="form-section">
+            <div className="section-label"><span className="step-number">01</span><span className="section-title">When are you free?</span></div>
+            <div className="time-row">
+              <button className={`time-btn ${usingNow ? "active" : ""}`} type="button" onClick={handleNow}>Now</button>
+              <input className="time-input" type="text" maxLength={2} value={hourText} onChange={(e)=>{setHourText(e.target.value.replace(/\D/g,"").slice(0,2));setUsingNow(false);}} />
+              <span className="time-sep">:</span>
+              <input className="time-input" type="text" maxLength={2} value={minuteText} onChange={(e)=>{setMinuteText(e.target.value.replace(/\D/g,"").slice(0,2));setUsingNow(false);}} />
+              <div className="ampm-group">
+                <button className={`ampm-btn ${meridiem === "AM" ? "active" : ""}`} type="button" onClick={()=>setMeridiem("AM")}>AM</button>
+                <button className={`ampm-btn ${meridiem === "PM" ? "active" : ""}`} type="button" onClick={()=>setMeridiem("PM")}>PM</button>
+              </div>
             </div>
           </div>
-        </section>
-      )}
-    </div>
+          <div className="form-section">
+            <div className="section-label"><span className="step-number">02</span><span className="section-title">What are you into? <span style={{opacity:0.5,fontSize:"0.65rem"}}>(optional)</span></span></div>
+            <div className="chips">
+              {INTEREST_OPTIONS.map((interest) => (
+                <button key={interest} type="button" className={`chip ${selectedInterests.includes(interest) ? "active" : ""}`} onClick={() => toggleInterest(interest)}>{interest}</button>
+              ))}
+            </div>
+          </div>
+          <div className="cta-wrapper">
+            <button className="cta-btn" type="button" onClick={handleFindClass} disabled={isFinding || !selectedTime24}><span>{isFinding ? "Finding..." : "Find me a class"}</span></button>
+          </div>
+          {!isFinding && !currentCourse && filteredCourses.length === 0 && <div className="empty-state">No classes match that combo. Try a different time or fewer interests.</div>}
+          {currentCourse && (
+            <div className="result-section">
+              <p className="result-label">Here&apos;s one for you</p>
+              <div className="course-card">
+                <div className="card-body">
+                  <div className="card-top"><span className="card-dept">{currentCourse.department}</span><span className="card-time-badge">{formatTimeRange(currentCourse.startTime, currentCourse.endTime)}</span></div>
+                  <h2 className="card-title">{currentCourse.title}</h2>
+                  <p className="card-meta">{currentCourse.code} - {currentCourse.instructor}</p>
+                  <div className="card-divider" />
+                  <div className="card-location"><a href={buildMapsUrl(currentCourse.building)} target="_blank" rel="noreferrer">{currentCourse.building}, room {currentCourse.room}</a><p className="card-meta">~{currentCourse.walkingMinutes} min walk from Sather Gate</p></div>
+                  <p className="card-desc">{currentCourse.description}</p>
+                  <div className="card-tags">{currentCourse.interests.map((tag)=><span key={tag} className="card-tag">{tag}</span>)}</div>
+                </div>
+                <div className="card-actions">
+                  <button className="btn-secondary" type="button" onClick={() => downloadIcs(currentCourse)}>Add to Calendar</button>
+                  <button className="btn-primary" type="button" onClick={handleFindAnother}>Find Another</button>
+                </div>
+              </div>
+            </div>
+          )}
+        </main>
+        <footer>
+          <div className="footer-left"><div className="avatar">CH</div><span className="footer-brand"><strong>ClassHop</strong> · UC Berkeley</span></div>
+          <span className="footer-note">Times are approximations — verify with the official schedule.</span>
+        </footer>
+      </div>
+    </>
   );
 }
+
