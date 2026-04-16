@@ -25,6 +25,8 @@ type Course = {
   walkingMinutes: number;
   startTime: string;
   endTime: string;
+  /** Mon=M, Tue=T, Wed=W, Thu=Tr, Fri=F — combined e.g. MW, TTr, MWF */
+  meetDays: string;
   interests: Interest[];
   description: string;
   semester?: Semester;
@@ -46,7 +48,8 @@ const LATEST_MINUTES = 19 * 60; // 7:00 PM
 
 const allCourses: Course[] = (courses as unknown as Course[]).map((c) => ({
   ...c,
-  id: String(c.id)
+  id: String(c.id),
+  meetDays: c.meetDays ?? "MW"
 }));
 
 function parseTimeToday(time: string): Date {
@@ -329,7 +332,7 @@ export default function HomePage() {
               <p className="result-label">Here&apos;s one for you</p>
               <div className="course-card">
                 <div className="card-body">
-                  <div className="card-top"><span className="card-dept">{currentCourse.department}</span><span className="card-time-badge">{formatTimeRange(currentCourse.startTime, currentCourse.endTime)}</span></div>
+                  <div className="card-top"><span className="card-dept">{currentCourse.department}</span><span className="card-time-badge">{currentCourse.meetDays} · {formatTimeRange(currentCourse.startTime, currentCourse.endTime)}</span></div>
                   <h2 className="card-title">{currentCourse.title}</h2>
                   <p className="card-meta">{currentCourse.code} - {currentCourse.instructor}</p>
                   <div className="card-divider" />

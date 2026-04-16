@@ -8,12 +8,16 @@
     "building": "Dwinelle Hall",
     "room": "155",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Tech", "Science"],
-    "description": "Introduction to the basic ideas and techniques underlying the design of intelligent computer systems. Topics include search, game playing, knowledge representation, inference, planning, decision making under uncertainty, and machine learning."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Introduction to the basic ideas and techniques underlying the design of intelligent computer systems. Topics include search, game playing, knowledge representation, inference, planning, decision making under uncertainty, and machine learning.",
+    "meetDays": "MW"
   },
   {
     "id": 2,
@@ -28,8 +32,11 @@
     "walkingMinutes": 2,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Tech"],
-    "description": "Fundamental dynamic data structures, including linear lists, queues, trees, and other linked structures; arrays, strings, and hash tables. Storage management. Elementary principles of software engineering."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Fundamental dynamic data structures, including linear lists, queues, trees, and other linked structures; arrays, strings, and hash tables. Storage management. Elementary principles of software engineering.",
+    "meetDays": "MWF"
   },
   {
     "id": 3,
@@ -44,8 +51,12 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Tech", "Science"],
-    "description": "Theoretical foundations and practical methods for machine learning and pattern recognition. Supervised and unsupervised learning, neural networks, deep learning, generative models."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Theoretical foundations and practical methods for machine learning and pattern recognition. Supervised and unsupervised learning, neural networks, deep learning, generative models.",
+    "meetDays": "TTr"
   },
   {
     "id": 4,
@@ -60,8 +71,11 @@
     "walkingMinutes": 4,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Science"],
-    "description": "Techniques of integration; applications of integration. Infinite sequences and series. First-order ordinary differential equations. Second-order ordinary differential equations; oscillation and damping."
+    "interests": [
+      "Science"
+    ],
+    "description": "Techniques of integration; applications of integration. Infinite sequences and series. First-order ordinary differential equations. Second-order ordinary differential equations; oscillation and damping.",
+    "meetDays": "MTr"
   },
   {
     "id": 5,
@@ -72,12 +86,15 @@
     "building": "Dwinelle Hall",
     "room": "155",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Basic linear algebra; matrix arithmetic and determinants. Vector spaces; inner product spaces. Eigenvalues and eigenvectors; linear transformations. Homogeneous ordinary differential equations."
+    "interests": [
+      "Science"
+    ],
+    "description": "Basic linear algebra; matrix arithmetic and determinants. Vector spaces; inner product spaces. Eigenvalues and eigenvectors; linear transformations. Homogeneous ordinary differential equations.",
+    "meetDays": "WF"
   },
   {
     "id": 6,
@@ -88,12 +105,15 @@
     "building": "Moses Hall",
     "room": "223",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Philosophy"],
-    "description": "An examination of the mind-body problem, consciousness, intentionality, and personal identity. Topics include dualism, physicalism, functionalism, and the nature of mental causation."
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "An examination of the mind-body problem, consciousness, intentionality, and personal identity. Topics include dualism, physicalism, functionalism, and the nature of mental causation.",
+    "meetDays": "MTW"
   },
   {
     "id": 7,
@@ -104,12 +124,15 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Philosophy"],
-    "description": "An introduction to the major ethical theories and their application to contemporary moral problems. Topics include consequentialism, deontology, virtue ethics, and applied ethics."
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "An introduction to the major ethical theories and their application to contemporary moral problems. Topics include consequentialism, deontology, virtue ethics, and applied ethics.",
+    "meetDays": "MWTr"
   },
   {
     "id": 8,
@@ -124,8 +147,11 @@
     "walkingMinutes": 2,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["History"],
-    "description": "A survey of world history from prehistoric times to the present. Emphasis on comparative analysis of major civilizations and the dynamics of historical change."
+    "interests": [
+      "History"
+    ],
+    "description": "A survey of world history from prehistoric times to the present. Emphasis on comparative analysis of major civilizations and the dynamics of historical change.",
+    "meetDays": "M"
   },
   {
     "id": 9,
@@ -136,12 +162,15 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:00",
-    "interests": ["History"],
-    "description": "The history of the United States from Reconstruction to the present, including industrialization, immigration, labor movements, civil rights, and the rise of global power."
+    "interests": [
+      "History"
+    ],
+    "description": "The history of the United States from Reconstruction to the present, including industrialization, immigration, labor movements, civil rights, and the rise of global power.",
+    "meetDays": "T"
   },
   {
     "id": 10,
@@ -152,12 +181,15 @@
     "building": "Valley Life Sciences",
     "room": "2050",
     "lat": 37.8751,
-    "lng": -122.2620,
+    "lng": -122.262,
     "walkingMinutes": 5,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Science"],
-    "description": "General introduction to cell biology, genetics, molecular biology, physiology, and evolution. Lab sections provide hands-on experience with biological techniques."
+    "interests": [
+      "Science"
+    ],
+    "description": "General introduction to cell biology, genetics, molecular biology, physiology, and evolution. Lab sections provide hands-on experience with biological techniques.",
+    "meetDays": "W"
   },
   {
     "id": 11,
@@ -168,12 +200,15 @@
     "building": "Valley Life Sciences",
     "room": "1101",
     "lat": 37.8751,
-    "lng": -122.2620,
+    "lng": -122.262,
     "walkingMinutes": 5,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Systematic study of the structure of the human body. Regional and systemic approaches to understanding gross anatomy, histology, and functional relationships."
+    "interests": [
+      "Science"
+    ],
+    "description": "Systematic study of the structure of the human body. Regional and systemic approaches to understanding gross anatomy, histology, and functional relationships.",
+    "meetDays": "Tr"
   },
   {
     "id": 12,
@@ -188,8 +223,11 @@
     "walkingMinutes": 4,
     "startTime": "12:00",
     "endTime": "13:00",
-    "interests": ["Business"],
-    "description": "Introduction to economic analysis and its applications to contemporary problems. Supply and demand, market equilibrium, competition and monopoly, externalities and public goods."
+    "interests": [
+      "Business"
+    ],
+    "description": "Introduction to economic analysis and its applications to contemporary problems. Supply and demand, market equilibrium, competition and monopoly, externalities and public goods.",
+    "meetDays": "F"
   },
   {
     "id": 13,
@@ -204,8 +242,11 @@
     "walkingMinutes": 7,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Business"],
-    "description": "Introduction to macroeconomic analysis: national income and product accounts, business cycles, unemployment, inflation, money and banking, fiscal and monetary policy."
+    "interests": [
+      "Business"
+    ],
+    "description": "Introduction to macroeconomic analysis: national income and product accounts, business cycles, unemployment, inflation, money and banking, fiscal and monetary policy.",
+    "meetDays": "MT"
   },
   {
     "id": 14,
@@ -220,8 +261,11 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Arts"],
-    "description": "A survey of art and architecture from prehistory to the medieval period. Focus on visual analysis, cultural context, and the social functions of art across civilizations."
+    "interests": [
+      "Arts"
+    ],
+    "description": "A survey of art and architecture from prehistory to the medieval period. Focus on visual analysis, cultural context, and the social functions of art across civilizations.",
+    "meetDays": "TW"
   },
   {
     "id": 15,
@@ -236,8 +280,11 @@
     "walkingMinutes": 5,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Arts"],
-    "description": "Art from the French Revolution to the present. Impressionism, Post-Impressionism, Cubism, Abstract Expressionism, and contemporary movements examined in their social contexts."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Art from the French Revolution to the present. Impressionism, Post-Impressionism, Cubism, Abstract Expressionism, and contemporary movements examined in their social contexts.",
+    "meetDays": "MWF"
   },
   {
     "id": 16,
@@ -252,8 +299,11 @@
     "walkingMinutes": 4,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Science"],
-    "description": "Atomic and molecular structure, chemical bonding, thermodynamics, kinetics, and equilibrium. Laboratory work develops quantitative skills and introduces experimental chemistry."
+    "interests": [
+      "Science"
+    ],
+    "description": "Atomic and molecular structure, chemical bonding, thermodynamics, kinetics, and equilibrium. Laboratory work develops quantitative skills and introduces experimental chemistry.",
+    "meetDays": "MTrW"
   },
   {
     "id": 17,
@@ -268,8 +318,11 @@
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Structure, bonding, and reactions of organic compounds. Mechanisms of organic reactions, stereochemistry, spectroscopic identification, and synthesis strategies."
+    "interests": [
+      "Science"
+    ],
+    "description": "Structure, bonding, and reactions of organic compounds. Mechanisms of organic reactions, stereochemistry, spectroscopic identification, and synthesis strategies.",
+    "meetDays": "MW"
   },
   {
     "id": 18,
@@ -284,8 +337,11 @@
     "walkingMinutes": 3,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Science"],
-    "description": "Mechanics and wave motion. Newton's laws, energy, momentum, rotational motion, oscillations, and waves. Emphasizes problem solving and physical intuition."
+    "interests": [
+      "Science"
+    ],
+    "description": "Mechanics and wave motion. Newton's laws, energy, momentum, rotational motion, oscillations, and waves. Emphasizes problem solving and physical intuition.",
+    "meetDays": "MWF"
   },
   {
     "id": 19,
@@ -300,8 +356,11 @@
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Electricity, magnetism, and optics. Electric and magnetic fields, electromagnetic waves, geometric and wave optics, and an introduction to quantum phenomena."
+    "interests": [
+      "Science"
+    ],
+    "description": "Electricity, magnetism, and optics. Electric and magnetic fields, electromagnetic waves, geometric and wave optics, and an introduction to quantum phenomena.",
+    "meetDays": "TTr"
   },
   {
     "id": 20,
@@ -316,8 +375,11 @@
     "walkingMinutes": 2,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts"],
-    "description": "Close reading of Shakespeare's major plays and sonnets. Examination of theatrical conventions, language, and themes in their historical and cultural contexts."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Close reading of Shakespeare's major plays and sonnets. Examination of theatrical conventions, language, and themes in their historical and cultural contexts.",
+    "meetDays": "MTr"
   },
   {
     "id": 21,
@@ -332,8 +394,11 @@
     "walkingMinutes": 2,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Arts"],
-    "description": "History and theory of the novel from its origins to the present. Novels by major British, American, and world authors examined in their cultural contexts."
+    "interests": [
+      "Arts"
+    ],
+    "description": "History and theory of the novel from its origins to the present. Novels by major British, American, and world authors examined in their cultural contexts.",
+    "meetDays": "WF"
   },
   {
     "id": 22,
@@ -348,8 +413,12 @@
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to sociological perspectives on social institutions, stratification, race, gender, and social change. Emphasis on applying sociological imagination to everyday life."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to sociological perspectives on social institutions, stratification, race, gender, and social change. Emphasis on applying sociological imagination to everyday life.",
+    "meetDays": "MTW"
   },
   {
     "id": 23,
@@ -364,8 +433,12 @@
     "walkingMinutes": 6,
     "startTime": "12:00",
     "endTime": "13:00",
-    "interests": ["Science", "Philosophy"],
-    "description": "Survey of psychology covering biological bases of behavior, sensation and perception, learning and memory, cognition, development, personality, social psychology, and mental health."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Survey of psychology covering biological bases of behavior, sensation and perception, learning and memory, cognition, development, personality, social psychology, and mental health.",
+    "meetDays": "MWTr"
   },
   {
     "id": 24,
@@ -380,8 +453,12 @@
     "walkingMinutes": 6,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Science", "Philosophy"],
-    "description": "Neural basis of cognition including attention, memory, language, and executive function. Emphasis on neuroimaging methods and cognitive neuropsychology."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Neural basis of cognition including attention, memory, language, and executive function. Emphasis on neuroimaging methods and cognitive neuropsychology.",
+    "meetDays": "M"
   },
   {
     "id": 25,
@@ -396,8 +473,12 @@
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to comparative politics, international relations, political theory, and American politics. Examines political institutions, behavior, and the nature of political power."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to comparative politics, international relations, political theory, and American politics. Examines political institutions, behavior, and the nature of political power.",
+    "meetDays": "T"
   },
   {
     "id": 26,
@@ -412,8 +493,12 @@
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Law", "History"],
-    "description": "The constitutional law of the United States. Judicial review, federalism, separation of powers, civil liberties, and equal protection. Analysis of landmark Supreme Court decisions."
+    "interests": [
+      "Law",
+      "History"
+    ],
+    "description": "The constitutional law of the United States. Judicial review, federalism, separation of powers, civil liberties, and equal protection. Analysis of landmark Supreme Court decisions.",
+    "meetDays": "W"
   },
   {
     "id": 27,
@@ -428,8 +513,11 @@
     "walkingMinutes": 4,
     "startTime": "13:00",
     "endTime": "14:00",
-    "interests": ["Arts"],
-    "description": "Introduction to the elements of music and the art of listening. Examines diverse musical traditions including Western classical, jazz, world music, and popular styles."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to the elements of music and the art of listening. Examines diverse musical traditions including Western classical, jazz, world music, and popular styles.",
+    "meetDays": "Tr"
   },
   {
     "id": 28,
@@ -444,8 +532,12 @@
     "walkingMinutes": 4,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Arts", "History"],
-    "description": "Survey of music from Africa, Asia, the Middle East, Latin America, and indigenous cultures. Examines music as cultural expression and explores global musical interactions."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Survey of music from Africa, Asia, the Middle East, Latin America, and indigenous cultures. Examines music as cultural expression and explores global musical interactions.",
+    "meetDays": "F"
   },
   {
     "id": 29,
@@ -456,12 +548,15 @@
     "building": "Mulford Hall",
     "room": "230",
     "lat": 37.8754,
-    "lng": -122.2640,
+    "lng": -122.264,
     "walkingMinutes": 7,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Introduction to environmental science including ecology, conservation biology, environmental policy, and sustainability. Examines human impacts on ecosystems and solutions to environmental problems."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to environmental science including ecology, conservation biology, environmental policy, and sustainability. Examines human impacts on ecosystems and solutions to environmental problems.",
+    "meetDays": "MT"
   },
   {
     "id": 30,
@@ -472,12 +567,16 @@
     "building": "Mulford Hall",
     "room": "114",
     "lat": 37.8754,
-    "lng": -122.2640,
+    "lng": -122.264,
     "walkingMinutes": 7,
     "startTime": "15:00",
     "endTime": "16:00",
-    "interests": ["Science", "Philosophy"],
-    "description": "The science and policy of climate change. Physical basis of global warming, impacts on ecosystems and human societies, mitigation and adaptation strategies."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "The science and policy of climate change. Physical basis of global warming, impacts on ecosystems and human societies, mitigation and adaptation strategies.",
+    "meetDays": "TW"
   },
   {
     "id": 31,
@@ -492,8 +591,11 @@
     "walkingMinutes": 6,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Science"],
-    "description": "Descriptive astronomy: the solar system, stars, galaxies, and cosmology. An introduction to modern astronomy for non-scientists, emphasizing physical principles and recent discoveries."
+    "interests": [
+      "Science"
+    ],
+    "description": "Descriptive astronomy: the solar system, stars, galaxies, and cosmology. An introduction to modern astronomy for non-scientists, emphasizing physical principles and recent discoveries.",
+    "meetDays": "MWF"
   },
   {
     "id": 32,
@@ -508,8 +610,11 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Science"],
-    "description": "Structure and evolution of galaxies, dark matter and dark energy, the large-scale structure of the universe, and cosmological models. Modern observational techniques and results."
+    "interests": [
+      "Science"
+    ],
+    "description": "Structure and evolution of galaxies, dark matter and dark energy, the large-scale structure of the universe, and cosmological models. Modern observational techniques and results.",
+    "meetDays": "MTrW"
   },
   {
     "id": 33,
@@ -520,12 +625,16 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Philosophy", "Arts"],
-    "description": "Introduction to the scientific study of language: phonetics, phonology, morphology, syntax, semantics, and pragmatics. Language variation, change, and the relationship between language and mind."
+    "interests": [
+      "Philosophy",
+      "Arts"
+    ],
+    "description": "Introduction to the scientific study of language: phonetics, phonology, morphology, syntax, semantics, and pragmatics. Language variation, change, and the relationship between language and mind.",
+    "meetDays": "MW"
   },
   {
     "id": 34,
@@ -536,12 +645,17 @@
     "building": "Dwinelle Hall",
     "room": "88",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Philosophy", "History", "Arts"],
-    "description": "The relationship between language and culture. Linguistic relativity, language socialization, multilingualism, language and identity, and the cultural dimensions of meaning."
+    "interests": [
+      "Philosophy",
+      "History",
+      "Arts"
+    ],
+    "description": "The relationship between language and culture. Linguistic relativity, language socialization, multilingualism, language and identity, and the cultural dimensions of meaning.",
+    "meetDays": "MWF"
   },
   {
     "id": 35,
@@ -556,8 +670,12 @@
     "walkingMinutes": 5,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to cultural anthropology. Social organization, religion, economics, politics, and world view in cross-cultural perspective. Ethnographic methods and the ethics of fieldwork."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to cultural anthropology. Social organization, religion, economics, politics, and world view in cross-cultural perspective. Ethnographic methods and the ethics of fieldwork.",
+    "meetDays": "TTr"
   },
   {
     "id": 36,
@@ -572,8 +690,12 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science", "History"],
-    "description": "Introduction to biological anthropology and human evolution. The fossil record, genetics, primatology, and the emergence of modern humans and behavior."
+    "interests": [
+      "Science",
+      "History"
+    ],
+    "description": "Introduction to biological anthropology and human evolution. The fossil record, genetics, primatology, and the emergence of modern humans and behavior.",
+    "meetDays": "MTr"
   },
   {
     "id": 37,
@@ -588,8 +710,11 @@
     "walkingMinutes": 5,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Tech"],
-    "description": "Introduction to computer security. Topics include software security, cryptography, network security, web security, and privacy. Students learn both attack and defense techniques."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Introduction to computer security. Topics include software security, cryptography, network security, web security, and privacy. Students learn both attack and defense techniques.",
+    "meetDays": "WF"
   },
   {
     "id": 38,
@@ -604,8 +729,11 @@
     "walkingMinutes": 5,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Tech"],
-    "description": "Relational data model, SQL, indexing, query processing, transaction management, concurrency control, and recovery. Introduction to NoSQL systems and big data processing."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Relational data model, SQL, indexing, query processing, transaction management, concurrency control, and recovery. Introduction to NoSQL systems and big data processing.",
+    "meetDays": "MTW"
   },
   {
     "id": 39,
@@ -620,8 +748,11 @@
     "walkingMinutes": 5,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Tech"],
-    "description": "Concepts of operating systems and system programming. Processes, threads, synchronization, scheduling, memory management, file systems, networking, and virtualization."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Concepts of operating systems and system programming. Processes, threads, synchronization, scheduling, memory management, file systems, networking, and virtualization.",
+    "meetDays": "MWTr"
   },
   {
     "id": 40,
@@ -636,8 +767,11 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Tech"],
-    "description": "Engineering and design of digital computers. Instruction set design, processor pipelines, memory hierarchy, I/O systems, parallel architectures, and performance evaluation."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Engineering and design of digital computers. Instruction set design, processor pipelines, memory hierarchy, I/O systems, parallel architectures, and performance evaluation.",
+    "meetDays": "M"
   },
   {
     "id": 41,
@@ -652,8 +786,11 @@
     "walkingMinutes": 9,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Business"],
-    "description": "Theory and practice of financial decision making in firms. Time value of money, capital budgeting, risk and return, capital structure, and dividend policy."
+    "interests": [
+      "Business"
+    ],
+    "description": "Theory and practice of financial decision making in firms. Time value of money, capital budgeting, risk and return, capital structure, and dividend policy.",
+    "meetDays": "T"
   },
   {
     "id": 42,
@@ -668,8 +805,11 @@
     "walkingMinutes": 9,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Business"],
-    "description": "Introduction to marketing strategy and management. Market analysis, consumer behavior, segmentation, targeting, positioning, and the marketing mix."
+    "interests": [
+      "Business"
+    ],
+    "description": "Introduction to marketing strategy and management. Market analysis, consumer behavior, segmentation, targeting, positioning, and the marketing mix.",
+    "meetDays": "W"
   },
   {
     "id": 43,
@@ -684,8 +824,12 @@
     "walkingMinutes": 9,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Business", "Philosophy"],
-    "description": "Individual and group behavior in organizations. Motivation, leadership, decision making, communication, power, conflict, and organizational design and culture."
+    "interests": [
+      "Business",
+      "Philosophy"
+    ],
+    "description": "Individual and group behavior in organizations. Motivation, leadership, decision making, communication, power, conflict, and organizational design and culture.",
+    "meetDays": "Tr"
   },
   {
     "id": 44,
@@ -700,8 +844,12 @@
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Law", "History"],
-    "description": "Introduction to American law and legal institutions. Criminal law, civil law, constitutional law, and the role of law in society. Emphasis on legal reasoning and case analysis."
+    "interests": [
+      "Law",
+      "History"
+    ],
+    "description": "Introduction to American law and legal institutions. Criminal law, civil law, constitutional law, and the role of law in society. Emphasis on legal reasoning and case analysis.",
+    "meetDays": "F"
   },
   {
     "id": 45,
@@ -716,8 +864,13 @@
     "walkingMinutes": 3,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Law", "History", "Philosophy"],
-    "description": "Constitutional protection of individual rights. Free speech, religious liberty, equal protection, due process, and privacy. Historical development and current controversies."
+    "interests": [
+      "Law",
+      "History",
+      "Philosophy"
+    ],
+    "description": "Constitutional protection of individual rights. Free speech, religious liberty, equal protection, due process, and privacy. Historical development and current controversies.",
+    "meetDays": "MT"
   },
   {
     "id": 46,
@@ -732,8 +885,11 @@
     "walkingMinutes": 6,
     "startTime": "12:00",
     "endTime": "13:00",
-    "interests": ["Science"],
-    "description": "Introduction to the nervous system: cellular and molecular neuroscience, systems neuroscience, sensory and motor systems, and the neural basis of cognition and behavior."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to the nervous system: cellular and molecular neuroscience, systems neuroscience, sensory and motor systems, and the neural basis of cognition and behavior.",
+    "meetDays": "TW"
   },
   {
     "id": 47,
@@ -743,13 +899,16 @@
     "instructor": "Prof. Jasper Rine",
     "building": "Stanley Hall",
     "room": "105",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Science"],
-    "description": "Principles of inheritance, gene structure and function, genetic regulation, genomics, and human genetics. Analysis of classical and molecular genetic experiments."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles of inheritance, gene structure and function, genetic regulation, genomics, and human genetics. Analysis of classical and molecular genetic experiments.",
+    "meetDays": "MWF"
   },
   {
     "id": 48,
@@ -760,12 +919,15 @@
     "building": "Dwinelle Hall",
     "room": "255",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts"],
-    "description": "Introduction to theater and performance as art forms and cultural practices. Scripts, staging, acting, design, directing, and the relationship between performance and society."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to theater and performance as art forms and cultural practices. Scripts, staging, acting, design, directing, and the relationship between performance and society.",
+    "meetDays": "MTrW"
   },
   {
     "id": 49,
@@ -780,8 +942,11 @@
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Arts"],
-    "description": "Introduction to dance as an art form through viewing, discussing, and moving. Survey of major dance forms including ballet, modern, jazz, world dance, and contemporary performance."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to dance as an art form through viewing, discussing, and moving. Survey of major dance forms including ballet, modern, jazz, world dance, and contemporary performance.",
+    "meetDays": "MW"
   },
   {
     "id": 50,
@@ -796,8 +961,11 @@
     "walkingMinutes": 2,
     "startTime": "18:00",
     "endTime": "21:00",
-    "interests": ["Arts"],
-    "description": "Introduction to film history, theory, and criticism. Close analysis of films from different national cinemas and historical periods. Film language, genre, narrative, and ideology."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to film history, theory, and criticism. Close analysis of films from different national cinemas and historical periods. Film language, genre, narrative, and ideology.",
+    "meetDays": "MWF"
   },
   {
     "id": 51,
@@ -812,8 +980,12 @@
     "walkingMinutes": 4,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Tech", "Science"],
-    "description": "Probability theory, random variables, distributions, estimation, hypothesis testing, regression, and Bayesian inference. Applications to real-world data using Python."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Probability theory, random variables, distributions, estimation, hypothesis testing, regression, and Bayesian inference. Applications to real-world data using Python.",
+    "meetDays": "TTr"
   },
   {
     "id": 52,
@@ -828,8 +1000,11 @@
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Introduction to statistical reasoning for non-majors. Probability, sampling, estimation, hypothesis testing, correlation, and regression. Critical evaluation of statistical claims."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to statistical reasoning for non-majors. Probability, sampling, estimation, hypothesis testing, correlation, and regression. Critical evaluation of statistical claims.",
+    "meetDays": "MTr"
   },
   {
     "id": 53,
@@ -844,8 +1019,12 @@
     "walkingMinutes": 8,
     "startTime": "13:00",
     "endTime": "14:00",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to urban planning, urban form, and the forces that shape cities. Housing, transportation, land use, sustainability, equity, and the politics of urban development."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to urban planning, urban form, and the forces that shape cities. Housing, transportation, land use, sustainability, equity, and the politics of urban development.",
+    "meetDays": "WF"
   },
   {
     "id": 54,
@@ -860,8 +1039,12 @@
     "walkingMinutes": 8,
     "startTime": "09:00",
     "endTime": "12:00",
-    "interests": ["Arts", "Science"],
-    "description": "Introduction to architectural design. Form, space, structure, and material. Analysis of historical and contemporary buildings. Design studio with weekly projects."
+    "interests": [
+      "Arts",
+      "Science"
+    ],
+    "description": "Introduction to architectural design. Form, space, structure, and material. Analysis of historical and contemporary buildings. Design studio with weekly projects.",
+    "meetDays": "MTW"
   },
   {
     "id": 55,
@@ -876,8 +1059,12 @@
     "walkingMinutes": 8,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Arts", "History"],
-    "description": "Survey of world architecture from antiquity to the industrial revolution. Greek, Roman, Byzantine, Islamic, medieval, and Renaissance architecture in their cultural contexts."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Survey of world architecture from antiquity to the industrial revolution. Greek, Roman, Byzantine, Islamic, medieval, and Renaissance architecture in their cultural contexts.",
+    "meetDays": "MWTr"
   },
   {
     "id": 56,
@@ -892,8 +1079,12 @@
     "walkingMinutes": 2,
     "startTime": "08:00",
     "endTime": "09:00",
-    "interests": ["Tech", "Science"],
-    "description": "Critical thinking and quantitative reasoning applied to real-world problems. Programming in Python, statistical inference, visualization, machine learning, and social implications of data."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Critical thinking and quantitative reasoning applied to real-world problems. Programming in Python, statistical inference, visualization, machine learning, and social implications of data.",
+    "meetDays": "M"
   },
   {
     "id": 57,
@@ -904,12 +1095,16 @@
     "building": "South Hall",
     "room": "210",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "14:30",
     "endTime": "16:00",
-    "interests": ["Tech", "Arts"],
-    "description": "Design and evaluation of interactive systems. User research, prototyping, usability testing, accessibility, and the social impact of technology design."
+    "interests": [
+      "Tech",
+      "Arts"
+    ],
+    "description": "Design and evaluation of interactive systems. User research, prototyping, usability testing, accessibility, and the social impact of technology design.",
+    "meetDays": "T"
   },
   {
     "id": 58,
@@ -920,12 +1115,17 @@
     "building": "South Hall",
     "room": "205",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["Tech", "Law", "Philosophy"],
-    "description": "Technological, legal, and policy dimensions of privacy in the digital age. Surveillance, data collection, social media, and the governance of privacy in networked environments."
+    "interests": [
+      "Tech",
+      "Law",
+      "Philosophy"
+    ],
+    "description": "Technological, legal, and policy dimensions of privacy in the digital age. Surveillance, data collection, social media, and the governance of privacy in networked environments.",
+    "meetDays": "W"
   },
   {
     "id": 59,
@@ -936,12 +1136,16 @@
     "building": "Moses Hall",
     "room": "370",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Philosophy", "History"],
-    "description": "Introduction to ancient Greek philosophy. The Pre-Socratics, Socrates, Plato, and Aristotle. Topics include the nature of reality, knowledge, virtue, and the good life."
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "Introduction to ancient Greek philosophy. The Pre-Socratics, Socrates, Plato, and Aristotle. Topics include the nature of reality, knowledge, virtue, and the good life.",
+    "meetDays": "Tr"
   },
   {
     "id": 60,
@@ -952,12 +1156,15 @@
     "building": "Moses Hall",
     "room": "234",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Philosophy"],
-    "description": "The theory of knowledge. What is knowledge? Can we know anything? Topics include skepticism, perception, memory, testimony, inference, and the analysis of knowledge."
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "The theory of knowledge. What is knowledge? Can we know anything? Topics include skepticism, perception, memory, testimony, inference, and the analysis of knowledge.",
+    "meetDays": "F"
   },
   {
     "id": 61,
@@ -968,12 +1175,16 @@
     "building": "Dwinelle Hall",
     "room": "88",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["History", "Arts"],
-    "description": "Introduction to the history, literature, and cultures of China, Japan, and Korea. Examines key texts, social institutions, and cultural practices across East Asia."
+    "interests": [
+      "History",
+      "Arts"
+    ],
+    "description": "Introduction to the history, literature, and cultures of China, Japan, and Korea. Examines key texts, social institutions, and cultural practices across East Asia.",
+    "meetDays": "MT"
   },
   {
     "id": 62,
@@ -984,12 +1195,15 @@
     "building": "Dwinelle Hall",
     "room": "87",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["History"],
-    "description": "Japan from the Meiji Restoration to the present. Modernization, imperialism, World War II, postwar recovery, and contemporary Japanese society and culture."
+    "interests": [
+      "History"
+    ],
+    "description": "Japan from the Meiji Restoration to the present. Modernization, imperialism, World War II, postwar recovery, and contemporary Japanese society and culture.",
+    "meetDays": "TW"
   },
   {
     "id": 63,
@@ -1000,12 +1214,15 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["History"],
-    "description": "Survey of Chinese history from the earliest dynasties to 1800. Political institutions, social structures, economic development, religion, and cultural change."
+    "interests": [
+      "History"
+    ],
+    "description": "Survey of Chinese history from the earliest dynasties to 1800. Political institutions, social structures, economic development, religion, and cultural change.",
+    "meetDays": "MWF"
   },
   {
     "id": 64,
@@ -1020,8 +1237,12 @@
     "walkingMinutes": 7,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["History", "Arts"],
-    "description": "Introduction to the history, religion, philosophy, and culture of South Asia. Hinduism, Buddhism, Islam, colonialism, and independence in the Indian subcontinent."
+    "interests": [
+      "History",
+      "Arts"
+    ],
+    "description": "Introduction to the history, religion, philosophy, and culture of South Asia. Hinduism, Buddhism, Islam, colonialism, and independence in the Indian subcontinent.",
+    "meetDays": "MTrW"
   },
   {
     "id": 65,
@@ -1032,12 +1253,16 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to Islam: the Quran, the Prophet Muhammad, Islamic law and theology, Sufism, and Islamic civilization. Examines Muslim communities and practices worldwide."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to Islam: the Quran, the Prophet Muhammad, Islamic law and theology, Sufism, and Islamic civilization. Examines Muslim communities and practices worldwide.",
+    "meetDays": "MW"
   },
   {
     "id": 66,
@@ -1048,12 +1273,16 @@
     "building": "Dwinelle Hall",
     "room": "155",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["History", "Arts"],
-    "description": "The myths of ancient Greece and Rome as literature and cultural expression. Creation myths, hero stories, the Olympian gods, and the underworld. Influence on Western art and literature."
+    "interests": [
+      "History",
+      "Arts"
+    ],
+    "description": "The myths of ancient Greece and Rome as literature and cultural expression. Creation myths, hero stories, the Olympian gods, and the underworld. Influence on Western art and literature.",
+    "meetDays": "MWF"
   },
   {
     "id": 67,
@@ -1064,12 +1293,15 @@
     "building": "Dwinelle Hall",
     "room": "109",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "13:30",
     "endTime": "15:00",
-    "interests": ["History"],
-    "description": "Survey of Latin American history from pre-Columbian civilizations to independence. Aztecs, Incas, Spanish and Portuguese colonialism, the Atlantic slave trade, and liberation movements."
+    "interests": [
+      "History"
+    ],
+    "description": "Survey of Latin American history from pre-Columbian civilizations to independence. Aztecs, Incas, Spanish and Portuguese colonialism, the Atlantic slave trade, and liberation movements.",
+    "meetDays": "TTr"
   },
   {
     "id": 68,
@@ -1084,8 +1316,11 @@
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["History"],
-    "description": "African American history from slavery to the present. Reconstruction, the Great Migration, civil rights movement, Black Power, and contemporary Black political struggles."
+    "interests": [
+      "History"
+    ],
+    "description": "African American history from slavery to the present. Reconstruction, the Great Migration, civil rights movement, Black Power, and contemporary Black political struggles.",
+    "meetDays": "MTr"
   },
   {
     "id": 69,
@@ -1100,8 +1335,12 @@
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Philosophy", "History"],
-    "description": "Introduction to feminist theory and gender studies. Gender, sexuality, race, and class as intersecting categories of analysis. Feminist politics and social movements."
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "Introduction to feminist theory and gender studies. Gender, sexuality, race, and class as intersecting categories of analysis. Feminist politics and social movements.",
+    "meetDays": "WF"
   },
   {
     "id": 70,
@@ -1112,12 +1351,16 @@
     "building": "Moses Hall",
     "room": "223",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["Philosophy", "Science"],
-    "description": "Ethical issues arising from medicine and the life sciences. Informed consent, end-of-life decisions, genetic enhancement, research ethics, and justice in healthcare."
+    "interests": [
+      "Philosophy",
+      "Science"
+    ],
+    "description": "Ethical issues arising from medicine and the life sciences. Informed consent, end-of-life decisions, genetic enhancement, research ethics, and justice in healthcare.",
+    "meetDays": "MTW"
   },
   {
     "id": 71,
@@ -1128,12 +1371,16 @@
     "building": "Moses Hall",
     "room": "370",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Philosophy", "History"],
-    "description": "Classic and contemporary texts in political philosophy. Social contract theory, liberalism, democracy, justice, equality, and the nature of political authority."
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "Classic and contemporary texts in political philosophy. Social contract theory, liberalism, democracy, justice, equality, and the nature of political authority.",
+    "meetDays": "MWTr"
   },
   {
     "id": 72,
@@ -1144,12 +1391,16 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Philosophy", "Tech"],
-    "description": "Introduction to symbolic logic. Propositional logic, predicate logic, formal proofs, and the foundations of mathematical reasoning. Applications to philosophy and computer science."
+    "interests": [
+      "Philosophy",
+      "Tech"
+    ],
+    "description": "Introduction to symbolic logic. Propositional logic, predicate logic, formal proofs, and the foundations of mathematical reasoning. Applications to philosophy and computer science.",
+    "meetDays": "M"
   },
   {
     "id": 73,
@@ -1164,8 +1415,12 @@
     "walkingMinutes": 9,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Law", "Science"],
-    "description": "Legal frameworks for environmental protection. Environmental statutes, administrative law, common law remedies, and international environmental agreements."
+    "interests": [
+      "Law",
+      "Science"
+    ],
+    "description": "Legal frameworks for environmental protection. Environmental statutes, administrative law, common law remedies, and international environmental agreements.",
+    "meetDays": "T"
   },
   {
     "id": 74,
@@ -1180,8 +1435,12 @@
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["Law", "Business"],
-    "description": "Legal framework for business transactions. Contracts, torts, property, agency, partnership, corporations, and intellectual property in the context of commercial activity."
+    "interests": [
+      "Law",
+      "Business"
+    ],
+    "description": "Legal framework for business transactions. Contracts, torts, property, agency, partnership, corporations, and intellectual property in the context of commercial activity.",
+    "meetDays": "W"
   },
   {
     "id": 75,
@@ -1192,12 +1451,16 @@
     "building": "South Hall",
     "room": "110",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Law", "Tech"],
-    "description": "Legal issues in the digital age. Internet law, intellectual property, privacy, cybersecurity, platform liability, and the regulation of emerging technologies."
+    "interests": [
+      "Law",
+      "Tech"
+    ],
+    "description": "Legal issues in the digital age. Internet law, intellectual property, privacy, cybersecurity, platform liability, and the regulation of emerging technologies.",
+    "meetDays": "Tr"
   },
   {
     "id": 76,
@@ -1212,8 +1475,12 @@
     "walkingMinutes": 5,
     "startTime": "08:00",
     "endTime": "09:30",
-    "interests": ["Tech", "Science"],
-    "description": "Modeling, analysis, and design of information devices and systems. Circuits, linear algebra, machine learning, and signal processing with applications to sensing and communication."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Modeling, analysis, and design of information devices and systems. Circuits, linear algebra, machine learning, and signal processing with applications to sensing and communication.",
+    "meetDays": "F"
   },
   {
     "id": 77,
@@ -1228,8 +1495,12 @@
     "walkingMinutes": 7,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Tech", "Science"],
-    "description": "Representation and analysis of linear, time-invariant systems. Fourier series, Fourier transforms, Laplace transforms, and Z-transforms with applications in communications and control."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Representation and analysis of linear, time-invariant systems. Fourier series, Fourier transforms, Laplace transforms, and Z-transforms with applications in communications and control.",
+    "meetDays": "MT"
   },
   {
     "id": 78,
@@ -1244,8 +1515,12 @@
     "walkingMinutes": 6,
     "startTime": "13:00",
     "endTime": "14:00",
-    "interests": ["Science", "Tech"],
-    "description": "Introduction to civil and environmental engineering. Structures, geotechnical engineering, transportation, water resources, and environmental systems. Sustainability and design."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Introduction to civil and environmental engineering. Structures, geotechnical engineering, transportation, water resources, and environmental systems. Sustainability and design.",
+    "meetDays": "TW"
   },
   {
     "id": 79,
@@ -1260,8 +1535,12 @@
     "walkingMinutes": 6,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science", "Tech"],
-    "description": "Fundamentals of thermodynamics for engineering applications. First and second laws, entropy, thermodynamic cycles, phase equilibrium, and chemical equilibria."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Fundamentals of thermodynamics for engineering applications. First and second laws, entropy, thermodynamic cycles, phase equilibrium, and chemical equilibria.",
+    "meetDays": "MWF"
   },
   {
     "id": 80,
@@ -1276,8 +1555,12 @@
     "walkingMinutes": 7,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Science", "Tech"],
-    "description": "Introduction to the science of materials: atomic structure, bonding, crystalline and amorphous solids, phase diagrams, mechanical and thermal properties, and electronic materials."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Introduction to the science of materials: atomic structure, bonding, crystalline and amorphous solids, phase diagrams, mechanical and thermal properties, and electronic materials.",
+    "meetDays": "MTrW"
   },
   {
     "id": 81,
@@ -1292,8 +1575,12 @@
     "walkingMinutes": 6,
     "startTime": "12:00",
     "endTime": "13:00",
-    "interests": ["Science", "History"],
-    "description": "Global health challenges including infectious diseases, chronic conditions, maternal and child health, and health disparities. Emphasis on low-income countries and global health governance."
+    "interests": [
+      "Science",
+      "History"
+    ],
+    "description": "Global health challenges including infectious diseases, chronic conditions, maternal and child health, and health disparities. Emphasis on low-income countries and global health governance.",
+    "meetDays": "MW"
   },
   {
     "id": 82,
@@ -1308,8 +1595,11 @@
     "walkingMinutes": 6,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Principles and methods of epidemiology. Study designs, measures of disease frequency, causation, bias, confounding, and the applications of epidemiology to public health practice."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles and methods of epidemiology. Study designs, measures of disease frequency, causation, bias, confounding, and the applications of epidemiology to public health practice.",
+    "meetDays": "MWF"
   },
   {
     "id": 83,
@@ -1320,12 +1610,15 @@
     "building": "Morgan Hall",
     "room": "101",
     "lat": 37.8748,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 6,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Introduction to human nutrition: macronutrients, micronutrients, energy metabolism, dietary guidelines, and the relationship between diet and health."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to human nutrition: macronutrients, micronutrients, energy metabolism, dietary guidelines, and the relationship between diet and health.",
+    "meetDays": "TTr"
   },
   {
     "id": 84,
@@ -1340,8 +1633,12 @@
     "walkingMinutes": 9,
     "startTime": "16:00",
     "endTime": "17:30",
-    "interests": ["Business", "Tech"],
-    "description": "Theory and practice of entrepreneurship. Opportunity recognition, business model design, fundraising, team building, and the management of new ventures."
+    "interests": [
+      "Business",
+      "Tech"
+    ],
+    "description": "Theory and practice of entrepreneurship. Opportunity recognition, business model design, fundraising, team building, and the management of new ventures.",
+    "meetDays": "MTr"
   },
   {
     "id": 85,
@@ -1356,8 +1653,11 @@
     "walkingMinutes": 9,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Business"],
-    "description": "Design and management of supply chains. Inventory management, logistics, procurement, demand forecasting, and global supply chain strategy."
+    "interests": [
+      "Business"
+    ],
+    "description": "Design and management of supply chains. Inventory management, logistics, procurement, demand forecasting, and global supply chain strategy.",
+    "meetDays": "WF"
   },
   {
     "id": 86,
@@ -1372,8 +1672,11 @@
     "walkingMinutes": 9,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Business"],
-    "description": "Financial analysis of real estate investment and development. Property valuation, mortgage markets, real estate investment trusts, and urban economics."
+    "interests": [
+      "Business"
+    ],
+    "description": "Financial analysis of real estate investment and development. Property valuation, mortgage markets, real estate investment trusts, and urban economics.",
+    "meetDays": "MTW"
   },
   {
     "id": 87,
@@ -1383,13 +1686,16 @@
     "instructor": "Prof. Judith Klinman",
     "building": "Stanley Hall",
     "room": "220",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "08:00",
     "endTime": "09:30",
-    "interests": ["Science"],
-    "description": "Chemistry of biological molecules: proteins, nucleic acids, lipids, carbohydrates. Enzyme kinetics, metabolism, gene expression, and molecular mechanisms of disease."
+    "interests": [
+      "Science"
+    ],
+    "description": "Chemistry of biological molecules: proteins, nucleic acids, lipids, carbohydrates. Enzyme kinetics, metabolism, gene expression, and molecular mechanisms of disease.",
+    "meetDays": "MWTr"
   },
   {
     "id": 88,
@@ -1404,8 +1710,11 @@
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Chemical processes in the environment. Atmospheric chemistry, water chemistry, soil chemistry, and the fate of pollutants. Climate change from a chemical perspective."
+    "interests": [
+      "Science"
+    ],
+    "description": "Chemical processes in the environment. Atmospheric chemistry, water chemistry, soil chemistry, and the fate of pollutants. Climate change from a chemical perspective.",
+    "meetDays": "M"
   },
   {
     "id": 89,
@@ -1420,8 +1729,11 @@
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Science"],
-    "description": "The foundations of quantum mechanics. Wave-particle duality, the Schrödinger equation, quantum states, measurement, uncertainty principle, and applications to atoms and molecules."
+    "interests": [
+      "Science"
+    ],
+    "description": "The foundations of quantum mechanics. Wave-particle duality, the Schrödinger equation, quantum states, measurement, uncertainty principle, and applications to atoms and molecules.",
+    "meetDays": "T"
   },
   {
     "id": 90,
@@ -1436,8 +1748,11 @@
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Science"],
-    "description": "Special and general relativity, black holes, gravitational waves, and the origin and fate of the universe. Modern cosmology including the Big Bang, inflation, and dark energy."
+    "interests": [
+      "Science"
+    ],
+    "description": "Special and general relativity, black holes, gravitational waves, and the origin and fate of the universe. Modern cosmology including the Big Bang, inflation, and dark energy.",
+    "meetDays": "W"
   },
   {
     "id": 91,
@@ -1452,8 +1767,12 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Science", "Philosophy"],
-    "description": "Social influences on thought, feeling, and behavior. Attitudes, persuasion, group dynamics, conformity, prejudice, altruism, aggression, and social identity."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Social influences on thought, feeling, and behavior. Attitudes, persuasion, group dynamics, conformity, prejudice, altruism, aggression, and social identity.",
+    "meetDays": "Tr"
   },
   {
     "id": 92,
@@ -1468,8 +1787,11 @@
     "walkingMinutes": 6,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Psychological disorders: their description, diagnosis, causes, and treatment. Anxiety disorders, mood disorders, schizophrenia, personality disorders, and substance abuse."
+    "interests": [
+      "Science"
+    ],
+    "description": "Psychological disorders: their description, diagnosis, causes, and treatment. Anxiety disorders, mood disorders, schizophrenia, personality disorders, and substance abuse.",
+    "meetDays": "F"
   },
   {
     "id": 93,
@@ -1484,8 +1806,11 @@
     "walkingMinutes": 6,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Science"],
-    "description": "The development of children from birth through adolescence. Cognitive, social, emotional, and moral development. Developmental theories, research methods, and applications."
+    "interests": [
+      "Science"
+    ],
+    "description": "The development of children from birth through adolescence. Cognitive, social, emotional, and moral development. Developmental theories, research methods, and applications.",
+    "meetDays": "MT"
   },
   {
     "id": 94,
@@ -1500,8 +1825,12 @@
     "walkingMinutes": 2,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts", "History"],
-    "description": "Major works of world literature in translation. Epic poetry, tragedy, the novel, and short fiction from Europe, Asia, Africa, and the Americas examined in comparative perspective."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Major works of world literature in translation. Epic poetry, tragedy, the novel, and short fiction from Europe, Asia, Africa, and the Americas examined in comparative perspective.",
+    "meetDays": "TW"
   },
   {
     "id": 95,
@@ -1516,8 +1845,11 @@
     "walkingMinutes": 2,
     "startTime": "10:00",
     "endTime": "13:00",
-    "interests": ["Arts"],
-    "description": "Workshop in creative writing. Students write and critique fiction, poetry, and creative nonfiction. Emphasis on revision, voice, craft, and the development of a personal style."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Workshop in creative writing. Students write and critique fiction, poetry, and creative nonfiction. Emphasis on revision, voice, craft, and the development of a personal style.",
+    "meetDays": "MWF"
   },
   {
     "id": 96,
@@ -1532,8 +1864,12 @@
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Contemporary challenges in world politics. Nuclear proliferation, terrorism, climate change, global governance, and the future of the liberal international order."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Contemporary challenges in world politics. Nuclear proliferation, terrorism, climate change, global governance, and the future of the liberal international order.",
+    "meetDays": "MTrW"
   },
   {
     "id": 97,
@@ -1548,8 +1884,12 @@
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Comparative analysis of democratic and authoritarian regimes. Democratization, democratic backsliding, electoral authoritarianism, and the conditions for stable democracy."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Comparative analysis of democratic and authoritarian regimes. Democratization, democratic backsliding, electoral authoritarianism, and the conditions for stable democracy.",
+    "meetDays": "MW"
   },
   {
     "id": 98,
@@ -1564,8 +1904,12 @@
     "walkingMinutes": 6,
     "startTime": "10:00",
     "endTime": "12:00",
-    "interests": ["Arts", "History"],
-    "description": "Principles and practice of journalism. Reporting, writing, editing, and media ethics. Survey of the changing media landscape and the role of journalism in democracy."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Principles and practice of journalism. Reporting, writing, editing, and media ethics. Survey of the changing media landscape and the role of journalism in democracy.",
+    "meetDays": "MWF"
   },
   {
     "id": 99,
@@ -1580,8 +1924,12 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "16:00",
-    "interests": ["Arts", "Tech"],
-    "description": "Storytelling in the digital age. Multimedia reporting, data journalism, social media, audience analytics, and the business models of digital news organizations."
+    "interests": [
+      "Arts",
+      "Tech"
+    ],
+    "description": "Storytelling in the digital age. Multimedia reporting, data journalism, social media, audience analytics, and the business models of digital news organizations.",
+    "meetDays": "TTr"
   },
   {
     "id": 100,
@@ -1596,8 +1944,11 @@
     "walkingMinutes": 7,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Introduction to geology: the structure and composition of the Earth, plate tectonics, earthquakes, volcanoes, rocks and minerals, geologic time, and the history of life."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to geology: the structure and composition of the Earth, plate tectonics, earthquakes, volcanoes, rocks and minerals, geologic time, and the history of life.",
+    "meetDays": "MTr"
   },
   {
     "id": 101,
@@ -1612,8 +1963,11 @@
     "walkingMinutes": 7,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science"],
-    "description": "Physical basis of climate and climate change. Energy balance, atmospheric and ocean circulation, the carbon cycle, climate feedbacks, and projections of future climate."
+    "interests": [
+      "Science"
+    ],
+    "description": "Physical basis of climate and climate change. Energy balance, atmospheric and ocean circulation, the carbon cycle, climate feedbacks, and projections of future climate.",
+    "meetDays": "WF"
   },
   {
     "id": 102,
@@ -1628,8 +1982,11 @@
     "walkingMinutes": 7,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Science"],
-    "description": "Physics of the solid Earth. Seismology, gravity, geomagnetism, heat flow, and the dynamics of the Earth's interior. Seismic waves and the structure of the Earth."
+    "interests": [
+      "Science"
+    ],
+    "description": "Physics of the solid Earth. Seismology, gravity, geomagnetism, heat flow, and the dynamics of the Earth's interior. Seismic waves and the structure of the Earth.",
+    "meetDays": "MTW"
   },
   {
     "id": 103,
@@ -1644,8 +2001,12 @@
     "walkingMinutes": 7,
     "startTime": "12:00",
     "endTime": "13:00",
-    "interests": ["Science", "History"],
-    "description": "Introduction to geographic perspectives on nature-society interactions. Climate, ecosystems, resources, land use, and the uneven geographies of development and environmental change."
+    "interests": [
+      "Science",
+      "History"
+    ],
+    "description": "Introduction to geographic perspectives on nature-society interactions. Climate, ecosystems, resources, land use, and the uneven geographies of development and environmental change.",
+    "meetDays": "MWTr"
   },
   {
     "id": 104,
@@ -1660,8 +2021,12 @@
     "walkingMinutes": 7,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["History", "Science"],
-    "description": "Structure and dynamics of urban areas. Land use, housing, transportation, suburbanization, gentrification, and inequality in cities. Case studies from North America and globally."
+    "interests": [
+      "History",
+      "Science"
+    ],
+    "description": "Structure and dynamics of urban areas. Land use, housing, transportation, suburbanization, gentrification, and inequality in cities. Case studies from North America and globally.",
+    "meetDays": "M"
   },
   {
     "id": 105,
@@ -1672,12 +2037,17 @@
     "building": "Dwinelle Hall",
     "room": "88",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science", "Philosophy", "Tech"],
-    "description": "Introduction to the interdisciplinary study of mind. Perception, attention, memory, language, reasoning, and consciousness from psychological, computational, and neuroscientific perspectives."
+    "interests": [
+      "Science",
+      "Philosophy",
+      "Tech"
+    ],
+    "description": "Introduction to the interdisciplinary study of mind. Perception, attention, memory, language, reasoning, and consciousness from psychological, computational, and neuroscientific perspectives.",
+    "meetDays": "T"
   },
   {
     "id": 106,
@@ -1692,8 +2062,12 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science", "Philosophy"],
-    "description": "Does language shape thought? Cross-linguistic research on color, space, time, number, and social categories. Linguistic relativity, language acquisition, and conceptual development."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Does language shape thought? Cross-linguistic research on color, space, time, number, and social categories. Linguistic relativity, language acquisition, and conceptual development.",
+    "meetDays": "W"
   },
   {
     "id": 107,
@@ -1704,12 +2078,16 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Survey of Indian civilization from the Indus Valley to the Mughal period. Hinduism, Buddhism, Jainism, Sanskrit literature, art, architecture, and philosophical traditions."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Survey of Indian civilization from the Indus Valley to the Mughal period. Hinduism, Buddhism, Jainism, Sanskrit literature, art, architecture, and philosophical traditions.",
+    "meetDays": "Tr"
   },
   {
     "id": 108,
@@ -1724,8 +2102,11 @@
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["History"],
-    "description": "Introduction to African history, culture, and politics. Pre-colonial Africa, the transatlantic slave trade, colonialism, independence movements, and contemporary challenges."
+    "interests": [
+      "History"
+    ],
+    "description": "Introduction to African history, culture, and politics. Pre-colonial Africa, the transatlantic slave trade, colonialism, independence movements, and contemporary challenges.",
+    "meetDays": "F"
   },
   {
     "id": 109,
@@ -1736,12 +2117,17 @@
     "building": "Dwinelle Hall",
     "room": "106",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Arts", "History", "Philosophy"],
-    "description": "The Hebrew Bible read as literary art. Narrative style, poetic technique, imagery, and characterization. Genesis, Exodus, the prophets, Psalms, Job, and wisdom literature."
+    "interests": [
+      "Arts",
+      "History",
+      "Philosophy"
+    ],
+    "description": "The Hebrew Bible read as literary art. Narrative style, poetic technique, imagery, and characterization. Genesis, Exodus, the prophets, Psalms, Job, and wisdom literature.",
+    "meetDays": "MT"
   },
   {
     "id": 110,
@@ -1752,12 +2138,16 @@
     "building": "Dwinelle Hall",
     "room": "109",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["History", "Science"],
-    "description": "History of Western science from antiquity to the present. Scientific revolution, Enlightenment, Darwin, Einstein, and the development of modern science and technology."
+    "interests": [
+      "History",
+      "Science"
+    ],
+    "description": "History of Western science from antiquity to the present. Scientific revolution, Enlightenment, Darwin, Einstein, and the development of modern science and technology.",
+    "meetDays": "TW"
   },
   {
     "id": 111,
@@ -1768,12 +2158,16 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "16:00",
     "endTime": "17:30",
-    "interests": ["History", "Tech"],
-    "description": "The relationship between technology and society from the Industrial Revolution to Silicon Valley. Technology, capitalism, labor, culture, and the politics of innovation."
+    "interests": [
+      "History",
+      "Tech"
+    ],
+    "description": "The relationship between technology and society from the Industrial Revolution to Silicon Valley. Technology, capitalism, labor, culture, and the politics of innovation.",
+    "meetDays": "MWF"
   },
   {
     "id": 112,
@@ -1788,8 +2182,13 @@
     "walkingMinutes": 8,
     "startTime": "10:00",
     "endTime": "12:00",
-    "interests": ["Business", "History", "Law"],
-    "description": "Introduction to the analysis and formation of public policy. Policy process, policy analysis tools, welfare economics, market failures, and case studies in health, education, and environment."
+    "interests": [
+      "Business",
+      "History",
+      "Law"
+    ],
+    "description": "Introduction to the analysis and formation of public policy. Policy process, policy analysis tools, welfare economics, market failures, and case studies in health, education, and environment.",
+    "meetDays": "MTrW"
   },
   {
     "id": 113,
@@ -1804,8 +2203,13 @@
     "walkingMinutes": 4,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Business", "Philosophy", "Science"],
-    "description": "Behavioral economics and the psychology of decision making. Bounded rationality, present bias, social preferences, nudges, and applications to policy and business."
+    "interests": [
+      "Business",
+      "Philosophy",
+      "Science"
+    ],
+    "description": "Behavioral economics and the psychology of decision making. Bounded rationality, present bias, social preferences, nudges, and applications to policy and business.",
+    "meetDays": "MW"
   },
   {
     "id": 114,
@@ -1820,8 +2224,12 @@
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Business", "History"],
-    "description": "Economics of developing countries. Poverty, inequality, institutions, technology, agriculture, health, and education. Field experiments and evidence-based approaches to development."
+    "interests": [
+      "Business",
+      "History"
+    ],
+    "description": "Economics of developing countries. Poverty, inequality, institutions, technology, agriculture, health, and education. Field experiments and evidence-based approaches to development.",
+    "meetDays": "MWF"
   },
   {
     "id": 115,
@@ -1836,8 +2244,12 @@
     "walkingMinutes": 5,
     "startTime": "08:00",
     "endTime": "09:30",
-    "interests": ["Tech", "Science"],
-    "description": "Introduction to robotics. Robot kinematics, dynamics, control, sensing, and planning. Applications to manipulation, locomotion, and autonomous systems."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Introduction to robotics. Robot kinematics, dynamics, control, sensing, and planning. Applications to manipulation, locomotion, and autonomous systems.",
+    "meetDays": "TTr"
   },
   {
     "id": 116,
@@ -1852,8 +2264,12 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Tech", "Science"],
-    "description": "Image formation, representation, and processing. Edge detection, segmentation, object recognition, stereo vision, motion analysis, and deep learning for vision."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Image formation, representation, and processing. Edge detection, segmentation, object recognition, stereo vision, motion analysis, and deep learning for vision.",
+    "meetDays": "MTr"
   },
   {
     "id": 117,
@@ -1868,8 +2284,12 @@
     "walkingMinutes": 5,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Tech", "Arts"],
-    "description": "Algorithms for natural language processing. Language modeling, parsing, machine translation, sentiment analysis, question answering, and large language models."
+    "interests": [
+      "Tech",
+      "Arts"
+    ],
+    "description": "Algorithms for natural language processing. Language modeling, parsing, machine translation, sentiment analysis, question answering, and large language models.",
+    "meetDays": "WF"
   },
   {
     "id": 118,
@@ -1880,12 +2300,17 @@
     "building": "South Hall",
     "room": "110",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Tech", "Philosophy", "Law"],
-    "description": "Ethical challenges posed by artificial intelligence. Fairness, accountability, transparency, privacy, safety, and the societal impacts of AI systems."
+    "interests": [
+      "Tech",
+      "Philosophy",
+      "Law"
+    ],
+    "description": "Ethical challenges posed by artificial intelligence. Fairness, accountability, transparency, privacy, safety, and the societal impacts of AI systems.",
+    "meetDays": "MTW"
   },
   {
     "id": 119,
@@ -1900,8 +2325,12 @@
     "walkingMinutes": 5,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Tech", "Science"],
-    "description": "Foundations of cryptography. One-way functions, pseudorandomness, private-key encryption, public-key encryption, digital signatures, and zero-knowledge proofs."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Foundations of cryptography. One-way functions, pseudorandomness, private-key encryption, public-key encryption, digital signatures, and zero-knowledge proofs.",
+    "meetDays": "MWTr"
   },
   {
     "id": 120,
@@ -1916,8 +2345,11 @@
     "walkingMinutes": 5,
     "startTime": "16:00",
     "endTime": "17:30",
-    "interests": ["Tech"],
-    "description": "Design and implementation of distributed systems. Consistency, replication, fault tolerance, concurrency, and performance. Case studies of large-scale systems including cloud computing."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Design and implementation of distributed systems. Consistency, replication, fault tolerance, concurrency, and performance. Case studies of large-scale systems including cloud computing.",
+    "meetDays": "M"
   },
   {
     "id": 121,
@@ -1932,8 +2364,12 @@
     "walkingMinutes": 9,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Business", "Science"],
-    "description": "Business strategies for sustainable development. Corporate environmental management, sustainable supply chains, ESG investing, and the transition to a low-carbon economy."
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "Business strategies for sustainable development. Corporate environmental management, sustainable supply chains, ESG investing, and the transition to a low-carbon economy.",
+    "meetDays": "T"
   },
   {
     "id": 122,
@@ -1948,8 +2384,12 @@
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Sociological perspectives on education. Inequality and schooling, race and education, educational reform, and the relationship between education and social mobility."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Sociological perspectives on education. Inequality and schooling, race and education, educational reform, and the relationship between education and social mobility.",
+    "meetDays": "W"
   },
   {
     "id": 123,
@@ -1964,8 +2404,12 @@
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Sociological analysis of sport. Race, gender, class, and nationalism in sports culture. Athletic labor, commercialization, and the politics of sport in American society."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Sociological analysis of sport. Race, gender, class, and nationalism in sports culture. Athletic labor, commercialization, and the politics of sport in American society.",
+    "meetDays": "Tr"
   },
   {
     "id": 124,
@@ -1976,12 +2420,17 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Science", "Philosophy", "Tech"],
-    "description": "Can machines think? The relationship between mind and computation. The Turing test, connectionism, consciousness, intentionality, and the limits of artificial intelligence."
+    "interests": [
+      "Science",
+      "Philosophy",
+      "Tech"
+    ],
+    "description": "Can machines think? The relationship between mind and computation. The Turing test, connectionism, consciousness, intentionality, and the limits of artificial intelligence.",
+    "meetDays": "F"
   },
   {
     "id": 125,
@@ -1996,8 +2445,12 @@
     "walkingMinutes": 6,
     "startTime": "09:00",
     "endTime": "12:00",
-    "interests": ["Arts", "Tech"],
-    "description": "Principles of visual communication and design for journalism. Photography, infographics, data visualization, video, and the design of news products."
+    "interests": [
+      "Arts",
+      "Tech"
+    ],
+    "description": "Principles of visual communication and design for journalism. Photography, infographics, data visualization, video, and the design of news products.",
+    "meetDays": "MT"
   },
   {
     "id": 126,
@@ -2012,8 +2465,11 @@
     "walkingMinutes": 6,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Stellar structure and evolution, compact objects, the interstellar medium, and the formation and evolution of galaxies. Quantitative treatment using physics and mathematics."
+    "interests": [
+      "Science"
+    ],
+    "description": "Stellar structure and evolution, compact objects, the interstellar medium, and the formation and evolution of galaxies. Quantitative treatment using physics and mathematics.",
+    "meetDays": "TW"
   },
   {
     "id": 127,
@@ -2028,8 +2484,12 @@
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Law", "History"],
-    "description": "Comparative analysis of legal systems. Common law, civil law, Islamic law, and customary law. Courts, legal culture, and the relationship between law and society across nations."
+    "interests": [
+      "Law",
+      "History"
+    ],
+    "description": "Comparative analysis of legal systems. Common law, civil law, Islamic law, and customary law. Courts, legal culture, and the relationship between law and society across nations.",
+    "meetDays": "MWF"
   },
   {
     "id": 128,
@@ -2044,8 +2504,12 @@
     "walkingMinutes": 9,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Law", "History"],
-    "description": "The criminal justice system in America. Policing, prosecution, courts, sentencing, and incarceration. Mass incarceration, racial disparities, and reform movements."
+    "interests": [
+      "Law",
+      "History"
+    ],
+    "description": "The criminal justice system in America. Policing, prosecution, courts, sentencing, and incarceration. Mass incarceration, racial disparities, and reform movements.",
+    "meetDays": "MTrW"
   },
   {
     "id": 129,
@@ -2060,8 +2524,12 @@
     "walkingMinutes": 9,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Law", "Philosophy"],
-    "description": "Feminist perspectives on law. Sex discrimination, reproductive rights, domestic violence, sexual harassment, and the ways law constructs and reflects gender."
+    "interests": [
+      "Law",
+      "Philosophy"
+    ],
+    "description": "Feminist perspectives on law. Sex discrimination, reproductive rights, domestic violence, sexual harassment, and the ways law constructs and reflects gender.",
+    "meetDays": "MW"
   },
   {
     "id": 130,
@@ -2076,8 +2544,12 @@
     "walkingMinutes": 6,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Science", "Philosophy"],
-    "description": "Social determinants of health. Social class, race, gender, stress, social support, health behaviors, and the relationship between social conditions and health outcomes."
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Social determinants of health. Social class, race, gender, stress, social support, health behaviors, and the relationship between social conditions and health outcomes.",
+    "meetDays": "MWF"
   },
   {
     "id": 131,
@@ -2087,13 +2559,17 @@
     "instructor": "Prof. Nir Yosef",
     "building": "Stanley Hall",
     "room": "105",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Science", "Tech"],
-    "description": "Computational approaches to biological problems. Sequence alignment, gene finding, protein structure prediction, genome assembly, and analysis of high-throughput biological data."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Computational approaches to biological problems. Sequence alignment, gene finding, protein structure prediction, genome assembly, and analysis of high-throughput biological data.",
+    "meetDays": "TTr"
   },
   {
     "id": 132,
@@ -2103,13 +2579,17 @@
     "instructor": "Prof. Jay Keasling",
     "building": "Stanley Hall",
     "room": "220",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science", "Tech"],
-    "description": "Design and construction of new biological parts, devices, and systems. Genetic circuit design, metabolic engineering, protein engineering, and applications in medicine and industry."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Design and construction of new biological parts, devices, and systems. Genetic circuit design, metabolic engineering, protein engineering, and applications in medicine and industry.",
+    "meetDays": "MTr"
   },
   {
     "id": 133,
@@ -2120,12 +2600,16 @@
     "building": "Tan Hall",
     "room": "180",
     "lat": 37.8763,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 8,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science", "Tech"],
-    "description": "Introduction to chemical engineering. Mass and energy balances, transport phenomena, reactor design, separation processes, and the chemical engineering profession."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Introduction to chemical engineering. Mass and energy balances, transport phenomena, reactor design, separation processes, and the chemical engineering profession.",
+    "meetDays": "WF"
   },
   {
     "id": 134,
@@ -2140,8 +2624,13 @@
     "walkingMinutes": 5,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Science", "Business", "History"],
-    "description": "Energy resources, technologies, and policies. Fossil fuels, renewables, nuclear, and the transition to a sustainable energy system. Economics and politics of energy."
+    "interests": [
+      "Science",
+      "Business",
+      "History"
+    ],
+    "description": "Energy resources, technologies, and policies. Fossil fuels, renewables, nuclear, and the transition to a sustainable energy system. Economics and politics of energy.",
+    "meetDays": "MTW"
   },
   {
     "id": 135,
@@ -2156,8 +2645,12 @@
     "walkingMinutes": 5,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Science", "Law"],
-    "description": "Science and policy of freshwater resources. Hydrology, water rights, irrigation, urban water supply, water quality, and global water scarcity."
+    "interests": [
+      "Science",
+      "Law"
+    ],
+    "description": "Science and policy of freshwater resources. Hydrology, water rights, irrigation, urban water supply, water quality, and global water scarcity.",
+    "meetDays": "MWTr"
   },
   {
     "id": 136,
@@ -2168,12 +2661,16 @@
     "building": "Moses Hall",
     "room": "370",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Philosophy", "Science"],
-    "description": "Philosophical foundations of science. Scientific explanation, laws of nature, causation, confirmation, theory change, and the demarcation of science from pseudoscience."
+    "interests": [
+      "Philosophy",
+      "Science"
+    ],
+    "description": "Philosophical foundations of science. Scientific explanation, laws of nature, causation, confirmation, theory change, and the demarcation of science from pseudoscience.",
+    "meetDays": "M"
   },
   {
     "id": 137,
@@ -2184,12 +2681,16 @@
     "building": "Moses Hall",
     "room": "223",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Philosophy", "Arts"],
-    "description": "Meaning, reference, truth, and communication. Theories of meaning, the relationship between language and thought, speech acts, context-dependence, and conversational implicature."
+    "interests": [
+      "Philosophy",
+      "Arts"
+    ],
+    "description": "Meaning, reference, truth, and communication. Theories of meaning, the relationship between language and thought, speech acts, context-dependence, and conversational implicature.",
+    "meetDays": "T"
   },
   {
     "id": 138,
@@ -2200,12 +2701,15 @@
     "building": "Moses Hall",
     "room": "234",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Philosophy"],
-    "description": "Fundamental questions about reality. The nature of time, causation, material objects, properties, modality, personal identity, and free will."
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "Fundamental questions about reality. The nature of time, causation, material objects, properties, modality, personal identity, and free will.",
+    "meetDays": "W"
   },
   {
     "id": 139,
@@ -2216,12 +2720,16 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to Buddhism from its origins in India through its spread across Asia. The life of the Buddha, core teachings, meditation, ritual, and the diversity of Buddhist traditions."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to Buddhism from its origins in India through its spread across Asia. The life of the Buddha, core teachings, meditation, ritual, and the diversity of Buddhist traditions.",
+    "meetDays": "Tr"
   },
   {
     "id": 140,
@@ -2232,12 +2740,16 @@
     "building": "Dwinelle Hall",
     "room": "255",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Introduction to the major world religions. Hinduism, Buddhism, Confucianism, Taoism, Judaism, Christianity, and Islam examined in comparative perspective."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Introduction to the major world religions. Hinduism, Buddhism, Confucianism, Taoism, Judaism, Christianity, and Islam examined in comparative perspective.",
+    "meetDays": "F"
   },
   {
     "id": 141,
@@ -2252,8 +2764,11 @@
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["History"],
-    "description": "Introduction to Chicano and Latino history, culture, and politics in the United States. Immigration, labor, civil rights, and the Chicano movement."
+    "interests": [
+      "History"
+    ],
+    "description": "Introduction to Chicano and Latino history, culture, and politics in the United States. Immigration, labor, civil rights, and the Chicano movement.",
+    "meetDays": "MT"
   },
   {
     "id": 142,
@@ -2264,12 +2779,15 @@
     "building": "Dwinelle Hall",
     "room": "109",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["History"],
-    "description": "Introduction to Native American and Indigenous peoples of North America. Pre-contact history, colonialism, sovereignty, contemporary political issues, and cultural revitalization."
+    "interests": [
+      "History"
+    ],
+    "description": "Introduction to Native American and Indigenous peoples of North America. Pre-contact history, colonialism, sovereignty, contemporary political issues, and cultural revitalization.",
+    "meetDays": "TW"
   },
   {
     "id": 143,
@@ -2284,8 +2802,13 @@
     "walkingMinutes": 4,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Business", "Philosophy", "Science"],
-    "description": "Strategic decision making. Normal and extensive form games, Nash equilibrium, backward induction, repeated games, and applications to economics, politics, and evolutionary biology."
+    "interests": [
+      "Business",
+      "Philosophy",
+      "Science"
+    ],
+    "description": "Strategic decision making. Normal and extensive form games, Nash equilibrium, backward induction, repeated games, and applications to economics, politics, and evolutionary biology.",
+    "meetDays": "MWF"
   },
   {
     "id": 144,
@@ -2300,8 +2823,12 @@
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Business", "Science"],
-    "description": "Economics of health and medical care. Health insurance, hospital markets, pharmaceutical pricing, provider behavior, and evaluation of health policies."
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "Economics of health and medical care. Health insurance, hospital markets, pharmaceutical pricing, provider behavior, and evaluation of health policies.",
+    "meetDays": "MTrW"
   },
   {
     "id": 145,
@@ -2316,8 +2843,12 @@
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Business", "History"],
-    "description": "Labor markets and employment. Wages, employment, human capital, discrimination, unions, immigration, inequality, and the impact of technology on work."
+    "interests": [
+      "Business",
+      "History"
+    ],
+    "description": "Labor markets and employment. Wages, employment, human capital, discrimination, unions, immigration, inequality, and the impact of technology on work.",
+    "meetDays": "MW"
   },
   {
     "id": 146,
@@ -2332,8 +2863,11 @@
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts"],
-    "description": "Music composed after 1945. Serialism, electronic music, minimalism, improvisation, and multimedia. Listening, score analysis, and the social contexts of contemporary musical practice."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Music composed after 1945. Serialism, electronic music, minimalism, improvisation, and multimedia. Listening, score analysis, and the social contexts of contemporary musical practice.",
+    "meetDays": "MWF"
   },
   {
     "id": 147,
@@ -2348,8 +2882,12 @@
     "walkingMinutes": 4,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["Arts", "History"],
-    "description": "History of jazz from its origins to the present. New Orleans jazz, swing, bebop, cool, hard bop, free jazz, fusion, and contemporary styles. Race, culture, and improvisation."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "History of jazz from its origins to the present. New Orleans jazz, swing, bebop, cool, hard bop, free jazz, fusion, and contemporary styles. Race, culture, and improvisation.",
+    "meetDays": "TTr"
   },
   {
     "id": 148,
@@ -2364,8 +2902,11 @@
     "walkingMinutes": 8,
     "startTime": "13:00",
     "endTime": "17:00",
-    "interests": ["Arts"],
-    "description": "Introduction to painting in oils or acrylic. Observation, composition, color mixing, paint application, and the development of a personal visual language. Weekly studio projects."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to painting in oils or acrylic. Observation, composition, color mixing, paint application, and the development of a personal visual language. Weekly studio projects.",
+    "meetDays": "MTr"
   },
   {
     "id": 149,
@@ -2380,8 +2921,11 @@
     "walkingMinutes": 8,
     "startTime": "09:00",
     "endTime": "12:00",
-    "interests": ["Arts"],
-    "description": "Introduction to drawing. Line, form, space, light, and value. Observational drawing, the figure, and compositional strategies using pencil, charcoal, and other media."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to drawing. Line, form, space, light, and value. Observational drawing, the figure, and compositional strategies using pencil, charcoal, and other media.",
+    "meetDays": "WF"
   },
   {
     "id": 150,
@@ -2396,8 +2940,12 @@
     "walkingMinutes": 8,
     "startTime": "14:00",
     "endTime": "17:00",
-    "interests": ["Arts", "Tech"],
-    "description": "Introduction to digital art making. Image manipulation, animation, video, interactive art, and net art. Conceptual frameworks for digital creativity and the history of media art."
+    "interests": [
+      "Arts",
+      "Tech"
+    ],
+    "description": "Introduction to digital art making. Image manipulation, animation, video, interactive art, and net art. Conceptual frameworks for digital creativity and the history of media art.",
+    "meetDays": "MTW"
   },
   {
     "id": 151,
@@ -2412,8 +2960,11 @@
     "walkingMinutes": 8,
     "startTime": "10:00",
     "endTime": "13:00",
-    "interests": ["Arts"],
-    "description": "Introduction to photography as artistic practice. Digital and analog processes, light, composition, and developing a critical photographic eye. Weekly shooting and critique."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to photography as artistic practice. Digital and analog processes, light, composition, and developing a critical photographic eye. Weekly shooting and critique.",
+    "meetDays": "MWTr"
   },
   {
     "id": 152,
@@ -2428,8 +2979,11 @@
     "walkingMinutes": 8,
     "startTime": "13:00",
     "endTime": "17:00",
-    "interests": ["Arts"],
-    "description": "Introduction to sculpture. Three-dimensional form, space, and material. Casting, fabrication, and assemblage using a variety of materials. Site and concept in contemporary sculpture."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to sculpture. Three-dimensional form, space, and material. Casting, fabrication, and assemblage using a variety of materials. Site and concept in contemporary sculpture.",
+    "meetDays": "M"
   },
   {
     "id": 153,
@@ -2440,12 +2994,17 @@
     "building": "Mulford Hall",
     "room": "230",
     "lat": 37.8754,
-    "lng": -122.2640,
+    "lng": -122.264,
     "walkingMinutes": 7,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Science", "Law", "Business"],
-    "description": "Environmental policy analysis and design. Market failures, externalities, pollution control, natural resource management, and the politics of environmental regulation."
+    "interests": [
+      "Science",
+      "Law",
+      "Business"
+    ],
+    "description": "Environmental policy analysis and design. Market failures, externalities, pollution control, natural resource management, and the politics of environmental regulation.",
+    "meetDays": "T"
   },
   {
     "id": 154,
@@ -2456,12 +3015,15 @@
     "building": "Mulford Hall",
     "room": "114",
     "lat": 37.8754,
-    "lng": -122.2640,
+    "lng": -122.264,
     "walkingMinutes": 7,
     "startTime": "15:30",
     "endTime": "17:00",
-    "interests": ["Science"],
-    "description": "Principles of wildlife conservation biology. Habitat loss, fragmentation, invasive species, overexploitation, climate change, and strategies for protecting biodiversity."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles of wildlife conservation biology. Habitat loss, fragmentation, invasive species, overexploitation, climate change, and strategies for protecting biodiversity.",
+    "meetDays": "W"
   },
   {
     "id": 155,
@@ -2472,12 +3034,15 @@
     "building": "Valley Life Sciences",
     "room": "2060",
     "lat": 37.8751,
-    "lng": -122.2620,
+    "lng": -122.262,
     "walkingMinutes": 5,
     "startTime": "09:00",
     "endTime": "10:00",
-    "interests": ["Science"],
-    "description": "Principles of ecology. Population, community, and ecosystem ecology. Energy flow, nutrient cycling, biodiversity, and the effects of human activity on natural systems."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles of ecology. Population, community, and ecosystem ecology. Energy flow, nutrient cycling, biodiversity, and the effects of human activity on natural systems.",
+    "meetDays": "Tr"
   },
   {
     "id": 156,
@@ -2488,12 +3053,15 @@
     "building": "Valley Life Sciences",
     "room": "2050",
     "lat": 37.8751,
-    "lng": -122.2620,
+    "lng": -122.262,
     "walkingMinutes": 5,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science"],
-    "description": "Biology of marine organisms and their environments. Marine habitats, adaptations, ecology, fisheries, and conservation. Lab and field activities at the Berkeley Marina."
+    "interests": [
+      "Science"
+    ],
+    "description": "Biology of marine organisms and their environments. Marine habitats, adaptations, ecology, fisheries, and conservation. Lab and field activities at the Berkeley Marina.",
+    "meetDays": "F"
   },
   {
     "id": 157,
@@ -2504,12 +3072,15 @@
     "building": "Valley Life Sciences",
     "room": "1101",
     "lat": 37.8751,
-    "lng": -122.2620,
+    "lng": -122.262,
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Science"],
-    "description": "Principles of evolution. Natural selection, genetic drift, mutation, gene flow, speciation, macroevolution, and the modern evolutionary synthesis."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles of evolution. Natural selection, genetic drift, mutation, gene flow, speciation, macroevolution, and the modern evolutionary synthesis.",
+    "meetDays": "MT"
   },
   {
     "id": 158,
@@ -2524,8 +3095,11 @@
     "walkingMinutes": 6,
     "startTime": "08:00",
     "endTime": "09:30",
-    "interests": ["Science"],
-    "description": "Introduction to plant biology. Plant cell structure, physiology, reproduction, development, genetics, and ecology. The role of plants in human civilization and global ecosystems."
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to plant biology. Plant cell structure, physiology, reproduction, development, genetics, and ecology. The role of plants in human civilization and global ecosystems.",
+    "meetDays": "TW"
   },
   {
     "id": 159,
@@ -2540,8 +3114,11 @@
     "walkingMinutes": 6,
     "startTime": "11:00",
     "endTime": "12:00",
-    "interests": ["Science"],
-    "description": "Microbial diversity, physiology, and ecology. Bacteria, archaea, viruses, and fungi. Pathogenesis, microbial ecology, biotechnology, and the microbiome."
+    "interests": [
+      "Science"
+    ],
+    "description": "Microbial diversity, physiology, and ecology. Bacteria, archaea, viruses, and fungi. Pathogenesis, microbial ecology, biotechnology, and the microbiome.",
+    "meetDays": "MWF"
   },
   {
     "id": 160,
@@ -2551,13 +3128,16 @@
     "instructor": "Prof. Steven Fancy",
     "building": "Stanley Hall",
     "room": "105",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science"],
-    "description": "Biology of viruses. Viral structure, replication, genetics, evolution, and pathogenesis. RNA and DNA viruses, retroviruses, emerging viruses, and antiviral strategies."
+    "interests": [
+      "Science"
+    ],
+    "description": "Biology of viruses. Viral structure, replication, genetics, evolution, and pathogenesis. RNA and DNA viruses, retroviruses, emerging viruses, and antiviral strategies.",
+    "meetDays": "MTrW"
   },
   {
     "id": 161,
@@ -2568,12 +3148,15 @@
     "building": "Dwinelle Hall",
     "room": "155",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["History"],
-    "description": "Europe from the Renaissance to the present. Reformation, Scientific Revolution, Enlightenment, French Revolution, industrialization, imperialism, World Wars, and postwar Europe."
+    "interests": [
+      "History"
+    ],
+    "description": "Europe from the Renaissance to the present. Reformation, Scientific Revolution, Enlightenment, French Revolution, industrialization, imperialism, World Wars, and postwar Europe.",
+    "meetDays": "MW"
   },
   {
     "id": 162,
@@ -2584,12 +3167,16 @@
     "building": "Dwinelle Hall",
     "room": "109",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["History", "Philosophy"],
-    "description": "History of the Holocaust. The Nazi rise to power, anti-Semitism, ghettos, death camps, collaboration, resistance, and the aftermath. Memory, testimony, and lessons for today."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "History of the Holocaust. The Nazi rise to power, anti-Semitism, ghettos, death camps, collaboration, resistance, and the aftermath. Memory, testimony, and lessons for today.",
+    "meetDays": "MWF"
   },
   {
     "id": 163,
@@ -2600,12 +3187,15 @@
     "building": "Dwinelle Hall",
     "room": "87",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["History"],
-    "description": "The Cold War from 1945 to 1991. Origins, nuclear strategy, proxy wars, détente, arms race, collapse of communism, and the legacy of the Cold War in contemporary international relations."
+    "interests": [
+      "History"
+    ],
+    "description": "The Cold War from 1945 to 1991. Origins, nuclear strategy, proxy wars, détente, arms race, collapse of communism, and the legacy of the Cold War in contemporary international relations.",
+    "meetDays": "TTr"
   },
   {
     "id": 164,
@@ -2616,12 +3206,15 @@
     "building": "Dwinelle Hall",
     "room": "106",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["History"],
-    "description": "History of the Middle East from the rise of Islam to the present. Islamic empires, Ottoman period, European colonialism, nationalism, oil, the Arab-Israeli conflict, and contemporary politics."
+    "interests": [
+      "History"
+    ],
+    "description": "History of the Middle East from the rise of Islam to the present. Islamic empires, Ottoman period, European colonialism, nationalism, oil, the Arab-Israeli conflict, and contemporary politics.",
+    "meetDays": "MTr"
   },
   {
     "id": 165,
@@ -2632,12 +3225,15 @@
     "building": "Dwinelle Hall",
     "room": "182",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["History"],
-    "description": "Russia from Peter the Great to the present. Westernization, revolution, Stalin, the Soviet system, the Cold War, collapse of the Soviet Union, and Putin's Russia."
+    "interests": [
+      "History"
+    ],
+    "description": "Russia from Peter the Great to the present. Westernization, revolution, Stalin, the Soviet system, the Cold War, collapse of the Soviet Union, and Putin's Russia.",
+    "meetDays": "WF"
   },
   {
     "id": 166,
@@ -2652,8 +3248,12 @@
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Philosophy", "History"],
-    "description": "Introduction to gender and sexuality studies. Theories of gender, sexuality, and the body. LGBTQ+ history and politics, queer theory, and intersectionality."
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "Introduction to gender and sexuality studies. Theories of gender, sexuality, and the body. LGBTQ+ history and politics, queer theory, and intersectionality.",
+    "meetDays": "MTW"
   },
   {
     "id": 167,
@@ -2668,8 +3268,12 @@
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Theories of race and racism in American society. Racial formation, structural racism, implicit bias, white privilege, and contemporary racial politics."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Theories of race and racism in American society. Racial formation, structural racism, implicit bias, white privilege, and contemporary racial politics.",
+    "meetDays": "MWTr"
   },
   {
     "id": 168,
@@ -2680,12 +3284,17 @@
     "building": "South Hall",
     "room": "205",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["Tech", "Philosophy", "History"],
-    "description": "Social, cultural, and political dimensions of the internet. Online communities, social media, digital inequality, misinformation, platform economics, and internet governance."
+    "interests": [
+      "Tech",
+      "Philosophy",
+      "History"
+    ],
+    "description": "Social, cultural, and political dimensions of the internet. Online communities, social media, digital inequality, misinformation, platform economics, and internet governance.",
+    "meetDays": "M"
   },
   {
     "id": 169,
@@ -2696,12 +3305,16 @@
     "building": "South Hall",
     "room": "110",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Tech", "Philosophy"],
-    "description": "Ethical dimensions of data collection, use, and governance. Informed consent, data ownership, algorithmic bias, differential privacy, and the ethics of data science."
+    "interests": [
+      "Tech",
+      "Philosophy"
+    ],
+    "description": "Ethical dimensions of data collection, use, and governance. Informed consent, data ownership, algorithmic bias, differential privacy, and the ethics of data science.",
+    "meetDays": "T"
   },
   {
     "id": 170,
@@ -2716,8 +3329,12 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Arts", "History"],
-    "description": "Survey of Indian art and architecture from the Indus Valley to the Mughal period. Buddhist, Hindu, and Jain traditions. Sculpture, painting, and temple architecture."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Survey of Indian art and architecture from the Indus Valley to the Mughal period. Buddhist, Hindu, and Jain traditions. Sculpture, painting, and temple architecture.",
+    "meetDays": "W"
   },
   {
     "id": 171,
@@ -2732,8 +3349,12 @@
     "walkingMinutes": 5,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Arts", "History"],
-    "description": "Survey of Chinese art from the Neolithic period to the present. Bronzes, ceramics, painting, calligraphy, and architecture examined in their cultural and historical contexts."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Survey of Chinese art from the Neolithic period to the present. Bronzes, ceramics, painting, calligraphy, and architecture examined in their cultural and historical contexts.",
+    "meetDays": "Tr"
   },
   {
     "id": 172,
@@ -2748,8 +3369,12 @@
     "walkingMinutes": 5,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Arts", "History"],
-    "description": "Survey of African art across the continent. Masks, sculpture, textiles, body arts, and architecture from sub-Saharan Africa and the diaspora examined in cultural context."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Survey of African art across the continent. Masks, sculpture, textiles, body arts, and architecture from sub-Saharan Africa and the diaspora examined in cultural context.",
+    "meetDays": "F"
   },
   {
     "id": 173,
@@ -2764,8 +3389,11 @@
     "walkingMinutes": 2,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["Arts"],
-    "description": "Introduction to poetry. Close reading of poems from various traditions and periods. Prosody, imagery, figures of speech, and the relationship between form and meaning."
+    "interests": [
+      "Arts"
+    ],
+    "description": "Introduction to poetry. Close reading of poems from various traditions and periods. Prosody, imagery, figures of speech, and the relationship between form and meaning.",
+    "meetDays": "MT"
   },
   {
     "id": 174,
@@ -2780,8 +3408,12 @@
     "walkingMinutes": 2,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Arts", "History"],
-    "description": "American literature from the colonial period to the present. Major authors and movements including Puritanism, Romanticism, Realism, Modernism, and contemporary writing."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "American literature from the colonial period to the present. Major authors and movements including Puritanism, Romanticism, Realism, Modernism, and contemporary writing.",
+    "meetDays": "TW"
   },
   {
     "id": 175,
@@ -2796,8 +3428,13 @@
     "walkingMinutes": 2,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts", "Tech", "Philosophy"],
-    "description": "Science fiction as literary genre and cultural phenomenon. Utopia and dystopia, technology, artificial intelligence, space exploration, and the social imagination in SF."
+    "interests": [
+      "Arts",
+      "Tech",
+      "Philosophy"
+    ],
+    "description": "Science fiction as literary genre and cultural phenomenon. Utopia and dystopia, technology, artificial intelligence, space exploration, and the social imagination in SF.",
+    "meetDays": "MWF"
   },
   {
     "id": 176,
@@ -2812,8 +3449,11 @@
     "walkingMinutes": 6,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Science"],
-    "description": "Principles of immunology. Innate and adaptive immunity, lymphocytes, antibodies, vaccines, autoimmunity, immunodeficiency, and cancer immunotherapy."
+    "interests": [
+      "Science"
+    ],
+    "description": "Principles of immunology. Innate and adaptive immunity, lymphocytes, antibodies, vaccines, autoimmunity, immunodeficiency, and cancer immunotherapy.",
+    "meetDays": "MTrW"
   },
   {
     "id": 177,
@@ -2828,8 +3468,11 @@
     "walkingMinutes": 6,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Science"],
-    "description": "Molecular and cellular mechanisms of development. Fertilization, cleavage, gastrulation, organogenesis, stem cells, and the regulation of gene expression during development."
+    "interests": [
+      "Science"
+    ],
+    "description": "Molecular and cellular mechanisms of development. Fertilization, cleavage, gastrulation, organogenesis, stem cells, and the regulation of gene expression during development.",
+    "meetDays": "MW"
   },
   {
     "id": 178,
@@ -2839,13 +3482,16 @@
     "instructor": "Prof. Robert Tjian",
     "building": "Stanley Hall",
     "room": "220",
-    "lat": 37.8760,
+    "lat": 37.876,
     "lng": -122.2568,
     "walkingMinutes": 8,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Science"],
-    "description": "Molecular and cellular basis of cancer. Oncogenes, tumor suppressors, cell cycle control, DNA repair, metastasis, and targeted cancer therapies."
+    "interests": [
+      "Science"
+    ],
+    "description": "Molecular and cellular basis of cancer. Oncogenes, tumor suppressors, cell cycle control, DNA repair, metastasis, and targeted cancer therapies.",
+    "meetDays": "MWF"
   },
   {
     "id": 179,
@@ -2860,8 +3506,12 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Science", "Tech"],
-    "description": "Structural analysis and design. Loads, equilibrium, truss analysis, beam analysis, frames, and introduction to structural materials including steel, concrete, and timber."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Structural analysis and design. Loads, equilibrium, truss analysis, beam analysis, frames, and introduction to structural materials including steel, concrete, and timber.",
+    "meetDays": "TTr"
   },
   {
     "id": 180,
@@ -2876,8 +3526,12 @@
     "walkingMinutes": 6,
     "startTime": "10:00",
     "endTime": "11:00",
-    "interests": ["Science", "Tech"],
-    "description": "Introduction to nuclear science and engineering. Radioactivity, nuclear reactions, reactors, radiation safety, nuclear power, and applications in medicine and research."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Introduction to nuclear science and engineering. Radioactivity, nuclear reactions, reactors, radiation safety, nuclear power, and applications in medicine and research.",
+    "meetDays": "MTr"
   },
   {
     "id": 181,
@@ -2892,8 +3546,12 @@
     "walkingMinutes": 6,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["Science", "Tech"],
-    "description": "Fluid statics and dynamics. Bernoulli's equation, viscous flow, boundary layers, turbulence, and applications to aerodynamics, hydraulics, and engineering design."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Fluid statics and dynamics. Bernoulli's equation, viscous flow, boundary layers, turbulence, and applications to aerodynamics, hydraulics, and engineering design.",
+    "meetDays": "WF"
   },
   {
     "id": 182,
@@ -2908,8 +3566,12 @@
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "17:00",
-    "interests": ["Science", "Tech"],
-    "description": "Computational methods in physics. Numerical integration, Monte Carlo methods, molecular dynamics, finite element methods, and applications to classical and quantum mechanics."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Computational methods in physics. Numerical integration, Monte Carlo methods, molecular dynamics, finite element methods, and applications to classical and quantum mechanics.",
+    "meetDays": "MTW"
   },
   {
     "id": 183,
@@ -2924,8 +3586,11 @@
     "walkingMinutes": 3,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["Science"],
-    "description": "Physics of biological systems. Protein folding, DNA mechanics, molecular motors, cell membranes, and the application of physical principles to living matter."
+    "interests": [
+      "Science"
+    ],
+    "description": "Physics of biological systems. Protein folding, DNA mechanics, molecular motors, cell membranes, and the application of physical principles to living matter.",
+    "meetDays": "MWTr"
   },
   {
     "id": 184,
@@ -2940,8 +3605,11 @@
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Science"],
-    "description": "Advanced classical mechanics. Lagrangian and Hamiltonian formulations, symmetry and conservation laws, small oscillations, rigid body motion, and special relativity."
+    "interests": [
+      "Science"
+    ],
+    "description": "Advanced classical mechanics. Lagrangian and Hamiltonian formulations, symmetry and conservation laws, small oscillations, rigid body motion, and special relativity.",
+    "meetDays": "M"
   },
   {
     "id": 185,
@@ -2956,8 +3624,11 @@
     "walkingMinutes": 4,
     "startTime": "08:00",
     "endTime": "09:30",
-    "interests": ["Science"],
-    "description": "Elementary number theory. Divisibility, primes, congruences, quadratic residues, and Diophantine equations. Applications to cryptography and the Riemann hypothesis."
+    "interests": [
+      "Science"
+    ],
+    "description": "Elementary number theory. Divisibility, primes, congruences, quadratic residues, and Diophantine equations. Applications to cryptography and the Riemann hypothesis.",
+    "meetDays": "T"
   },
   {
     "id": 186,
@@ -2972,8 +3643,11 @@
     "walkingMinutes": 4,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["Science"],
-    "description": "Groups, rings, and fields. Homomorphisms, quotient structures, polynomial rings, field extensions, and Galois theory. Applications to geometry and number theory."
+    "interests": [
+      "Science"
+    ],
+    "description": "Groups, rings, and fields. Homomorphisms, quotient structures, polynomial rings, field extensions, and Galois theory. Applications to geometry and number theory.",
+    "meetDays": "W"
   },
   {
     "id": 187,
@@ -2988,8 +3662,11 @@
     "walkingMinutes": 4,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["Science"],
-    "description": "The real number system, sequences, limits, continuity, differentiation, integration, and metric spaces. Rigorous treatment of the foundations of calculus."
+    "interests": [
+      "Science"
+    ],
+    "description": "The real number system, sequences, limits, continuity, differentiation, integration, and metric spaces. Rigorous treatment of the foundations of calculus.",
+    "meetDays": "Tr"
   },
   {
     "id": 188,
@@ -3004,8 +3681,11 @@
     "walkingMinutes": 4,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Science"],
-    "description": "Point-set topology and introduction to algebraic topology. Topological spaces, continuity, compactness, connectedness, and the fundamental group."
+    "interests": [
+      "Science"
+    ],
+    "description": "Point-set topology and introduction to algebraic topology. Topological spaces, continuity, compactness, connectedness, and the fundamental group.",
+    "meetDays": "F"
   },
   {
     "id": 189,
@@ -3020,8 +3700,12 @@
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "15:00",
-    "interests": ["Science", "Tech"],
-    "description": "Probability spaces, random variables, distributions, expectation, conditional probability, independence, law of large numbers, central limit theorem, and Markov chains."
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Probability spaces, random variables, distributions, expectation, conditional probability, independence, law of large numbers, central limit theorem, and Markov chains.",
+    "meetDays": "MT"
   },
   {
     "id": 190,
@@ -3036,8 +3720,12 @@
     "walkingMinutes": 4,
     "startTime": "16:00",
     "endTime": "17:30",
-    "interests": ["Business", "Tech"],
-    "description": "Economics of cryptocurrencies and blockchain. Bitcoin, Ethereum, DeFi, NFTs, smart contracts, and the macroeconomics of digital currencies and decentralized finance."
+    "interests": [
+      "Business",
+      "Tech"
+    ],
+    "description": "Economics of cryptocurrencies and blockchain. Bitcoin, Ethereum, DeFi, NFTs, smart contracts, and the macroeconomics of digital currencies and decentralized finance.",
+    "meetDays": "TW"
   },
   {
     "id": 191,
@@ -3052,8 +3740,12 @@
     "walkingMinutes": 3,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Law", "History"],
-    "description": "Sociological perspectives on law and legal institutions. How law shapes and is shaped by society, legal consciousness, access to justice, and law in everyday life."
+    "interests": [
+      "Law",
+      "History"
+    ],
+    "description": "Sociological perspectives on law and legal institutions. How law shapes and is shaped by society, legal consciousness, access to justice, and law in everyday life.",
+    "meetDays": "MWF"
   },
   {
     "id": 192,
@@ -3068,8 +3760,12 @@
     "walkingMinutes": 6,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Arts", "History"],
-    "description": "History and theory of mass communication. Newspapers, radio, television, and digital media. Media ownership, journalism ethics, and the role of media in democracy."
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "History and theory of mass communication. Newspapers, radio, television, and digital media. Media ownership, journalism ethics, and the role of media in democracy.",
+    "meetDays": "MTrW"
   },
   {
     "id": 193,
@@ -3084,8 +3780,13 @@
     "walkingMinutes": 5,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["History", "Science", "Philosophy"],
-    "description": "Cultural dimensions of health, illness, and healing. Medical systems, the social construction of disease, illness narratives, and the political economy of health."
+    "interests": [
+      "History",
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Cultural dimensions of health, illness, and healing. Medical systems, the social construction of disease, illness narratives, and the political economy of health.",
+    "meetDays": "MW"
   },
   {
     "id": 194,
@@ -3096,12 +3797,16 @@
     "building": "Dwinelle Hall",
     "room": "109",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "10:00",
     "endTime": "11:30",
-    "interests": ["History", "Business"],
-    "description": "Economic development of the United States from colonial times to the present. Industrialization, labor markets, financial crises, the Great Depression, and postwar growth."
+    "interests": [
+      "History",
+      "Business"
+    ],
+    "description": "Economic development of the United States from colonial times to the present. Industrialization, labor markets, financial crises, the Great Depression, and postwar growth.",
+    "meetDays": "MWF"
   },
   {
     "id": 195,
@@ -3116,8 +3821,12 @@
     "walkingMinutes": 3,
     "startTime": "13:00",
     "endTime": "14:30",
-    "interests": ["History", "Philosophy"],
-    "description": "Theory and research on social movements. Civil rights, women's liberation, environmental, and labor movements. Political opportunities, resources, framing, and movement outcomes."
+    "interests": [
+      "History",
+      "Philosophy"
+    ],
+    "description": "Theory and research on social movements. Civil rights, women's liberation, environmental, and labor movements. Political opportunities, resources, framing, and movement outcomes.",
+    "meetDays": "TTr"
   },
   {
     "id": 196,
@@ -3128,12 +3837,17 @@
     "building": "South Hall",
     "room": "210",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Tech", "Arts", "History"],
-    "description": "Computational approaches to humanistic inquiry. Text analysis, network visualization, geographic information systems, and digital archives applied to literature, history, and culture."
+    "interests": [
+      "Tech",
+      "Arts",
+      "History"
+    ],
+    "description": "Computational approaches to humanistic inquiry. Text analysis, network visualization, geographic information systems, and digital archives applied to literature, history, and culture.",
+    "meetDays": "MTr"
   },
   {
     "id": 197,
@@ -3144,12 +3858,16 @@
     "building": "South Hall",
     "room": "205",
     "lat": 37.8713,
-    "lng": -122.2590,
+    "lng": -122.259,
     "walkingMinutes": 4,
     "startTime": "14:00",
     "endTime": "17:00",
-    "interests": ["Tech", "Arts"],
-    "description": "Principles and practice of game design. Mechanics, dynamics, aesthetics, narrative, and player experience. Rapid prototyping and playtesting of board games and digital games."
+    "interests": [
+      "Tech",
+      "Arts"
+    ],
+    "description": "Principles and practice of game design. Mechanics, dynamics, aesthetics, narrative, and player experience. Rapid prototyping and playtesting of board games and digital games.",
+    "meetDays": "WF"
   },
   {
     "id": 198,
@@ -3164,8 +3882,11 @@
     "walkingMinutes": 5,
     "startTime": "09:30",
     "endTime": "11:00",
-    "interests": ["Tech"],
-    "description": "Parallel computer architectures and programming models. Shared memory, distributed memory, GPU computing, and performance optimization for scientific applications."
+    "interests": [
+      "Tech"
+    ],
+    "description": "Parallel computer architectures and programming models. Shared memory, distributed memory, GPU computing, and performance optimization for scientific applications.",
+    "meetDays": "MTW"
   },
   {
     "id": 199,
@@ -3180,8 +3901,12 @@
     "walkingMinutes": 5,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Tech", "Science"],
-    "description": "Quantum algorithms and complexity. Qubits, quantum gates, quantum Fourier transform, Shor's algorithm, Grover's algorithm, and quantum error correction."
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "Quantum algorithms and complexity. Qubits, quantum gates, quantum Fourier transform, Shor's algorithm, Grover's algorithm, and quantum error correction.",
+    "meetDays": "MWTr"
   },
   {
     "id": 200,
@@ -3196,8 +3921,13 @@
     "walkingMinutes": 5,
     "startTime": "11:00",
     "endTime": "12:30",
-    "interests": ["Tech", "Science", "Philosophy"],
-    "description": "Formal models of computation. Finite automata, context-free grammars, Turing machines, decidability, computational complexity, and P vs NP."
+    "interests": [
+      "Tech",
+      "Science",
+      "Philosophy"
+    ],
+    "description": "Formal models of computation. Finite automata, context-free grammars, Turing machines, decidability, computational complexity, and P vs NP.",
+    "meetDays": "M"
   },
   {
     "id": 201,
@@ -3208,12 +3938,16 @@
     "building": "Moses Hall",
     "room": "234",
     "lat": 37.8737,
-    "lng": -122.2610,
+    "lng": -122.261,
     "walkingMinutes": 4,
     "startTime": "16:00",
     "endTime": "17:30",
-    "interests": ["Philosophy", "Science"],
-    "description": "Philosophical issues in mathematics. The nature of mathematical objects, mathematical truth, proof, formalism, Platonism, constructivism, and the applicability of mathematics."
+    "interests": [
+      "Philosophy",
+      "Science"
+    ],
+    "description": "Philosophical issues in mathematics. The nature of mathematical objects, mathematical truth, proof, formalism, Platonism, constructivism, and the applicability of mathematics.",
+    "meetDays": "T"
   },
   {
     "id": 202,
@@ -3228,8 +3962,11 @@
     "walkingMinutes": 3,
     "startTime": "09:00",
     "endTime": "10:30",
-    "interests": ["History"],
-    "description": "Sociology of cities and urban life. Urbanization, community, neighborhoods, segregation, gentrification, and the social organization of urban space."
+    "interests": [
+      "History"
+    ],
+    "description": "Sociology of cities and urban life. Urbanization, community, neighborhoods, segregation, gentrification, and the social organization of urban space.",
+    "meetDays": "W"
   },
   {
     "id": 203,
@@ -3244,8 +3981,12 @@
     "walkingMinutes": 3,
     "startTime": "12:00",
     "endTime": "13:30",
-    "interests": ["Philosophy", "History"],
-    "description": "Introduction to the interdisciplinary study of peace, conflict, and nonviolence. War, genocide, human rights, peacebuilding, and strategies for nonviolent social change."
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "Introduction to the interdisciplinary study of peace, conflict, and nonviolence. War, genocide, human rights, peacebuilding, and strategies for nonviolent social change.",
+    "meetDays": "Tr"
   },
   {
     "id": 204,
@@ -3260,8 +4001,12 @@
     "walkingMinutes": 3,
     "startTime": "15:00",
     "endTime": "16:30",
-    "interests": ["History", "Business"],
-    "description": "Understanding and addressing global poverty. Theories of development, humanitarian aid, microfinance, social enterprise, and immersive field projects in low-income communities."
+    "interests": [
+      "History",
+      "Business"
+    ],
+    "description": "Understanding and addressing global poverty. Theories of development, humanitarian aid, microfinance, social enterprise, and immersive field projects in low-income communities.",
+    "meetDays": "F"
   },
   {
     "id": 205,
@@ -3272,11 +4017,16 @@
     "building": "Dwinelle Hall",
     "room": "370",
     "lat": 37.8724,
-    "lng": -122.2630,
+    "lng": -122.263,
     "walkingMinutes": 3,
     "startTime": "14:00",
     "endTime": "15:30",
-    "interests": ["Philosophy", "History", "Arts"],
-    "description": "Rhetoric in movements for social change. Abolitionism, civil rights, feminism, environmentalism, and contemporary activism. Persuasion, argument, and public discourse."
+    "interests": [
+      "Philosophy",
+      "History",
+      "Arts"
+    ],
+    "description": "Rhetoric in movements for social change. Abolitionism, civil rights, feminism, environmentalism, and contemporary activism. Persuasion, argument, and public discourse.",
+    "meetDays": "MT"
   }
 ]
