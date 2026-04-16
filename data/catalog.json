@@ -1,0 +1,2296 @@
+[
+  {
+    "id": "COMPSCI-189",
+    "subject": "COMPSCI",
+    "courseNumber": "189",
+    "title": "Introduction to Machine Learning",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Theoretical foundations, algorithms, methodologies, and applications for machine learning. Topics may include supervised methods for regression and classication (linear models, trees, neural networks, ensemble methods, instance-based methods); generative and discriminative probabilistic models; Bayesian parametric learning; density estimation and clustering; Bayesian networks; time series models; dimensionality reduction; programming projects covering a variety of real-world applications. "
+  },
+  {
+    "id": "COMPSCI-188",
+    "subject": "COMPSCI",
+    "courseNumber": "188",
+    "title": "Introduction to Artificial Intelligence",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Ideas and techniques underlying the design of intelligent computer systems. Topics include search, game playing, knowledge representation, inference, planning, reasoning under uncertainty, machine learning, robotics, perception, and language understanding."
+  },
+  {
+    "id": "COMPSCI-161",
+    "subject": "COMPSCI",
+    "courseNumber": "161",
+    "title": "Computer Security",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Introduction to computer security. Cryptography, including encryption, authentication, hash functions, cryptographic protocols, and applications. Operating system security, access control. Network security, firewalls, viruses, and worms. Software security, defensive programming, and language-based security. Case studies from real-world systems. "
+  },
+  {
+    "id": "COMPSCI-185",
+    "subject": "COMPSCI",
+    "courseNumber": "185",
+    "title": "Deep Reinforcement Learning, Decision Making, and Control",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course will cover the intersection of control, reinforcement learning, and deep learning. This course will provide an advanced treatment of the reinforcement learning formalism, the most critical model-free reinforcement learning algorithms (policy gradients, value function and Q-function learning, and actor-critic), a discussion of model-based reinforcement learning algorithms, an overview of imitation learning, and a range of advanced topics, including exploration, model-based learning with video prediction, transfer learning, multi-task learning, and meta-learning. Homework assignments will cover imitation learning, policy gradients, Q-learning, and model-based reinforcement learning, as well as a final project. "
+  },
+  {
+    "id": "ECON-138",
+    "subject": "ECON",
+    "courseNumber": "138",
+    "title": "Financial and Behavioral Economics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "This course is an advanced class in Financial Economics. Topics include moral hazard (principal-agent problems, free cash flow), asymmetric Information (security issurance, dividends), mergers and acquisitions (theory, managerial incentives), corporate governance (separation of ownership and control, internal capital markets, superstar CEOs), corporate fraud (earnings manipulations). This class emphasizes the economic underpinning of financial decision-making and is mathematically and technically demanding. You will be required to do some empirical homework using STATA."
+  },
+  {
+    "id": "COMPSCI-61A",
+    "subject": "COMPSCI",
+    "courseNumber": "61A",
+    "title": "The Structure and Interpretation of Computer Programs",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "An introduction to programming and computer science focused on abstraction techniques as means to manage program complexity. Techniques include procedural abstraction; control abstraction using recursion, higher-order functions, generators, and streams; data abstraction using interfaces, objects, classes, and generic operators; and language abstraction using interpreters and macros. The course exposes students to programming paradigms, including functional, object-oriented, and declarative approaches. It includes an introduction to asymptotic analysis of algorithms. There are several significant programming projects."
+  },
+  {
+    "id": "ANTHRO-2AC",
+    "subject": "ANTHRO",
+    "courseNumber": "2AC",
+    "title": "Introduction to Archaeology",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Prehistory and cultural growth. Introduction to the methods, goals, and theoretical concepts of archaeology with attention to the impact archaeology has had on the construction of the histories of diverse communities - Native Americans, Hispanics, and Euro-Americans. It fulfills the requirements for 2. "
+  },
+  {
+    "id": "COMPSCI-168",
+    "subject": "COMPSCI",
+    "courseNumber": "168",
+    "title": "Introduction to the Internet: Architecture and Protocols",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course is an introduction to the Internet architecture. We will focus on the concepts and fundamental design principles that have contributed to the Internet's scalability and robustness and survey the various protocols and algorithms used within this architecture. Topics include layering, addressing, intradomain routing, interdomain routing, reliable delivery, congestion control, and the core protocols (e.g., TCP, UDP, IP, DNS, and HTTP) and network technologies (e.g., Ethernet, wireless)."
+  },
+  {
+    "id": "COMPSCI-61B",
+    "subject": "COMPSCI",
+    "courseNumber": "61B",
+    "title": "Data Structures",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Business"
+    ],
+    "description": "Fundamental dynamic data structures, including linear lists, queues, trees, and other linked structures; arrays strings, and hash tables. Storage management. Elementary principles of software engineering. Abstract data types. Algorithms for sorting and searching. Introduction to the Java programming language. "
+  },
+  {
+    "id": "NUSCTX-10S",
+    "subject": "NUSCTX",
+    "courseNumber": "10S",
+    "title": "Introduction to Human Nutrition: Managing Life",
+    "department": "Nutritional Sciences & Tox",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "The course will center on how the body processes nutrients, as well as other components of diet such as water, alcohol, and plant constituents. We will explore how these processes can have a lasting effect on our health and behavior. Students will gain a general understanding of basic human nutrition, how key biological, physical, social and psychological factors affect how we eat.  The goal is that students gain sufficient knowledge to be able to make informed dietary choices based on individual nutritional needs, and to understand how these choices can have a long lasting impact on one's life. "
+  },
+  {
+    "id": "DATA-C8",
+    "subject": "DATA",
+    "courseNumber": "C8",
+    "title": "Foundations of Data Science",
+    "department": "Statistics",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Foundations of data science from three perspectives: inferential thinking, computational thinking, and real-world relevance. Given data arising from some real-world phenomenon, how does one analyze that data so as to understand that phenomenon? The course teaches critical concepts and skills in computer programming and statistical inference, in conjunction with hands-on analysis of real-world datasets, including economic data, document collections, geographical data, and social networks. It delves into social and legal issues surrounding data analysis, including issues of privacy and data ownership."
+  },
+  {
+    "id": "COMPSCI-170",
+    "subject": "COMPSCI",
+    "courseNumber": "170",
+    "title": "Efficient Algorithms and Intractable Problems",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Concept and basic techniques in the design and analysis of algorithms; models of computation; lower bounds; algorithms for optimum search trees, balanced trees and UNION-FIND algorithms; numerical and algebraic algorithms; combinatorial algorithms. Turing machines, how to count steps, deterministic and nondeterministic Turing machines, NP-completeness. Unsolvable and intractable problems. "
+  },
+  {
+    "id": "DATA-C100",
+    "subject": "DATA",
+    "courseNumber": "C100",
+    "title": "Principles & Techniques of Data Science",
+    "department": "Data Science Undergrad Studies",
+    "interests": [
+      "Tech"
+    ],
+    "description": "In this course, students will explore the data science lifecycle, including question formulation, data collection and cleaning, exploratory data analysis and visualization, statistical inference and prediction​, and decision-making.​ This class will focus on quantitative critical thinking​ and key principles and techniques needed to carry out this cycle. These include languages for transforming, querying and analyzing data; algorithms for machine learning methods including regression, classification and clustering; principles behind creating informative data visualizations; statistical concepts of measurement error and prediction; and techniques for scalable data processing."
+  },
+  {
+    "id": "COMPSCI-186",
+    "subject": "COMPSCI",
+    "courseNumber": "186",
+    "title": "Introduction to Database Systems",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Access methods and file systems to facilitate data access. Hierarchical, network, relational, and object-oriented data models. Query languages for models. Embedding query languages in programming languages. Database services including protection, integrity control, and alternative views of data. High-level interfaces including application generators, browsers, and report writers. Introduction to transaction processing. Database system implementation to be done as term project. "
+  },
+  {
+    "id": "DATA-C104",
+    "subject": "DATA",
+    "courseNumber": "C104",
+    "title": "Human Contexts and Ethics of Data - DATA/History/STS",
+    "department": "Sci & Tech Stds Grad Grp",
+    "interests": [
+      "Tech",
+      "Philosophy",
+      "History"
+    ],
+    "description": "This course teaches you to use the tools of applied historical thinking and Science, Technology, and Society (STS) to recognize, analyze, and shape the human contexts and ethics of data. It addresses key topics such as doing ethical data science amid shifting definitions of human subjects, consent, and privacy; the changing relationship between data, democracy, and law; the role of data analytics in how corporations and governments provide public goods such as health and security to citizens; sensors, machine learning and artificial intelligence and changing landscapes of labor, industry, and city life.  It prepares you to engage as a knowledgeable and responsible citizen and professional in the varied arenas of our datafied world."
+  },
+  {
+    "id": "ECON-115",
+    "subject": "ECON",
+    "courseNumber": "115",
+    "title": "The World Economy in the Twentieth Century",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "History"
+    ],
+    "description": "Development of the world economic system with particular reference to world-wide trading relationships. This course is equivalent to History 160; students will not receive credit for both courses."
+  },
+  {
+    "id": "ENGIN-125",
+    "subject": "ENGIN",
+    "courseNumber": "125",
+    "title": "Ethics, Engineering, and Society",
+    "department": "Engineering",
+    "interests": [
+      "Tech",
+      "Arts",
+      "Philosophy"
+    ],
+    "description": "How should engineers analyze and resolve the ethical issues inherent in engineering? This seminar-style course provides an introduction to how theories, concepts, and methods from the humanities and social science can be applied to ethical problems in engineering. Assignments incorporate group and independent research designed to provide students an opportunity to contribute novel findings to the emerging field of engineering ethics while building their analytical and communication skills. This course cannot be used to fulfill any engineering technical requirements (units or courses)."
+  },
+  {
+    "id": "ECON-148",
+    "subject": "ECON",
+    "courseNumber": "148",
+    "title": "Data Science for Economists",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Tech"
+    ],
+    "description": "This course will give the undergraduate student the basic computational building blocks needed to be a good consumer and producer of applied economics work.  Students will work to acquire data through APIs, access census data, or download from replication repositories. The course will cover wrangling data, working with incomplete or unstructured data, joining and merging data, exploratory data analysis and data visualization.  The course will cover many aspects of preparing data for econometric analysis.  Practices around literate code, open science tools, reproducibility, and data management will also be covered.    \n\n"
+  },
+  {
+    "id": "ECON-140",
+    "subject": "ECON",
+    "courseNumber": "140",
+    "title": "Econometrics",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "This course provides an introduction to statistical and estimation analysis of economic data, also known as “Econometrics”. It covers topics such as the linear regression model and its estimator, Ordinary Least Squares, as well as extensions such as Instrumental Variables models, panel data models, and time series models. Topics covered in this course are similar to those in 141."
+  },
+  {
+    "id": "EECS-126",
+    "subject": "EECS",
+    "courseNumber": "126",
+    "title": "Probability and Random Processes",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Social Science"
+    ],
+    "description": "This course covers the fundamentals of probability and random processes useful in fields such as networks, communication, signal processing, and control. Sample space, events, probability law. Conditional probability. Independence. Random variables. Distribution, density functions. Random vectors. Law of large numbers. Central limit theorem. Estimation and detection. Markov chains. "
+  },
+  {
+    "id": "ECON-136",
+    "subject": "ECON",
+    "courseNumber": "136",
+    "title": "Financial Economics",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "Analysis of financial assets and institutions. The course emphasizes modern asset valuation theory and the role of financial intermediaries, and their regulation, in the financial system."
+  },
+  {
+    "id": "ESPM-50AC",
+    "subject": "ESPM",
+    "courseNumber": "50AC",
+    "title": "Introduction to Culture and Natural Resource Management",
+    "department": "Env Sci, Policy, & Mgmt",
+    "interests": [
+      "Environment",
+      "Business"
+    ],
+    "description": "An introduction to how culture affects the way we use and manage fire, wildland and urban forests, rangelands, parks and preserves, and croplands in America. The basic concepts and tools for evaluating the role of culture in resource use and management are introduced and used to examine the experience of American cultural groups in the development and management of western natural resources. "
+  },
+  {
+    "id": "SOCIOL-146AC",
+    "subject": "SOCIOL",
+    "courseNumber": "146AC",
+    "title": "Contemporary Immigration in Global Perspective",
+    "department": "Sociology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "The goal of this course is to introduce students to important academic and political debates around immigration, to discuss processes of immigration, integration and exclusion in different national and cultural contexts, and to look at how the question of immigration plays out in different social and political areas. "
+  },
+  {
+    "id": "DATA-C88C",
+    "subject": "DATA",
+    "courseNumber": "C88C",
+    "title": "Computational Structures in Data Science",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Development of Computer Science topics appearing in Foundations of Data Science (C8); expands computational concepts and techniques of abstraction. Understanding  the structures that underlie the programs, algorithms, and languages used in data science and elsewhere.   Mastery of a particular programming language while studying general techniques for managing program complexity, e.g., functional, object-oriented, and declarative programming. Provides practical experience with composing larger systems through several significant programming projects."
+  },
+  {
+    "id": "ART-8",
+    "subject": "ART",
+    "courseNumber": "8",
+    "title": "Introduction to Visual Thinking",
+    "department": "Art Practice",
+    "interests": [
+      "Arts"
+    ],
+    "description": "A first course in the language, processes, and media of visual art. Course work will be organized around weekly lectures and studio problems that will introduce students to the nature of art making and visual thinking. This course is a prerequisite for applying to the Art Practice major."
+  },
+  {
+    "id": "COMPSCI-162",
+    "subject": "COMPSCI",
+    "courseNumber": "162",
+    "title": "Operating Systems and System Programming",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Arts"
+    ],
+    "description": "Basic concepts of operating systems and system programming. Utility programs, subsystems, multiple-program systems. Processes, interprocess communication, and synchronization. Memory allocation, segmentation, paging. Loading and linking, libraries. Resource allocation, scheduling, performance evaluation. File systems, storage devices, I/O systems. Protection, security, and privacy. "
+  },
+  {
+    "id": "LS-22",
+    "subject": "LS",
+    "courseNumber": "22",
+    "title": "Sense and Sensibility and Science",
+    "department": "UG Interdisciplinary Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Every day we make decisions that can and should be informed by science. We make decisions as individuals, as voters, and as members of our various communities. The problem is, we don’t do it so well—a fact sadly apparent in political debates. This course aims to equip students with basic tools to be better thinkers.  We will explore key aspects of scientific thinking that everyone should know, especially the many ways that we humans tend to fool ourselves, and how to avoid them—including how to differentiate signal from noise, evaluate causal claims, and avoid reasoning biases.   We’ll then look at the best models for using science to guide decisions, combining both evidence and values, with the ultimate goal of bettering the world."
+  },
+  {
+    "id": "INTEGBI-35AC",
+    "subject": "INTEGBI",
+    "courseNumber": "35AC",
+    "title": "Human Biological Variation",
+    "department": "Integrative Biology",
+    "interests": [
+      "Science",
+      "History"
+    ],
+    "description": "This course addresses modern human biological variation from historical, comparative, evolutionary, biomedical, and cultural perspectives. It is designed to introduce students to the fundamentals of comparative biology, evolutionary theory, and genetics."
+  },
+  {
+    "id": "ECON-131",
+    "subject": "ECON",
+    "courseNumber": "131",
+    "title": "Public Economics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Environment"
+    ],
+    "description": "This course focuses on the role of the government in the economy from a theoretical and empirical perspective. The aim of the course is to provide an understanding of the reasons for government intervention in the economy, analyzing the merits of possible government policies, and the response of economic agents to the government's actions. The course covers the analysis of tax policy, social insurance programs, public goods, environmental protection, and the interaction between different levels of government. Special emphasis is set on current government policy issues such as social security reform, income tax reform, and budget deficits."
+  },
+  {
+    "id": "MATH-54",
+    "subject": "MATH",
+    "courseNumber": "54",
+    "title": "Linear Algebra and Differential Equations",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Basic linear algebra; matrix arithmetic and determinants. Vector spaces; inner product spaces. Eigenvalues and eigenvectors; orthogonality, symmetric matrices. Linear second-order differential equations; first-order systems with constant coefficients. Fourier series."
+  },
+  {
+    "id": "COMPSCI-164",
+    "subject": "COMPSCI",
+    "courseNumber": "164",
+    "title": "Programming Languages and Compilers",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Survey of programming languages. The design of modern programming languages. Principles and techniques of scanning, parsing, semantic analysis, and code generation. Implementation of compilers, interpreters, and assemblers. Overview of run-time organization and error handling. "
+  },
+  {
+    "id": "COMPSCI-70",
+    "subject": "COMPSCI",
+    "courseNumber": "70",
+    "title": "Discrete Mathematics and Probability Theory",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Science",
+      "Social Science"
+    ],
+    "description": "Logic, infinity, and induction; applications include undecidability and stable marriage problem. Modular arithmetic and GCDs; applications include primality testing and cryptography. Polynomials; examples include error correcting codes and interpolation. Probability including sample spaces, independence, random variables, law of large numbers; examples include load balancing, existence arguments, Bayesian inference."
+  },
+  {
+    "id": "ANTHRO-3AC",
+    "subject": "ANTHRO",
+    "courseNumber": "3AC",
+    "title": "Introduction to Social/Cultural Anthropology (American Cultures)",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "The structure and dynamics of human cultures and social institutions from a comparative perspective with special attention to American cultures and their roots. Case studies will illustrate the principles presented in the course. It fulfills the requirements for 3. "
+  },
+  {
+    "id": "EECS-127",
+    "subject": "EECS",
+    "courseNumber": "127",
+    "title": "Optimization Models in Engineering",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "This course offers an introduction to optimization models and their applications, ranging from machine learning and statistics to decision-making and control, with emphasis on numerically tractable problems, such as linear or constrained least-squares optimization. "
+  },
+  {
+    "id": "BIOENG-100",
+    "subject": "BIOENG",
+    "courseNumber": "100",
+    "title": "Ethics in Science and Engineering",
+    "department": "Bioengineering",
+    "interests": [
+      "Tech",
+      "Philosophy",
+      "History"
+    ],
+    "description": "The goal of this semester course is to present the issues of professional conduct in the practice of engineering, research, publication, public and private disclosures, and in managing professional and financial conflicts. The method is through historical didactic presentations, case studies, presentations of methods for problem solving in ethical matters, and classroom debates on contemporary ethical issues. The faculty will be drawn from national experts and faculty from religious studies, journalism, and law from the UC Berkeley campus."
+  },
+  {
+    "id": "MUSIC-27",
+    "subject": "MUSIC",
+    "courseNumber": "27",
+    "title": "Introduction to Western Music",
+    "department": "Music",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Devoted to the development of listening skills, and a survey of major forms and types of Western art music."
+  },
+  {
+    "id": "COMPSCI-61C",
+    "subject": "COMPSCI",
+    "courseNumber": "61C",
+    "title": "Great Ideas of Computer Architecture (Machine Structures)",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Philosophy",
+      "Business"
+    ],
+    "description": "The internal organization and operation of digital computers. Machine architecture, support for high-level languages (logic, arithmetic, instruction sequencing) and operating systems (I/O, interrupts, memory management, process switching). Elements of computer logic design. Tradeoffs involved in fundamental architectural design decisions."
+  },
+  {
+    "id": "COMPSCI-184",
+    "subject": "COMPSCI",
+    "courseNumber": "184",
+    "title": "Foundations of Computer Graphics",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "A broad introduction to the fundamentals of computer graphics. The main areas covered are modeling, rendering, animation and imaging. Topics include 2D and 3D transformations, drawing to raster displays, sampling, texturing, antialiasing, geometric modeling, ray tracing and global illumination, animation, cameras, image processing and computational imaging. There will be an emphasis on mathematical and geometric aspects of graphics, and the ability to write complete 3D graphics programs."
+  },
+  {
+    "id": "STAT-135",
+    "subject": "STAT",
+    "courseNumber": "135",
+    "title": "Concepts of Statistics",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "A comprehensive survey course in statistical theory and methodology. Topics include descriptive statistics, maximum likelihood estimation, non-parametric methods, introduction to optimality, goodness-of-fit tests, analysis of variance, bootstrap and computer-intensive methods and least squares estimation. The laboratory includes computer-based data-analytic applications to science and engineering."
+  },
+  {
+    "id": "COMPSCI-152",
+    "subject": "COMPSCI",
+    "courseNumber": "152",
+    "title": "Computer Architecture and Engineering",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Instruction set architecture, microcoding, pipelining (simple and complex). Memory hierarchies and virtual memory. Processor parallelism: VLIW, vectors, multithreading. Multiprocessors."
+  },
+  {
+    "id": "GWS-14",
+    "subject": "GWS",
+    "courseNumber": "14",
+    "title": "Gender, Sexuality, and Race in Global Political Issues",
+    "department": "Gender & Womens Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "The production of gender, sexuality, and processes of racialization in contemporary global political issues. Topics and geographical foci may vary. Examples: the post-9-11 situation in the U.S. and U.S. wars in Afghanistan and Iraq; Hindu-Muslim conflict in India; the wars in the former Yugoslavia and Rwanda; the Israel/Palestine situation; global right-wing movements; state and social movement terrorisms and transnational \"security\" measures. "
+  },
+  {
+    "id": "ASAMST-132AC",
+    "subject": "ASAMST",
+    "courseNumber": "132AC",
+    "title": "Islamophobia and Constructing Otherness",
+    "department": "Ethnic Studies",
+    "interests": [
+      "History",
+      "Social Science"
+    ],
+    "description": "This course will examine and attempt to understand Islamophobia, as the most recently articulated principle of otherness and its implications domestically and globally. The course will also closely examine the ideological and epistemological frameworks employed in discourses of otherness, and the complex social, political, economic, gender-based, and religious forces entangled in its historical and modern reproduction. "
+  },
+  {
+    "id": "ECON-119",
+    "subject": "ECON",
+    "courseNumber": "119",
+    "title": "Psychology and Economics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "This course presents psychological and experimental economics research demonstrating departures from perfect rationality, self-interest, and other classical assumptions of economics and explores ways that these departures can be mathematically modeled and incorporated into mainstream positive and normative economics. The course will focus on the behavioral evidence itself, especially on specific formal assumptions that capture the findings in a way that can be incorporated into economics. The implications of these new assumptions for theoretical and empirical economics will be explored."
+  },
+  {
+    "id": "ECON-151",
+    "subject": "ECON",
+    "courseNumber": "151",
+    "title": "Labor Economics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "This course provides a general overview of labor markets primarily in the U.S., using the theoretical and empirical tools of modern economics. Topics include labor force participation, the allocation of time to market work, migration, labor demand and monopsony, investment in human capital like education and on-the-job training, race and gender and discrimination, labor unions, and unemployment. The course will also examine the impacts on work and well-being of government programs such as unemployment insurance, minimum wages, and a negative income tax like the modern earned income credit."
+  },
+  {
+    "id": "ECON-C181",
+    "subject": "ECON",
+    "courseNumber": "C181",
+    "title": "International Trade",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "The theory of international trade and its applications to tariff protection. This course is equivalent to UGBA 118; students will not receive credit for both courses."
+  },
+  {
+    "id": "MELC-11",
+    "subject": "MELC",
+    "courseNumber": "11",
+    "title": "Middle Eastern Worlds: The Modern Middle East",
+    "department": "Middle Eastern Lang & Cultures",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "  This course provides a multidisciplinary introduction to the Middle East, an area that has long dominated the news but remains relatively unknown to most Americans. In a broad sense, the Middle East refers to “Arab” countries in general as well as Israel, Turkey, Iran, Afghanistan, and the region of Kurdistan. The course aims to help students expand their knowledge and understanding of the social, economic, and cultural complexities that underlie current events and politics in the Middle East. We will examine the interplay of cultures, societies, and economies of various regional communities that remain central to the dynamics of Middle Eastern identities."
+  },
+  {
+    "id": "ANTHRO-84",
+    "subject": "ANTHRO",
+    "courseNumber": "84",
+    "title": "Sophomore Seminar",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Sophomore seminars are small interactive courses offered by faculty members in departments all across the campus. Sophomore seminars offer opportunity for close, regular intellectual contact between faculty members and students in the crucial second year. The topics vary from department to department and semester to semester. Enrollment limited to 15 sophomores. "
+  },
+  {
+    "id": "ECON-157",
+    "subject": "ECON",
+    "courseNumber": "157",
+    "title": "Health Economics",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "An economic analysis of policies and institutions in the U.S. health care sector. Topics covered include the supply and demand for health services, conceptual and policy issues relating to the provision of health insurance, and economic analysis of efficient regulatory policies toward the health care sector. "
+  },
+  {
+    "id": "ASAMST-20A",
+    "subject": "ASAMST",
+    "courseNumber": "20A",
+    "title": "Introduction to the History of Asians in the United States",
+    "department": "Ethnic Studies",
+    "interests": [
+      "History"
+    ],
+    "description": "Introductory comparative analysis of the Asian American experience from 1848 to present. Topics include an analysis of the Asian American perspective; cultural roots; immigration and settlement patterns; labor, legal, political, and social history."
+  },
+  {
+    "id": "STAT-134",
+    "subject": "STAT",
+    "courseNumber": "134",
+    "title": "Concepts of Probability",
+    "department": "Statistics",
+    "interests": [
+      "Science"
+    ],
+    "description": "An introduction to probability, emphasizing concepts and applications. Conditional expectation, independence, laws of large numbers. Discrete and continuous random variables. Central limit theorem. Selected topics such as the Poisson process, Markov chains, characteristic functions."
+  },
+  {
+    "id": "ECON-C110",
+    "subject": "ECON",
+    "courseNumber": "C110",
+    "title": "Game Theory in the Social Sciences",
+    "department": "Political Science",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "A non-technical introduction to game theory. Basic principle, and models of interaction among players, with a strong emphasis on applications to political science, economics, and other social sciences."
+  },
+  {
+    "id": "EDUC-131AC",
+    "subject": "EDUC",
+    "courseNumber": "131AC",
+    "title": "Classroom Interactions in Science and Mathematics: A Focus on Equity and Urban Schools",
+    "department": "Grad School of Education",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "This course continues the process of preparing students to teach science and mathematics in secondary schools by providing opportunities to evaluate challenges they face in instructional settings. We will explore frameworks for thinking abut equity issues in the classroom and beyond school settings, learn strategies for teaching students of diverse backgrounds, and consider how classroom interactions enable students to develop a deep conceptual understanding of the subject matter."
+  },
+  {
+    "id": "DATA-C140",
+    "subject": "DATA",
+    "courseNumber": "C140",
+    "title": "Probability for Data Science",
+    "department": "Data Science Undergrad Studies",
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "An introduction to probability, emphasizing the combined use of mathematics and programming. Discrete and continuous families of distributions. Bounds and approximations. Transforms and convergence. Markov chains and Markov Chain Monte Carlo. Dependence, conditioning, Bayesian methods. Maximum likelihood, least squares prediction, the multivariate normal, and multiple regression. Random permutations, symmetry, and order statistics. Use of numerical computation, graphics, simulation, and computer algebra."
+  },
+  {
+    "id": "MATH-128A",
+    "subject": "MATH",
+    "courseNumber": "128A",
+    "title": "Numerical Analysis",
+    "department": "Mathematics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Programming for numerical calculations, round-off error, approximation and interpolation, numerical quadrature, and solution of ordinary differential equations. Practice on the computer."
+  },
+  {
+    "id": "STAT-154",
+    "subject": "STAT",
+    "courseNumber": "154",
+    "title": "Modern Statistical Prediction and Machine Learning",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Tech",
+      "Arts"
+    ],
+    "description": "Theory and practice of statistical prediction. Contemporary methods as extensions of classical methods. Topics: optimal prediction rules, the curse of dimensionality, empirical risk, linear regression and classification, basis expansions, regularization, splines, the bootstrap, model selection, classification and regression trees, boosting, support vector machines. Computational efficiency versus predictive performance. Emphasis on experience with real data and assessing statistical assumptions. This course uses Python as its primary computing language; details are determined by the instructor."
+  },
+  {
+    "id": "EPS-C20",
+    "subject": "EPS",
+    "courseNumber": "C20",
+    "title": "Earthquakes in Your Backyard",
+    "department": "UG Interdisciplinary Studies",
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to earthquakes, their causes and effects. General discussion of basic principles and methods of seismology and geological tectonics, distribution of earthquakes in space and time, effects of earthquakes, and earthquake hazard and risk, with particular emphasis on the situation in California."
+  },
+  {
+    "id": "ECON-127",
+    "subject": "ECON",
+    "courseNumber": "127",
+    "title": "Antitrust Economics and Law",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "We will study both antitrust law and antitrust economics. Antitrust law governs the accumulation and exercise of market power. It prohibits both monopolization and agreements in unreasonable restraint of trade such as price fixing. It also prohibits anticompetitive mergers and a variety of specific competition problems such as exclusive dealing or tying arrangements. Deciding what qualifies as \"monopolization,\" what qualifies as an \"unreasonable restraint of trade,\" what qualifies as \"anticompetitive,\" and more generally how to interpret the prohibitions of antitrust law invariably involves economic analysis. Such economic analysis commonly goes by the name \"antitrust economics\".   "
+  },
+  {
+    "id": "INDENG-142A",
+    "subject": "INDENG",
+    "courseNumber": "142A",
+    "title": "Introduction to Machine Learning and Data Analytics",
+    "department": "Industrial Eng & Ops Research",
+    "interests": [
+      "Tech",
+      "Business"
+    ],
+    "description": "This course introduces students to key techniques in machine learning and data analytics through a diverse set of examples using real datasets from domains such as e-commerce, healthcare, social media, finance, the Internet, and more. Through these examples, conceptual exercises, data analysis exercises in Python, and a comprehensive team project, students will gain experience understanding and applying techniques such as linear regression, logistic regression, classification and regression trees, random forests, boosting, text mining, data cleaning and manipulation, data visualization, time series modeling, clustering, principal component analysis, regularization, and large-scale learning with neural networks."
+  },
+  {
+    "id": "MCELLBI-38",
+    "subject": "MCELLBI",
+    "courseNumber": "38",
+    "title": "Stem Cell Biology, Ethics and Societal Impact",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science",
+      "Philosophy",
+      "Social Science"
+    ],
+    "description": "Innovations in bioengineering and use of stem cells will significantly impact our ability to combat human disease, genetic disorders and physiological dysfunction.  An understanding of human stem cell biology will be critical to make informed decisions on our health and public policy."
+  },
+  {
+    "id": "ECON-1",
+    "subject": "ECON",
+    "courseNumber": "1",
+    "title": "Introduction to Economics",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "A survey of economics designed to give an overview of the field. "
+  },
+  {
+    "id": "MCELLBI-102",
+    "subject": "MCELLBI",
+    "courseNumber": "102",
+    "title": "Survey of the Principles of Biochemistry and Molecular Biology",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science",
+      "Philosophy"
+    ],
+    "description": "A comprehensive survey of the fundamentals of biological chemistry, including the properties of intermediary metabolites, the structure and function of biological macromolecules, the logic of metabolic pathways (both degradative and biosynthetic) and the molecular basis of genetics and gene expression. "
+  },
+  {
+    "id": "PBHLTH-101",
+    "subject": "PBHLTH",
+    "courseNumber": "101",
+    "title": "A Sustainable World: Challenges and Opportunities",
+    "department": "School of Public Health",
+    "interests": [
+      "Science",
+      "Social Science",
+      "Environment"
+    ],
+    "description": "Students now attending Berkeley will confront an extremely different set of challenges than the current faculty experienced. Economic growth cannot continue exponentially in a finite world. Human activity and human numbers threaten the possibility of irreversible damage to the fragile biosphere on which all life depends. In this 3-unit interdisciplinary course, students will focus on finding creative solutions to the problems faced by their generation. Each week, experts will discuss problems and solutions concerning sustainability and climate change that they’re passionate about. Topics include energy consumption, food security, population growth and family planning, migration, climate change, policy, and governance."
+  },
+  {
+    "id": "PHILOS-5",
+    "subject": "PHILOS",
+    "courseNumber": "5",
+    "title": "Science and Human Understanding",
+    "department": "Philosophy",
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "Introduction to the Philosophy of Science."
+  },
+  {
+    "id": "ECON-100A",
+    "subject": "ECON",
+    "courseNumber": "100A",
+    "title": "Microeconomics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "This course introduces students to the main tools and concepts of microeconomics. These tools and concepts will serve as a foundation for many upper level economics courses. Topics covered include consumer theory, producer theory, equilibrium in a competitive market, monopoly, general equilibrium, and asymmetric information. This course makes use of calculus. Topics covered are similar to those in 101A. "
+  },
+  {
+    "id": "ECON-100B",
+    "subject": "ECON",
+    "courseNumber": "100B",
+    "title": "Macroeconomics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "This course introduces students to the main approaches economists use to describe how the economy works at the aggregate level. Topics covered include economic growth, business cycles, the determinants of aggregate employment, unemployment, and inflation, and the effects of monetary and fiscal policy. This course makes use of calculus. Topics covered are similar to those in 101B. "
+  },
+  {
+    "id": "CDSS-94",
+    "subject": "CDSS",
+    "courseNumber": "94",
+    "title": "Special Topics in CDSS",
+    "department": "Clg of Comp Data Sci & Soc",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Topics will vary semester to semester."
+  },
+  {
+    "id": "PUBPOL-101",
+    "subject": "PUBPOL",
+    "courseNumber": "101",
+    "title": "Introduction to Public Policy Analysis",
+    "department": "Goldman School Public Policy",
+    "interests": [
+      "Social Science",
+      "Environment"
+    ],
+    "description": "A systematic and critical approach to evaluating and designing public policies. Combines theory and application to particular cases and problems. Diverse policy topics, including environmental, health, education, communications, safety, and arts policy issues, among others. "
+  },
+  {
+    "id": "HISTORY-7B",
+    "subject": "HISTORY",
+    "courseNumber": "7B",
+    "title": "Introduction to the History of the United States: The United States from Civil War to Present",
+    "department": "History",
+    "interests": [
+      "History",
+      "Social Science"
+    ],
+    "description": "What does it mean to be American? Whatever your answer is to this question, chances are it is deeply connected to the themes and events we will discuss in this class. Here we will track America's rise to global power, the fate of freedom in a post-Emancipation political setting, and the changing boundaries of nation, citizenship, and community. We will use landmark events to sharpen our themes, but we will also take care to analyze the equally important (and shifting) patterns of where and how Americans lived, worked, and played."
+  },
+  {
+    "id": "AEROENG-100",
+    "subject": "AEROENG",
+    "courseNumber": "100",
+    "title": "Aerospace Capstone",
+    "department": "Mechanical Engineering",
+    "interests": [
+      "Science"
+    ],
+    "description": "This capstone course challenges students to integrate their aerospace knowledge to design, analyze and build a system for an aerospace mission. Students can choose to focus on astronautical satellite systems or aeronautical drone systems. The course covers topics including structures, materials and environments, orbital and flight mechanics, attitude determination, stability and control, aeronautical and astronautical propulsion, aerodynamics, communications, and systems engineering."
+  },
+  {
+    "id": "AFRICAM-100",
+    "subject": "AFRICAM",
+    "courseNumber": "100",
+    "title": "Black Intellectual Thought",
+    "department": "African American Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "This course, lets students explore the status of African American studies as a discipline. The class will discuss the social relevance of African American studies, the political origins of the discipline, and the debate over Afrocentricity. Special attention will be devoted to the contributions of black feminist theory and community scholars/organic intellectuals to the development of the discipline."
+  },
+  {
+    "id": "ANTHRO-170",
+    "subject": "ANTHRO",
+    "courseNumber": "170",
+    "title": "China",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Chinese culture and society with an emphasis on the village level."
+  },
+  {
+    "id": "PORTUG-128",
+    "subject": "PORTUG",
+    "courseNumber": "128",
+    "title": "Modern and Contemporary Brazilian Literature",
+    "department": "Spanish & Portuguese",
+    "interests": [
+      "Arts",
+      "Social Science"
+    ],
+    "description": "Reflects on some of the leading writers, artists, and thinkers from the Republic (1889) to the present and the social and political transformations of modern and contemporary Brazil that shaped literary and artistic production. In providing students with an introduction to major literary movements (modernism, regionalism, concretism, marginal literature, urban literature, etc), the course problematizes the idea of a literary canon while exploring lesser-known works and newer voices. Histories of Brazil’s social transformations, as well as theoretical reflections on the politics of world literature and translation, form part of this course’s offerings."
+  },
+  {
+    "id": "GEOG-130",
+    "subject": "GEOG",
+    "courseNumber": "130",
+    "title": "Food and the Environment",
+    "department": "Geography",
+    "interests": [
+      "Environment"
+    ],
+    "description": "How do human populations organize and alter natural resources and ecosystems to produce food? The role of agriculture in the world economy, national development, and environmental degradation in the Global North and the Global South. The origins of scarcity and abundance, population growth, hunger and obesity, and poverty."
+  },
+  {
+    "id": "INDENG-164",
+    "subject": "INDENG",
+    "courseNumber": "164",
+    "title": "Introduction to Optimization Modeling",
+    "department": "Industrial Eng & Ops Research",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Designed for students from any science/engineering major, this upper-division course will introduce students to optimization models, and train them to use software tools to model and solve optimization problems. The main goal is to develop proficiency in common optimization modeling languages, and learn how to integrate them with underlying optimization solvers. Students will work primarily on modeling exercises, which will develop confidence in modeling and solve optimization methods using software packages, and will require some programming. \nReview of linear and nonlinear optimization models, including optimization problems with discrete decision variables. Applications to practical problems from engineering and data science."
+  },
+  {
+    "id": "THEATER-25AC",
+    "subject": "THEATER",
+    "courseNumber": "25AC",
+    "title": "The Drama of American Cultures: An Introduction to Our Theater",
+    "department": "Theater Dance & Perf Stds",
+    "interests": [
+      "Arts",
+      "Social Science"
+    ],
+    "description": "This course provides an introduction to theater through the study of values and issues fundamental to cultural identity, the comparison of selected cultural groups and their relationship to American society as a whole, and the study of drama as an instrument for understanding and expressing cultural identity. Theater of specific cultural groups to be included will be determined by the availability of live theater productions offered on campus and in the Bay Area. "
+  },
+  {
+    "id": "DATA-188",
+    "subject": "DATA",
+    "courseNumber": "188",
+    "title": "Advanced Data Science Connector",
+    "department": "Data Science Undergrad Studies",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Designed to be taken concurrently with or after Principles and Techniques of Data Science (Data C100) or Probability for Data Science (Data C140) or both, each connector course consists of an intensive study of data science ideas in a particular field. Topics include the development of the theory of data science, the application of data science in a variety of domains, its human and social contexts, and anything else. Topics vary by field, and more than one topic may be offered in a semester."
+  },
+  {
+    "id": "MATH-110",
+    "subject": "MATH",
+    "courseNumber": "110",
+    "title": "Abstract Linear Algebra",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Matrices, vector spaces, linear transformations, inner products, determinants. Eigenvectors. QR factorization. Quadratic forms and Rayleigh's principle. Jordan canonical form, applications. Linear functionals. "
+  },
+  {
+    "id": "STAT-20",
+    "subject": "STAT",
+    "courseNumber": "20",
+    "title": "Introduction to Probability and Statistics",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "For students with mathematical background who wish to acquire basic concepts. Relative frequencies, discrete probability, random variables, expectation. Testing hypotheses. Estimation. Illustrations from various fields. This course uses R as its primary computing language; details are determined by the instructor."
+  },
+  {
+    "id": "COGSCI-1",
+    "subject": "COGSCI",
+    "courseNumber": "1",
+    "title": "Introduction to Cognitive Science",
+    "department": "Interdisc Social Science Pgms",
+    "interests": [
+      "Science",
+      "Philosophy",
+      "Tech"
+    ],
+    "description": "This course introduces the interdisciplinary field of cognitive science. Lectures and readings will survey research from artificial intelligence, psychology, linguistics, philosophy, and neuroscience, and will cover topics such as the nature of knowledge, thinking, remembering, vision, imagery, language, and consciousness. Sections will demonstrate some of the major methodologies."
+  },
+  {
+    "id": "COMPSCI-288",
+    "subject": "COMPSCI",
+    "courseNumber": "288",
+    "title": "Advanced Natural Language Processing",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course provides a graduate-level introduction to Natural Language Processing (NLP). We will survey foundational approaches such as word representations and n-gram language models, followed by neural methods including recurrent networks and attention mechanisms, and then progress to modern Transformer-based architectures. In addition, the course will cover advanced topics in contemporary NLP, including retrieval-augmented models, mixture-of-experts architectures, AI agents, and memorization."
+  },
+  {
+    "id": "HISTORY-139AC",
+    "subject": "HISTORY",
+    "courseNumber": "139AC",
+    "title": "The Multiracial History of Slavery & Servitude in America",
+    "department": "History",
+    "interests": [
+      "History"
+    ],
+    "description": "This course introduces students to the entwined, overlapping, multiracial histories of involuntary servitude and slavery in British North America/the United States. We will cover topics such as Native American systems of bondage, European enslavement of Indigenous men, women, and children, the often-forcible transport to and compulsory servitude of European migrants, the captivity and enslavement of African-descended people, and the coerced servitude of Asian migrants in the 19th century. The class concludes by considering the development of the post-Civil War penal state and the rise of mass incarceration. Students will leave the class with a more expansive understanding of American systems of captivity from settlement to the present."
+  },
+  {
+    "id": "COLWRIT-10B",
+    "subject": "COLWRIT",
+    "courseNumber": "10B",
+    "title": "Advanced Public Speaking",
+    "department": "College Writing Programs",
+    "interests": [
+      "Arts"
+    ],
+    "description": "This is an advanced course that presumes introductory training in public speaking. Emphasis will be on real-world speaking situations. The course combines both theory and practice: it incorporates extensive speaking performance and individualized critiques from instructor and students, as well as analysis of advanced speaking models, and it explores theories, speech genres, and rhetorical processes beyond those in the introductory course. The intent of the course is to advance students' ability to deliver polished and informed public speeches adapted to a wide range of audiences and speaking situations."
+  },
+  {
+    "id": "MUSIC-70",
+    "subject": "MUSIC",
+    "courseNumber": "70",
+    "title": "History of Music",
+    "department": "Music",
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "Introduction to the study of music history; required for music majors. This writing-intensive course offers an in-depth study of musical genres and styles in relation to conditions of production and reception. Through listening, reading musical scores, and studying historical documents, students will draw connections between specific features of music and the ways in which listening, performance, and the function of music have changed over time."
+  },
+  {
+    "id": "ESPM-161A",
+    "subject": "ESPM",
+    "courseNumber": "161A",
+    "title": "Thinking With Animals",
+    "department": "Env Sci, Policy, & Mgmt",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Animals have long been the subject of human inquiry. As historian Harriet Ritvo writes, “Learned attention to the animal is far from new.\" However, in recent decades social movements, artists, and scholars have focused more frequently, and perhaps more urgently, on what Derrida called “the question of the animal.” In this course we will look to how centering the animal challenges human exceptionalism, anthropocentrism, and traditional critical discourse. Tracing the ways work in animal studies denaturalizes hierarchical taxonomies, defines key concepts such as human and animal, and articulates boundaries between species, this course will follow the various political, relational, ethical and imaginative implications of thinking with animals."
+  },
+  {
+    "id": "PSYCH-128",
+    "subject": "PSYCH",
+    "courseNumber": "128",
+    "title": "Topical Seminars in Cognitive Psychology",
+    "department": "Psychology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "For a precise schedule of offerings check with the Student Services Office each semester."
+  },
+  {
+    "id": "MATH-53",
+    "subject": "MATH",
+    "courseNumber": "53",
+    "title": "Multivariable Calculus",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Parametric equations and polar coordinates. Vectors in 2- and 3-dimensional Euclidean spaces. Partial derivatives. Multiple integrals. Vector calculus. Theorems of Green, Gauss, and Stokes. "
+  },
+  {
+    "id": "EDUC-155AC",
+    "subject": "EDUC",
+    "courseNumber": "155AC",
+    "title": "Pacific Islander and Asian American Educational Struggles: Collective Learning for Racial Justice",
+    "department": "Berkeley School of Education",
+    "interests": [
+      "Social Science",
+      "History"
+    ],
+    "description": "Through a place-based and community-engaged research approach, we examine the social construction and contestation of race, the historical and contemporary consequences of racism, and the ongoing struggle for racial justice in the United States through the lens of Asian American racialization."
+  },
+  {
+    "id": "UGBA-135",
+    "subject": "UGBA",
+    "courseNumber": "135",
+    "title": "Personal Financial Management",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business",
+      "Social Science"
+    ],
+    "description": "Survey of major life financial decisions (e.g., career choice,  consumption versus saving, investments, mortgages, insurance) and how decision-making biases (e.g., overconfidence, present bias, limited attention) can lead to suboptimal choice. The course draws on research from economics, psychology, and sociology. "
+  },
+  {
+    "id": "AGRS-10B",
+    "subject": "AGRS",
+    "courseNumber": "10B",
+    "title": "Introduction Ancient Rome",
+    "department": "Ancient Greek & Roman Studies",
+    "interests": [
+      "History",
+      "Arts",
+      "Social Science"
+    ],
+    "description": "Investigation of the main achievements and tensions in Roman culture from Romulus to the High Empire. Key sources for literature, history, and material culture are studied in order to reveal Roman civilization in its political and social context. All materials are read in English. "
+  },
+  {
+    "id": "ECON-145",
+    "subject": "ECON",
+    "courseNumber": "145",
+    "title": "Digital Finance and Financial Inclusion",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "This course dives into the world of digital finance, exploring how it’s transforming payments, credit, and financial inclusion in both advanced and emerging markets."
+  },
+  {
+    "id": "ECON-2",
+    "subject": "ECON",
+    "courseNumber": "2",
+    "title": "Introduction to Economics--Lecture Format",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Arts"
+    ],
+    "description": "Econ 2 provides an overview of the field of economics. It covers both microeconomics, the study of consumer choice, firm behavior, and market interaction, and macroeconomics, the study of economic growth, unemployment, and inflation. Econ 2 has longer lectures than Econ 1. Econ 2 covers topics in greater depth with more connection with current economic research. The required material includes both the standard textbook material as well as more technical academic papers from the current economic literature.  It is particularly suited for intended economics majors. "
+  },
+  {
+    "id": "STAT-150",
+    "subject": "STAT",
+    "courseNumber": "150",
+    "title": "Stochastic Processes",
+    "department": "Statistics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Random walks, discrete time Markov chains, Poisson processes. Further topics such as: continuous time Markov chains, queueing theory, point processes, branching processes, renewal theory, stationary processes, Gaussian processes."
+  },
+  {
+    "id": "ESPM-109A",
+    "subject": "ESPM",
+    "courseNumber": "109A",
+    "title": "Island and Coral Reef Resilience and Ecosystem Services",
+    "department": "Env Sci, Policy, & Mgmt",
+    "interests": [
+      "Environment",
+      "Science",
+      "Tech"
+    ],
+    "description": "Students will learn the fundamentals of island and reef biology, geology, marine ecology and their inter-connectedness, as well as the physical and biological forces shaping and maintaining these ecosystems. The course will involve a significant amount of time in the field to expose students to the different island habitats and explore the ecosystem services provided by island habitats to local peoples and beyond. Students will interact directly with local people to learn about local perspectives on the value of these systems. This course is one of five co-requisite courses (ESPM 109A-E) that make up the study abroad program in Island Sustainability taught off campus on Moorea, French Polynesia, during the Spring semester."
+  },
+  {
+    "id": "UGBA-104",
+    "subject": "UGBA",
+    "courseNumber": "104",
+    "title": "Introduction to Business Analytics",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business",
+      "Tech"
+    ],
+    "description": "This course provides an introduction to several quantitative methods used to facilitate complex decision-making in business, with applications in many different industries, at different levels in the organization, and with different scopes of decisions. The power of the methods covered in this class is further enhanced by implementing them in spreadsheet software, which allows complex problems to be approached and solved in a straightforward and understandable manner. "
+  },
+  {
+    "id": "ART-26",
+    "subject": "ART",
+    "courseNumber": "26",
+    "title": "Moving Image: Foundations",
+    "department": "Art Practice",
+    "interests": [
+      "Arts",
+      "Philosophy",
+      "History"
+    ],
+    "description": "A practical and critical introduction to moving image media, focusing primarily on independent and experimental film and video art. Students learn video production and post-production and are introduced to key moments and concepts in moving image history and criticism. Course instruction includes basic camera operations, sound recording, and lighting, as well as basic editing, compression, and dissemination formats. Solo and group assignments are completed, and group critiques of class projects train students to recognize and discuss the formal, technical, critical and historical dimensions of their works. Weekly readings in philosophy, critical theory, artist statements and literature are assigned."
+  },
+  {
+    "id": "ESPM-90",
+    "subject": "ESPM",
+    "courseNumber": "90",
+    "title": "Introduction to Conservation and Resource Studies Major",
+    "department": "Env Sci, Policy, & Mgmt",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Introduction to the major, emphasizing each student's educational goals. Overview of ecological problems and contrasting approaches to solutions through institutional and community-based efforts. Required of all CRS sophomore majors and all entering off-campus transfer students to CRS major. Restricted to CRS majors. One field trip is normally required. "
+  },
+  {
+    "id": "PLANTBI-40",
+    "subject": "PLANTBI",
+    "courseNumber": "40",
+    "title": "The (Secret) Life of Plants",
+    "department": "Plant & Microbial Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "Covers contemporary topics in plant biology. Examines how plants grow, reproduce, and respond to the environment (e.g., to light) in ways distinct from animals. Presents basic principles of genetics, cell, and molecular biology. Basics of genetic engineering and biotechnology reveal how they are used to modify plants, and these socially relevant issues are assessed. Includes visit to modern plant biology research laboratory, and aspects of plant disease and diversity. Knowledge of the physical sciences neither required nor assumed. "
+  },
+  {
+    "id": "COMPSCI-C280",
+    "subject": "COMPSCI",
+    "courseNumber": "C280",
+    "title": "Computer Vision",
+    "department": "Vision Science Grad Grp",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Paradigms for computational vision. Relation to human visual perception. Mathematical techniques for representing and reasoning, with curves, surfaces and volumes. Illumination and reflectance models. Color perception. Image segmentation and aggregation. Methods for bottom-up three dimensional shape recovery: Line drawing analysis, stereo, shading, motion, texture. Use of object models for prediction and recognition."
+  },
+  {
+    "id": "ECON-101B",
+    "subject": "ECON",
+    "courseNumber": "101B",
+    "title": "Macroeconomics (Quantitative)",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "This course introduces students to the main approaches economists use to describe how the economy works at the aggregate level. Topics covered include economic growth, business cycles, the determinants of aggregate employment, unemployment, and inflation, and the effects of monetary and fiscal policy. Topics covered are similar to those in 100B, but this course uses calculus more intensively and is intended for students seeking a more mathematical approach."
+  },
+  {
+    "id": "INDENG-160",
+    "subject": "INDENG",
+    "courseNumber": "160",
+    "title": "Nonlinear and Discrete Optimization",
+    "department": "Industrial Eng & Ops Research",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course introduces unconstrained and constrained optimization with continuous and discrete domains.  Convex sets and convex functions; local optimality; KKT conditions; Lagrangian duality; steepest descent and Newton's method. Modeling with integer variables; branch-and-bound method; cutting planes. Models on production/inventory planning, logistics, portfolio optimization, factor modeling, classification with support vector machines."
+  },
+  {
+    "id": "AGRS-28",
+    "subject": "AGRS",
+    "courseNumber": "28",
+    "title": "Greek and Roman Myths",
+    "department": "Ancient Greek & Roman Studies",
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "The society, culture, values and outlook on life of the ancient Greeks as expressed in their mythology; their views on life, birth, marriage, death, sex and sexuality; on culture and civilization, the origin and meaning of the world. Their use of myth to think about, and give order to human experience. The course includes some of the most important works of Western literature in English translation (the 'Odyssey', the 'Theogony', twelve plays by leading Greek dramatists (Aeschylus, Sophocles and Euripides), along with their historical and religious context, as well as drawing on material evidence (vase paintings, sculpture, archaeological sites). "
+  },
+  {
+    "id": "ASAMST-145AC",
+    "subject": "ASAMST",
+    "courseNumber": "145AC",
+    "title": "Politics, Public Policy, and Asian American Communities",
+    "department": "Ethnic Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "An examination of the purpose, power, and function of the executive, legislative and judicial branches of the federal government and their relationship to the Asian American community. The course presents a range of contemporary issues to illustrate how government institutions and the Asian community define issues and respond to political challenges."
+  },
+  {
+    "id": "ECON-143",
+    "subject": "ECON",
+    "courseNumber": "143",
+    "title": "Econometrics: Advanced Methods and Applications",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "This course introduces selected advanced data analysis and inference methods appropriate for economic data. Methods are taught in tandem with real world applications as encountered in policy analysis, industry and consulting work. Equal weight is given to theoretical development, computation and application. Exact topics and applications may vary across offerings. ECON C142 and 143 may be taken independently or together in any order. "
+  },
+  {
+    "id": "ETHSTD-122AC",
+    "subject": "ETHSTD",
+    "courseNumber": "122AC",
+    "title": "Ethnicity and Race in Contemporary American Films",
+    "department": "Ethnic Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "The depiction of race and ethnic relations in American films from the 1960s to the present. The course covers independent features as well as mainstream Hollywood studio films."
+  },
+  {
+    "id": "GWS-132AC",
+    "subject": "GWS",
+    "courseNumber": "132AC",
+    "title": "Gender, Race, and Law",
+    "department": "Gender & Womens Studies",
+    "interests": [
+      "Social Science",
+      "Arts",
+      "History"
+    ],
+    "description": "Focusing on the interconnected ways that race, gender, and sexuality are constructed through the law, this course will examine a wide range of historical texts, legal documents, literature, and critical theory. Throughout our course readings, we will be focusing on how these categories of difference inform legal constructions of nation, citizenship, immigration, masculinity, femininity, childhood, the public sphere, and everyday life. Throughout the course, we will be making connections between historical events and the contemporary moment through a consideration of interpretation and implications of legal arguments."
+  },
+  {
+    "id": "MATH-55",
+    "subject": "MATH",
+    "courseNumber": "55",
+    "title": "Discrete Mathematics",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Logic, mathematical induction sets, relations, and functions. Introduction to graphs, elementary number theory, combinatorics, algebraic structures, and discrete probability theory. "
+  },
+  {
+    "id": "PHYSICS-7B",
+    "subject": "PHYSICS",
+    "courseNumber": "7B",
+    "title": "Physics for Scientists and Engineers",
+    "department": "Physics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Heat, electricity, and magnetism. "
+  },
+  {
+    "id": "GLOBAL-150Q",
+    "subject": "GLOBAL",
+    "courseNumber": "150Q",
+    "title": "Special Topics In Asia",
+    "department": "Interdisc Social Science Pgms",
+    "interests": [
+      "Science"
+    ],
+    "description": "Advanced multidisciplinary research in current issues and topics related to Asia. This Global Studies course will focus on specific issues related to Asia with appropriate comparative material included.Topics will change depending on the instructor teaching. "
+  },
+  {
+    "id": "PHYSICS-7A",
+    "subject": "PHYSICS",
+    "courseNumber": "7A",
+    "title": "Physics for Scientists and Engineers",
+    "department": "Physics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Mechanics and wave motion. "
+  },
+  {
+    "id": "EECS-16B",
+    "subject": "EECS",
+    "courseNumber": "16B",
+    "title": "Introduction to Circuits & Devices",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "This course teaches the fundamentals needed to predict the behavior of real-world electronic phenomena and applications via mathematical models and circuit analytical methods that simplify initially complex problems, rendering them solvable and understandable. Among the specific topics to be covered are time and frequency domain representation, complex arithmetic, phasor analysis of systems governed by differential equations, Kirchhoff’s laws, physical examples of electronic elements and devices, RLC circuits, op amp-based signal processors, feedback methods, and circuit models for domains beyond the electronic. Class contact time includes lectures, discussions, and a laboratory component designed to help solidify learned concepts."
+  },
+  {
+    "id": "BIOLOGY-1A",
+    "subject": "BIOLOGY",
+    "courseNumber": "1A",
+    "title": "General Biology Lecture",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "General introduction to cell structure and function, molecular and organismal genetics, animal development, form and function. Intended for biological sciences majors, but open to all qualified students. "
+  },
+  {
+    "id": "HISTORY-6B",
+    "subject": "HISTORY",
+    "courseNumber": "6B",
+    "title": "Introduction to Chinese History: From the Mongols to Post-Mao China",
+    "department": "History",
+    "interests": [
+      "History"
+    ],
+    "description": "This is an introduction to Chinese history from the 13th through the 20th centuries -- from the Mongols and Khubilai Khan's conquest of southern China to the amazing turnaround following the death of Mao Zedong in 1976 and the opening of the era of reform that has led to China's emergence as a major economic and strategic power today. The course assumes no prior knowledge of Chinese history. "
+  },
+  {
+    "id": "INFO-159",
+    "subject": "INFO",
+    "courseNumber": "159",
+    "title": "Natural Language Processing",
+    "department": "School of Information",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course introduces students to natural language processing and exposes them to the variety of methods available for reasoning about text in computational systems. NLP is deeply interdisciplinary, drawing on both linguistics and computer science, and helps drive much contemporary work in text analysis (as used in computational social science, the digital humanities, and computational journalism). We will focus on major algorithms used in NLP for various applications (part-of-speech tagging, parsing, coreference resolution, machine translation) and on the linguistic phenomena those algorithms attempt to model. Students will implement algorithms and create linguistically annotated data on which those algorithms depend. "
+  },
+  {
+    "id": "DATA-C4AC",
+    "subject": "DATA",
+    "courseNumber": "C4AC",
+    "title": "Data and Justice",
+    "department": "Sci & Tech Stds Grad Grp",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course engages students with fundamental questions of justice in relation to data and computing in American society. Data collection, visualization, and analysis have been entangled in the struggle for racial and social justice because they can make injustice visible, imaginable, and thus actionable. Data has also been used to oppress minoritized communities and institutionalize, rationalize, and naturalize systems of racial violence. The course examines key sites of justice involving data (such as citizenship, policing, prisons, environment, and health). Along with critical social science tools, students gain introductory experience and do collaborative and creative projects with data science using real-world data. "
+  },
+  {
+    "id": "MUSIC-188",
+    "subject": "MUSIC",
+    "courseNumber": "188",
+    "title": "Inside Music Therapy",
+    "department": "Music",
+    "interests": [
+      "Arts",
+      "Social Science"
+    ],
+    "description": "For those students who have completed Music 48 (Introduction to Music Therapy), a more in-depth study of the music therapy profession.  From analysis of case studies and research studies to clinical improvisation techniques and a closer look at music therapy interventions, this course will dive deeper into the profession.  This course will also begin an exploration into the psychology of music, the neurological responses to music and the innate human propensity for musical response and musical communication from a Music Therapist’s perspective."
+  },
+  {
+    "id": "ECON-101A",
+    "subject": "ECON",
+    "courseNumber": "101A",
+    "title": "Microeconomics (Quantitative)",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Science"
+    ],
+    "description": "This course introduces students to the main tools and concepts of microeconomics. These tools and concepts will serve as a foundation for many upper level economics courses. Topics covered include consumer theory, producer theory, equilibrium in a competitive market, monopoly, general equilibrium, game theory, and asymmetric information. Topics covered are similar to those in 100A, but this course uses calculus more intensively and is intended for students seeking a more mathematical approach."
+  },
+  {
+    "id": "ANTHRO-160AC",
+    "subject": "ANTHRO",
+    "courseNumber": "160AC",
+    "title": "Forms of Folklore",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "A world-wide survey of the major and minor forms of folklore with special emphasis upon proverbs, riddles, superstitions, games, songs, and narratives."
+  },
+  {
+    "id": "ENVECON-141",
+    "subject": "ENVECON",
+    "courseNumber": "141",
+    "title": "Agricultural and Environmental Policy",
+    "department": "Ag & Resource Econ & Pol",
+    "interests": [
+      "Environment"
+    ],
+    "description": "This course considers the formation, implementation, and impact of public policies affecting agriculture and the environment. Economic approaches to public lawmaking, including theories of legislation, interest group activity, and congressional control of bureaucracies. Case studies include water allocation, endangered species protection, water quality, food safety, drainage, wetlands, pesticides, and farmworker safety. Emphasis on examples from California."
+  },
+  {
+    "id": "ECON-155",
+    "subject": "ECON",
+    "courseNumber": "155",
+    "title": "Urban Economics",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "Application of economic theory to urban problems. Topics covered include location theory, housing, transportation, and the fiscal problems of city government."
+  },
+  {
+    "id": "UGBA-192AC",
+    "subject": "UGBA",
+    "courseNumber": "192AC",
+    "title": "Social Movements and Social Media",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business",
+      "Science",
+      "Arts"
+    ],
+    "description": "This course provides a survey of innovative social movements and their complex relationships to social media technologies. It will examine the evolution from pre-social-media to present-day mobilizing strategies and the interplay between explicitly policy- and advocacy-focused approaches and related efforts rooted in music, visual arts, popular culture and celebrities. The course will place into comparative relief the discourses of explicitly racially- or ethnically-defined movements and movements that mobilize based on other, sometimes overlapping categories of marginalization including class, immigration status, gender identity and occupational category."
+  },
+  {
+    "id": "CHINESE-180",
+    "subject": "CHINESE",
+    "courseNumber": "180",
+    "title": "The Story of the Stone",
+    "department": "East Asian Lang & Culture",
+    "interests": [
+      "Arts",
+      "Philosophy"
+    ],
+    "description": "This course centers around intensive reading and analysis of Cao Xueqin’s 18th-century masterpiece of Chinese fiction (also known as the Dream of the Red Chamber). Students will be introduced to the literary, cultural, philosophical, and material world from which this work emerged, as well as various approaches to the world within the text. "
+  },
+  {
+    "id": "ESPM-C167",
+    "subject": "ESPM",
+    "courseNumber": "C167",
+    "title": "Environmental Health and Development",
+    "department": "School of Public Health",
+    "interests": [
+      "Environment",
+      "Business"
+    ],
+    "description": "The health effects of environmental alterations caused by development programs and other human activities in both developing and developed areas. Case studies will contextualize methodological information and incorporate a global perspective on environmentally mediated diseases in diverse populations. Topics include water management; population change; toxics; energy development; air pollution; climate change; chemical use, etc. "
+  },
+  {
+    "id": "GEOG-167AC",
+    "subject": "GEOG",
+    "courseNumber": "167AC",
+    "title": "Decolonial Border Geographies",
+    "department": "Geography",
+    "interests": [
+      "History",
+      "Social Science"
+    ],
+    "description": "This course examines how today’s bounded geographies were shaped by racialized and regionalized discourse and practice, setting the foundation for contemporary struggles over political, economic and social identities along and across Latin America. Specifically, the course incorporates the study of the United States’ historical relationship with Mexico, Central America, and the Caribbean in order to understand how these histories map onto the productions of borders, regimes of migration and citizenship, and movements that increasingly articulate a decolonial turn in intellectual thought and within political and social action. \n"
+  },
+  {
+    "id": "MATH-52",
+    "subject": "MATH",
+    "courseNumber": "52",
+    "title": "Calculus II",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Continuation of 51. Techniques of integration; applications of integration. Infinite sequences and series. First-order ordinary differential equations. Second-order ordinary differential equations; oscillation and damping; series solutions of ordinary differential equations. Prior to Fall 2025, this course was offered as Math 1B."
+  },
+  {
+    "id": "PBHLTH-142",
+    "subject": "PBHLTH",
+    "courseNumber": "142",
+    "title": "Introduction to Probability and Statistics in Biology and Public Health",
+    "department": "School of Public Health",
+    "interests": [
+      "Science"
+    ],
+    "description": "Descriptive statistics, probability, probability distributions, point and interval estimation, hypothesis testing, chi-square, correlation and regression with biomedical applications. "
+  },
+  {
+    "id": "ECON-141",
+    "subject": "ECON",
+    "courseNumber": "141",
+    "title": "Econometrics (Quantitative)",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "This course provides an introduction to statistical and estimation analysis of economic data, also known as “Econometrics”. It covers topics such as the linear regression model and its estimator, Ordinary Least Squares, as well as extensions such as Instrumental Variables models, panel data models, and time series models. Topics covered in this course are similar to those in 140, but this course is intended for students seeking a more rigorous approach."
+  },
+  {
+    "id": "PHILOS-106",
+    "subject": "PHILOS",
+    "courseNumber": "106",
+    "title": "Bioethics:  Clinical and Population-Level",
+    "department": "Philosophy",
+    "interests": [
+      "Philosophy",
+      "Science",
+      "Social Science"
+    ],
+    "description": "This course aims to introduce you to a range of philosophical debates in clinical and population-level bioethics. Among the topics in clinical bioethics that we will discuss are:  abortion; physician-assisted suicide and euthanasia; pre-commitment in bioethics; genetic enhancement; and the Non-Identity Problem.  In population-level bioethics, questions we will discuss include:  the concept of disability; the measurement and valuation of health; cost-effectiveness and disability-discrimination; Bioethics in a Time of Pandemic: Quarantine, Triage, Drug Trials; health inequalities and justice; personal and social responsibility for health; personal and social responsibility for health; standards of care in clinical trials in the US and abroad."
+  },
+  {
+    "id": "ELENG-122",
+    "subject": "ELENG",
+    "courseNumber": "122",
+    "title": "Introduction to Communication Networks",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course focuses on the fundamentals of the wired and wireless communication networks. The course covers both the architectural principles for making these networks scalable and robust, as well as the key techniques essential for analyzing and designing them. The topics include graph theory, Markov chains, queuing, optimization techniques, the physical and link layers, switching, transport, cellular networks and Wi-Fi."
+  },
+  {
+    "id": "GEOG-72AC",
+    "subject": "GEOG",
+    "courseNumber": "72AC",
+    "title": "The Bay Area",
+    "department": "Geography",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course examines the distinct but ill-defined San Francisco Bay Area. Our approach will be neither to simply learn about the individual places that compose the Bay Area nor to study a succession of detached periods of development. Instead, we will think critically about the creations, contestations, and transformations of Bay Area spaces—landscapes, communities, neighborhoods, cities, suburbs, and the metropolitan region.  Topics include indigenous geographies, colonialism, industrialization and economic geography, cities and suburbs, gentrification and displacement, regional racial formation and place-based identities, and resistance and rebellion."
+  },
+  {
+    "id": "LEGALST-132AC",
+    "subject": "LEGALST",
+    "courseNumber": "132AC",
+    "title": "Immigration and Citizenship",
+    "department": "L&S Legal Studies",
+    "interests": [
+      "Social Science",
+      "History"
+    ],
+    "description": "We often hear that America is a \"nation of immigrants.\" This representation of the U.S. does not explain why some are presumed to belong and others are not. We will examine both historical and contemporary law of immigration and citizenship to see how law has shaped national identity and the identity of immigrant communities. In addition to scholarly texts, we will read and analyze excerpts of cases and the statute that governs immigration and citizenship, the Immigration and Nationality Act."
+  },
+  {
+    "id": "PSYCH-1",
+    "subject": "PSYCH",
+    "courseNumber": "1",
+    "title": "General Psychology",
+    "department": "Psychology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Introduction to the principal areas, problems, and concepts of psychology. This course is required for the major; students not considering a psychology major are directed to 2. "
+  },
+  {
+    "id": "ECON-158",
+    "subject": "ECON",
+    "courseNumber": "158",
+    "title": "Corporate and Personal Finance",
+    "department": "Economics",
+    "interests": [
+      "Business"
+    ],
+    "description": "This course provides an integrated introduction to both corporate and personal finance, examining how financial principles apply across individual and institutional decision-making. Four main objectives. First, to give participants a foundation in core financial concepts including valuation, risk management, and capital structure decisions. Second, to develop financial literacy skills for personal financial management including saving, investing, borrowing, and retirement planning. Third, to analyze how behavioral biases affect both corporate managers and individual investors. Fourth, to explore how financial markets and institutions serve both corporate and household needs, and how policy interventions can improve financial outcomes."
+  },
+  {
+    "id": "HISTORY-11",
+    "subject": "HISTORY",
+    "courseNumber": "11",
+    "title": "Introduction to the Civilizations and Cultures of South Asia",
+    "department": "History",
+    "interests": [
+      "History",
+      "Arts",
+      "Science"
+    ],
+    "description": "In this course we will study South Asia through a thematic lens, beginning with sport, and moving to the themes of the Partition of 1947, the creation of colonial knowledge, Indian religions, the workings of caste and power in society, the historical evolution of Indian cuisines, agriculture and cities; and a sustained focus on politics and culture—cinema, art, and music—in the period after 1947. Regular collaborative readings of a range of primary sources will be supplemented by movie viewings and discussion sections, with an in-class mid-term and a final examination."
+  },
+  {
+    "id": "ECON-C184",
+    "subject": "ECON",
+    "courseNumber": "C184",
+    "title": "International Environmental Economics",
+    "department": "Economics",
+    "interests": [
+      "Business",
+      "Environment",
+      "Social Science"
+    ],
+    "description": "This course studies the following question:How should policymakers and scholars design and analyze environmental policy in a globalized world where much economic activity and pollution crosses political borders? The course addresses issues including climate change, air and water pollution, deforestation, species extinction, and others. The course also analyzes a variety of ways that countries and regions interact, including trade, foreign direct investment, outsourcing, international agreements and treaties, and others. The course also teaches a range of tools used to analyze these issues, including life-cycle(also called environmental footprint) analysis, simple econometrics, environmental market design, non-market valuation, and the data."
+  },
+  {
+    "id": "STAT-153",
+    "subject": "STAT",
+    "courseNumber": "153",
+    "title": "Introduction to Time Series",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "An introduction to time series analysis in the time domain and spectral domain. Topics will include: estimation of trends and seasonal effects, autoregressive moving average models, forecasting, indicators, harmonic analysis, spectra. This course uses either R or Python as its primary computing language, as determined by the instructor."
+  },
+  {
+    "id": "GPP-115",
+    "subject": "GPP",
+    "courseNumber": "115",
+    "title": "Global Poverty: Challenges and Hopes",
+    "department": "Interdisc Social Science Pgms",
+    "interests": [
+      "Social Science",
+      "History"
+    ],
+    "description": "This class seeks to provide a rigorous understanding of 20th century development and thus 21st century poverty alleviation. Students will take a look at popular ideas of poverty alleviation, the institutional framework of poverty ideas and practices, and the social and political mobilizations that seek to transform the structures of poverty. "
+  },
+  {
+    "id": "MCELLBI-C114",
+    "subject": "MCELLBI",
+    "courseNumber": "C114",
+    "title": "Introduction to Comparative Virology",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course will provide a comparative overview of virus life cycles and strategies viruses use to infect and replicate in hosts. We will discuss virus structure and classification and the molecular basis of viral reproduction, evolution, assembly, and virus-host interactions. Common features used during virus replication and host cellular responses to infection will be covered. Topics also included are common and emerging virus diseases, their control, and factors affecting their spread."
+  },
+  {
+    "id": "STAT-133",
+    "subject": "STAT",
+    "courseNumber": "133",
+    "title": "Concepts in Computing with Data",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "An introduction to computationally intensive applied statistics. Topics will include organization and use of databases, visualization and graphics, statistical learning and data mining, model validation procedures, and the presentation of results. This course uses R as its primary computing language; details are determined by the instructor."
+  },
+  {
+    "id": "MELC-175",
+    "subject": "MELC",
+    "courseNumber": "175",
+    "title": "History and Culture of Afghanistan",
+    "department": "Middle Eastern Lang & Cultures",
+    "interests": [
+      "Arts",
+      "Social Science",
+      "History"
+    ],
+    "description": "This course will discuss Afghanistan from ancient times to the present, including the emergence of Afghanistan as a modern nation-state and its geo-strategic importance. The Soviet invasion and aftermath will be emphasized, along with issues of state and society, ethnic diversity and tribal structure, challenges of modernization, and nationalism and political identity. The role of religion and mystical orders and the role of art, music, and literature will also be discussed. "
+  },
+  {
+    "id": "SOCIOL-167",
+    "subject": "SOCIOL",
+    "courseNumber": "167",
+    "title": "Virtual Communities/Social Media",
+    "department": "Sociology",
+    "interests": [
+      "Social Science",
+      "Arts"
+    ],
+    "description": "With the advent of virtual communities and online social networks, old questions about the meaning of human social behavior have taken on renewed significance. Using a variety of online social media simultaneously, and drawing upon theoretical literature in a variety of disciplines, this course delves into discourse about community across disciplines. This course will enable students to establish both theoretical and experiential foundations for making decisions and judgments regarding the relations between mediated communication and human community."
+  },
+  {
+    "id": "EPS-C12",
+    "subject": "EPS",
+    "courseNumber": "C12",
+    "title": "The Planets",
+    "department": "Astronomy",
+    "interests": [
+      "Science"
+    ],
+    "description": "A tour of the mysteries and inner workings of our solar system. What are planets made of? Why do they orbit the sun the way they do? How do planets form, and what are they made of? Why do some bizarre moons have oceans, volcanoes, and ice floes? What makes the Earth hospitable for life? Is the Earth a common type of planet or some cosmic quirk? This course will introduce basic physics, chemistry, and math to understand planets, moons, rings, comets, asteroids, atmospheres, and oceans. Understanding other worlds will help us save our own planet and help us understand our place in the universe. "
+  },
+  {
+    "id": "SOCIOL-111AC",
+    "subject": "SOCIOL",
+    "courseNumber": "111AC",
+    "title": "Sociology of the Family",
+    "department": "Sociology",
+    "interests": [
+      "Social Science",
+      "History"
+    ],
+    "description": "In this course, we trace the history of the American family from the 19th-century farm--in which work, medical care, and entertainment went on--to the smaller, more diverse, and subjectively defined family of the 21st century. We also explore ways in which the family acts as a \"shock absorber\" of many trends including immigration, the increasing social class divide, and especially the growing domination of the marketplace. Finally, we also explore the diversity of family forms associated with social class, ethnicity, and sexual orientation."
+  },
+  {
+    "id": "CHEM-3A",
+    "subject": "CHEM",
+    "courseNumber": "3A",
+    "title": "Chemical Structure and Reactivity",
+    "department": "Chemistry",
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to organic chemical structures, bonding, and chemical reactivity. The organic chemistry of alkanes, alkyl halides, alcohols, alkenes, alkynes, and organometallics. "
+  },
+  {
+    "id": "ART-15",
+    "subject": "ART",
+    "courseNumber": "15",
+    "title": "Ceramics: Foundations",
+    "department": "Art Practice",
+    "interests": [
+      "Arts",
+      "History"
+    ],
+    "description": "This course will prepare students to use ceramics to explore and understand three-dimensional space. We will develop a practical understanding of how clay and glaze behave, while building a conceptual framework through which to apply this knowledge. Studio practice includes hand building, modeling, carving, and glazing as possibilities for turning ideas into three dimensional propositions. Assignments, critiques and class discussions will help acquaint students with the ideas artists have explored through history and in contemporary sculptural practices. This course is a recommended prerequisite for upper division Ceramics classes."
+  },
+  {
+    "id": "COMPSCI-194",
+    "subject": "COMPSCI",
+    "courseNumber": "194",
+    "title": "Special Topics",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Topics will vary semester to semester. See the Computer Science Division announcements. "
+  },
+  {
+    "id": "MCELLBI-150",
+    "subject": "MCELLBI",
+    "courseNumber": "150",
+    "title": "Molecular Immunology",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "Fundamentals of immunology with emphasis on biochemical and molecular approaches to study of the immune system and its application in medicine and biotechnology. Topics covered include description of the immune system, antibody and T-cell receptor structure and function, genes of the immunoglobulin superfamily, cells and molecular mediators that regulate the immune response, allergy, autoimmunity, immunodeficiency, tissue and organ transplants, and tumor immunology."
+  },
+  {
+    "id": "NUSCTX-104",
+    "subject": "NUSCTX",
+    "courseNumber": "104",
+    "title": "Food, Culture, and the Environment",
+    "department": "Nutritional Sciences & Tox",
+    "interests": [
+      "Environment"
+    ],
+    "description": "This nutrition course with an anthropological perspective examines why we eat what we eat by addressing environmental, socio-economic, political, cultural, and personal components of the human diet. Cuisines from a sampling of countries and regions are discussed."
+  },
+  {
+    "id": "PHYSICS-8A",
+    "subject": "PHYSICS",
+    "courseNumber": "8A",
+    "title": "Introductory Physics",
+    "department": "Physics",
+    "interests": [
+      "Science"
+    ],
+    "description": "Introduction to forces, kinetics, equilibria, fluids, waves, and heat. This course presents concepts and methodologies for understanding physical phenomena, and is particularly useful preparation for upper division study in biology and architecture. "
+  },
+  {
+    "id": "EALANG-110",
+    "subject": "EALANG",
+    "courseNumber": "110",
+    "title": "Bioethics in Asian Thought and Culture",
+    "department": "East Asian Lang & Culture",
+    "interests": [
+      "Science",
+      "History",
+      "Social Science"
+    ],
+    "description": "This course will explore some of the most difficult bioethical issues confronting the world today from the perspective of traditional values embedded in the cultural history of India, China, and Japan as evidenced in their religions, legal codes, and political history. Possible topics include population control, abortion, sex-selection, euthanasia, suicide, genetic manipulation, brain-death, and organ transplants. "
+  },
+  {
+    "id": "UGBA-101A",
+    "subject": "UGBA",
+    "courseNumber": "101A",
+    "title": "Microeconomic Analysis for Business Decisions",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business"
+    ],
+    "description": "Economic analysis applicable to the problems of business enterprises with emphasis on the determination of the level of prices, outputs, and inputs; effects of the state of the competitive environment on business and government policies. "
+  },
+  {
+    "id": "UGBA-103",
+    "subject": "UGBA",
+    "courseNumber": "103",
+    "title": "Introduction to Finance",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business"
+    ],
+    "description": "Analysis and management of the flow of funds through an enterprise. Cash management, source and application of funds, term loans, types and sources of long-term capital. Capital budgeting, cost of capital, and financial structure. Introduction to capital markets. "
+  },
+  {
+    "id": "PSYCH-C127",
+    "subject": "PSYCH",
+    "courseNumber": "C127",
+    "title": "Cognitive Neuroscience",
+    "department": "Psychology",
+    "interests": [
+      "Social Science",
+      "Science"
+    ],
+    "description": "This course will examine research investigating the neurological basis of cognition. Material covered will include the study of brain-injured patients, neurophysiological research in animals, and the study of normal cognitive processes in humans with non-invasive behavioral and physiological techniques such as functional Magnetic Resonance Imaging (fMRI), electroencephalography (EEG), and transcranial magnetic stimulation (TMS). Topics to be covered include perception, attention, memory, language, motor control, executive control, and emotion."
+  },
+  {
+    "id": "COGSCI-131",
+    "subject": "COGSCI",
+    "courseNumber": "131",
+    "title": "Computational Models of Cognition",
+    "department": "Interdisc Social Science Pgms",
+    "interests": [
+      "Science",
+      "Arts",
+      "Tech"
+    ],
+    "description": "This course will provide advanced students in cognitive science and computer science with the skills to develop computational models of human cognition, giving insight into how people solve challenging computational problems, as well as how to bring computers closer to human performance. The course will explore three ways in which researchers have attempted to formalize cognition -- symbolic approaches, neural networks, and probability and statistics -- considering the strengths and weaknesses of each. "
+  },
+  {
+    "id": "EECS-16A",
+    "subject": "EECS",
+    "courseNumber": "16A",
+    "title": "Foundations of Signals, Dynamical Systems, and Information Processing",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "This course offers an introduction to signals, systems, optimization, controls, and machine learning, all grounded in linear algebraic techniques. After a brief review of linear algebra, students will delve into topics such as signal processing, linear systems, feedback control, optimization methods, and foundational machine learning algorithms. Emphasizing practical applications, the course prepares EECS majors for advanced study by connecting mathematical concepts to real-world engineering problems."
+  },
+  {
+    "id": "ANTHRO-114",
+    "subject": "ANTHRO",
+    "courseNumber": "114",
+    "title": "History of Anthropological Thought",
+    "department": "Anthropology",
+    "interests": [
+      "Social Science",
+      "History"
+    ],
+    "description": "This course will present a history of anthropological thought from the mid-19th century to the present, and will draw upon the major subdisciplines of anthropology. It will focus both upon the integration of the anthropological subdisciplines and upon the relationships between these and other disciplines outside anthropology."
+  },
+  {
+    "id": "COMPSCI-10",
+    "subject": "COMPSCI",
+    "courseNumber": "10",
+    "title": "The Beauty and Joy of Computing",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech",
+      "History"
+    ],
+    "description": "An introductory course for students with minimal prior exposure to computer science. Prepares students for future computer science courses and empowers them to utilize programming to solve problems in their field of study. Presents an overview of the history, great principles, and transformative applications of computer science, as well as a comprehensive introduction to programming. Topics include abstraction, recursion, algorithmic complexity, higher-order functions, concurrency, social implications of computing (privacy, education, algorithmic bias), and engaging research areas (data science, AI, HCI). Students will program in Snap! (a friendly graphical language) and Python, and will design and implement two projects of their choice."
+  },
+  {
+    "id": "UGBA-100",
+    "subject": "UGBA",
+    "courseNumber": "100",
+    "title": "Business Communication",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business"
+    ],
+    "description": "Theory and practice of effective communication in a business environment. Students practice what they learn with oral presentations and written assignments that model real-life business situations."
+  },
+  {
+    "id": "COMPSCI-169L",
+    "subject": "COMPSCI",
+    "courseNumber": "169L",
+    "title": "Software Engineering Team Project",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Open-ended design project enhancing or creating software for real customers in an agile team setting. Teamwork coordination, effective customer meetings, pre- and post-iteration team meetings, running scrums and standups, technical communication. Contributing as a team to an open-source project; tools and workflows associated with open source collaboration, including fork-and-pull, rebase, upstream merge, continuous deployment & integration."
+  },
+  {
+    "id": "ELENG-120",
+    "subject": "ELENG",
+    "courseNumber": "120",
+    "title": "Signals and Systems",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Continuous and discrete-time transform analysis techniques with illustrative applications. Linear and time-invariant systems, transfer functions. Fourier series, Fourier transform, Laplace and Z-transforms. Sampling and reconstruction. Solution of differential and difference equations using transforms. Frequency response, Bode plots, stability analysis. Illustrated by analysis of communication systems and feedback control systems. "
+  },
+  {
+    "id": "NEU-C61",
+    "subject": "NEU",
+    "courseNumber": "C61",
+    "title": "Brain, Mind, and Behavior",
+    "department": "Neuroscience",
+    "interests": [
+      "Science"
+    ],
+    "description": "The human brain is the most complex structure in the known universe. The study of its structure and function and how it figures into our actions and mental experience is among the most exciting projects of modern science. This class begins with molecules and cells, builds up to brains and nervous systems, encompasses neural signaling, sensory perception, memory, language, and emotion, and culminates with the great mystery of how brain processes relate to consciousness and mental experience — that is, how mind may be related to brain. This is a comprehensive introduction to the exciting subject of contemporary neuroscience, open to all interested students."
+  },
+  {
+    "id": "SOCIOL-180I",
+    "subject": "SOCIOL",
+    "courseNumber": "180I",
+    "title": "Comparative Perspectives on U.S. and European Societies: Inequality",
+    "department": "Sociology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "This survey course explores differences between modern societies through systematic comparisons of inequality in the U.S. and European countries. It analyzes central social changes, social problems and institutions in the societies, addressing gender inequality, immigration, and rising inequality."
+  },
+  {
+    "id": "CYPLAN-C117",
+    "subject": "CYPLAN",
+    "courseNumber": "C117",
+    "title": "Urban and Community Health",
+    "department": "City & Regional Planning",
+    "interests": [
+      "Environment",
+      "History"
+    ],
+    "description": "This course will focus on the history, research methods and practices aimed at promoting community and urban health. The course will offer students frameworks for understanding and addressing inequities in community health experienced by racial and ethnic groups in the United States. The course will take a historical and comparative perspective for understanding the multiple contributors to health and disease in communities and how residents, scientists and professionals are working to improve community health."
+  },
+  {
+    "id": "MATH-104",
+    "subject": "MATH",
+    "courseNumber": "104",
+    "title": "Introduction to Analysis",
+    "department": "Mathematics",
+    "interests": [
+      "Science"
+    ],
+    "description": "The real number system. Sequences, limits, and continuous functions in R and R. The concept of a metric space. Uniform convergence, interchange of limit operations. Infinite series. Mean value theorem and applications. The Riemann integral. "
+  },
+  {
+    "id": "PSYCH-C61",
+    "subject": "PSYCH",
+    "courseNumber": "C61",
+    "title": "Brain, Mind, and Behavior",
+    "department": "Neuroscience",
+    "interests": [
+      "Social Science",
+      "Science"
+    ],
+    "description": "The human brain is the most complex structure in the known universe. The study of its structure and function and how it figures into our actions and mental experience is among the most exciting projects of modern science. This class begins with molecules and cells, builds up to brains and nervous systems, encompasses neural signaling, sensory perception, memory, language, and emotion, and culminates with the great mystery of how brain processes relate to consciousness and mental experience — that is, how mind may be related to brain. This is a comprehensive introduction to the exciting subject of contemporary neuroscience, open to all interested students."
+  },
+  {
+    "id": "ART-21",
+    "subject": "ART",
+    "courseNumber": "21",
+    "title": "Digital Photography: Foundations",
+    "department": "Art Practice",
+    "interests": [
+      "Arts",
+      "Tech",
+      "History"
+    ],
+    "description": "This course introduces students to technical skills including manual functions of digital cameras, image creation and capture, file management and workflow, image adjustment and digital printing. Assignments will use primary Adobe software tools to test creative possibilities of both the camera and the computer. The course will introduce students to photography history and theory, and a range of contemporary practices. Group critiques and individual tutorials will help develop ideas and technical skills. By the end of the course, students should feel comfortable shooting digitally, editing and producing final images for print or the web. This course is a recommended prerequisite for upper division Photography classes."
+  },
+  {
+    "id": "EECS-C106A",
+    "subject": "EECS",
+    "courseNumber": "C106A",
+    "title": "Introduction to Robotics",
+    "department": "Bioengineering",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course is an introduction to the field of robotics. It covers the fundamentals of kinematics, dynamics, control of robot manipulators, robotic vision, sensing, forward & inverse kinematics of serial chain manipulators, the manipulator Jacobian, force relations, dynamics, & control. We will present techniques for geometric motion planning & obstacle avoidance. Open problems in trajectory generation with dynamic constraints will also be discussed. The course also presents the use of the same analytical techniques as manipulation for the analysis of images & computer vision. Low level vision, structure from motion, & an introduction to vision & learning will be covered. The course concludes with current applications of robotics."
+  },
+  {
+    "id": "INDENG-162",
+    "subject": "INDENG",
+    "courseNumber": "162",
+    "title": "Linear Programming and Network Flows",
+    "department": "Industrial Eng & Ops Research",
+    "interests": [
+      "Tech",
+      "Business"
+    ],
+    "description": "This course addresses modeling and algorithms for optimization of linear constrained optimization problems.  The simplex method; theorems of duality; complementary slackness.  Applications in production planning and resource allocation. Graph and network problems as linear programs with integer solutions. Algorithms for selected network flow problems.  Transportation and logistics problems.  Dynamic programming and its role in applications to shortest paths, project management and equipment replacement."
+  },
+  {
+    "id": "PBHLTH-116",
+    "subject": "PBHLTH",
+    "courseNumber": "116",
+    "title": "Seminar on Social, Political, and Ethical Issues in Health and Medicine",
+    "department": "School of Public Health",
+    "interests": [
+      "Science",
+      "Business",
+      "Environment"
+    ],
+    "description": "This course offers an introduction to issues and perspectives related to health and medicine. Guest lecturers speak about the week’s topic, which can include a variety of topics such as public health, violence, chronic illnesses, environmental health, and health care economics.  Speakers share their first-hand experiences in their fields, discuss current issues, debate ethical dilemmas, and pose and answer questions. During the weekly discussion sections, students delve deeper into the issues, not only exploring and perhaps questioning their own thoughts and beliefs, but also learning from the experiences and perspectives of their fellow students. "
+  },
+  {
+    "id": "SOCIOL-127",
+    "subject": "SOCIOL",
+    "courseNumber": "127",
+    "title": "Development and Globalization",
+    "department": "Sociology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "A comparative analysis of socio-economic and political change, focusing on the poor countries of Asia, Africa, and Latin America. Offers both a basic descriptive understanding of processes of change in these countries and an introduction to major theoretical perspectives on development and globalization."
+  },
+  {
+    "id": "AFRICAM-28AC",
+    "subject": "AFRICAM",
+    "courseNumber": "28AC",
+    "title": "Globalization and Minority American Communities",
+    "department": "African American Studies",
+    "interests": [
+      "Science"
+    ],
+    "description": "An examination of the movement of individuals, ideas, ideologies, and institutions between minority American communities in the U.S. (African Americans, Asians, Chicanos) and their cultures of origin, in the 19th and 20th centuries. The course will utilize the concepts of \"migration,\" \"diaspora,\" \"otherness,\" \"multiculturalism,\" and \"global village\" and will draw largely on social science perspectives."
+  },
+  {
+    "id": "ASTRON-C12",
+    "subject": "ASTRON",
+    "courseNumber": "C12",
+    "title": "The Planets",
+    "department": "Astronomy",
+    "interests": [
+      "Science"
+    ],
+    "description": "A tour of the mysteries and inner workings of our solar system. What are planets made of? Why do they orbit the sun the way they do? How do planets form, and what are they made of? Why do some bizarre moons have oceans, volcanoes, and ice floes? What makes the Earth hospitable for life? Is the Earth a common type of planet or some cosmic quirk? This course will introduce basic physics, chemistry, and math to understand planets, moons, rings, comets, asteroids, atmospheres, and oceans. Understanding other worlds will help us save our own planet and help us understand our place in the universe. "
+  },
+  {
+    "id": "MCELLBI-104",
+    "subject": "MCELLBI",
+    "courseNumber": "104",
+    "title": "Genetics, Genomics, and Cell Biology",
+    "department": "Molecular & Cell Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course will introduce students to key concepts in genetic analysis, eukaryotic cell biology, and state-of-the-art approaches in genomic medicine. Lectures will highlight basic knowledge of cellular processes with the basis for human diseases, particularly cancer. Prerequisite courses will have introduced students to the concepts of cells, the central dogma of molecular biology, and gene regulation. Emphasis in this course will be on eukaryotic cell processes, including cellular organization, dynamics, and signaling. "
+  },
+  {
+    "id": "NATAMST-C22AC",
+    "subject": "NATAMST",
+    "courseNumber": "C22AC",
+    "title": "Fire: Past, Present and Future Interactions with the People and Ecosystems of California",
+    "department": "Anthropology",
+    "interests": [
+      "Science",
+      "History",
+      "Social Science"
+    ],
+    "description": "The course presents a diachronic perspective on human-fire interactions with local ecosystems in California that spans over 10,000 years. The course will provide an historical perspective on human-fire interactions at the landscape scale using a diverse range of data sources drawn from the fields of fire ecology, biology, history, anthropology, and archaeology. An important component includes examining how diverse cultures and ethnicity influenced how people perceived and used fire at the landscape scale in ancient, historical and modern times. The implications of these diverse fire practices and policies will be analyzed and the consequences they have had for transforming habitats and propagating catastrophic fires will be explored."
+  },
+  {
+    "id": "EALANG-191",
+    "subject": "EALANG",
+    "courseNumber": "191",
+    "title": "Tools and Methods in the Study of East Asian Philosophy and Religion",
+    "department": "East Asian Lang & Culture",
+    "interests": [
+      "Science",
+      "Arts",
+      "Philosophy"
+    ],
+    "description": "This course is a capstone experience that centers on the philosophies and religions of East Asia examined from multiple theoretical perspectives. It comprises several thematic units within which a short set of readings about theory are followed by chronologically arranged readings about East Asia. Themes will alternate from year to year but may include: ritual and performance studies; religion and evolution; definitions of religion and theories of its origins; and the role of sacrifice."
+  },
+  {
+    "id": "GPP-105",
+    "subject": "GPP",
+    "courseNumber": "105",
+    "title": "The Ethics, Methods, and Pragmatics of Global Practice",
+    "department": "Interdisc Social Science Pgms",
+    "interests": [
+      "Social Science",
+      "Arts",
+      "Philosophy"
+    ],
+    "description": "This course is intended to provide students with the necessary background and knowledge to undertake projects and work experience of a global scope. Students will be exposed to a diversity of methodological frameworks, introduced to the basic skills needed to effectively participate in organizations, and to understand the ethics of global service and practice. Students will be required to complete a literature review and a major project proposal."
+  },
+  {
+    "id": "UGBA-101B",
+    "subject": "UGBA",
+    "courseNumber": "101B",
+    "title": "Macroeconomic Analysis for Business Decisions",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business"
+    ],
+    "description": "Analysis of the operation of the market system with emphasis on the factors responsible for economic instability; analysis of public and business policies which are necessary as a result of business fluctuations. "
+  },
+  {
+    "id": "ESPM-10",
+    "subject": "ESPM",
+    "courseNumber": "10",
+    "title": "Environmental Issues",
+    "department": "Env Sci, Policy, & Mgmt",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Relationship between human society and the natural environment; case studies of ecosystem maintenance and disruption. Issues of economic development, population, energy, resources, technology, and alternative systems."
+  },
+  {
+    "id": "MATH-113",
+    "subject": "MATH",
+    "courseNumber": "113",
+    "title": "Introduction to Abstract Algebra",
+    "department": "Mathematics",
+    "interests": [
+      "Science",
+      "Tech"
+    ],
+    "description": "Sets and relations. The integers, congruences, and the Fundamental Theorem of Arithmetic. Groups and their factor groups. Commutative rings, ideals, and quotient fields. The theory of polynomials: Euclidean algorithm and unique factorizations. The Fundamental Theorem of Algebra. Fields and field extensions. "
+  },
+  {
+    "id": "NUSCTX-20",
+    "subject": "NUSCTX",
+    "courseNumber": "20",
+    "title": "Personal Food Security and Wellness",
+    "department": "Nutritional Sciences & Tox",
+    "interests": [
+      "Business"
+    ],
+    "description": "Food insecurity is broadly defined as having unreliable access to adequate foods resulting in disrupted eating patterns or reduced food intake due to a lack of money and other resources for food. NST 20 will improve nutrition-related behaviors and support students in need of improving their food security status.  Students whom have limited cooking and food preparation experience will acquire foundational nutrition knowledge and basic cooking skills to be able to prepare healthful and affordable meals in consideration of existing factors, such as: food availability; food budgeting; and time management."
+  },
+  {
+    "id": "PHILOS-119",
+    "subject": "PHILOS",
+    "courseNumber": "119",
+    "title": "Feminism and Philosophy",
+    "department": "Philosophy",
+    "interests": [
+      "Philosophy",
+      "History"
+    ],
+    "description": "This course will introduce students to a range of historical and contemporary feminist issues."
+  },
+  {
+    "id": "POLSCI-1",
+    "subject": "POLSCI",
+    "courseNumber": "1",
+    "title": "Introduction to American Politics",
+    "department": "Political Science",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "An introductory analysis of the structure and operations of the American political system, primarily at the national level. "
+  },
+  {
+    "id": "SOCIOL-5",
+    "subject": "SOCIOL",
+    "courseNumber": "5",
+    "title": "Evaluation of Evidence",
+    "department": "Sociology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "A review of methodological problems in assessing data relating to social life. Topics to be covered include: posing a sociological problem, gaining access to data, measuring, establishing correlation and causal connection among data, and relating data to theoretical context."
+  },
+  {
+    "id": "STAT-155",
+    "subject": "STAT",
+    "courseNumber": "155",
+    "title": "Game Theory",
+    "department": "Statistics",
+    "interests": [
+      "Science",
+      "Business"
+    ],
+    "description": "General theory of zero-sum, two-person games, including games in extensive form and continuous games, and illustrated by detailed study of examples."
+  },
+  {
+    "id": "AEROENG-193",
+    "subject": "AEROENG",
+    "courseNumber": "193",
+    "title": "Special Topics in Aerospace Engineering",
+    "department": "Mechanical Engineering",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course covers current topics of interest in Aerospace Engineering. Topics and content may vary semester to semester. "
+  },
+  {
+    "id": "ESPM-C22AC",
+    "subject": "ESPM",
+    "courseNumber": "C22AC",
+    "title": "Fire: Past, Present and Future Interactions with the People and Ecosystems of California",
+    "department": "Anthropology",
+    "interests": [
+      "Environment",
+      "Science",
+      "History"
+    ],
+    "description": "The course presents a diachronic perspective on human-fire interactions with local ecosystems in California that spans over 10,000 years. The course will provide an historical perspective on human-fire interactions at the landscape scale using a diverse range of data sources drawn from the fields of fire ecology, biology, history, anthropology, and archaeology. An important component includes examining how diverse cultures and ethnicity influenced how people perceived and used fire at the landscape scale in ancient, historical and modern times. The implications of these diverse fire practices and policies will be analyzed and the consequences they have had for transforming habitats and propagating catastrophic fires will be explored."
+  },
+  {
+    "id": "UGBA-157",
+    "subject": "UGBA",
+    "courseNumber": "157",
+    "title": "Special Topics in the Management of Organizations",
+    "department": "Haas School of Business",
+    "interests": [
+      "Business"
+    ],
+    "description": "A variety of topics in organizational behavior and industrial relations with emphasis on current problems and research."
+  },
+  {
+    "id": "ARCH-170B",
+    "subject": "ARCH",
+    "courseNumber": "170B",
+    "title": "An Historical Survey of Architecture and Urbanism",
+    "department": "Architecture",
+    "interests": [
+      "History"
+    ],
+    "description": "The first part of this sequence studies the ancient and medieval periods; the second part studies the period since 1400; the aim is to look at architecture and urbanism in their social and historical context."
+  },
+  {
+    "id": "ART-14",
+    "subject": "ART",
+    "courseNumber": "14",
+    "title": "Sculpture: Foundations",
+    "department": "Art Practice",
+    "interests": [
+      "Arts",
+      "Tech",
+      "History"
+    ],
+    "description": "This course is the study of the interaction between physical form and space. We will focus on building a strong conceptual foundation while developing the practical studio skills needed to translate your ideas into three dimensions. Shop practices will include hand, machine, and computer-aided fabrications. Field trips and illustrated talks will help acquaint students with the ideas sculptors have explored through history and in contemporary sculptural practices. This course is a recommended prerequisite for upper division Sculpture classes."
+  },
+  {
+    "id": "INDENG-120",
+    "subject": "INDENG",
+    "courseNumber": "120",
+    "title": "Principles of Engineering Economics",
+    "department": "Industrial Eng & Ops Research",
+    "interests": [
+      "Tech",
+      "Business"
+    ],
+    "description": "Economic analysis for engineering decision making: Capital flows, effect of time and interest rate. Different methods of evaluation of alternatives. Minimum-cost life and replacement analysis. Depreciation and taxes. Uncertainty; preference under risk; decision analysis. Capital sources and their effects. Economic studies. Formerly Engineering 120."
+  },
+  {
+    "id": "PSYCH-160",
+    "subject": "PSYCH",
+    "courseNumber": "160",
+    "title": "Social Psychology",
+    "department": "Psychology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Survey of social psychology including interaction processes, small groups, attitudes and attitude change, and social problems. "
+  },
+  {
+    "id": "SOCIOL-166",
+    "subject": "SOCIOL",
+    "courseNumber": "166",
+    "title": "Society and Technology",
+    "department": "Sociology",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "This course studies the interaction between society and technologies in a comparative and multicultural perspective. Some topics covered include the relationship between technology and human society; technology, culture and values; technology in the new global economy; development and inequality; electronic democracy; how technology has transformed work and employment; and the challenges of technological progress and the role that society plays in addressing these challenges."
+  },
+  {
+    "id": "AGRS-130C",
+    "subject": "AGRS",
+    "courseNumber": "130C",
+    "title": "Ancient Greek Political Thought",
+    "department": "Ancient Greek & Roman Studies",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "In this course we will investigate the political thought of ancient Greece by discussing some of its most important and influential texts.  All texts are to be read in translation."
+  },
+  {
+    "id": "COGSCI-C100",
+    "subject": "COGSCI",
+    "courseNumber": "C100",
+    "title": "Basic Issues in Cognition",
+    "department": "Psychology",
+    "interests": [
+      "Science",
+      "Philosophy",
+      "Tech"
+    ],
+    "description": "Theoretical foundations and current controversies in cognitive science will be discussed. Basic issues in cognition--including perception, imagery, memory, categorization, thinking, judgment, and development--will be considered from the perspectives of philosophy, psychology, computer science, and physiology. Particular emphasis will be placed on the nature, implications, and limitations of the computational model of mind. "
+  },
+  {
+    "id": "LEGALST-122",
+    "subject": "LEGALST",
+    "courseNumber": "122",
+    "title": "Cybersecurity in Context",
+    "department": "L&S Legal Studies",
+    "interests": [
+      "Tech",
+      "Social Science"
+    ],
+    "description": "We will explore the elements that shape the playing field on which cybersecurity problems emerge and are managed, emphasizing how ethical, legal, and economic frameworks enable and constrain security technologies and policies. We will look at macro-elements  (national security considerations and interests of nation-states) and micro-elements (behavioral economic insights into how people understand and interact with security features). Topics include policymaking (on the national, international, and organizational level), business models, legal frameworks (duties of security, privacy issues, law enforcement access issues, computer hacking, and economic/military espionage), standards making, and the roles of users, government, and industry."
+  },
+  {
+    "id": "MCELLBI-C103",
+    "subject": "MCELLBI",
+    "courseNumber": "C103",
+    "title": "Bacterial Pathogenesis",
+    "department": "Plant & Microbial Biology",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course for upper division and graduate students will explore the molecular and cellular basis of microbial pathogenesis. The course will focus on model microbial systems which illustrate mechanisms of pathogenesis. Most of the emphasis will be on bacterial pathogens of mammals, but there will be some discussion of viral and protozoan pathogens. There will be an emphasis on experimental approaches. The course will also include some aspects of bacterial genetics and physiology, immune response to infection, and the cell biology of host-parasite interactions. "
+  },
+  {
+    "id": "AMERSTD-H110",
+    "subject": "AMERSTD",
+    "courseNumber": "H110",
+    "title": "Honors Seminar: Special Topics in American Studies",
+    "department": "UG Interdisciplinary Studies",
+    "interests": [
+      "History"
+    ],
+    "description": "This course is designed to introduce honors students (those who have achieved a minimum overall GPA of 3.3) to the history and theory of American studies as an interdisciplinary field and to explore current themes, debates, and researh problems in American studies."
+  },
+  {
+    "id": "BIOENG-C142",
+    "subject": "BIOENG",
+    "courseNumber": "C142",
+    "title": "Machine Learning, Statistical Models, and Optimization for Molecular Problems",
+    "department": "Chemistry",
+    "interests": [
+      "Tech",
+      "Science"
+    ],
+    "description": "An introduction to mathematical optimization, statistical models, and advances in machine learning for the physical sciences. Machine learning prerequisites are introduced including local and global optimization, various statistical and clustering models, and early meta-heuristic methods such as genetic algorithms and artificial neural networks. Building on this foundation, current machine learning techniques are covered including deep learning artificial neural networks, Convolutional neural networks, Recurrent and long short term memory (LSTM) networks, graph neural networks, decision trees. "
+  },
+  {
+    "id": "COMPSCI-285",
+    "subject": "COMPSCI",
+    "courseNumber": "285",
+    "title": "Deep Reinforcement Learning, Decision Making, and Control",
+    "department": "Electrical Eng & Computer Sci",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Intersection of control, reinforcement learning, and deep learning. Deep learning methods, which train large parametric function approximators, achieve excellent results on problems that require reasoning about unstructured real-world situations (e.g., computer vision, speech recognition, NLP). Advanced treatment of the reinforcement learning formalism, the most critical model-free reinforcement learning algorithms (policy gradients, value function and Q-function learning, and actor-critic), a discussion of model-based reinforcement learning algorithms, an overview of imitation learning, and a range of advanced topics (e.g., exploration, model-based learning with video prediction, transfer learning, multi-task learning, and meta-learning)."
+  }
+]
