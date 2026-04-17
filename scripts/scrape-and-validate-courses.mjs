@@ -7,7 +7,8 @@ import { inferInterestsFromCatalogEntry } from "./lib/inferInterests.mjs";
 const GRAPHQL_URL = "https://berkeleytime.com/api/graphql";
 const EXCLUDED_COURSE_PATTERNS = [
   /\bspecial(?:\s+|-)?topics?\b/i,
-  /\bspecial(?:\s+|-)?projects?\b/i
+  /\bspecial(?:\s+|-)?projects?\b/i,
+  /\baspir(?:ing|iing)\s+academic\s+interns?\b/i
 ];
 
 function parseArgs() {

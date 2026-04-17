@@ -81,6 +81,19 @@ function formatTimeRange(start: string, end: string) {
   return `${to12h(start)} - ${to12h(end)}`;
 }
 
+function stripPrereqText(description: string): string {
+  if (!description) return description;
+  const compact = description.replace(/\s+/g, " ").trim();
+
+  // Remove trailing prerequisite/corequisite notes commonly appended to catalog descriptions.
+  const cutPattern =
+    /\b(prerequisites?|prereqs?|prerequisite\(s\)|corequisites?|corequisite\(s\)|pre[- ]?reqs?)\b/i;
+  const match = compact.match(cutPattern);
+  if (!match || match.index === undefined) return compact;
+
+  return compact.slice(0, match.index).trim().replace(/[;:,.\-–\s]+$/g, "");
+}
+
 function getDisplayDepartment(department: string): string {
   const map: Record<string, string> = {
     "Electrical Eng & Computer Sci": "Electrical Engineering & Computer Sciences",
@@ -559,7 +572,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                     <p className="card-meta">{currentCourse.code} - <InstructorWithRmpLink instructor={currentCourse.instructor} /></p>
                     <div className="card-divider" />
                     <div className="card-location"><a href={buildMapsUrl(currentCourse.building)} target="_blank" rel="noreferrer">{formatBuildingLabel(currentCourse.building)}, Room {currentCourse.room}</a></div>
-                    <p className="card-desc">{currentCourse.description}</p>
+                    <p className="card-desc">{stripPrereqText(currentCourse.description)}</p>
                     <div className="card-tags">{currentCourse.interests.map((tag)=><span key={tag} className="card-tag">{tag}</span>)}</div>
                   </div>
                   <div className="card-actions">

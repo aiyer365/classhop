@@ -15681,17 +15681,6 @@
     "description": "Berkeley Connect is a mentoring program, offered through various academic departments, that helps students build intellectual community. Over the course of a semester, enrolled students participate in regular small-group discussions facilitated by a graduate student mentor (following a faculty-directed curriculum), meet with their graduate student mentor for one-on-one academic advising, attend lectures and panel discussions featuring department faculty and alumni, and go on field trips to campus resources. Students are not required to be declared majors in order to participate.\n\nCourse may be repeated for credit."
   },
   {
-    "id": "COMPSCI-365",
-    "subject": "COMPSCI",
-    "courseNumber": "365",
-    "title": "Introduction to Instructional Methods in Computer Science for Academic Interns",
-    "department": "Electrical Eng & Computer Sci",
-    "interests": [
-      "Tech"
-    ],
-    "description": "This is a course for aspiring Academic Interns (AIs). It provides pedagogical training and guidance to students by introducing them to the Big Ideas of Teaching and Learning, and how to put them into practice. The course covers what makes a safe learning environment, how students learn, how to guide students toward mastery, and psychosocial factors that can negatively affect even the best students and best teachers. Class covers both theoretical and practical pedagogical aspects of teaching STEM subjects—specifically Computer Science. An integral feature of the course lies in the weekly AI experience that students perform to practice their teaching skills."
-  },
-  {
     "id": "DATA-C200",
     "subject": "DATA",
     "courseNumber": "C200",
