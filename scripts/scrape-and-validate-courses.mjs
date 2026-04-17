@@ -5,14 +5,9 @@ import Ajv2020 from "ajv/dist/2020.js";
 import { inferInterestsFromCatalogEntry } from "./lib/inferInterests.mjs";
 
 const GRAPHQL_URL = "https://berkeleytime.com/api/graphql";
-
 const EXCLUDED_COURSE_PATTERNS = [
-  /\bspecial\s+topics?\b/i,
-  /\bseminar\b/i,
-  /\bcolloquium\b/i,
-  /\bdirected\s+study\b/i,
-  /\bindependent\s+study\b/i,
-  /\btopics\s+in\b/i
+  /\bspecial(?:\s+|-)?topics?\b/i,
+  /\bspecial(?:\s+|-)?projects?\b/i
 ];
 
 function parseArgs() {
@@ -189,10 +184,10 @@ function transformRows(rows, semesterLabel) {
   let id = 1;
 
   for (const row of rows) {
-    const titleText = row.title || "";
-    const codeText = `${row.subject || ""} ${row.courseNumber || ""}`.trim();
+    const titleText = row.courseTitle || row.title || "";
+    const descText = row.courseDescription || row.description || "";
     const shouldExclude = EXCLUDED_COURSE_PATTERNS.some((re) =>
-      re.test(`${titleText} ${codeText}`)
+      re.test(`${titleText} ${descText}`)
     );
     if (shouldExclude) {
       excludedCount += 1;
@@ -294,7 +289,7 @@ async function main() {
   await fs.writeFile(offeringsPath, JSON.stringify(offerings, null, 2), "utf8");
 
   console.log(`Scraped rows: ${rows.length}`);
-  console.log(`Excluded seminar/special-topics rows: ${excludedCount}`);
+  console.log(`Excluded rows (special topics/projects): ${excludedCount}`);
   console.log(`Catalog entries: ${catalog.length}`);
   console.log(`Offerings: ${offerings.length}`);
   console.log(`Joined rows (validated): ${joined.length}`);

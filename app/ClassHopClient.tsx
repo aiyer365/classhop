@@ -83,7 +83,9 @@ function formatTimeRange(start: string, end: string) {
 
 function getDisplayDepartment(department: string): string {
   const map: Record<string, string> = {
-    "Electrical Eng & Computer Sci": "Electrical Engineering & Computer Sciences"
+    "Electrical Eng & Computer Sci": "Electrical Engineering & Computer Sciences",
+    "Industrial Eng & Operations Res": "Industrial Engineering & Operations Research",
+    "Industrial Eng and Ops Research": "Industrial Engineering & Operations Research"
   };
   return map[department] ?? department;
 }
@@ -126,7 +128,7 @@ function getDisplayCollege(course: Course): string {
   if (bySubject[subject]) return bySubject[subject];
 
   const byDepartment: Array<[RegExp, string]> = [
-    [/Electrical Engineering & Computer Sciences|Engineering|Bioengineering|Industrial Eng|Mechanical/i, "College of Engineering"],
+    [/Electrical Engineering & Computer Sciences|Engineering|Bioengineering|Mechanical/i, "College of Engineering"],
     [/Env Sci, Policy, & Mgmt|Plant & Microbial Biology|Integrative Biology|Ag & Resource Econ/i, "Rausser College of Natural Resources"],
     [/Haas School of Business/i, "Haas School of Business"],
     [/School of Information/i, "School of Information"],
@@ -140,7 +142,9 @@ function getDisplayCollege(course: Course): string {
     if (pattern.test(dept)) return college;
   }
 
-  return "College of Letters & Science";
+  // For the L&S fallback case, show the specific subject/department name
+  // rather than a generic college label.
+  return dept;
 }
 
 function formatInstructor(instructor: string): string {
@@ -449,7 +453,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .prominent-message{text-align:center;font-family:var(--font-display);font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.28;color:var(--navy);letter-spacing:-.01em}.prominent-message--form{margin-top:3rem}.prominent-message--result{margin-top:1.25rem}.result-section{margin-top:3rem}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
         .course-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}.card-body{padding:1.5rem 1.75rem}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem}.card-college{font-family:var(--font-display);font-size:1.2rem;line-height:1.25;color:var(--navy);margin:0 0 .3rem}.card-dept{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
         .card-time-badge{font-family:var(--font-mono);font-size:.7rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.25rem .7rem;white-space:nowrap}.card-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.65rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:.4rem}
-        .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-instructor-link{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-instructor-link:hover{border-bottom-color:var(--navy)}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500}
+        .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-instructor-link{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-instructor-link:hover{border-bottom-color:var(--navy)}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-location a:hover{border-bottom-color:var(--navy)}
         .card-tags{display:flex;flex-wrap:wrap;gap:.4rem}.card-tag{font-family:var(--font-body);font-size:.72rem;letter-spacing:0;text-transform:none;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.25rem .65rem}
         .card-actions{display:flex;justify-content:flex-end;gap:.6rem;padding:1rem 1.75rem;border-top:1px solid var(--border);background:var(--cream)}.btn-secondary,.btn-primary{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-sm);padding:.6rem 1.1rem;cursor:pointer}.btn-secondary{color:var(--navy);background:transparent;border:1px solid var(--border)}.btn-primary{color:var(--gold);background:var(--navy);border:1px solid var(--navy)}
         .skipped-section{margin-top:1rem;padding:1rem 1.25rem;border:1px solid var(--border);border-radius:var(--radius-md);background:#fff}
