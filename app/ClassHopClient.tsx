@@ -150,7 +150,10 @@ function formatInstructor(instructor: string): string {
 }
 
 function rateMyProfessorSearchUrl(name: string): string {
-  return `https://www.ratemyprofessors.com/search/professors?q=${encodeURIComponent(name.trim())}`;
+  const UC_BERKELEY_RMP_SCHOOL_ID = "1072";
+  return `https://www.ratemyprofessors.com/search/professors/${UC_BERKELEY_RMP_SCHOOL_ID}?q=${encodeURIComponent(
+    name.trim()
+  )}`;
 }
 
 function InstructorWithRmpLink({ instructor }: { instructor: string }) {
