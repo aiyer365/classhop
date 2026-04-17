@@ -1,0 +1,4002 @@
+[
+  {
+    "id": 1,
+    "title": "COMPSCI 189",
+    "code": "COMPSCI 189",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Alex Dimakis",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 2,
+    "title": "COMPSCI 188",
+    "code": "COMPSCI 188",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Dan Klein",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 3,
+    "title": "COMPSCI 161",
+    "code": "COMPSCI 161",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Henry Corrigan-Gibbs",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 4,
+    "title": "COMPSCI 185",
+    "code": "COMPSCI 185",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Sergey Levine",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 5,
+    "title": "ECON 138",
+    "code": "ECON 138",
+    "department": "Economics",
+    "instructor": "Chen Lian",
+    "building": "Latimer",
+    "room": "120",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "18:30",
+    "endTime": "19:59",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 6,
+    "title": "COMPSCI 61A",
+    "code": "COMPSCI 61A",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Dan Garcia",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 7,
+    "title": "ANTHRO 2AC",
+    "code": "ANTHRO 2AC",
+    "department": "Anthropology",
+    "instructor": "Jun Sunseri",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "This is an introduction to how an explicitly Americanist archaeology is used to tell stories about the past, especially those parts of the human past which are hidden by the limitations or objectives of written histories. Readings, lectures, section discussions and activities, and out-of-class exercises explore the practical and social dimensions of archaeology as practiced in the United States. We begin with a basic orientation, seeing how archaeology developed here, and the contrast between popular images of archaeology and its real social and political context with consequences for communities today. We then explore how archaeologists work--how they gather data and how they reconstruct social behavior and cultural meaning from material remains, with particular attention to architecture, domestic artifacts, mortuary practices, foodways, and trash disposal in contexts unique to different American communities. Next we examine how these methods are used to study fundamental aspects of society and culture, including human ecology and subsistence; social relations and identities; production and exchange; symbolism and ideology; and the relationship between power, social inequality and the state. While the course materials (e.g. Deetz) present a variety of North American pre-contact, colonial, and post-colonial contexts, we will use additional case studies and guest lectures from a range of practicing Americanist archaeologists to explore the consequences of archaeological practice for diverse American communities including those with heritages from Native America, Latin America, Asia, Europe, and Africa. We also discuss some of the professional and ethical problems affecting the practice of archaeology today and the conservation, protection, and control of our nation’s cultural resources. Students selected to work as American Cultures Engaged Scholars will have additional opportunities to partner on community-accountable projects in lieu of some coursework, but will be graded by community partners (details TBA in class).",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 8,
+    "title": "COMPSCI 168",
+    "code": "COMPSCI 168",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Rishabh Iyer",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 9,
+    "title": "COMPSCI 61B",
+    "code": "COMPSCI 61B",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Joshua Hug",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 10,
+    "title": "NUSCTX 10S",
+    "code": "NUSCTX 10S",
+    "department": "Nutritional Sciences & Tox",
+    "instructor": "Gregory Aponte",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "12:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 11,
+    "title": "DATA C8",
+    "code": "DATA C8",
+    "department": "Statistics",
+    "instructor": "John DeNero",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 12,
+    "title": "COMPSCI 170",
+    "code": "COMPSCI 170",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Lijie Chen",
+    "building": "Stanley",
+    "room": "105",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 13,
+    "title": "DATA C100",
+    "code": "DATA C100",
+    "department": "Data Science Undergrad Studies",
+    "instructor": "Josh Grossman",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 14,
+    "title": "COMPSCI 186",
+    "code": "COMPSCI 186",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Alvin Cheung",
+    "building": "Soda",
+    "room": "306",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "11:29",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 15,
+    "title": "DATA C104",
+    "code": "DATA C104",
+    "department": "Sci & Tech Stds Grad Grp",
+    "instructor": "Ari Edmundson",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 16,
+    "title": "ECON 115",
+    "code": "ECON 115",
+    "department": "Economics",
+    "instructor": "Barry Eichengreen",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 17,
+    "title": "ENGIN 125",
+    "code": "ENGIN 125",
+    "department": "Engineering",
+    "instructor": "Raluca Scarlat",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 18,
+    "title": "ECON 148",
+    "code": "ECON 148",
+    "department": "Economics",
+    "instructor": "Eric Van Dusen",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 19,
+    "title": "ECON 140",
+    "code": "ECON 140",
+    "department": "Economics",
+    "instructor": "Benjamin Faber",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 20,
+    "title": "EECS 126",
+    "code": "EECS 126",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Kannan Ramchandran",
+    "building": "Dwinelle",
+    "room": "145",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 21,
+    "title": "ECON 136",
+    "code": "ECON 136",
+    "department": "Economics",
+    "instructor": "Stephen Bianchi",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 22,
+    "title": "ESPM 50AC",
+    "code": "ESPM 50AC",
+    "department": "Env Sci, Policy, & Mgmt",
+    "instructor": "Kurt Spreyer",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 23,
+    "title": "SOCIOL 146AC",
+    "code": "SOCIOL 146AC",
+    "department": "Sociology",
+    "instructor": "Lorraine Cruz Del Rio",
+    "building": "Stanley",
+    "room": "106",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 24,
+    "title": "DATA C88C",
+    "code": "DATA C88C",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Michael Ball",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 25,
+    "title": "ART 8",
+    "code": "ART 8",
+    "department": "Art Practice",
+    "instructor": "Asma Kazmi",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "160",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "12:59",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 26,
+    "title": "COMPSCI 162",
+    "code": "COMPSCI 162",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "John Kubiatowicz",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 27,
+    "title": "Sense and Sensibility and Science",
+    "code": "LS 22",
+    "department": "UG Interdisciplinary Studies",
+    "instructor": "Ellen Evers",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "On Wednesdays, the two-hour 11 am - 1:00 pm block will be used primarily for lecture with some time for office hours. In addition, Friday 11:00 am - 12:00 pm is typically scheduled for optional office hours. Several Fridays are reserved for required course events from 11:00 am - 1:00 pm. There are no lectures on Fridays.\n\nIt may be helpful to note the range of requirements that Sense and Sensibility and Science\nfulfills:\nL&S Breadth, Physical Science\nL&S Breadth, Philosophy & Values\nL&S Breadth, Social & Behavioral Sciences\nCDSS Essential Skills Requirement, Human and Social Dynamics of Data and Technology\nRequirement\nCDSS Data Science Major Requirement, Philosophical Foundations: Evidence and Inference\n\nEvery day we make decisions that can and should be informed by science. The problem is, we don’t always do it so well. This course explores some of the most useful tools of scientific-style critical thinking with an emphasis on how they can be used to make better decisions as individuals, as voters, and as members of our various communities.\n\nSense and Sensibility and Science equips students with a diverse skill set in scientific-style critical thinking using the tools that various scientific disciplines have built and honed over centuries. The course–co-taught by a Nobel winning physicist, a philosopher, and a behavioral psychologist–explores the key aspects of scientific thinking that everyone should know, and how these tools can help us better cope with uncertainty, understand those we disagree with, evaluate causal claims, and avoid biases in our reasoning (among other things!). The course also covers novel models for individual and group decision-making that appropriately combine scientific thinking with human values, for the ultimate goal of building a better future. Come take\nthis course and save the world! We’re facing a world that seems to struggle with rational collective decision making. How can we take into account our values, fears, and aspirations while also grappling with and evaluating facts and evidence? We must make decisions as individuals, as groups, and as a society; we find this challenge everywhere we turn. This year, the challenge of making good decisions as a society seems both more difficult and more important than ever. Over the centuries, scientists, psychologists, and philosophers have developed rigorous yet open-minded ways of thinking about the world that can help us address these universal and pressing concerns. This course explores and directly engages with some of the most useful tools of scientific-style critical thinking, considering both psychological biases and philosophical underpinnings.\n\nThis course is co-taught by Saul Perlmutter (Physics, Nobel Prize 2011), Verónica Gómez Sánchez (Philosophy), and Ellen Evers (Social Psychology, Haas School of Business). It is built around interactive activities and stimulating discussions led by the faculty and a passionate teaching team from diverse disciplines. In addition to inviting multiple special guests, we also host a panel of experts for a deliberative polling event for students to engage with policy making, wrestling with topics such as fracking, gene drives, and online misinformation. In past years, this activity has been hosted in collaboration with sister courses at other universities and the Nobel Prize summit. The course culminates in a decision making final project.\n\nThis course is part of the Big Ideas Courses program.\n\nSense and Sensibility and Science is supported by the Discovery Initiative at UC Berkeley, which offers undergraduates opportunities to immerse themselves in inquiry-driven learning and original research across disciplines.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 28,
+    "title": "INTEGBI 35AC",
+    "code": "INTEGBI 35AC",
+    "department": "Integrative Biology",
+    "instructor": "Rasmus Nielsen",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 29,
+    "title": "ECON 131",
+    "code": "ECON 131",
+    "department": "Economics",
+    "instructor": "Danny Yagan",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 30,
+    "title": "MATH 54",
+    "code": "MATH 54",
+    "department": "Mathematics",
+    "instructor": "Vera Serganova",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 31,
+    "title": "COMPSCI 164",
+    "code": "COMPSCI 164",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Koushik Sen",
+    "building": "Soda",
+    "room": "306",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 32,
+    "title": "COMPSCI 70",
+    "code": "COMPSCI 70",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Alistair Sinclair",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 33,
+    "title": "ANTHRO 3AC",
+    "code": "ANTHRO 3AC",
+    "department": "Anthropology",
+    "instructor": "Karen Nakamura",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 34,
+    "title": "EECS 127",
+    "code": "EECS 127",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Gireeja Ranade",
+    "building": "Stanley",
+    "room": "105",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 35,
+    "title": "BIOENG 100",
+    "code": "BIOENG 100",
+    "department": "Bioengineering",
+    "instructor": "John Dueber",
+    "building": "Mulford",
+    "room": "159",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 36,
+    "title": "MUSIC 27",
+    "code": "MUSIC 27",
+    "department": "Music",
+    "instructor": "Lester Hu",
+    "building": "Hertz",
+    "room": "320",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:29",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 37,
+    "title": "COMPSCI 61C",
+    "code": "COMPSCI 61C",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Lisa Yan",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 38,
+    "title": "COMPSCI 184",
+    "code": "COMPSCI 184",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "James O'Brien",
+    "building": "Unknown",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 39,
+    "title": "STAT 135",
+    "code": "STAT 135",
+    "department": "Statistics",
+    "instructor": "Shobhana Stoyanov",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 40,
+    "title": "COMPSCI 152",
+    "code": "COMPSCI 152",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Christopher Fletcher",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 41,
+    "title": "GWS 14",
+    "code": "GWS 14",
+    "department": "Gender & Womens Studies",
+    "instructor": "Courtney Morris",
+    "building": "Physics Building",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 42,
+    "title": "ASAMST 132AC",
+    "code": "ASAMST 132AC",
+    "department": "Ethnic Studies",
+    "instructor": "Hatem Albazian",
+    "building": "Valley Life Sciences",
+    "room": "2040",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 43,
+    "title": "ECON 119",
+    "code": "ECON 119",
+    "department": "Economics",
+    "instructor": "Robizon Khubulashvili",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "M",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 44,
+    "title": "ECON 151",
+    "code": "ECON 151",
+    "department": "Economics",
+    "instructor": "Denis Sosinskiy",
+    "building": "Physics Building",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 45,
+    "title": "ECON C181",
+    "code": "ECON C181",
+    "department": "Economics",
+    "instructor": "Johannes Boehm",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "17:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 46,
+    "title": "MELC 11",
+    "code": "MELC 11",
+    "department": "Middle Eastern Lang & Cultures",
+    "instructor": "Nora Jacobsen Ben Hammed",
+    "building": "Cory",
+    "room": "277",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 47,
+    "title": "Race, Gender, and Social Life in Colonial Honduras: Reading Over the Shoulder of People in the Past",
+    "code": "ANTHRO 84",
+    "department": "Anthropology",
+    "instructor": "Rosemary Joyce",
+    "building": "Social Sciences Building",
+    "room": "180",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "How de we learn about people's everyday lives in the past? One source is documents, which collectively form archives. Scholars learn to read old handwriting, explore why documents were produced, and expand from them to understanding people's lives. This seminar introduces students to this process of research with original documents from the Spanish colonial period in Central America. Working with digital copies of documents from the colonial Spanish archives in Spain, Guatemala, and Honduras, we will \"read over the shoulder\" of the writers whose words form one of our most immediate links to Spanish colonial Honduran life. Students will learn how to locate archival documents online; how to read colonial handwriting; and how we can begin to understand more about society from even brief documents. Working together, we will discuss several longer documents about the lives of native Americans who were obliged to work for Spanish citizens and petitioned for relief, about free black residents of a military fort, and about a variety of women and men who shaped colonial life.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 48,
+    "title": "ECON 157",
+    "code": "ECON 157",
+    "department": "Economics",
+    "instructor": "Ryan Edwards",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 49,
+    "title": "ASAMST 20A",
+    "code": "ASAMST 20A",
+    "department": "Ethnic Studies",
+    "instructor": "Harvey Dong",
+    "building": "Birge",
+    "room": "50",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 50,
+    "title": "STAT 134",
+    "code": "STAT 134",
+    "department": "Statistics",
+    "instructor": "Adam Lucas",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 51,
+    "title": "ECON C110",
+    "code": "ECON C110",
+    "department": "Political Science",
+    "instructor": "Sean Gailmard",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 52,
+    "title": "EDUC 131AC",
+    "code": "EDUC 131AC",
+    "department": "Grad School of Education",
+    "instructor": "Morgan Mitchell",
+    "building": "Social Sciences Building",
+    "room": "56",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "M",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 53,
+    "title": "DATA C140",
+    "code": "DATA C140",
+    "department": "Data Science Undergrad Studies",
+    "instructor": "Ani Adhikari",
+    "building": "Stanley",
+    "room": "105",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 54,
+    "title": "MATH 128A",
+    "code": "MATH 128A",
+    "department": "Mathematics",
+    "instructor": "Ryan Hass",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 55,
+    "title": "STAT 154",
+    "code": "STAT 154",
+    "department": "Statistics",
+    "instructor": "Hugo Chardon",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 56,
+    "title": "EPS C20",
+    "code": "EPS C20",
+    "department": "UG Interdisciplinary Studies",
+    "instructor": "Noha Farghal",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "00:00",
+    "endTime": "00:00",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 57,
+    "title": "ECON 127",
+    "code": "ECON 127",
+    "department": "Economics",
+    "instructor": "Aaron Edlin",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 58,
+    "title": "INDENG 142A",
+    "code": "INDENG 142A",
+    "department": "Industrial Eng & Ops Research",
+    "instructor": "Phillip Kerger",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "12:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 59,
+    "title": "MCELLBI 38",
+    "code": "MCELLBI 38",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Robin Ball",
+    "building": "Valley Life Sciences",
+    "room": "2060",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 60,
+    "title": "ECON 1",
+    "code": "ECON 1",
+    "department": "Economics",
+    "instructor": "James Campbell",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "19:00",
+    "endTime": "19:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 61,
+    "title": "MCELLBI 102",
+    "code": "MCELLBI 102",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Sabeeha Merchant",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 62,
+    "title": "PBHLTH 101",
+    "code": "PBHLTH 101",
+    "department": "School of Public Health",
+    "instructor": "Marlon Maus",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "11:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 63,
+    "title": "PHILOS 5",
+    "code": "PHILOS 5",
+    "department": "Philosophy",
+    "instructor": "Shamik Dasgupta",
+    "building": "Cory",
+    "room": "277",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 64,
+    "title": "ECON 100A",
+    "code": "ECON 100A",
+    "department": "Economics",
+    "instructor": "James Campbell",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 65,
+    "title": "ECON 100B",
+    "code": "ECON 100B",
+    "department": "Economics",
+    "instructor": "Ryan Edwards",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 66,
+    "title": "Building AI Systems: post-training techniques, shaping model behavior, and building products",
+    "code": "CDSS 94",
+    "department": "Clg of Comp Data Sci & Soc",
+    "instructor": "Narges Norouzi",
+    "building": "Cory",
+    "room": "521",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:30",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 67,
+    "title": "PUBPOL 101",
+    "code": "PUBPOL 101",
+    "department": "Goldman School Public Policy",
+    "instructor": "Amy Lerman",
+    "building": "Stanley",
+    "room": "105",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 68,
+    "title": "DATA C8",
+    "code": "DATA C8",
+    "department": "Statistics",
+    "instructor": "John DeNero",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 69,
+    "title": "HISTORY 7B",
+    "code": "HISTORY 7B",
+    "department": "History",
+    "instructor": "Mark Brilliant",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "History"
+    ],
+    "description": "This course presents a history of the United States since the Civil War. We will pay particular attention to three, often interrelated, themes that weave throughout these 150+ years and go by the mnemonic “The 3 P’s”: (1) pluralism, (2) political economy, and (3) projection of power. Pluralism refers to the nation’s extraordinary social diversity and the struggles to expand the boundaries of just who is included in the “We” of the Constitution’s “We the People.” Political economy refers to the interaction between politics/policy and economics, in particular, how 19th century populism, early 20th century progressivism, mid-20th century New Deal liberalism, and late 20th century and early 21st century neoliberalism offered different political and policy responses to the nation’s shifting economic base from agriculture to industry to post-industry/service, striking different balances between how much faith and responsibility to vest in the public sector (government) vs. the private sector (the free market). Projection of power refers to the engagement of the United States with the world beyond its boundaries (initially across the continent, later beyond the continental United States), from “hard power” military force to “soft power” economic and cultural influence.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 70,
+    "title": "AEROENG 100",
+    "code": "AEROENG 100",
+    "department": "Mechanical Engineering",
+    "instructor": "Derek Lang",
+    "building": "Jacobs Hall",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "17:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 71,
+    "title": "AFRICAM 100",
+    "code": "AFRICAM 100",
+    "department": "African American Studies",
+    "instructor": "Leigh Raiford",
+    "building": "Mulford",
+    "room": "159",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 72,
+    "title": "ANTHRO 170",
+    "code": "ANTHRO 170",
+    "department": "Anthropology",
+    "instructor": "Xin Liu",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "This class takes up \"China\" as an object of knowledge and focuses on its Cultural aspect of a long historical duration. Today's world is different from what it used to be, witnessed by ChatGPT and other digital technologies, and yet China has remained an Other for us in terms of its cultural logic and logographic language—two essential features of a fundamental Difference. This class aims at an anthropological understanding of the Chinese world as an essential part of a Self-understanding for ourselves, and as an anthropology class we will focus on the Chinese way of thinking and being, i.e. rather than on China's geopolitical significance or its fast material growth, in order for us to understand today's world in a more intelligent manner.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 73,
+    "title": "Rivers and Other Waters",
+    "code": "PORTUG 128",
+    "department": "Spanish & Portuguese",
+    "instructor": "Nathaniel Wolfson",
+    "building": "Dwinelle",
+    "room": "187",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Taught in Portuguese. As the largest watershed in the world, the Amazon river supplies millions of gallons of freshwater to the Atlantic Ocean each day. This water is then swept around the world on ocean currents. In this course we’ll explore water, especially rivers, in cultural production from Brazil. Some of the materials we’ll study approach water as an infrastructural and environmental issue by reflecting on the impacts of flooding, damming and drought in certain regions. Others work more poetically by comparing liquid forms to the qualities of literary language (transparent, opaque, thick, etc.) or emotional states of being (delirious, unsettled, seething, etc). Literature from Amazônia conjures fantastical worlds beneath the aquatic surface containing riverine creatures. Authors from the Nordeste narrate the lives of retirantes or migrants escaping extreme weather cycles and devastating secas. More recently, artists and musicians from the Northeastern city Recife have cultivated an estética de lama. This course is, at its core, an introduction to modern and contemporary Brazilian literature. The topic of water will allow us to navigate literary and cultural production spanning the 20th and 21st centuries, both canonical and lesser-known, while familiarizing ourselves with some of the nation’s most fascinating aesthetic movements and debates.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 74,
+    "title": "GEOG 130",
+    "code": "GEOG 130",
+    "department": "Geography",
+    "instructor": "Chase Hobbs-Morgan",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 75,
+    "title": "INDENG 164",
+    "code": "INDENG 164",
+    "department": "Industrial Eng & Ops Research",
+    "instructor": "Ying Cui",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 76,
+    "title": "THEATER 25AC",
+    "code": "THEATER 25AC",
+    "department": "Theater Dance & Perf Stds",
+    "instructor": "Karina Gutierrez",
+    "building": "Hearst Mining",
+    "room": "390",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 77,
+    "title": "Introduction to Deep Learning",
+    "code": "DATA 188",
+    "department": "Data Science Undergrad Studies",
+    "instructor": "Eric Kim",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "This course is an introduction to deep learning (also known as \"deep neural networks\"), and will cover the fundamental techniques that power deep learning algorithms, as well as exploring the intuitions and various \"rules of thumb\" behind successful deep learning methods. Topics include: neural network architectures, backpropagation, convolutional neural networks, sequence models (such as the transformer model), applications to computer vision and natural language processing, and more.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 78,
+    "title": "MATH 54",
+    "code": "MATH 54",
+    "department": "Mathematics",
+    "instructor": "Arun Sharma",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "08:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 79,
+    "title": "MATH 110",
+    "code": "MATH 110",
+    "department": "Mathematics",
+    "instructor": "Edward Frenkel",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 80,
+    "title": "STAT 20",
+    "code": "STAT 20",
+    "department": "Statistics",
+    "instructor": "Jeremy Sanchez",
+    "building": "Wheeler",
+    "room": "212",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 81,
+    "title": "COGSCI 1",
+    "code": "COGSCI 1",
+    "department": "Interdisc Social Science Pgms",
+    "instructor": "Uri Korisky",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "17:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 82,
+    "title": "COMPSCI 288",
+    "code": "COMPSCI 288",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Sewon Min",
+    "building": "Soda",
+    "room": "306",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 83,
+    "title": "HISTORY 139AC",
+    "code": "HISTORY 139AC",
+    "department": "History",
+    "instructor": "Stephanie Jones-Rogers",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "T",
+    "interests": [
+      "History"
+    ],
+    "description": "Throughout the semester, the readings and lecture material will also be attentive to the laws that sanctioned slavery and other systems of captivity, captive people’s ongoing resistance to enslavement, and the ways that age, religion, gender, and sexuality shaped experiences of captivity. The class concludes by considering the development of the post-Civil War penal state, the widespread criminalization of formerly enslaved African Americans and their descendants, the concurrent emergence of convict leasing and debt peonage, and mass incarceration. Students will leave the class with a rich, more expansive, multicultural understanding of American systems of captivity from settlement to the present.\n\nAll course readings are free and available digitally on bCourses.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 84,
+    "title": "COLWRIT 10B",
+    "code": "COLWRIT 10B",
+    "department": "College Writing Programs",
+    "instructor": "John Levine",
+    "building": "Wheeler",
+    "room": "124",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 85,
+    "title": "MUSIC 70",
+    "code": "MUSIC 70",
+    "department": "Music",
+    "instructor": "Mary Ann Smart",
+    "building": "Morrison",
+    "room": "128",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 86,
+    "title": "ESPM 161A",
+    "code": "ESPM 161A",
+    "department": "Env Sci, Policy, & Mgmt",
+    "instructor": "Sunaura Taylor",
+    "building": "Etcheverry",
+    "room": "3108",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 87,
+    "title": "Memory – Brain to Behavior",
+    "code": "PSYCH 128",
+    "department": "Psychology",
+    "instructor": "Mariam Aly",
+    "building": "Barker",
+    "room": "110",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "16:59",
+    "meetDays": "W",
+    "interests": [
+      "Science"
+    ],
+    "description": "In the first part of the class, we will examine the neural underpinnings of basic memory phenomena, such as encoding, consolidation, and retrieval, with methods spanning behavior, lesion studies, neuroimaging, and animal models. We will then delve into theories of episodic memory and current debates in the field. Finally, we will discuss challenges to the traditional view of “memory systems” in the brain. The readings comprise empirical papers (which report new experiments) and review papers (which summarize and synthesize a large body of research). Our goal is to arrive at a deeper understanding of what we know about memory and what we are still struggling to understand.\n\nEach week will be devoted to a different topic. Class will begin with a brief overview (by the instructor) of the topic for that week. Most of the class will comprise student presentations and discussion. Each student is responsible for one presentation on the topic of their choice. Topic selections will occur on the first day of class. Students will also be responsible for weekly written reflections, a final paper due at the end of the semester, and regular attendance and participation.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 88,
+    "title": "MATH 53",
+    "code": "MATH 53",
+    "department": "Mathematics",
+    "instructor": "Suncica Canic",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 89,
+    "title": "EDUC 155AC",
+    "code": "EDUC 155AC",
+    "department": "Berkeley School of Education",
+    "instructor": "Kourtney Christen Kawano",
+    "building": "Social Sciences Building",
+    "room": "56",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 90,
+    "title": "UGBA 135",
+    "code": "UGBA 135",
+    "department": "Haas School of Business",
+    "instructor": "Robert Shaye",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "11:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 91,
+    "title": "AGRS 10B",
+    "code": "AGRS 10B",
+    "department": "Ancient Greek & Roman Studies",
+    "instructor": "Trevor Murphy",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course presents an overview of the highlights of Roman civilization with an emphasis on major literary works and how they reflect Roman culture. The discussion sections will provide supplementary information and an opportunity to discuss topics addressed in the lectures.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 92,
+    "title": "ECON 145",
+    "code": "ECON 145",
+    "department": "Economics",
+    "instructor": "Zhe Liu",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "18:00",
+    "endTime": "20:59",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 93,
+    "title": "ECON 2",
+    "code": "ECON 2",
+    "department": "Economics",
+    "instructor": "Enrico Moretti",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 94,
+    "title": "STAT 150",
+    "code": "STAT 150",
+    "department": "Statistics",
+    "instructor": "Vadim Gorin",
+    "building": "Valley Life Sciences",
+    "room": "2040",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "18:30",
+    "endTime": "19:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 95,
+    "title": "ESPM 109A",
+    "code": "ESPM 109A",
+    "department": "Env Sci, Policy, & Mgmt",
+    "instructor": "George Roderick",
+    "building": "Off",
+    "room": "Campus",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "00:00",
+    "endTime": "00:00",
+    "meetDays": "MW",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 96,
+    "title": "UGBA 104",
+    "code": "UGBA 104",
+    "department": "Haas School of Business",
+    "instructor": "Sytske Wijnsma",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 97,
+    "title": "ART 26",
+    "code": "ART 26",
+    "department": "Art Practice",
+    "instructor": "Sabrina Gschwandtner",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "11:59",
+    "meetDays": "T",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 98,
+    "title": "ESPM 90",
+    "code": "ESPM 90",
+    "department": "Env Sci, Policy, & Mgmt",
+    "instructor": "Ignacio Chapela",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "160",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:59",
+    "meetDays": "T",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 99,
+    "title": "PLANTBI 40",
+    "code": "PLANTBI 40",
+    "department": "Plant & Microbial Biology",
+    "instructor": "Patrick Shih",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 100,
+    "title": "COMPSCI C280",
+    "code": "COMPSCI C280",
+    "department": "Vision Science Grad Grp",
+    "instructor": "Alexei Efros",
+    "building": "Hearst Mining",
+    "room": "390",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 101,
+    "title": "ECON 101B",
+    "code": "ECON 101B",
+    "department": "Economics",
+    "instructor": "Benjamin Schoefer",
+    "building": "Valley Life Sciences",
+    "room": "2060",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 102,
+    "title": "INDENG 160",
+    "code": "INDENG 160",
+    "department": "Industrial Eng & Ops Research",
+    "instructor": "Javad Lavaei",
+    "building": "Valley Life Sciences",
+    "room": "2040",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "12:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 103,
+    "title": "AGRS 28",
+    "code": "AGRS 28",
+    "department": "Ancient Greek & Roman Studies",
+    "instructor": "Duncan Macrae",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "08:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Telling stories is one of the most common ways that humans make sense of the world and their lives in it. For the ancient Greeks and Romans, these stories were very often in the form of tales of the adventures, triumphs and sufferings of gods and heroes – what we call classical myths. This class examines many of these myths, what they meant to Greeks and Romans, and what they still mean for us. We will cover major myths (including myths of creation, myths of nature and the stars, the Trojan war myths, the story of the house of Oedipus, the exploits of Hercules and Theseus, the career of Aeneas, and the myths of the early Roman kings) and the various media that record them (including ancient literature in translation and visual representations). This serves as an excellent introduction to ancient Mediterranean culture and society: through the myths we can learn more about ancient religion, politics and art. We will also discuss post-ancient and global responses to the classical myths, from medieval revulsion to modern poetry to spectacular Hollywood renditions.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 104,
+    "title": "ASAMST 145AC",
+    "code": "ASAMST 145AC",
+    "department": "Ethnic Studies",
+    "instructor": "Michael Chang",
+    "building": "Social Sciences Building",
+    "room": "140",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "W",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 105,
+    "title": "ECON 143",
+    "code": "ECON 143",
+    "department": "Economics",
+    "instructor": "Bryan Graham",
+    "building": "Lewis",
+    "room": "9",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 106,
+    "title": "ETHSTD 122AC",
+    "code": "ETHSTD 122AC",
+    "department": "Ethnic Studies",
+    "instructor": "Raymond Telles",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "160",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "M",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 107,
+    "title": "GWS 132AC",
+    "code": "GWS 132AC",
+    "department": "Gender & Womens Studies",
+    "instructor": "Patrice Douglass",
+    "building": "Social Sciences Building",
+    "room": "20",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 108,
+    "title": "MATH 55",
+    "code": "MATH 55",
+    "department": "Mathematics",
+    "instructor": "Nikhil Srivastava",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 109,
+    "title": "PHYSICS 7B",
+    "code": "PHYSICS 7B",
+    "department": "Physics",
+    "instructor": "Catherine Bordel",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 110,
+    "title": "War, Memory and Identity in Contemporary Asia",
+    "code": "GLOBAL 150Q",
+    "department": "Interdisc Social Science Pgms",
+    "instructor": "Crystal Chang",
+    "building": "Wheeler",
+    "room": "24",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "How do societies remember war—and how do those memories shape who we are? This course examines the interplay of war, memory, and identity in contemporary Asia through case studies including World War II, the Partition of India, the Korean and Chinese Civil Wars, and the Vietnam War.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 111,
+    "title": "PHYSICS 7A",
+    "code": "PHYSICS 7A",
+    "department": "Physics",
+    "instructor": "Adrian Lee",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 112,
+    "title": "EECS 16B",
+    "code": "EECS 16B",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Prabal Dutta",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 113,
+    "title": "BIOLOGY 1A",
+    "code": "BIOLOGY 1A",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Jennifer Doudna",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "08:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 114,
+    "title": "HISTORY 6B",
+    "code": "HISTORY 6B",
+    "department": "History",
+    "instructor": "Stacey Van Vleet",
+    "building": "Joan and Sanford I. Weill",
+    "room": "101",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "History"
+    ],
+    "description": "This course offers an introduction to Chinese history from the Mongol conquest in the thirteenth century to the People's Republic's emergence as a major global power in the twenty-first century. We will examine forces for political unification and economic integration under the imperial dynasties of the Yuan, the Ming, and the Qing, the transformation of China from a continental empire to a nation-state integrated into a global capitalist economy, the formation of a socialist alternative under the Chinese Communist Party, and the origins and limits of systemwide reforms following Mao Zedong's death in 1976. Students will be expected to attend lectures, take part in discussion sections, and read a variety of assigned materials, with a strong emphasis on primary sources in English. The course assumes no prior knowledge of Chinese history or Chinese language.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 115,
+    "title": "INFO 159",
+    "code": "INFO 159",
+    "department": "School of Information",
+    "instructor": "David Bamman",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 116,
+    "title": "DATA C4AC",
+    "code": "DATA C4AC",
+    "department": "Sci & Tech Stds Grad Grp",
+    "instructor": "Daniel Roddy",
+    "building": "Social Sciences Building",
+    "room": "170",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 117,
+    "title": "MUSIC 188",
+    "code": "MUSIC 188",
+    "department": "Music",
+    "instructor": "Melanie Acosta",
+    "building": "Morrison",
+    "room": "117",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 118,
+    "title": "ECON 101A",
+    "code": "ECON 101A",
+    "department": "Economics",
+    "instructor": "Cecile Gaubert",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 119,
+    "title": "ANTHRO 160AC",
+    "code": "ANTHRO 160AC",
+    "department": "Anthropology",
+    "instructor": "Charles Briggs",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "160",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Challenging nationalistic constructions of folklore, this course explores how racial, class, gender, sexual, (dis)ability, and national hierarchies shape identities and how people create notions of difference through folklore. It features research by Black, Latinx, Native American, and Asian American and Pacific Islander scholars.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 120,
+    "title": "ENVECON 141",
+    "code": "ENVECON 141",
+    "department": "Ag & Resource Econ & Pol",
+    "instructor": "Aaron Smith",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Prereqs: ENVECON 100 or Economics 100A or 101A.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 121,
+    "title": "ECON 155",
+    "code": "ECON 155",
+    "department": "Economics",
+    "instructor": "Nilopa Shah",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "16:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 122,
+    "title": "UGBA 192AC",
+    "code": "UGBA 192AC",
+    "department": "Haas School of Business",
+    "instructor": "David Harris",
+    "building": "Chou Hall N540 and",
+    "room": "N544",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 123,
+    "title": "CHINESE 180",
+    "code": "CHINESE 180",
+    "department": "East Asian Lang & Culture",
+    "instructor": "Sophie Volpp",
+    "building": "Cory",
+    "room": "247",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course centers around intensive reading and analysis of Cao Xueqin’s 18th-century masterpiece of Chinese fiction The Story of the Stone (also known as the Dream of the Red Chamber). Students will be introduced to the  cultural world from which this work emerged. Special attention will be paid to the novel's relation to Daoist and Buddhist texts, as well as to the visual and material culture of China's eighteenth-century. The reading will be in English translation and the course will be conducted in English, although any student who would like to do the reading in Chinese is welcome to do so.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 124,
+    "title": "ESPM C167",
+    "code": "ESPM C167",
+    "department": "School of Public Health",
+    "instructor": "Kurt Spreyer",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 125,
+    "title": "GEOG 167AC",
+    "code": "GEOG 167AC",
+    "department": "Geography",
+    "instructor": "Diana Negrin",
+    "building": "Haas Faculty Wing",
+    "room": "F295",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 126,
+    "title": "MATH 52",
+    "code": "MATH 52",
+    "department": "Mathematics",
+    "instructor": "Alexander Paulin",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 127,
+    "title": "PBHLTH 142",
+    "code": "PBHLTH 142",
+    "department": "School of Public Health",
+    "instructor": "Mi-Suk Kang Dufour",
+    "building": "Dwinelle",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "08:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 128,
+    "title": "ECON 141",
+    "code": "ECON 141",
+    "department": "Economics",
+    "instructor": "Stephen Bianchi",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 129,
+    "title": "PHILOS 106",
+    "code": "PHILOS 106",
+    "department": "Philosophy",
+    "instructor": "Johann Frick",
+    "building": "Social Sciences Building",
+    "room": "170",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 130,
+    "title": "ELENG 122",
+    "code": "ELENG 122",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Shyam Parekh",
+    "building": "Cory",
+    "room": "241",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 131,
+    "title": "GEOG 72AC",
+    "code": "GEOG 72AC",
+    "department": "Geography",
+    "instructor": "Seth Lunine",
+    "building": "Evans",
+    "room": "60",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 132,
+    "title": "LEGALST 132AC",
+    "code": "LEGALST 132AC",
+    "department": "L&S Legal Studies",
+    "instructor": "Lisa Knox",
+    "building": "Birge",
+    "room": "50",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 133,
+    "title": "PSYCH 1",
+    "code": "PSYCH 1",
+    "department": "Psychology",
+    "instructor": "Christopher Gade",
+    "building": "Stanley",
+    "room": "105",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "13:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 134,
+    "title": "ECON 158",
+    "code": "ECON 158",
+    "department": "Economics",
+    "instructor": "Chenzi Xu",
+    "building": "Physics Building",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 135,
+    "title": "HISTORY 11",
+    "code": "HISTORY 11",
+    "department": "History",
+    "instructor": "Abhishek Kaicker",
+    "building": "GSPP",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "History"
+    ],
+    "description": "In this course we will study South Asia through a thematic lens, beginning with sport, and moving to the themes of the Partition of 1947, the creation of colonial knowledge, Indian religions, the workings of caste and power in society, the historical evolution of Indian cuisines, agriculture and cities; and a sustained focus on politics and culture—cinema, art, and music—in the period after 1947. Regular collaborative readings of a range of primary sources will be supplemented by movie viewings and discussion sections, with an in-class mid-term and a final examination.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 136,
+    "title": "ECON C184",
+    "code": "ECON C184",
+    "department": "Economics",
+    "instructor": "Joseph Shapiro",
+    "building": "Evans",
+    "room": "10",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 137,
+    "title": "STAT 153",
+    "code": "STAT 153",
+    "department": "Statistics",
+    "instructor": "Liberty Hamilton",
+    "building": "Valley Life Sciences",
+    "room": "2060",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 138,
+    "title": "GPP 115",
+    "code": "GPP 115",
+    "department": "Interdisc Social Science Pgms",
+    "instructor": "Ross Doll",
+    "building": "Dwinelle",
+    "room": "145",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 139,
+    "title": "MCELLBI C114",
+    "code": "MCELLBI C114",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Britt Glaunsinger",
+    "building": "Genetics & Plant Bio",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 140,
+    "title": "STAT 133",
+    "code": "STAT 133",
+    "department": "Statistics",
+    "instructor": "Gaston Sanchez Trujillo",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 141,
+    "title": "MELC 175",
+    "code": "MELC 175",
+    "department": "Middle Eastern Lang & Cultures",
+    "instructor": "Wali Ahmadi",
+    "building": "Dwinelle",
+    "room": "234",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 142,
+    "title": "SOCIOL 167",
+    "code": "SOCIOL 167",
+    "department": "Sociology",
+    "instructor": "Joseph Klett",
+    "building": "Dwinelle",
+    "room": "145",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 143,
+    "title": "EPS C12",
+    "code": "EPS C12",
+    "department": "Astronomy",
+    "instructor": "Burkhard Militzer",
+    "building": "Physics Building",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 144,
+    "title": "SOCIOL 111AC",
+    "code": "SOCIOL 111AC",
+    "department": "Sociology",
+    "instructor": "Joanna Reed",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "160",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 145,
+    "title": "CHEM 3A",
+    "code": "CHEM 3A",
+    "department": "Chemistry",
+    "instructor": "Peter Marsden",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 146,
+    "title": "ART 15",
+    "code": "ART 15",
+    "department": "Art Practice",
+    "instructor": "Emma Logan",
+    "building": "Wurster",
+    "room": "171",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "15:59",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 147,
+    "title": "Research in AI Education",
+    "code": "COMPSCI 194",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Narges Norouzi",
+    "building": "Soda",
+    "room": "606",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "M",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 148,
+    "title": "MCELLBI 150",
+    "code": "MCELLBI 150",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Laurent Coscoy",
+    "building": "Dwinelle",
+    "room": "145",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 149,
+    "title": "NUSCTX 104",
+    "code": "NUSCTX 104",
+    "department": "Nutritional Sciences & Tox",
+    "instructor": "Ashley Reaver",
+    "building": "Genetics & Plant Bio",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 150,
+    "title": "PHYSICS 8A",
+    "code": "PHYSICS 8A",
+    "department": "Physics",
+    "instructor": "Daniel Barsky",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "15:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 151,
+    "title": "EALANG 110",
+    "code": "EALANG 110",
+    "department": "East Asian Lang & Culture",
+    "instructor": "Mark Blum",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "155",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "18:30",
+    "endTime": "19:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 152,
+    "title": "UGBA 101A",
+    "code": "UGBA 101A",
+    "department": "Haas School of Business",
+    "instructor": "Mina Mirazimi",
+    "building": "Chou Hall",
+    "room": "N100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 153,
+    "title": "UGBA 103",
+    "code": "UGBA 103",
+    "department": "Haas School of Business",
+    "instructor": "Matteo Benetton",
+    "building": "Chou Hall",
+    "room": "N100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 154,
+    "title": "PSYCH C127",
+    "code": "PSYCH C127",
+    "department": "Psychology",
+    "instructor": "Richard Ivry",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "17:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 155,
+    "title": "COGSCI 131",
+    "code": "COGSCI 131",
+    "department": "Interdisc Social Science Pgms",
+    "instructor": "Jose Ramirez",
+    "building": "Social Sciences Building",
+    "room": "20",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 156,
+    "title": "EECS 16A",
+    "code": "EECS 16A",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Babak Ayazifar",
+    "building": "Pimentel",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "18:30",
+    "endTime": "19:59",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 157,
+    "title": "ANTHRO 114",
+    "code": "ANTHRO 114",
+    "department": "Anthropology",
+    "instructor": "Charles Hirschkind",
+    "building": "Mulford",
+    "room": "159",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 158,
+    "title": "COMPSCI 10",
+    "code": "COMPSCI 10",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Dan Garcia",
+    "building": "Evans",
+    "room": "60",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "10:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 159,
+    "title": "UGBA 100",
+    "code": "UGBA 100",
+    "department": "Haas School of Business",
+    "instructor": "Krystal Thomas",
+    "building": "Cheit",
+    "room": "C220",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "11:59",
+    "meetDays": "M",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 160,
+    "title": "COMPSCI 169L",
+    "code": "COMPSCI 169L",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Michael Ball",
+    "building": "Soda",
+    "room": "320",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:30",
+    "endTime": "11:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 161,
+    "title": "ELENG 120",
+    "code": "ELENG 120",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Babak Ayazifar",
+    "building": "Physics Building",
+    "room": "4",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 162,
+    "title": "NEU C61",
+    "code": "NEU C61",
+    "department": "Neuroscience",
+    "instructor": "Hillel Adesnik",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 163,
+    "title": "SOCIOL 180I",
+    "code": "SOCIOL 180I",
+    "department": "Sociology",
+    "instructor": "Szonja Ivester",
+    "building": "Physics Building",
+    "room": "3",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:00",
+    "endTime": "12:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 164,
+    "title": "CYPLAN C117",
+    "code": "CYPLAN C117",
+    "department": "City & Regional Planning",
+    "instructor": "Jason Corburn",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "12:30",
+    "endTime": "13:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 165,
+    "title": "MATH 104",
+    "code": "MATH 104",
+    "department": "Mathematics",
+    "instructor": "Ruofan Jiang",
+    "building": "Etcheverry",
+    "room": "3107",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 166,
+    "title": "PSYCH C61",
+    "code": "PSYCH C61",
+    "department": "Neuroscience",
+    "instructor": "Hillel Adesnik",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 167,
+    "title": "ART 21",
+    "code": "ART 21",
+    "department": "Art Practice",
+    "instructor": "Bec Imrich",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "275",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "11:59",
+    "meetDays": "MW",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 168,
+    "title": "EECS C106A",
+    "code": "EECS C106A",
+    "department": "Bioengineering",
+    "instructor": "Jean-Paul Tennant",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "M",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 169,
+    "title": "INDENG 162",
+    "code": "INDENG 162",
+    "department": "Industrial Eng & Ops Research",
+    "instructor": "Dorit Hochbaum",
+    "building": "Morgan",
+    "room": "101",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 170,
+    "title": "PBHLTH 116",
+    "code": "PBHLTH 116",
+    "department": "School of Public Health",
+    "instructor": "Darlene Francis",
+    "building": "Internet/Online",
+    "room": "TBD",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "17:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 171,
+    "title": "SOCIOL 127",
+    "code": "SOCIOL 127",
+    "department": "Sociology",
+    "instructor": "Edwin Lin",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "MW",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 172,
+    "title": "AFRICAM 28AC",
+    "code": "AFRICAM 28AC",
+    "department": "African American Studies",
+    "instructor": "Frederick Vincent",
+    "building": "Social Sciences Building",
+    "room": "20",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 173,
+    "title": "ASTRON C12",
+    "code": "ASTRON C12",
+    "department": "Astronomy",
+    "instructor": "Burkhard Militzer",
+    "building": "Physics Building",
+    "room": "1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 174,
+    "title": "MCELLBI 104",
+    "code": "MCELLBI 104",
+    "department": "Molecular & Cell Biology",
+    "instructor": "Michael Eisen",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 175,
+    "title": "NATAMST C22AC",
+    "code": "NATAMST C22AC",
+    "department": "Anthropology",
+    "instructor": "Peter Nelson",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 176,
+    "title": "EALANG 191",
+    "code": "EALANG 191",
+    "department": "East Asian Lang & Culture",
+    "instructor": "Mark Csikszentmihalyi",
+    "building": "Dwinelle",
+    "room": "242",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 177,
+    "title": "GPP 105",
+    "code": "GPP 105",
+    "department": "Interdisc Social Science Pgms",
+    "instructor": "Clare Talwalker",
+    "building": "Blum",
+    "room": "B100AB",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 178,
+    "title": "UGBA 101B",
+    "code": "UGBA 101B",
+    "department": "Haas School of Business",
+    "instructor": "Don Hanna",
+    "building": "Chou Hall",
+    "room": "N100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "08:00",
+    "endTime": "09:29",
+    "meetDays": "T",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 179,
+    "title": "ESPM 10",
+    "code": "ESPM 10",
+    "department": "Env Sci, Policy, & Mgmt",
+    "instructor": "Ronald Amundson",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Environment"
+    ],
+    "description": "SAME CLASS AS ESPM C10 meets the same requirements",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 180,
+    "title": "MATH 113",
+    "code": "MATH 113",
+    "department": "Mathematics",
+    "instructor": "Sylvie Corteel",
+    "building": "Wheeler",
+    "room": "150",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 181,
+    "title": "NUSCTX 20",
+    "code": "NUSCTX 20",
+    "department": "Nutritional Sciences & Tox",
+    "instructor": "Sarah Minkow",
+    "building": "Mulford",
+    "room": "159",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 182,
+    "title": "PHILOS 119",
+    "code": "PHILOS 119",
+    "department": "Philosophy",
+    "instructor": "Olivia Bailey",
+    "building": "Cory",
+    "room": "247",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Philosophy"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 183,
+    "title": "POLSCI 1",
+    "code": "POLSCI 1",
+    "department": "Political Science",
+    "instructor": "Robert Van Houweling",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "12:29",
+    "meetDays": "MW",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 184,
+    "title": "SOCIOL 5",
+    "code": "SOCIOL 5",
+    "department": "Sociology",
+    "instructor": "Peter Hurtubise",
+    "building": "Lewis",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "11:00",
+    "endTime": "11:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 185,
+    "title": "STAT 155",
+    "code": "STAT 155",
+    "department": "Statistics",
+    "instructor": "Arash Jamshidpey",
+    "building": "Stanley",
+    "room": "106",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:30",
+    "endTime": "16:59",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 186,
+    "title": "New Space Economy",
+    "code": "AEROENG 193",
+    "department": "Mechanical Engineering",
+    "instructor": "Abhijeet Kumar",
+    "building": "Wurster",
+    "room": "102",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "19:59",
+    "meetDays": "W",
+    "interests": [
+      "Science"
+    ],
+    "description": "This course provides an in-depth analysis of the emerging New Space Economy. Students will explore the commercial opportunities, technological advancements, regulatory frameworks, and strategic implications of the burgeoning space industry. The course will examine various sectors within the space economy, including satellite communications, Earth observation, space tourism, space mining, in-orbit services, space startups, space launch providers, and funding mechanisms and business models.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 187,
+    "title": "ESPM C22AC",
+    "code": "ESPM C22AC",
+    "department": "Anthropology",
+    "instructor": "Peter Nelson",
+    "building": "Li Ka Shing",
+    "room": "245",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "13:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Environment"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 188,
+    "title": "Decision Making",
+    "code": "UGBA 157",
+    "department": "Haas School of Business",
+    "instructor": "Celia Gaertig",
+    "building": "Chou Hall",
+    "room": "N170",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:30",
+    "endTime": "10:59",
+    "meetDays": "MW",
+    "interests": [
+      "Business"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 189,
+    "title": "ARCH 170B",
+    "code": "ARCH 170B",
+    "department": "Architecture",
+    "instructor": "Diana Martinez",
+    "building": "Wurster",
+    "room": "112",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 190,
+    "title": "ART 14",
+    "code": "ART 14",
+    "department": "Art Practice",
+    "instructor": "Xandra Ibarra",
+    "building": "Anthro/Art Practice Bldg",
+    "room": "165",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "13:00",
+    "endTime": "15:59",
+    "meetDays": "T",
+    "interests": [
+      "Arts"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 191,
+    "title": "INDENG 120",
+    "code": "INDENG 120",
+    "department": "Industrial Eng & Ops Research",
+    "instructor": "Alberto Gennaro",
+    "building": "Physics Building",
+    "room": "3",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "15:00",
+    "endTime": "16:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 192,
+    "title": "PSYCH 160",
+    "code": "PSYCH 160",
+    "department": "Psychology",
+    "instructor": "Iris Mauss",
+    "building": "Valley Life Sciences",
+    "room": "2050",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "10:00",
+    "endTime": "11:59",
+    "meetDays": "Tr",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 193,
+    "title": "SOCIOL 166",
+    "code": "SOCIOL 166",
+    "department": "Sociology",
+    "instructor": "Linus Huang",
+    "building": "Hearst Mining",
+    "room": "390",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "14:59",
+    "meetDays": "TTr",
+    "interests": [
+      "Social Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 194,
+    "title": "AGRS 130C",
+    "code": "AGRS 130C",
+    "department": "Ancient Greek & Roman Studies",
+    "instructor": "Giovanni Ferrari",
+    "building": "Wheeler",
+    "room": "104",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 195,
+    "title": "COGSCI C100",
+    "code": "COGSCI C100",
+    "department": "Psychology",
+    "instructor": "Davina Chan",
+    "building": "Dwinelle",
+    "room": "145",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "M",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 196,
+    "title": "LEGALST 122",
+    "code": "LEGALST 122",
+    "department": "L&S Legal Studies",
+    "instructor": "Chris Hoofnagle",
+    "building": "Physics Building",
+    "room": "2",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 197,
+    "title": "MCELLBI C103",
+    "code": "MCELLBI C103",
+    "department": "Plant & Microbial Biology",
+    "instructor": "Daniel Portnoy",
+    "building": "Genetics & Plant Bio",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "14:00",
+    "endTime": "15:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 198,
+    "title": "The Secret History of America",
+    "code": "AMERSTD H110",
+    "department": "UG Interdisciplinary Studies",
+    "instructor": "Michael Cohen",
+    "building": "Dwinelle",
+    "room": "210",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "16:00",
+    "endTime": "18:59",
+    "meetDays": "T",
+    "interests": [
+      "Science"
+    ],
+    "description": "PLEASE NOTE: THIS COURSE IS NOW FULL AND INSTRUCTOR IS NOT ACCEPTING FURTHER ENROLLMENTS.\n\nWho writes the secret history of America? Who draws the maps revealing the origins of the present crisis? The answer is that we do. Any of us and all of us. And in this class we will imagine, illustrate maps and write the stories that guide us from the past to the future so that we may come to grasp the depth of the present crisis. \n\nDesigned with a dual purpose of providing a history of the present moment while serving as an active laboratory for generating new, student lead knowledge, this class will be both discussion seminar and writing workshop. We will start by reading extensively in the fields of contemporary history and American politics before collaboratively publishing on-line essays. Admission is by instructor approval only with preference given to American Studies majors and Seniors.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 199,
+    "title": "BIOENG C142",
+    "code": "BIOENG C142",
+    "department": "Chemistry",
+    "instructor": "Teresa Head-Gordon",
+    "building": "Genetics & Plant Bio",
+    "room": "100",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "17:00",
+    "endTime": "18:29",
+    "meetDays": "MW",
+    "interests": [
+      "Science"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  },
+  {
+    "id": 200,
+    "title": "COMPSCI 285",
+    "code": "COMPSCI 285",
+    "department": "Electrical Eng & Computer Sci",
+    "instructor": "Sergey Levine",
+    "building": "Hearst Field Annex",
+    "room": "A1",
+    "lat": 37.8715,
+    "lng": -122.273,
+    "walkingMinutes": 8,
+    "startTime": "09:00",
+    "endTime": "09:59",
+    "meetDays": "T",
+    "interests": [
+      "Tech"
+    ],
+    "description": "Description not available.",
+    "semester": "Spring 2026"
+  }
+]
