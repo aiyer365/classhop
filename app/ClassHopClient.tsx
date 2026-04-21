@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { Course, Interest, Semester } from "../lib/types";
@@ -8,19 +8,19 @@ import type { Course, Interest, Semester } from "../lib/types";
 const INTEREST_OPTIONS: Interest[] = [
   "Business & Economics",
   "Society & Politics",
+  "History & Culture",
+  "Health & Environment",
+  "Arts & Design",
   "Science & Nature",
   "Tech & Engineering",
-  "Math & Data",
-  "Arts & Design",
-  "History & Culture",
-  "Health & Environment"
+  "Math & Data"
 ];
 
 const EARLIEST_MINUTES = 7 * 60; // 7:00 AM
 const LATEST_MINUTES = 19 * 60; // 7:00 PM
 
 type WeekdayToken = "M" | "T" | "W" | "Tr" | "F";
-type TopTab = "discover" | "editor";
+type TopTab = "discover" | "saved" | "editor";
 
 const WEEKDAY_BUTTONS: { token: WeekdayToken; label: string }[] = [
   { token: "M", label: "M" },
@@ -38,6 +38,14 @@ function getDefaultWeekdayToken(): WeekdayToken {
   if (d === 4) return "Tr";
   if (d === 5) return "F";
   return "M";
+}
+
+function getDefaultMinutes(): number {
+  const now = new Date();
+  const nowMinutes = now.getHours() * 60 + now.getMinutes();
+  if (nowMinutes >= 19 * 60 + 30 && nowMinutes <= 21 * 60) return LATEST_MINUTES;
+  if (nowMinutes < EARLIEST_MINUTES || nowMinutes > LATEST_MINUTES) return EARLIEST_MINUTES;
+  return Math.max(EARLIEST_MINUTES, Math.min(LATEST_MINUTES, snapToHalfHour(nowMinutes)));
 }
 
 /** Parse meetDays string (e.g. MW, TTr) into tokens; Thursday is always Tr. */
@@ -252,6 +260,10 @@ function getDisplayCollege(course: Course): string {
     PLANTBI:  "Rausser College of Natural Resources",
     ENVECON:  "Rausser College of Natural Resources",
     NUSCTX:   "Rausser College of Natural Resources",
+    COMPSCI:  "College of Computing, Data Science & Society",
+    DATA:     "College of Computing, Data Science & Society",
+    STAT:     "College of Computing, Data Science & Society",
+    CDSS:     "College of Computing, Data Science & Society",
     INFO:     "School of Information",
     PBHLTH:   "School of Public Health",
     GPP:      "Goldman School of Public Policy",
@@ -577,20 +589,52 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [semester, setSemester] = useState<Semester>("Spring 2026");
   const [topTab, setTopTab] = useState<TopTab>("discover");
   const [selectedWeekday, setSelectedWeekday] = useState<WeekdayToken>(getDefaultWeekdayToken);
-  const [selectedMinutes, setSelectedMinutes] = useState(15 * 60);
-  const [usingNow, setUsingNow] = useState(false);
+  const [selectedMinutes, setSelectedMinutes] = useState(getDefaultMinutes);
+  const [usingNow, setUsingNow] = useState(true);
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
   const [currentCourse, setCurrentCourse] = useState<Course | null>(null);
   const [lastPool, setLastPool] = useState<Course[]>([]);
+  const [page, setPage] = useState(0);
+  const PAGE_SIZE = 10;
   const [hasSearched, setHasSearched] = useState(false);
   const [sortCol, setSortCol] = useState<"title" | "code" | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [savedIds, setSavedIds] = useState<Set<string>>(() => {
+    if (typeof window === "undefined") return new Set<string>();
+    try {
+      const raw = localStorage.getItem("classhop-saved");
+      return new Set<string>(raw ? JSON.parse(raw) : []);
+    } catch { return new Set<string>(); }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("classhop-saved", JSON.stringify([...savedIds]));
+  }, [savedIds]);
+
+  const savedCourses = useMemo(
+    () => allCourses.filter((c) => savedIds.has(c.id)),
+    [allCourses, savedIds]
+  );
+
+  function toggleSave(id: string, e: React.MouseEvent) {
+    e.stopPropagation();
+    setSavedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  }
 
   const selectedTime24 = useMemo(
     () => minutesToTime24(selectedMinutes),
     [selectedMinutes]
   );
+
+  function shouldUseNow(weekday: WeekdayToken, minutes: number): boolean {
+    return weekday === getDefaultWeekdayToken() && minutes === getDefaultMinutes();
+  }
 
   const filteredCourses = useMemo(() => {
     if (!selectedTime24) return [];
@@ -653,7 +697,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
 
     setSelectedMinutes(nextMinutes);
     setSelectedWeekday(getDefaultWeekdayToken());
-    setUsingNow(true);
+    setUsingNow(shouldUseNow(getDefaultWeekdayToken(), nextMinutes));
   }
 
   function toggleInterest(interest: Interest) {
@@ -663,6 +707,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   }
 
   const sortedPool = useMemo(() => {
+    setPage(0);
     if (!sortCol) return lastPool;
     return [...lastPool].sort((a, b) => {
       let va: string, vb: string;
@@ -706,6 +751,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   function handleFindClass() {
     setCurrentCourse(null);
     setHasSearched(true);
+    setPage(0);
     setLastPool(
       selectedInterests.length === 0 ? splatterPool(filteredCourses) : filteredCourses
     );
@@ -728,10 +774,11 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .top-tab-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
         .semester-toggle{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
         .semester-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}.semester-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
-        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:2.75rem 2rem 6rem}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
+        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:0.5rem 2rem 6rem}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
         .hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,3.75rem);font-weight:300;line-height:1.08;color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem}.subheadline{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--gold-dim);margin-bottom:1.75rem}.description{font-size:1rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:3.5rem}
-        .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-header-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 1.25rem;margin-bottom:1rem}.section-header-row .section-label{margin-bottom:0;padding-right:.75rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-        .day-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:.45rem}.day-btn{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;min-width:2.35rem;padding:.45rem .65rem;border-radius:var(--radius-pill);border:1px solid var(--border);background:var(--chip-bg);color:var(--text);cursor:pointer}.day-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+        .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-display);font-size:1.35rem;font-weight:300;letter-spacing:-.01em;text-transform:none;color:var(--navy)}
+        .when-section{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:1.25rem;row-gap:.75rem}.when-section .section-label{grid-column:1;grid-row:1;align-self:center;margin-bottom:0}.when-section .time-row{grid-column:1/-1;grid-row:2}.when-section .day-strip{grid-column:2;grid-row:1;align-self:center}
+        .day-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:.45rem}.day-btn{font-family:var(--font-body);font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.day-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
         .time-row{display:flex;align-items:center;gap:.8rem}.time-btn,.chip{font-family:var(--font-body);font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.time-btn.active,.chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
         .time-slider-wrap{flex:1;display:flex;align-items:center;gap:.75rem;min-width:220px}.time-slider{flex:1;appearance:none;height:6px;border-radius:999px;background:rgba(0,40,85,.15);outline:none}.time-slider::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}.time-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}
         .time-readout{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);min-width:72px;text-align:right}
@@ -742,6 +789,9 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-instructor-link{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-instructor-link:hover{border-bottom-color:var(--navy)}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-location a:hover{border-bottom-color:var(--navy)}
         .card-tags{display:flex;flex-wrap:wrap;gap:.4rem}.card-tag{font-family:var(--font-body);font-size:.72rem;letter-spacing:0;text-transform:none;color:var(--muted);background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.25rem .65rem}
         .card-actions{display:flex;justify-content:flex-end;gap:.6rem;padding:1rem 1.75rem;border-top:1px solid var(--border);background:var(--cream)}.btn-secondary,.btn-primary{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-sm);padding:.6rem 1.1rem;cursor:pointer}.btn-secondary{color:var(--navy);background:transparent;border:1px solid var(--border)}.btn-primary{color:var(--gold);background:var(--navy);border:1px solid var(--navy)}
+        .save-btn{background:none;border:none;cursor:pointer;padding:.25rem .4rem;line-height:1;color:var(--muted);opacity:.4;transition:opacity 120ms,color 120ms;vertical-align:middle}.save-btn:hover{opacity:1;color:var(--gold-dim)}.save-btn.is-saved{color:var(--gold-dim);opacity:1}
+        .saved-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:var(--navy);border-radius:var(--radius-pill);font-size:.55rem;font-weight:700;min-width:14px;height:14px;padding:0 3px;margin-left:4px;line-height:1}
+        .saved-empty{text-align:center;padding:4rem 2rem;color:var(--muted);font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic}
         .results-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-md)}
         .results-table{width:100%;border-collapse:collapse;background:#fff}
         .results-table thead tr{background:var(--navy)}
@@ -784,19 +834,115 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .cal-modal-btn--ghost{background:transparent;color:var(--muted)}
         .cal-modal-btn:disabled{opacity:.45;cursor:not-allowed}
         .redesign-root footer{border-top:1px solid var(--border);padding:1.25rem 2.5rem;display:flex;justify-content:space-between;background:var(--cream)}.footer-left{display:flex;align-items:center;gap:.85rem}.avatar{width:30px;height:30px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.68rem;color:var(--gold)}.footer-note{font-family:var(--font-mono);font-size:.65rem;color:var(--muted)}
+
+        /* Hamburger + drawer — hidden on desktop */
+        .hamburger{display:none}
+        .mobile-menu{display:none}
+
+        @media(max-width:640px){
+          /* ── Nav ── */
+          .redesign-root nav{padding:.875rem 1.25rem;gap:.5rem}
+          .header-right{gap:.4rem}
+          .semester-toggle{display:none}
+          .top-tabs{display:none}
+          .categories-link{display:none}
+          .logo-wordmark{font-size:.88rem}
+
+          /* ── Hamburger button ── */
+          .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.3rem;margin-left:auto}
+          .hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:transform 200ms,opacity 200ms}
+          .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+          .hamburger.open span:nth-child(2){opacity:0}
+          .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+          /* ── Mobile drawer ── */
+          .mobile-menu{display:block;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);z-index:9;overflow:hidden;max-height:0;transition:max-height 260ms ease}
+          .mobile-menu.open{max-height:280px}
+          .mobile-menu-inner{padding:.75rem 1.25rem 1.25rem;display:flex;flex-direction:column;gap:.25rem}
+          .mobile-nav-btn{font-family:var(--font-display);font-size:1.35rem;font-weight:300;color:var(--navy);background:none;border:none;text-align:left;padding:.6rem 0;cursor:pointer;letter-spacing:-.01em;border-bottom:1px solid var(--border)}
+          .mobile-nav-btn:last-child{border-bottom:none}
+          .mobile-nav-btn.active{color:var(--gold-dim)}
+          .mobile-nav-link{font-family:var(--font-display);font-size:1.35rem;font-weight:300;color:var(--navy);text-decoration:none;display:block;padding:.6rem 0;border-bottom:1px solid var(--border)}
+
+          /* ── Main ── */
+          .redesign-main{padding:.75rem 1.25rem 5rem !important}
+          .eyebrow{margin-bottom:1rem}
+          .subheadline{margin-bottom:1.25rem}
+          .description{font-size:.9rem;line-height:1.65;margin-bottom:2.5rem}
+          .divider{margin:1.75rem 0}
+          .form-section{margin-bottom:1.75rem}
+
+          /* ── Form: time & day ── */
+          .when-section{display:flex;flex-direction:column;align-items:flex-start}
+          .when-section .section-label{order:1;width:100%}
+          .when-section .time-row{order:2}
+          .when-section .day-strip{order:3;justify-content:center;width:100%}
+          .day-btn,.time-btn,.chip{
+            font-size:.82rem;
+            line-height:1;
+            height:2.15rem;
+            padding:.58rem .8rem;
+          }
+          .day-btn{flex:0 0 auto;text-align:center}
+          .time-row{flex-wrap:nowrap;gap:.5rem;width:100%}
+          .time-btn{flex:0 0 auto}
+          .time-slider-wrap{flex:1 1 auto;min-width:0;width:100%}
+          .time-slider{width:100%}
+          .time-readout{min-width:56px;font-size:.72rem}
+          .chips{gap:.4rem}
+          .cta-wrapper{margin-top:2rem}
+
+          /* ── Results table → stacked rows ── */
+          .results-table-wrap{border-radius:var(--radius-md);overflow:hidden}
+          .results-table thead{display:none}
+          .results-table tbody,
+          .results-table tr,
+          .results-table td{display:block;width:100%}
+          .results-table tbody tr{padding:.85rem 1rem;border-top:1px solid var(--border);position:relative}
+          .results-table td{padding:0;border:none}
+          /* hide Topic and Instructor columns on mobile */
+          .results-table td:nth-child(3),
+          .results-table td:nth-child(6){display:none}
+          /* Code inline before title */
+          .results-table td:nth-child(1){display:inline;vertical-align:middle;margin-right:.4rem}
+          .results-table td:nth-child(2){display:inline;vertical-align:middle}
+          /* Time and Location stacked below */
+          .results-table td:nth-child(4){margin-top:.35rem}
+          .results-table td:nth-child(5){margin-top:.1rem}
+          .rt-title{font-size:.88rem}
+          .rt-time,.rt-location{font-size:.72rem}
+
+          /* ── Expanded card ── */
+          .expanded-card-wrap{padding:.875rem 1rem}
+          .card-body{padding:1.1rem 1.25rem}
+          .card-top{flex-direction:column;gap:.5rem}
+          .card-time-badge{align-self:flex-start}
+          .card-actions{padding:.85rem 1.25rem;flex-wrap:wrap;gap:.5rem}
+          .btn-secondary,.btn-primary{font-size:.68rem;padding:.55rem .85rem}
+
+          /* ── Pagination ── */
+          .pagination{margin-top:1.5rem;gap:.6rem}
+          .page-btn{padding:.85rem 1.4rem;font-size:.72rem}
+
+          /* ── Footer ── */
+          .redesign-root footer{padding:1rem 1.25rem}
+
+          /* ── Calendar modal ── */
+          .cal-modal{padding:1.25rem}
+        }
       `}</style>
       <div className="redesign-root">
-        <nav>
+        <nav style={{position:"relative"}}>
           <a className="logo" href="#">
             <div className="logo-mark">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <text x="2" y="13" fontFamily="Georgia" fontSize="12" fontWeight="bold" fill="#FDB515">CH</text>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <text x="16" y="21" fontFamily="Georgia" fontSize="13" fontWeight="bold" fill="#FDB515" textAnchor="middle">CH</text>
               </svg>
             </div>
             <span className="logo-wordmark">ClassHop</span>
           </a>
           <div className="header-right">
-            <Link href="/categories" style={{fontFamily:"var(--font-mono)",fontSize:".68rem",letterSpacing:".06em",color:"var(--muted)",textDecoration:"none",border:"1px solid var(--border)",borderRadius:"var(--radius-pill)",padding:".3rem .85rem"}}>
+            <Link href="/categories" className="categories-link" style={{fontFamily:"var(--font-mono)",fontSize:".68rem",letterSpacing:".06em",color:"var(--muted)",textDecoration:"none",border:"1px solid var(--border)",borderRadius:"var(--radius-pill)",padding:".3rem .85rem"}}>
               Categories
             </Link>
             <div className="top-tabs">
@@ -806,6 +952,13 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                 type="button"
               >
                 Discover
+              </button>
+              <button
+                className={`top-tab-btn ${topTab === "saved" ? "active" : ""}`}
+                onClick={() => setTopTab("saved")}
+                type="button"
+              >
+                Saved{savedIds.size > 0 && <span className="saved-badge">{savedIds.size}</span>}
               </button>
               <button
                 className={`top-tab-btn ${topTab === "editor" ? "active" : ""}`}
@@ -820,37 +973,39 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
               <button className={`semester-btn ${semester === "Fall 2026" ? "active" : ""}`} onClick={() => setSemester("Fall 2026")} type="button">Fall 2026</button>
             </div>
           </div>
+          {/* Hamburger — mobile only */}
+          <button
+            className={`hamburger${menuOpen ? " open" : ""}`}
+            type="button"
+            aria-label="Menu"
+            onClick={() => setMenuOpen(o => !o)}
+          >
+            <span /><span /><span />
+          </button>
+          {/* Mobile slide-down drawer */}
+          <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+            <div className="mobile-menu-inner">
+              <button className={`mobile-nav-btn${topTab === "discover" ? " active" : ""}`} type="button" onClick={() => { setTopTab("discover"); setMenuOpen(false); }}>Discover</button>
+              <button className={`mobile-nav-btn${topTab === "saved" ? " active" : ""}`} type="button" onClick={() => { setTopTab("saved"); setMenuOpen(false); }}>
+                Saved{savedIds.size > 0 && <span className="saved-badge" style={{marginLeft:".5rem"}}>{savedIds.size}</span>}
+              </button>
+              <a href="/categories" className="mobile-nav-link">Categories</a>
+            </div>
+          </div>
         </nav>
-        <main className="redesign-main" style={lastPool.length > 0 ? {maxWidth:"none",padding:"2.75rem 2.5rem 6rem"} : undefined}>
+        <main className="redesign-main" style={(lastPool.length > 0 || (topTab === "saved" && savedCourses.length > 0)) ? {maxWidth:"none",padding:"2.75rem 2.5rem 6rem"} : undefined}>
           {topTab === "discover" ? (
             <>
-              <h1 className="hero-title">Got a free hour?</h1>
+              <h1 className="hero-title">Got a Free Hour?</h1>
               <p className="subheadline">Wander into a class.</p>
               <p className="description">Tell us when you&apos;re free and what sparks your curiosity. We&apos;ll find a real Berkeley class happening right now that you can quietly sit in on.</p>
               <div className="divider" />
-              <div className="form-section">
-                <div className="section-header-row">
+              <div className="form-section when-section">
                   <div className="section-label">
                     <span className="step-number">01</span>
                     <span className="section-title">When are you free?{"\u00a0"}</span>
                   </div>
-                  <div className="day-strip">
-                    {WEEKDAY_BUTTONS.map(({ token, label }) => (
-                      <button
-                        key={token}
-                        type="button"
-                        className={`day-btn ${selectedWeekday === token ? "active" : ""}`}
-                        onClick={() => {
-                          setSelectedWeekday(token);
-                          setUsingNow(false);
-                        }}
-                      >
-                        {label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="time-row">
+                  <div className="time-row">
                   <button className={`time-btn ${usingNow ? "active" : ""}`} type="button" onClick={handleNow}>Now</button>
                   <div className="time-slider-wrap">
                     <input
@@ -861,16 +1016,32 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                       step={30}
                       value={selectedMinutes}
                       onChange={(e) => {
-                        setSelectedMinutes(snapToHalfHour(Number(e.target.value)));
-                        setUsingNow(false);
+                        const snapped = snapToHalfHour(Number(e.target.value));
+                        setSelectedMinutes(snapped);
+                        setUsingNow(shouldUseNow(selectedWeekday, snapped));
                       }}
                     />
                     <span className="time-readout">{formatMinutes12h(selectedMinutes)}</span>
                   </div>
                 </div>
+                  <div className="day-strip">
+                    {WEEKDAY_BUTTONS.map(({ token, label }) => (
+                      <button
+                        key={token}
+                        type="button"
+                        className={`day-btn ${selectedWeekday === token ? "active" : ""}`}
+                        onClick={() => {
+                          setSelectedWeekday(token);
+                          setUsingNow(shouldUseNow(token, selectedMinutes));
+                        }}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
               </div>
               <div className="form-section">
-                <div className="section-label"><span className="step-number">02</span><span className="section-title">What are you into? <span style={{opacity:0.5,fontSize:"0.65rem"}}>(optional)</span></span></div>
+                <div className="section-label"><span className="step-number">02</span><span className="section-title">What are you into? <span style={{opacity:0.5}}>(optional)</span></span></div>
                 <div className="chips">
                   {INTEREST_OPTIONS.map((interest) => (
                     <button key={interest} type="button" className={`chip ${selectedInterests.includes(interest) ? "active" : ""}`} onClick={() => toggleInterest(interest)}>{interest}</button>
@@ -889,7 +1060,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
               )}
               {lastPool.length > 0 && (
                 <div className="result-section">
-                  <p className="result-count">{lastPool.length} {lastPool.length === 1 ? "class" : "classes"} available · click a row to expand</p>
+                  <p className="result-count">{sortedPool.length} {sortedPool.length === 1 ? "class" : "classes"} available · showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, sortedPool.length)} · click a row to expand</p>
                   <div className="results-table-wrap">
                     <table className="results-table">
                       <thead>
@@ -907,7 +1078,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                         </tr>
                       </thead>
                       <tbody>
-                        {sortedPool.map((course) => {
+                        {sortedPool.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE).map((course) => {
                           const isOpen = currentCourse?.id === course.id;
                           return (
                             <React.Fragment key={course.id}>
@@ -947,6 +1118,105 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                                           <div className="card-tags">{course.interests.map((tag) => <span key={tag} className="card-tag">{tag}</span>)}</div>
                                         </div>
                                         <div className="card-actions">
+                                          <button className="btn-secondary" type="button" onClick={(e) => toggleSave(course.id, e)}>
+                                            <span style={{fontSize:"1.1rem",lineHeight:1,marginRight:".3rem"}}>{savedIds.has(course.id) ? "★" : "☆"}</span>{savedIds.has(course.id) ? "Saved" : "Save"}
+                                          </button>
+                                          <button className="btn-secondary" type="button" onClick={(e) => { e.stopPropagation(); setPendingCalendarCourse(course); }}>Add to Calendar</button>
+                                          <button className="btn-primary" type="button" onClick={(e) => { e.stopPropagation(); setCurrentCourse(null); }}>Collapse ↑</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              )}
+                            </React.Fragment>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                  {sortedPool.length > PAGE_SIZE && (
+                    <div className="pagination">
+                      <button
+                        className="page-btn"
+                        type="button"
+                        disabled={page === 0}
+                        onClick={() => { setPage(p => p - 1); setCurrentCourse(null); }}
+                      >← Prev</button>
+                      <span className="page-info">{page + 1} / {Math.ceil(sortedPool.length / PAGE_SIZE)}</span>
+                      <button
+                        className="page-btn"
+                        type="button"
+                        disabled={(page + 1) * PAGE_SIZE >= sortedPool.length}
+                        onClick={() => { setPage(p => p + 1); setCurrentCourse(null); }}
+                      >Next →</button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </>
+          ) : topTab === "saved" ? (
+            <>
+              <h1 className="hero-title">Saved Classes</h1>
+              <p className="subheadline">Your personal shortlist.</p>
+              {savedCourses.length === 0 ? (
+                <p className="saved-empty">No saved classes yet — bookmark a row from your search results.</p>
+              ) : (
+                <div className="result-section">
+                  <p className="result-count">{savedCourses.length} saved {savedCourses.length === 1 ? "class" : "classes"} · click a row to expand</p>
+                  <div className="results-table-wrap">
+                    <table className="results-table">
+                      <thead>
+                        <tr>
+                          <th>Code</th>
+                          <th>Title</th>
+                          <th>Topic</th>
+                          <th>Time</th>
+                          <th>Location</th>
+                          <th>Instructor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {savedCourses.map((course) => {
+                          const isOpen = currentCourse?.id === course.id;
+                          return (
+                            <React.Fragment key={course.id}>
+                              <tr className={isOpen ? "row-active" : ""} onClick={() => setCurrentCourse(isOpen ? null : course)}>
+                                <td><span className="rt-code">{course.code}</span></td>
+                                <td><span className="rt-title">{course.title}</span></td>
+                                <td>
+                                  <div className="rt-tags">
+                                    {course.interests.map((tag) => <span key={tag} className="rt-tag">{tag}</span>)}
+                                  </div>
+                                </td>
+                                <td><span className="rt-time">{course.meetDays} · {formatTimeRange(course.startTime, course.endTime)}</span></td>
+                                <td><span className="rt-location">{formatBuildingLabel(course.building)}{course.room && course.room !== "TBD" ? `, ${course.room}` : ""}</span></td>
+                                <td><span className="rt-instructor">{formatInstructor(course.instructor)}</span></td>
+                              </tr>
+                              {isOpen && (
+                                <tr className="expanded-row">
+                                  <td colSpan={6}>
+                                    <div className="expanded-card-wrap">
+                                      <div className="course-card">
+                                        <div className="card-body">
+                                          <div className="card-top">
+                                            <div>
+                                              <p className="card-college">{getDisplayDepartment(course.department, course.code.split(" ")[0])}</p>
+                                              <span className="card-dept">{getDisplayCollege(course)}</span>
+                                            </div>
+                                            <span className="card-time-badge">{course.meetDays} · {formatTimeRange(course.startTime, course.endTime)}</span>
+                                          </div>
+                                          <h2 className="card-title">{course.title}</h2>
+                                          <p className="card-meta">{course.code} · <InstructorWithRmpLink instructor={course.instructor} /></p>
+                                          <div className="card-divider" />
+                                          <div className="card-location"><a href={buildMapsUrl(course.building)} target="_blank" rel="noreferrer">{formatBuildingLabel(course.building)}, Room {course.room}</a></div>
+                                          <p className="card-desc">{stripPrereqText(course.description)}</p>
+                                          <div className="card-tags">{course.interests.map((tag) => <span key={tag} className="card-tag">{tag}</span>)}</div>
+                                        </div>
+                                        <div className="card-actions">
+                                          <button className="btn-secondary" type="button" onClick={(e) => toggleSave(course.id, e)}>
+                                            <span style={{fontSize:"1.1rem",lineHeight:1,marginRight:".3rem"}}>★</span>Remove
+                                          </button>
                                           <button className="btn-secondary" type="button" onClick={(e) => { e.stopPropagation(); setPendingCalendarCourse(course); }}>Add to Calendar</button>
                                           <button className="btn-primary" type="button" onClick={(e) => { e.stopPropagation(); setCurrentCourse(null); }}>Collapse ↑</button>
                                         </div>
@@ -1014,8 +1284,14 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
           )}
         </main>
         <footer>
-          <div className="footer-left"><div className="avatar">CH</div><span className="footer-brand"><strong>ClassHop</strong> · UC Berkeley</span></div>
-          <span className="footer-note">Times are approximations — verify with the official schedule.</span>
+          <a className="logo" href="#">
+            <div className="logo-mark">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <text x="16" y="21" fontFamily="Georgia" fontSize="13" fontWeight="bold" fill="#FDB515" textAnchor="middle">CH</text>
+              </svg>
+            </div>
+            <span className="logo-wordmark">ClassHop <span style={{fontWeight:400,opacity:0.5}}>· UC Berkeley</span></span>
+          </a>
         </footer>
         {pendingCalendarCourse && (
           <div

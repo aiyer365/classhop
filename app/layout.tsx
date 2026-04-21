@@ -27,7 +27,9 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: "ClassHop",
-  description: "Discover interesting UC Berkeley lectures that fit your free time."
+  description: "Discover interesting UC Berkeley lectures that fit your free time.",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#002855"
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

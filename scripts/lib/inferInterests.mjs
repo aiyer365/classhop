@@ -97,7 +97,7 @@ const SIGNALS = {
     /\b(mathematical proof|real analysis|complex analysis|discrete math)\b/i,
     /\b(statistics|statistical method|hypothesis test|regression|inference)\b/i,
     /\b(data science|data analysis|data mining|machine learning)\b/i,
-    /\b(optimization|numerical method|simulation|modeling)\b/i
+    /\b(optimization|numerical method|mathematical modeling|statistical simulation|computational modeling)\b/i
   ],
   "Science & Nature": [
     /\b(biology|molecular biology|cell biology|biochemistry|genetics)\b/i,
@@ -106,7 +106,7 @@ const SIGNALS = {
     /\b(astronomy|astrophysics|cosmology|planetary science)\b/i,
     /\b(evolution|ecology|physiology|anatomy|neuroscience|microbiology)\b/i,
     /\b(geology|geophysics|atmospheric science|oceanography|climate)\b/i,
-    /\b(laboratory|experiment|empirical|scientific method)\b/i,
+    /\b(laboratory|experiment|scientific method|empirical research|empirical study)\b/i,
     /\b(immunology|virology|epidemiology|pharmacology)\b/i
   ],
   "Arts & Design": [
@@ -115,7 +115,7 @@ const SIGNALS = {
     /\b(theater|theatre|drama|acting|playwriting|performance)\b/i,
     /\b(film|cinema|documentary|screenwriting|cinematography)\b/i,
     /\b(visual art|painting|sculpture|drawing|printmaking|photography)\b/i,
-    /\b(architecture|architectural design|urban design|landscape)\b/i,
+    /\b(architecture|architectural design|urban design|landscape architecture|landscape design)\b/i,
     /\b(graphic design|typography|illustration|studio art)\b/i,
     /\b(dance|choreography|art history|aesthetic|criticism)\b/i
   ],
@@ -129,16 +129,16 @@ const SIGNALS = {
     /\b(religion|mythology|ritual|sacred|secular)\b/i
   ],
   "Society & Politics": [
-    /\b(political science|politics|governance|democracy|election)\b/i,
-    /\b(public policy|policy analysis|legislation|regulation)\b/i,
-    /\b(sociology|social theory|social movement|inequality)\b/i,
-    /\b(race|racism|gender|sexuality|identity|intersectionality)\b/i,
-    /\b(psychology|cognitive|behavioral|perception|mental health)\b/i,
-    /\b(law|legal|jurisprudence|constitutional|criminal justice)\b/i,
-    /\b(philosophy|ethics|moral|epistemology|metaphysics|logic)\b/i,
-    /\b(international relations|globalization|diplomacy|foreign policy)\b/i,
-    /\b(education|pedagogy|learning|curriculum|teaching)\b/i,
-    /\b(media|journalism|communication|rhetoric|discourse)\b/i
+    /\b(political science|politics|governance|democracy|election|political economy)\b/i,
+    /\b(public policy|policy analysis|legislation|government regulation|regulatory policy|social policy)\b/i,
+    /\b(sociology|social theory|social movement|inequality|social structure|social stratification)\b/i,
+    /\b(race|racism|racial equity|gender studies|sexuality|gender identity|social identity|intersectionality|racial justice)\b/i,
+    /\b(psychology|cognitive psychology|behavioral science|social behavior|mental health|human behavior)\b/i,
+    /\b(legal system|legal studies|jurisprudence|constitutional law|criminal justice|rule of law|case law|legal theory|international law)\b/i,
+    /\b(philosophy|moral philosophy|applied ethics|research ethics|bioethics|political philosophy|epistemology|metaphysics|philosophical logic)\b/i,
+    /\b(international relations|globalization|diplomacy|foreign policy|geopolitics|political theory)\b/i,
+    /\b(education policy|pedagogy|curriculum studies|higher education|public education)\b/i,
+    /\b(journalism|mass media|news media|social media|rhetoric|public discourse|science communication|political communication)\b/i
   ],
   "Business & Economics": [
     /\b(economics|economic theory|microeconomics|macroeconomics)\b/i,
