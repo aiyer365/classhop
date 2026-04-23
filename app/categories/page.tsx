@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./page.module.css";
 
 const CATEGORIES = [
   {
@@ -45,29 +46,30 @@ const CATEGORIES = [
 
 export default function CategoriesPage() {
   return (
-    <div className="cat-root">
-      <nav className="cat-nav">
-        <Link href="/" className="logo">
-          <div className="logo-mark">
+    <div className={styles.root}>
+      <nav className={styles.nav}>
+        <Link href="/" className={styles.logo}>
+          <div className={styles.logoMark}>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <text x="2" y="13" fontFamily="Georgia" fontSize="12" fontWeight="bold" fill="#FDB515">CH</text>
             </svg>
           </div>
-          <span className="logo-wordmark">ClassHop</span>
+          <span className={styles.logoWordmark}>ClassHop</span>
         </Link>
-        <Link href="/" className="back-link">← Back to discover</Link>
+        <Link href="/" className={styles.backLink}>← Back to discover</Link>
       </nav>
 
-      <main className="cat-main">
-        <p className="cat-eyebrow">Interest categories</p>
-        <h1 className="cat-title">What are you curious about?</h1>
-        <p className="cat-subtitle">Eight buckets. Thousands of classes.</p>
-        <p className="cat-desc">
+      <main className={styles.main}>
+        <p className={styles.eyebrow}>Interest categories</p>
+        <h1 className={styles.title}>What are you curious about?</h1>
+        <p className={styles.subtitle}>Eight buckets. Thousands of classes.</p>
+        <p className={styles.desc}>
           Each interest tag maps to a cluster of related departments and topics at Berkeley.
           Use them on the discover page to narrow your search — or leave them blank to see everything happening right now.
         </p>
 
-        <table className="cat-table">
+        <div className={styles.tableWrap}>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Category</th>
@@ -78,11 +80,11 @@ export default function CategoriesPage() {
             {CATEGORIES.map((cat) => (
               <tr key={cat.name}>
                 <td>{cat.name}</td>
-                <td className="covers">
+                <td className={styles.covers}>
                   {cat.covers}
-                  <div className="example-list">
+                  <div className={styles.exampleList}>
                     {cat.examples.map((ex) => (
-                      <span key={ex} className="example-pill">{ex}</span>
+                      <span key={ex} className={styles.examplePill}>{ex}</span>
                     ))}
                   </div>
                 </td>
@@ -90,11 +92,12 @@ export default function CategoriesPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </main>
 
-      <footer className="cat-footer">
-        <span className="footer-note">ClassHop · UC Berkeley</span>
-        <span className="footer-note">Tags are inferred — some courses may span multiple categories.</span>
+      <footer className={styles.footer}>
+        <span className={styles.footerNote}>ClassHop · UC Berkeley</span>
+        <span className={styles.footerNote}>Tags are inferred — some courses may span multiple categories.</span>
       </footer>
     </div>
   );
