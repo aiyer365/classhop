@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link";
 
 import type { Course, Interest, Semester } from "../lib/types";
+import { DEFAULT_SEMESTER } from "../lib/types";
 
 const INTEREST_OPTIONS: Interest[] = [
   "Business & Economics",
@@ -19,9 +20,17 @@ const INTEREST_OPTIONS: Interest[] = [
 const EARLIEST_MINUTES = 7 * 60; // 7:00 AM
 const LATEST_MINUTES = 19 * 60; // 7:00 PM
 const LOCKED_WINDOW_MINUTES = 60;
+const EXCLUDED_BUILDINGS = new Set(["Internet/Online", "Off", "Unknown"]);
 
 type WeekdayToken = "M" | "T" | "W" | "Tr" | "F";
 type TopTab = "discover" | "saved" | "search" | "editor";
+type PreparedCourse = Course & {
+  resolvedSemester: Semester;
+  startMinutes: number;
+  endMinutes: number;
+  subjectCode: string;
+  searchText: string;
+};
 
 const WEEKDAY_BUTTONS: { token: WeekdayToken; label: string }[] = [
   { token: "M", label: "M" },
@@ -308,7 +317,7 @@ function InstructorWithRmpLink({ instructor }: { instructor: string }) {
 }
 
 function getCourseSemester(course: Course): Semester {
-  return course.semester ?? "Spring 2026";
+  return course.semester ?? DEFAULT_SEMESTER;
 }
 
 /** Scraped schedule text often drops “Hall” / “Building”; normalize for display and maps. */
@@ -317,6 +326,10 @@ function formatBuildingLabel(raw: string): string {
   if (!key) return raw;
 
   const map: Record<string, string> = {
+    "2240 Piedmont": "2240 Piedmont Ave",
+    "2251 College": "ARF Building (Archaeological Research Facility)",
+    "2401 Bancroft": "Bancroft Dance Studio",
+    "2547 Bowditch": "Anna Head Alumnae Hall",
     "Anthro/Art Practice Bldg": "Anthro/Art Practice Building",
     Barker: "Barker Hall",
     Birge: "Birge Hall",
@@ -545,6 +558,120 @@ function downloadJsonFile(filename: string, data: unknown) {
   URL.revokeObjectURL(url);
 }
 
+function BuildingCombobox({
+  buildings,
+  value,
+  onChange
+}: {
+  buildings: string[];
+  value: string | null;
+  onChange: (v: string | null) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(-1);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return buildings;
+    return buildings.filter((b) => formatBuildingLabel(b).toLowerCase().includes(q));
+  }, [buildings, query]);
+
+  useEffect(() => { setActiveIdx(-1); }, [filtered]);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
+  function select(building: string) {
+    onChange(building);
+    setQuery("");
+    setOpen(false);
+    setActiveIdx(-1);
+  }
+
+  function clear() {
+    onChange(null);
+    setQuery("");
+    setActiveIdx(-1);
+    inputRef.current?.focus();
+  }
+
+  function onKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "Escape") { setOpen(false); setActiveIdx(-1); return; }
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setOpen(true);
+      setActiveIdx((i) => Math.min(i + 1, filtered.length - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIdx((i) => Math.max(i - 1, 0));
+    } else if (e.key === "Enter") {
+      if (activeIdx >= 0 && filtered[activeIdx]) { e.preventDefault(); select(filtered[activeIdx]); }
+    }
+  }
+
+  const displayValue = value ? formatBuildingLabel(value) : "";
+
+  return (
+    <div className="building-combobox" ref={wrapRef}>
+      <div className={`building-input-wrap ${open ? "open" : ""} ${value ? "has-value" : ""}`}>
+        <svg className="building-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5Zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="currentColor"/>
+        </svg>
+        <input
+          ref={inputRef}
+          type="text"
+          className="building-search-input"
+          placeholder={value ? displayValue : "Search a building…"}
+          value={open ? query : (value ? displayValue : query)}
+          onChange={(e) => { setQuery(e.target.value); setOpen(true); if (value) onChange(null); }}
+          onFocus={() => { setOpen(true); if (value) setQuery(""); }}
+          onKeyDown={onKeyDown}
+          role="combobox"
+          aria-expanded={open}
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autoComplete="off"
+        />
+        {value && (
+          <button type="button" className="building-clear" onClick={clear} aria-label="Clear building">×</button>
+        )}
+        <svg className={`building-chevron ${open ? "up" : ""}`} width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      {open && filtered.length > 0 && (
+        <ul className="building-dropdown" ref={listRef} role="listbox">
+          {filtered.map((b, i) => (
+            <li
+              key={b}
+              role="option"
+              aria-selected={value === b}
+              className={`building-option ${value === b ? "selected" : ""} ${activeIdx === i ? "active" : ""}`}
+              onMouseDown={(e) => { e.preventDefault(); select(b); }}
+              onMouseEnter={() => setActiveIdx(i)}
+            >
+              {formatBuildingLabel(b)}
+            </li>
+          ))}
+        </ul>
+      )}
+      {open && filtered.length === 0 && (
+        <div className="building-dropdown building-no-results">No buildings match</div>
+      )}
+    </div>
+  );
+}
+
 function snapToHalfHour(totalMinutes: number): number {
   let total = totalMinutes;
   const remainder = totalMinutes % 30;
@@ -559,16 +686,14 @@ function timeStringToMinutes(time: string): number {
   return h * 60 + m;
 }
 
-/** True if class [cStart, cEnd] overlaps user window [wStart, wEnd), all in minutes on the same nominal day. */
-function courseOverlapsFreeRange(
-  courseStart: string,
-  courseEnd: string,
+
+function minutesOverlapWindow(
+  courseStartMin: number,
+  courseEndMin: number,
   wStartMin: number,
   wEndMin: number
 ): boolean {
-  const cStart = timeStringToMinutes(courseStart);
-  const cEnd = timeStringToMinutes(courseEnd);
-  return cStart < wEndMin && cEnd > wStartMin;
+  return courseStartMin < wEndMin && courseEndMin > wStartMin;
 }
 
 function formatMinutes12h(totalMinutes: number): string {
@@ -642,10 +767,10 @@ function TimeRangeBar({
       if (endLocked) {
         onStartChange(Math.max(min, Math.min(snapped, max - LOCKED_WINDOW_MINUTES)));
       } else {
-        onStartChange(Math.max(min, Math.min(snapped, endMin - 30)));
+        onStartChange(Math.max(min, Math.min(snapped, endMin - LOCKED_WINDOW_MINUTES)));
       }
     } else {
-      onEndChange(Math.min(max, Math.max(snapped, startMin + 30)));
+      onEndChange(Math.min(max, Math.max(snapped, startMin + LOCKED_WINDOW_MINUTES)));
     }
   };
 
@@ -674,10 +799,10 @@ function TimeRangeBar({
         if (endLocked) {
           onStartChange(Math.max(min, Math.min(s, max - LOCKED_WINDOW_MINUTES)));
         } else {
-          onStartChange(Math.max(min, Math.min(s, endRef.current - 30)));
+          onStartChange(Math.max(min, Math.min(s, endRef.current - LOCKED_WINDOW_MINUTES)));
         }
       } else {
-        onEndChange(Math.min(max, Math.max(s, startRef.current + 30)));
+        onEndChange(Math.min(max, Math.max(s, startRef.current + LOCKED_WINDOW_MINUTES)));
       }
     };
     const onUp = () => { dragRangeAnchor.current = null; setDrag(null); };
@@ -716,7 +841,7 @@ function TimeRangeBar({
           style={{ left: `${pct0}%` }}
           aria-label="Window starts at"
           aria-valuemin={min}
-          aria-valuemax={endLocked ? max - LOCKED_WINDOW_MINUTES : endMin - 30}
+          aria-valuemax={endLocked ? max - LOCKED_WINDOW_MINUTES : endMin - LOCKED_WINDOW_MINUTES}
           aria-valuenow={startMin}
           role="slider"
           onKeyDown={(e) => {
@@ -729,7 +854,7 @@ function TimeRangeBar({
               onStartChange(
                 endLocked
                   ? Math.min(startMin + 30, max - LOCKED_WINDOW_MINUTES)
-                  : Math.min(startMin + 30, endMin - 30)
+                  : Math.min(startMin + 30, endMin - LOCKED_WINDOW_MINUTES)
               );
             }
           }}
@@ -749,14 +874,14 @@ function TimeRangeBar({
               ? "Drag past 1 hour to plan a longer window"
               : "Window end"
           }
-          aria-valuemin={startMin + 30}
+          aria-valuemin={startMin + LOCKED_WINDOW_MINUTES}
           aria-valuemax={max}
           aria-valuenow={endMin}
           role="slider"
           onKeyDown={(e) => {
             if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
               e.preventDefault();
-              onEndChange(Math.max(endMin - 30, startMin + 30));
+              onEndChange(Math.max(endMin - 30, startMin + LOCKED_WINDOW_MINUTES));
             }
             if (e.key === "ArrowRight" || e.key === "ArrowUp") {
               e.preventDefault();
@@ -785,17 +910,22 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
       initialCourses.map((c) => ({
         ...c,
         id: String(c.id),
-        meetDays: c.meetDays ?? "MW"
+        meetDays: c.meetDays ?? "MW",
+        resolvedSemester: getCourseSemester(c),
+        startMinutes: timeStringToMinutes(c.startTime),
+        endMinutes: timeStringToMinutes(c.endTime),
+        subjectCode: (c.code.split(" ")[0] || "").toUpperCase(),
+        searchText: `${c.title} ${c.code} ${c.instructor} ${c.department} ${c.description}`.toLowerCase()
       })),
     [initialCourses]
-  );
+  ) as PreparedCourse[];
 
-  const [semester, setSemester] = useState<Semester>("Spring 2026");
+  const [semester, setSemester] = useState<Semester>(DEFAULT_SEMESTER);
   const [topTab, setTopTab] = useState<TopTab>("discover");
-  const [selectedWeekday, setSelectedWeekday] = useState<WeekdayToken>(getDefaultWeekdayToken);
-  const [freeRangeStartMinutes, setFreeRangeStartMinutes] = useState(getDefaultMinutes);
-  const [freeRangeEndMinutes, setFreeRangeEndMinutes] = useState(() =>
-    Math.min(LATEST_MINUTES, getDefaultMinutes() + LOCKED_WINDOW_MINUTES)
+  const [selectedWeekday, setSelectedWeekday] = useState<WeekdayToken>("M");
+  const [freeRangeStartMinutes, setFreeRangeStartMinutes] = useState(EARLIEST_MINUTES);
+  const [freeRangeEndMinutes, setFreeRangeEndMinutes] = useState(
+    EARLIEST_MINUTES + LOCKED_WINDOW_MINUTES
   );
   const [freeRangeUnlocked, setFreeRangeUnlocked] = useState(false);
   const [usingNow, setUsingNow] = useState(true);
@@ -804,6 +934,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   freeRangeUnlockedRef.current = freeRangeUnlocked;
   freeRangeStartRef.current = freeRangeStartMinutes;
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
+  const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedCodes, setExpandedCodes] = useState<Set<string>>(new Set());
   const [currentSearchSection, setCurrentSearchSection] = useState<string | null>(null);
@@ -816,8 +947,20 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [savedIds, setSavedIds] = useState<Set<string>>(() => new Set<string>());
   const savedStorageReady = useRef(false);
+
+  // Hydration-safe defaults: compute time-based selections only on the client.
+  useEffect(() => {
+    const weekday = getDefaultWeekdayToken();
+    const startM = Math.min(getDefaultMinutes(), LATEST_MINUTES - LOCKED_WINDOW_MINUTES);
+    setSelectedWeekday(weekday);
+    setFreeRangeUnlocked(false);
+    setFreeRangeStartMinutes(startM);
+    setFreeRangeEndMinutes(Math.min(LATEST_MINUTES, startM + LOCKED_WINDOW_MINUTES));
+    setUsingNow(shouldUseNow(weekday, startM));
+  }, []);
 
   useEffect(() => {
     try {
@@ -828,6 +971,19 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     }
     savedStorageReady.current = true;
   }, []);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("classhop-dark");
+      if (stored !== null) setDarkMode(stored === "true");
+    } catch { /* ignore */ }
+  }, []);
+
+  useEffect(() => {
+    try { localStorage.setItem("classhop-dark", String(darkMode)); } catch { /* ignore */ }
+    if (darkMode) document.documentElement.classList.add("dark");
+    else document.documentElement.classList.remove("dark");
+  }, [darkMode]);
 
   useEffect(() => {
     if (!savedStorageReady.current) return;
@@ -849,6 +1005,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   }
 
   const freeRangeValid = freeRangeStartMinutes < freeRangeEndMinutes;
+  const selectedInterestSet = useMemo(() => new Set(selectedInterests), [selectedInterests]);
 
   function shouldUseNow(weekday: WeekdayToken, startMin: number): boolean {
     return weekday === getDefaultWeekdayToken() && startMin === getDefaultMinutes();
@@ -868,7 +1025,9 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         return;
       }
       setFreeRangeStartMinutes(snapped);
-      setFreeRangeEndMinutes((end) => (end <= snapped ? Math.min(LATEST_MINUTES, snapped + 30) : end));
+      setFreeRangeEndMinutes((end) =>
+        end <= snapped ? Math.min(LATEST_MINUTES, snapped + LOCKED_WINDOW_MINUTES) : end
+      );
       setUsingNow(shouldUseNow(selectedWeekday, snapped));
     },
     [selectedWeekday]
@@ -882,9 +1041,19 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
       setFreeRangeUnlocked(true);
     }
     setFreeRangeEndMinutes(snapped);
-    setFreeRangeStartMinutes((start) => (snapped <= start ? Math.max(EARLIEST_MINUTES, snapped - 30) : start));
+    setFreeRangeStartMinutes((start) =>
+      snapped <= start ? Math.max(EARLIEST_MINUTES, snapped - LOCKED_WINDOW_MINUTES) : start
+    );
     setUsingNow(false);
   }, []);
+
+  const availableBuildings = useMemo(
+    () =>
+      [...new Set(allCourses.map((c) => c.building))]
+        .filter((b) => b && !EXCLUDED_BUILDINGS.has(b))
+        .sort((a, b) => formatBuildingLabel(a).localeCompare(formatBuildingLabel(b))),
+    [allCourses]
+  );
 
   const filteredCourses = useMemo(() => {
     if (!freeRangeValid) return [];
@@ -892,20 +1061,22 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     let wEnd = freeRangeEndMinutes;
     if (wStart > wEnd) [wStart, wEnd] = [wEnd, wStart];
     return allCourses.filter((course) => {
-      if (getCourseSemester(course) !== semester) return false;
+      if (course.resolvedSemester !== semester) return false;
       if (!meetDaysIncludes(course.meetDays, selectedWeekday)) return false;
-      if (selectedInterests.length > 0) {
-        const intersects = course.interests.some((i) => selectedInterests.includes(i));
+      if (selectedInterestSet.size > 0) {
+        const intersects = course.interests.some((i) => selectedInterestSet.has(i));
         if (!intersects) return false;
       }
-      return courseOverlapsFreeRange(course.startTime, course.endTime, wStart, wEnd);
+      if (selectedBuilding && course.building !== selectedBuilding) return false;
+      return minutesOverlapWindow(course.startMinutes, course.endMinutes, wStart, wEnd);
     });
   }, [
     allCourses,
     freeRangeEndMinutes,
     freeRangeStartMinutes,
     freeRangeValid,
-    selectedInterests,
+    selectedInterestSet,
+    selectedBuilding,
     semester,
     selectedWeekday
   ]);
@@ -915,7 +1086,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     [allCourses]
   );
   const semesterCourses = useMemo(
-    () => allCourses.filter((course) => getCourseSemester(course) === semester),
+    () => allCourses.filter((course) => course.resolvedSemester === semester),
     [allCourses, semester]
   );
   const dayMatchedCourses = useMemo(
@@ -932,15 +1103,10 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const searchGroups = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return [];
+    const tokens = q.split(/\s+/).filter(Boolean);
     const matched = allCourses.filter((c) => {
-      if (getCourseSemester(c) !== semester) return false;
-      return (
-        c.title.toLowerCase().includes(q) ||
-        c.code.toLowerCase().includes(q) ||
-        c.instructor.toLowerCase().includes(q) ||
-        c.department.toLowerCase().includes(q) ||
-        c.description.toLowerCase().includes(q)
-      );
+      if (c.resolvedSemester !== semester) return false;
+      return tokens.every((token) => c.searchText.includes(token));
     });
     const map = new Map<string, Course[]>();
     for (const c of matched) {
@@ -998,17 +1164,21 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   }
 
   const sortedPool = useMemo(() => {
-    setPage(0);
     if (!sortCol) return lastPool;
     return [...lastPool].sort((a, b) => {
       let va: string, vb: string;
       if (sortCol === "title") {
         va = a.title; vb = b.title;
       } else {
-        va = a.code.split(" ")[0]; vb = b.code.split(" ")[0];
+        va = (a as PreparedCourse).subjectCode;
+        vb = (b as PreparedCourse).subjectCode;
       }
       return sortDir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
     });
+  }, [lastPool, sortCol, sortDir]);
+
+  useEffect(() => {
+    setPage(0);
   }, [lastPool, sortCol, sortDir]);
 
   function handleSort(col: "title" | "code") {
@@ -1045,12 +1215,29 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     setPage(0);
     const shuffled = [...filteredCourses].sort(() => Math.random() - 0.5);
     if (selectedInterests.length > 0) {
+      const interestSet = new Set(selectedInterests);
+      const scoreCache = new Map<string, { count: number; pure: boolean }>();
+      const getScore = (course: Course) => {
+        const cached = scoreCache.get(course.id);
+        if (cached) return cached;
+        let count = 0;
+        let pure = true;
+        for (const interest of course.interests) {
+          if (interestSet.has(interest)) count += 1;
+          else pure = false;
+        }
+        const score = { count, pure };
+        scoreCache.set(course.id, score);
+        return score;
+      };
       shuffled.sort((a, b) => {
-        const aCount = selectedInterests.filter((i) => a.interests.includes(i)).length;
-        const bCount = selectedInterests.filter((i) => b.interests.includes(i)).length;
+        const aScore = getScore(a);
+        const bScore = getScore(b);
+        const aCount = aScore.count;
+        const bCount = bScore.count;
         if (bCount !== aCount) return bCount - aCount;
-        const aPure = a.interests.every((i) => selectedInterests.includes(i)) ? 0 : 1;
-        const bPure = b.interests.every((i) => selectedInterests.includes(i)) ? 0 : 1;
+        const aPure = aScore.pure ? 0 : 1;
+        const bPure = bScore.pure ? 0 : 1;
         return aPure - bPure;
       });
     }
@@ -1064,18 +1251,58 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   return (
     <>
       <style jsx global>{`
-        :root { --navy:#002855; --navy-light:#0a3d6b; --gold:#fdb515; --gold-dim:#c98e00; --cream:#f8f5ef; --cream-dark:#ede8de; --text:#1a1612; --muted:#6b6356; --border:rgba(0,40,85,0.14); --chip-bg:#fff; --font-display:var(--font-fraunces),Georgia,serif; --font-body:var(--font-dm-sans),system-ui,sans-serif; --font-mono:var(--font-dm-mono),monospace; --radius-sm:6px; --radius-md:12px; --radius-pill:999px;}
+        :root { --navy:#002855; --navy-light:#0a3d6b; --gold:#fdb515; --gold-dim:#c98e00; --cream:#f8f5ef; --cream-dark:#ede8de; --text:#1a1612; --muted:#6b6356; --border:rgba(0,40,85,0.14); --chip-bg:#fff; --surface:#fff; --font-display:var(--font-fraunces),Georgia,serif; --font-body:var(--font-dm-sans),system-ui,sans-serif; --font-mono:var(--font-dm-mono),monospace; --radius-sm:6px; --radius-md:12px; --radius-pill:999px;}
+
         .redesign-root,.redesign-root *{box-sizing:border-box}.redesign-root{min-height:100vh;display:flex;flex-direction:column;background:var(--cream);color:var(--text);font-family:var(--font-body)}
+        body,body *{transition:background-color 300ms ease,color 300ms ease,border-color 300ms ease,box-shadow 300ms ease;}
         .redesign-root nav{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 2.5rem;border-bottom:1px solid var(--border);background:var(--cream);position:sticky;top:0;z-index:10}
         .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}.logo-mark{width:32px;height:32px;background:var(--navy);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}.logo-wordmark{font-weight:500;font-size:1rem;color:var(--navy);letter-spacing:-.01em}
+        .dark .logo-wordmark{color:var(--text)}
+        .theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:var(--radius-pill);border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);transition:color 120ms,border-color 120ms,background 120ms;flex-shrink:0}.theme-toggle:hover{color:var(--text);background:rgba(128,128,128,.1)}
+        html.dark{--cream:#0e1520;--cream-dark:#172030;--text:#dde4ed;--muted:#a0b5cc;--border:rgba(255,255,255,0.1);--chip-bg:#172030;--gold-dim:#e0a020}
+        html.dark body,html.dark .redesign-root{background:var(--cream);color:var(--text)}
+        html.dark .logo-wordmark{color:var(--text)}
+        html.dark .results-table{background:var(--cream-dark)}
+        html.dark .results-table tbody tr:hover{background:rgba(255,255,255,.04)}
+        html.dark .results-table tbody tr.row-active{background:rgba(255,255,255,.06)}
+        html.dark .course-card{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .card-actions{background:var(--cream);border-color:var(--border)}
+        html.dark .expanded-card-wrap{background:rgba(255,255,255,.03);border-top-color:rgba(255,255,255,.1)}
+        html.dark .building-dropdown{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .building-option:hover,html.dark .building-option.active{background:rgba(255,255,255,.06)}
+        html.dark .building-input-wrap{background:var(--cream-dark)}
+        html.dark .search-input{background:var(--cream-dark);color:var(--text);border-color:var(--border)}
+        html.dark .search-group{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .editor-panel{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .editor-stat{background:var(--cream);border-color:var(--border)}
+        html.dark .top-tab-btn.active{background:rgba(255,255,255,.1);color:var(--text)}
+        html.dark .semester-btn.active{background:rgba(255,255,255,.1);color:var(--text);box-shadow:none}
+        html.dark .btn-secondary{border-color:var(--border);color:var(--text)}
+        html.dark .rt-title,html.dark .hero-title,html.dark .section-title,html.dark .card-college,html.dark .card-title,html.dark .search-group-title,html.dark .prominent-message{color:var(--text)}
+        html.dark .cal-modal{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .cal-modal h3{color:var(--text)}
+        html.dark .cal-modal-btn{background:var(--cream);border-color:var(--border);color:var(--text)}
+        html.dark .mobile-menu{background:var(--cream-dark);border-color:var(--border)}
+        html.dark .mobile-nav-btn{color:var(--text);border-bottom-color:var(--border)}
+        html.dark .hamburger span{background:var(--text)}
+        html.dark .dual-range-thumb{border-color:var(--cream-dark)}
+        html.dark .card-instructor-link,html.dark .card-location a{color:var(--text);border-bottom-color:rgba(255,255,255,.2)}
+        html.dark .time-range-readout-line{color:var(--text);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+        html.dark .dual-range-bg{background:rgba(255,255,255,.15)}
+        html.dark .time-slider{background:rgba(255,255,255,.15)}
+        html.dark .editor-stat-value{color:var(--text)}
+        html.dark .building-option.selected{color:var(--text);background:rgba(255,255,255,.07)}
+        html.dark .building-input-wrap.has-value{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04)}
+        html.dark .search-section-active{background:rgba(255,255,255,.06)}
+        html.dark .search-section:hover,html.dark .search-group-header:hover{background:rgba(255,255,255,.04)}
         .header-right{display:flex;align-items:center;gap:.75rem}
-        .top-tabs{display:flex;align-items:center;gap:.4rem}
-        .top-tab-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:1px solid transparent;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}
-        .top-tab-btn:hover{border-color:var(--border);color:var(--text)}
-        .top-tab-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+        .top-tabs{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
+        .top-tab-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}
+        .top-tab-btn:hover{color:var(--text)}
+        .top-tab-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
         .semester-toggle{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
         .semester-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}.semester-btn.active{background:#fff;color:var(--text);box-shadow:0 1px 3px rgba(0,40,85,.1)}
-        .redesign-main{flex:1;max-width:680px;width:100%;margin:0 auto;padding:0.5rem 2rem 6rem;overflow-x:hidden}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
+        .redesign-main{flex:1;max-width:960px;width:100%;margin:0 auto;padding:0.5rem 2rem 6rem;overflow-x:hidden;transition:max-width 0.2s ease,padding 0.2s ease}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
         .hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,3.75rem);font-weight:300;line-height:1.08;color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem}.subheadline{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--gold-dim);margin-bottom:1.75rem}.description{font-size:1rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:3.5rem}
         .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:300;letter-spacing:-.01em;text-transform:none;color:var(--navy)}
         .when-section{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:1.25rem;row-gap:.75rem}.when-section .section-label{grid-column:1;grid-row:1;align-self:center;margin-bottom:0}.when-section .time-range-block{grid-column:1/-1;grid-row:2}.when-section .day-strip{grid-column:2;grid-row:1;align-self:center}
@@ -1139,6 +1366,21 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .editor-actions{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;margin-top:1rem}
         .editor-button{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-sm);padding:.58rem .95rem;cursor:pointer;color:var(--gold);background:var(--navy);border:1px solid var(--navy)}
         .editor-note{font-size:.82rem;line-height:1.5;color:var(--muted);margin-top:.8rem}
+        .building-combobox{position:relative;max-width:420px}
+        .building-input-wrap{display:flex;align-items:center;gap:.5rem;border:1px solid var(--border);border-radius:var(--radius-md);background:#fff;padding:.6rem 1rem;cursor:text;transition:border-color 120ms,box-shadow 120ms}
+        .building-input-wrap:focus-within,.building-input-wrap.open{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,40,85,.08)}
+        .building-input-wrap.has-value{border-color:var(--navy);background:rgba(0,40,85,.03)}
+        .building-icon{color:var(--muted);flex-shrink:0}
+        .building-search-input{flex:1;border:none;outline:none;background:transparent;font-family:var(--font-body);font-size:.95rem;color:var(--text);min-width:0}
+        .building-search-input::placeholder{color:var(--muted)}
+        .building-clear{border:none;background:none;cursor:pointer;color:var(--muted);font-size:1.1rem;line-height:1;padding:0 .15rem;flex-shrink:0}
+        .building-clear:hover{color:var(--text)}
+        .building-chevron{color:var(--muted);flex-shrink:0;transition:transform 150ms}.building-chevron.up{transform:rotate(180deg)}
+        .building-dropdown{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:0 8px 24px rgba(0,40,85,.13);z-index:100;max-height:260px;overflow-y:auto;margin:0;padding:.35rem 0;list-style:none}
+        .building-option{padding:.55rem 1rem;font-size:.9rem;cursor:pointer;color:var(--text)}
+        .building-option:hover,.building-option.active{background:rgba(0,40,85,.05)}
+        .building-option.selected{color:var(--navy);font-weight:500;background:rgba(0,40,85,.06)}
+        .building-no-results{padding:.75rem 1rem;font-size:.85rem;color:var(--muted);font-style:italic}
         .search-input-wrap{margin:1.5rem 0 1rem}
         .search-input{width:100%;font-family:var(--font-body);font-size:1rem;padding:.75rem 1rem;border:1px solid var(--border);border-radius:var(--radius-md);background:#fff;color:var(--text);outline:none;box-sizing:border-box}
         .search-input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(0,40,85,.08)}
@@ -1257,7 +1499,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
           .btn-secondary,.btn-primary{font-size:.68rem;padding:.55rem .85rem}
 
           /* ── Pagination ── */
-          .pagination{margin-top:1.5rem;gap:.6rem}
+          .pagination{display:flex;align-items:center;justify-content:center;margin-top:1.5rem;gap:.6rem}
           .page-btn{padding:.85rem 1.4rem;font-size:.72rem}
 
           /* ── Footer ── */
@@ -1269,14 +1511,28 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
       `}</style>
       <div className="redesign-root">
         <nav style={{position:"relative"}}>
-          <a className="logo" href="#">
-            <div className="logo-mark">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <text x="16" y="21" fontFamily="Georgia" fontSize="13" fontWeight="bold" fill="#FDB515" textAnchor="middle">CH</text>
-              </svg>
-            </div>
-            <span className="logo-wordmark">ClassHop</span>
-          </a>
+          <div style={{display:"flex",alignItems:"center",gap:".75rem"}}>
+            <a className="logo" href="#">
+              <div className="logo-mark">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <text x="16" y="21" fontFamily="Georgia" fontSize="13" fontWeight="bold" fill="#FDB515" textAnchor="middle">CH</text>
+                </svg>
+              </div>
+              <span className="logo-wordmark">ClassHop</span>
+            </a>
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={() => setDarkMode(d => !d)}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              title={darkMode ? "Light mode" : "Dark mode"}
+            >
+              {darkMode
+                ? <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                : <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              }
+            </button>
+          </div>
           <div className="header-right">
             <Link href="/categories" className="categories-link" style={{fontFamily:"var(--font-mono)",fontSize:".68rem",letterSpacing:".06em",color:"var(--muted)",textDecoration:"none",border:"1px solid var(--border)",borderRadius:"var(--radius-pill)",padding:".3rem .85rem"}}>
               Categories
@@ -1313,7 +1569,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
             </div>
           </div>
         </nav>
-        <main className="redesign-main" style={(lastPool.length > 0 || (topTab === "saved" && savedCourses.length > 0) || topTab === "search") ? {maxWidth:"none",padding:"2.75rem 2.5rem 6rem"} : undefined}>
+        <main className="redesign-main">
           {topTab === "discover" ? (
             <>
               <h1 className="hero-title">Got a Free Window?</h1>
@@ -1363,6 +1619,14 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                     <button key={interest} type="button" className={`chip ${selectedInterests.includes(interest) ? "active" : ""}`} onClick={() => toggleInterest(interest)}>{interest}</button>
                   ))}
                 </div>
+              </div>
+              <div className="form-section">
+                <div className="section-label"><span className="step-number">03</span><span className="section-title">Where are you? <span style={{opacity:0.5}}>(optional)</span></span></div>
+                <BuildingCombobox
+                  buildings={availableBuildings}
+                  value={selectedBuilding}
+                  onChange={setSelectedBuilding}
+                />
               </div>
               <div className="cta-wrapper">
                 <button className="cta-btn" type="button" onClick={handleFindClass} disabled={!freeRangeValid}><span>Find classes</span></button>

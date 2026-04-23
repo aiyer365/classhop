@@ -24,5 +24,5 @@ A small Next.js app that helps UC Berkeley students quickly discover interesting
 
 3. Open `http://localhost:3000` in your browser.
 
-All course data lives in `data/courses.json` and is loaded on the client; there is no backend.
+Course data is loaded server-side by joining `data/catalog.json` (stable course metadata) and `data/offerings.json` (per-semester sections) in `lib/loadCourses.ts`. The legacy `data/courses.json` snapshot is no longer used by the app.
 

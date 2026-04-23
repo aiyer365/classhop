@@ -286,6 +286,19 @@ async function main() {
   await fs.writeFile(catalogPath, JSON.stringify(catalog, null, 2), "utf8");
   await fs.writeFile(offeringsPath, JSON.stringify(offerings, null, 2), "utf8");
 
+  // Warn on building names that look like raw addresses (no word chars typical of a building name)
+  const KNOWN_BUILDING_SUFFIXES = /\b(Hall|Building|Bldg|Annex|Center|Wing|Library|Studio|Lab|Gym|Arena|Facility|House|Tower|Plaza)\b/i;
+  const EXCLUDED_NAMES = new Set(["Internet/Online", "Off", "Unknown", "TBD"]);
+  const unknownBuildings = new Set(
+    offerings
+      .map((o) => o.building)
+      .filter((b) => b && !EXCLUDED_NAMES.has(b) && !KNOWN_BUILDING_SUFFIXES.test(b))
+  );
+  if (unknownBuildings.size > 0) {
+    console.warn("⚠ Building names without a recognized suffix (may need formatBuildingLabel entry):");
+    for (const b of [...unknownBuildings].sort()) console.warn(`  - "${b}"`);
+  }
+
   console.log(`Scraped rows: ${rows.length}`);
   console.log(`Excluded rows (special topics/projects): ${excludedCount}`);
   console.log(`Catalog entries: ${catalog.length}`);

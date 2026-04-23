@@ -1,5 +1,7 @@
 export type Semester = "Spring 2026" | "Fall 2026";
 
+export const DEFAULT_SEMESTER: Semester = "Spring 2026";
+
 export type Interest =
   | "Science & Nature"
   | "Tech & Engineering"
@@ -46,7 +48,6 @@ export type Course = {
   instructor: string;
   building: string;
   room: string;
-  walkingMinutes: number;
   startTime: string;
   endTime: string;
   meetDays: string;
