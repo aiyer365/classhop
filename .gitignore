@@ -17,6 +17,9 @@ node_modules/
 .DS_Store
 *.pem
 
+# local agent / IDE (do not commit)
+.claude/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

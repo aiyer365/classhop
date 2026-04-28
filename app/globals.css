@@ -70,7 +70,8 @@ body { background-color: var(--cream); color: var(--text); font-family: var(--fo
 .when-section .day-strip { grid-column: 2; grid-row: 1; align-self: center; }
 .time-range-block { display: flex; align-items: flex-start; gap: .85rem; width: 100%; min-width: 0; flex: 1; }
 .time-range-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .35rem; }
-.time-range-now { flex: 0 0 auto; align-self: flex-start; margin-top: 2px; }
+.when-free-row { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; flex: 1; min-width: 0; }
+.when-free-row .day-btn.when-now-btn { flex: 0 0 auto; white-space: nowrap; }
 .time-range-dual { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .45rem; }
 .dual-range { position: relative; height: 36px; width: 100%; align-self: stretch; cursor: pointer; }
 .dual-range-bg { position: absolute; left: 0; right: 0; top: 50%; height: 6px; margin-top: -3px; border-radius: 999px; background: rgba(0,40,85,.12); pointer-events: none; }
@@ -277,7 +278,8 @@ input[type="time"]::-webkit-datetime-edit-fields-wrapper { padding: 0; }
   .when-section { display: flex; flex-direction: column; align-items: flex-start; }
   .when-section .section-label { order: 1; width: 100%; }
   .when-section .time-range-block { order: 2; flex-direction: column; align-items: stretch; gap: .75rem; }
-  .time-range-now { align-self: flex-start; }
+  .when-section-label .when-free-row .section-title { flex: 0 1 auto; }
+  .when-free-row .day-btn.when-now-btn { width: auto; min-width: 0; }
   .when-section .day-strip { order: 3; justify-content: center; width: 100%; }
   .day-btn, .time-btn, .chip { font-size: .82rem; line-height: 1; height: 2.15rem; padding: .58rem .8rem; }
   .day-btn { flex: 0 0 auto; text-align: center; }

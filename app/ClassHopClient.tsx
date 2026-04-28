@@ -22,6 +22,13 @@ const LATEST_MINUTES = 19 * 60; // 7:00 PM
 const LOCKED_WINDOW_MINUTES = 60;
 const EXCLUDED_BUILDINGS = new Set(["Internet/Online", "Off", "Unknown"]);
 
+const CAMPUS_AREAS: Record<string, Set<string>> = {
+  Southside: new Set(["Wurster", "2401 Bancroft", "2547 Bowditch", "2251 College", "Anthro/Art Practice Bldg", "Social Sciences Building", "Jacobs Hall", "Morrison", "Hertz", "Dwinelle", "Wheeler", "Pimentel"]),
+  Northside: new Set(["Hearst Mining", "Hearst Field Annex", "Physics Building", "Birge", "Morgan", "Evans", "Cory", "Soda", "Etcheverry"]),
+  Eastside: new Set(["Barker", "Genetics & Plant Bio", "Mulford", "Valley Life Sciences", "Stanley", "Li Ka Shing", "2240 Piedmont", "Latimer"]),
+  Westside: new Set(["Blum", "GSPP", "Lewis", "Haas Faculty Wing", "Cheit", "Joan and Sanford I. Weill", "Chou Hall N540 and"]),
+};
+
 type WeekdayToken = "M" | "T" | "W" | "Tr" | "F";
 type TopTab = "discover" | "saved" | "search" | "editor";
 type PreparedCourse = Course & {
@@ -934,7 +941,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   freeRangeUnlockedRef.current = freeRangeUnlocked;
   freeRangeStartRef.current = freeRangeStartMinutes;
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
-  const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
+  const [selectedArea, setSelectedArea] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedCodes, setExpandedCodes] = useState<Set<string>>(new Set());
   const [currentSearchSection, setCurrentSearchSection] = useState<string | null>(null);
@@ -943,11 +950,13 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 10;
   const [hasSearched, setHasSearched] = useState(false);
+  const [resultsKey, setResultsKey] = useState(0);
   const [sortCol, setSortCol] = useState<"title" | "code" | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
+  const [mobileShowResults, setMobileShowResults] = useState(false);
   const [savedIds, setSavedIds] = useState<Set<string>>(() => new Set<string>());
   const savedStorageReady = useRef(false);
 
@@ -1067,7 +1076,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         const intersects = course.interests.some((i) => selectedInterestSet.has(i));
         if (!intersects) return false;
       }
-      if (selectedBuilding && course.building !== selectedBuilding) return false;
+      if (selectedArea && !CAMPUS_AREAS[selectedArea]?.has(course.building)) return false;
       return minutesOverlapWindow(course.startMinutes, course.endMinutes, wStart, wEnd);
     });
   }, [
@@ -1076,7 +1085,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     freeRangeStartMinutes,
     freeRangeValid,
     selectedInterestSet,
-    selectedBuilding,
+    selectedArea,
     semester,
     selectedWeekday
   ]);
@@ -1209,10 +1218,37 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     return result;
   }
 
+  function buildPool(courses: Course[]) {
+    const shuffled = [...courses].sort(() => Math.random() - 0.5);
+    if (selectedInterests.length > 0) {
+      const interestSet = new Set(selectedInterests);
+      const scoreCache = new Map<string, { count: number; pure: boolean }>();
+      const getScore = (course: Course) => {
+        const cached = scoreCache.get(course.id);
+        if (cached) return cached;
+        let count = 0; let pure = true;
+        for (const interest of course.interests) {
+          if (interestSet.has(interest)) count += 1; else pure = false;
+        }
+        const score = { count, pure };
+        scoreCache.set(course.id, score);
+        return score;
+      };
+      shuffled.sort((a, b) => {
+        const aScore = getScore(a); const bScore = getScore(b);
+        if (bScore.count !== aScore.count) return bScore.count - aScore.count;
+        return (aScore.pure ? 0 : 1) - (bScore.pure ? 0 : 1);
+      });
+    }
+    return shuffled;
+  }
+
   function handleFindClass() {
     setCurrentCourse(null);
     setHasSearched(true);
     setPage(0);
+    setResultsKey((k) => k + 1);
+    setMobileShowResults(true);
     const shuffled = [...filteredCourses].sort(() => Math.random() - 0.5);
     if (selectedInterests.length > 0) {
       const interestSet = new Set(selectedInterests);
@@ -1243,6 +1279,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     }
     setLastPool(shuffled);
   }
+
 
   function handleDownloadDatabase() {
     downloadJsonFile("classhop-joined-courses.json", allCourses);
@@ -1285,7 +1322,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         html.dark .mobile-menu{background:var(--cream-dark);border-color:var(--border)}
         html.dark .mobile-nav-btn{color:var(--text);border-bottom-color:var(--border)}
         html.dark .hamburger span{background:var(--text)}
-        html.dark .dual-range-thumb{border-color:var(--cream-dark)}
+        html.dark .dual-range-thumb{background:#1e3a5f;border:2.5px solid #fff;box-shadow:0 0 0 1.5px rgba(255,255,255,0.35),0 2px 6px rgba(0,0,0,.4)}
         html.dark .card-instructor-link,html.dark .card-location a{color:var(--text);border-bottom-color:rgba(255,255,255,.2)}
         html.dark .time-range-readout-line{color:var(--text);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
         html.dark .dual-range-bg{background:rgba(255,255,255,.15)}
@@ -1305,10 +1342,12 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .redesign-main{flex:1;max-width:960px;width:100%;margin:0 auto;padding:0.5rem 2rem 6rem;overflow-x:hidden;transition:max-width 0.2s ease,padding 0.2s ease}.eyebrow{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.5rem}
         .hero-title{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,3.75rem);font-weight:300;line-height:1.08;color:var(--navy);letter-spacing:-.02em;margin-bottom:.75rem}.subheadline{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:300;font-style:italic;color:var(--gold-dim);margin-bottom:1.75rem}.description{font-size:1rem;line-height:1.75;color:var(--muted);max-width:520px;margin-bottom:3.5rem}
         .divider{height:1px;background:var(--border);margin:3rem 0}.form-section{margin-bottom:2.5rem}.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.step-number{font-family:var(--font-mono);font-size:.65rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.2rem .6rem;letter-spacing:.06em}.section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:300;letter-spacing:-.01em;text-transform:none;color:var(--navy)}
-        .when-section{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:1.25rem;row-gap:.75rem}.when-section .section-label{grid-column:1;grid-row:1;align-self:center;margin-bottom:0}.when-section .time-range-block{grid-column:1/-1;grid-row:2}.when-section .day-strip{grid-column:2;grid-row:1;align-self:center}
+        .when-section{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:1.25rem;row-gap:.75rem}.when-section .section-label{grid-column:1;grid-row:1;align-self:center;margin-bottom:0}.when-section .time-range-block{grid-column:1/-1;grid-row:2}.when-section .day-strip{grid-column:2;grid-row:1;align-self:center}.when-free-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;flex:1;min-width:0}.when-free-row .day-btn.when-now-btn{flex:0 0 auto;white-space:nowrap}.when-free-row .day-btn.when-now-btn:hover:not(.active){background:rgba(0,40,85,.05)}
         .time-range-block{display:flex;align-items:flex-start;gap:.85rem;width:100%;min-width:0;flex:1}
         .time-range-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:.35rem}
-        .time-range-now{flex:0 0 auto;align-self:flex-start;margin-top:2px}
+        .label-opt{opacity:0.45;font-size:.85em}
+        .chip.active,.time-btn.active,.day-btn.active{box-shadow:0 0 14px rgba(253,181,21,.18)}
+        html.dark .chip.active,html.dark .time-btn.active,html.dark .day-btn.active{box-shadow:0 0 18px rgba(253,181,21,.28)}
         .dual-range-thumb--end-locked{box-shadow:0 0 0 1px rgba(42,143,92,.4)}
         .time-range-dual{flex:1;min-width:0;display:flex;flex-direction:column;gap:.45rem}
         .dual-range{position:relative;height:56px;width:100%;align-self:stretch;cursor:pointer}
@@ -1325,7 +1364,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .time-slider-wrap{flex:1;display:flex;align-items:center;gap:.75rem;min-width:220px}.time-slider{flex:1;appearance:none;height:6px;border-radius:999px;background:rgba(0,40,85,.15);outline:none}.time-slider::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}.time-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}
         .time-readout{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);min-width:72px;text-align:right}
         .chips{display:flex;flex-wrap:wrap;gap:.5rem}.cta-wrapper{margin-top:3rem}.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;background:var(--navy);color:var(--gold);border:none;border-radius:var(--radius-md);padding:1.05rem 2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.cta-btn:disabled{opacity:.6;cursor:not-allowed}
-        .prominent-message{text-align:center;font-family:var(--font-display);font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.28;color:var(--navy);letter-spacing:-.01em}.prominent-message--form{margin-top:3rem}.prominent-message--result{margin-top:1.25rem}.result-section{margin-top:3rem}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+        .prominent-message{text-align:center;font-family:var(--font-display);font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.28;color:var(--navy);letter-spacing:-.01em}.prominent-message--form{margin-top:3rem}.prominent-message--result{margin-top:1.25rem}.result-section{margin-top:3rem;animation:results-fade-in 280ms ease both}@keyframes results-fade-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
         .course-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}.card-body{padding:1.5rem 1.75rem}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem}.card-college{font-family:var(--font-display);font-size:1.2rem;line-height:1.25;color:var(--navy);margin:0 0 .3rem}.card-dept{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
         .card-time-badge{font-family:var(--font-mono);font-size:.7rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.25rem .7rem;white-space:nowrap}.card-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.65rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:.4rem}
         .card-meta,.card-desc{color:var(--muted);font-size:.86rem;line-height:1.65;margin-bottom:1rem}.card-instructor-link{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-instructor-link:hover{border-bottom-color:var(--navy)}.card-divider{height:1px;background:var(--border);margin:1.25rem 0}.card-location{margin-bottom:1.25rem}.card-location a{color:var(--navy);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(0,40,85,.25)}.card-location a:hover{border-bottom-color:var(--navy)}
@@ -1417,6 +1456,9 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         /* Hamburger + drawer — hidden on desktop */
         .hamburger{display:none}
         .mobile-menu{display:none}
+        /* Mobile results page — hidden on desktop */
+        .mobile-results-nav{display:none}
+        .mobile-form-hidden,.mobile-results-hidden{/* no-op on desktop */}
 
         @media(max-width:640px){
           /* ── Nav ── */
@@ -1444,31 +1486,40 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
           .mobile-nav-link{font-family:var(--font-display);font-size:1.35rem;font-weight:300;color:var(--navy);text-decoration:none;display:block;padding:.6rem 0;border-bottom:1px solid var(--border)}
 
           /* ── Main ── */
-          .redesign-main{padding:.75rem 1.25rem 5rem !important}
-          .eyebrow{margin-bottom:1rem}
-          .subheadline{margin-bottom:1.25rem}
-          .description{font-size:.9rem;line-height:1.65;margin-bottom:2.5rem}
-          .divider{margin:1.75rem 0}
-          .form-section{margin-bottom:1.75rem}
+          .redesign-main{padding:1.5rem 1.25rem 6rem !important}
+          .eyebrow{font-size:.6rem;letter-spacing:.2em;margin-bottom:.75rem}
+          .hero-title{font-size:clamp(2.6rem,11vw,3.4rem);letter-spacing:-.03em;margin-bottom:.5rem;line-height:1.05}
+          .subheadline{font-size:1.15rem;margin-bottom:1rem}
+          .description{font-size:.85rem;line-height:1.6;color:var(--muted);margin-bottom:2rem;max-width:100%}
+          .divider{margin:2rem 0}
+          .form-section{margin-bottom:2.25rem}
+
+          /* ── Section labels ── */
+          .section-label{gap:.5rem;margin-bottom:1rem;align-items:flex-start;width:100%}
+          .step-number{font-size:.58rem;padding:.18rem .5rem;opacity:.8;flex-shrink:0;margin-top:.35rem}
+          .section-title{font-size:1.45rem;letter-spacing:-.02em;flex:1;line-height:1.2}
+          .when-section-label .when-free-row .section-title{flex:0 1 auto}
+          .when-free-row .day-btn.when-now-btn{width:auto;min-width:0}
 
           /* ── Form: time & day ── */
-          .when-section{display:flex;flex-direction:column;align-items:flex-start}
-          .when-section .section-label{order:1;width:100%}
-          .when-section .time-range-block{order:2;flex-direction:column;align-items:stretch;gap:.75rem}
-          .time-range-now{align-self:flex-start}
-          .when-section .day-strip{order:3;justify-content:center;width:100%}
-          .day-btn,.time-btn,.chip{
-            font-size:.82rem;
-            line-height:1;
-            height:2.15rem;
-            padding:.58rem .8rem;
-          }
-          .day-btn{flex:0 0 auto;text-align:center}
-          .time-btn{flex:0 0 auto}
-          .time-range-dual{gap:.35rem}
-          .time-range-readout-line{font-size:.78rem}
-          .chips{gap:.4rem}
-          .cta-wrapper{margin-top:2rem}
+          .when-section{display:flex;flex-direction:column;align-items:stretch;gap:1rem}
+          .when-section .section-label{order:1;margin-bottom:0}
+          .when-section .time-range-block{order:2;flex-direction:column;align-items:stretch;gap:.85rem}
+          .when-section .day-strip{order:3;display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem;width:100%}
+          .day-btn{height:2.85rem;padding:0;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-pill);font-size:.88rem;width:100%}
+          .time-btn{flex:0 0 auto;border-radius:var(--radius-pill)}
+          .time-range-dual{gap:.5rem}
+          .dual-range{height:48px}
+          .time-range-readout-line{font-size:.8rem;align-self:center;width:fit-content;margin:0 auto;text-align:center}
+
+          /* ── Interests & area chips ── */
+          .chips{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+          .chip{font-size:.82rem;height:2.75rem;display:flex;align-items:center;justify-content:center;padding:.6rem 1rem;border-radius:var(--radius-pill);text-align:center;line-height:1.2}
+
+          /* ── CTA button ── */
+          .cta-wrapper{margin-top:2.5rem}
+          .cta-btn{border-radius:var(--radius-pill);padding:1.1rem 2rem;font-size:.72rem;letter-spacing:.22em;box-shadow:0 4px 24px rgba(0,40,85,.25)}
+          html.dark .cta-btn{box-shadow:0 4px 32px rgba(253,181,21,.12)}
 
           /* ── Results table → stacked rows ── */
           .results-table-wrap{border-radius:var(--radius-md);overflow:hidden}
@@ -1478,13 +1529,10 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
           .results-table td{display:block;width:100%}
           .results-table tbody tr{padding:.85rem 1rem;border-top:1px solid var(--border);position:relative}
           .results-table td{padding:0;border:none}
-          /* hide Topic and Instructor columns on mobile */
           .results-table td:nth-child(3),
           .results-table td:nth-child(6){display:none}
-          /* Code inline before title */
           .results-table td:nth-child(1){display:inline;vertical-align:middle;margin-right:.4rem}
           .results-table td:nth-child(2){display:inline;vertical-align:middle}
-          /* Time and Location stacked below */
           .results-table td:nth-child(4){margin-top:.35rem}
           .results-table td:nth-child(5){margin-top:.1rem}
           .rt-title{font-size:.88rem}
@@ -1507,6 +1555,16 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
 
           /* ── Calendar modal ── */
           .cal-modal{padding:1.25rem}
+
+          /* ── Mobile results page switching ── */
+          .mobile-form-hidden{display:none !important}
+          .mobile-results-hidden{display:none !important}
+          .mobile-results-nav{display:flex;flex-direction:column;gap:.85rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;animation:results-fade-in 250ms ease both}
+          .mobile-back-btn{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);background:none;border:none;cursor:pointer;padding:0}
+          .mobile-back-btn:hover{color:var(--text)}
+          .mobile-filter-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+          .filter-tag{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.04em;color:var(--text);background:var(--chip-bg);border:1px solid var(--border);border-radius:var(--radius-pill);padding:.25rem .65rem;white-space:nowrap}
+          html.dark .filter-tag{background:var(--cream-dark)}
         }
       `}</style>
       <div className="redesign-root">
@@ -1571,18 +1629,37 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         </nav>
         <main className="redesign-main">
           {topTab === "discover" ? (
-            <>
+            <React.Fragment>
+              {/* ── Mobile results header ── */}
+              {mobileShowResults && (
+                <div className="mobile-results-nav">
+                  <button className="mobile-back-btn" type="button" onClick={() => { setMobileShowResults(false); window.scrollTo(0,0); }}>
+                    ← Back
+                  </button>
+                  <div className="mobile-filter-chips">
+                    <span className="filter-tag">{formatMinutes12h(freeRangeStartMinutes)}–{formatMinutes12h(freeRangeEndMinutes)}</span>
+                    <span className="filter-tag">{WEEKDAY_BUTTONS.find(b => b.token === selectedWeekday)?.label}</span>
+                    {selectedInterests.map(i => <span key={i} className="filter-tag">{i}</span>)}
+                    {selectedArea && <span className="filter-tag">{selectedArea}</span>}
+                  </div>
+                </div>
+              )}
+
+              {/* ── Form (hidden on mobile when viewing results) ── */}
+              <div className={mobileShowResults ? "mobile-form-hidden" : ""}>
               <h1 className="hero-title">Got a Free Window?</h1>
               <p className="subheadline">Wander into a class.</p>
               <p className="description">Pick a time range you&apos;re free and what sparks your curiosity. We&apos;ll list Berkeley classes that meet during that window on the day you choose.</p>
               <div className="divider" />
               <div className="form-section when-section">
-                  <div className="section-label">
+                  <div className="section-label when-section-label">
                     <span className="step-number">01</span>
-                    <span className="section-title">When are you free?{"\u00a0"}</span>
+                    <div className="when-free-row">
+                      <span className="section-title">When are you free?</span>
+                      <button className={`day-btn when-now-btn ${usingNow ? "active" : ""}`} type="button" onClick={handleNow}>Now</button>
+                    </div>
                   </div>
                   <div className="time-range-block">
-                    <button className={`time-btn time-range-now ${usingNow ? "active" : ""}`} type="button" onClick={handleNow}>Now</button>
                     <div className="time-range-main">
                       <TimeRangeBar
                         startMin={freeRangeStartMinutes}
@@ -1613,7 +1690,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                   </div>
               </div>
               <div className="form-section">
-                <div className="section-label"><span className="step-number">02</span><span className="section-title">What are you into? <span style={{opacity:0.5}}>(optional)</span></span></div>
+                <div className="section-label"><span className="step-number">02</span><span className="section-title">What are you into? <span className="label-opt">(optional)</span></span></div>
                 <div className="chips">
                   {INTEREST_OPTIONS.map((interest) => (
                     <button key={interest} type="button" className={`chip ${selectedInterests.includes(interest) ? "active" : ""}`} onClick={() => toggleInterest(interest)}>{interest}</button>
@@ -1621,16 +1698,24 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                 </div>
               </div>
               <div className="form-section">
-                <div className="section-label"><span className="step-number">03</span><span className="section-title">Where are you? <span style={{opacity:0.5}}>(optional)</span></span></div>
-                <BuildingCombobox
-                  buildings={availableBuildings}
-                  value={selectedBuilding}
-                  onChange={setSelectedBuilding}
-                />
+                <div className="section-label"><span className="step-number">03</span><span className="section-title">Where are you? <span className="label-opt">(optional)</span></span></div>
+                <div className="chips">
+                  {["Southside", "Northside", "Eastside", "Westside"].map((area) => (
+                    <button
+                      key={area}
+                      type="button"
+                      className={`chip ${selectedArea === area ? "active" : ""}`}
+                      onClick={() => setSelectedArea(selectedArea === area ? null : area)}
+                    >{area}</button>
+                  ))}
+                </div>
               </div>
               <div className="cta-wrapper">
                 <button className="cta-btn" type="button" onClick={handleFindClass} disabled={!freeRangeValid}><span>Find classes</span></button>
               </div>
+              </div>
+
+              <div className={!mobileShowResults ? "mobile-results-hidden" : ""}>
               {hasSearched && lastPool.length === 0 && (
                 <div className="prominent-message prominent-message--form">
                   No classes match that combination.
@@ -1639,7 +1724,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                 </div>
               )}
               {lastPool.length > 0 && (
-                <div className="result-section">
+                <div className="result-section" key={resultsKey}>
                   <p className="result-count">{sortedPool.length} {sortedPool.length === 1 ? "class" : "classes"} available · showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, sortedPool.length)} · click a row to expand</p>
                   <div className="results-table-wrap">
                     <table className="results-table">
@@ -1734,7 +1819,8 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                   )}
                 </div>
               )}
-            </>
+              </div>
+            </React.Fragment>
           ) : topTab === "saved" ? (
             <>
               <h1 className="hero-title">Saved Classes</h1>
