@@ -22,6 +22,16 @@
   --radius-pill: 999px;
 }
 
+html.dark {
+  --cream: #0e1520;
+  --cream-dark: #172030;
+  --text: #dde4ed;
+  --muted: #a0b5cc;
+  --border: rgba(255, 255, 255, 0.1);
+  --chip-bg: #172030;
+  --gold-dim: #e0a020;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; scrollbar-gutter: stable; }
 body { background-color: var(--cream); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
