@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Fraunces, DM_Sans, DM_Mono } from "next/font/google";
 
 const fraunces = Fraunces({
@@ -40,10 +39,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body>
-        <Script id="theme-init" strategy="beforeInteractive">{`try{var s=localStorage.getItem('classhop-dark');if(s===null||s==='true')document.documentElement.classList.add('dark')}catch(e){}`}</Script>
-        {children}
-      </body>
+      <head>
+        {/* eslint-disable-next-line @next/next/no-before-interactive-script-component */}
+        <script dangerouslySetInnerHTML={{ __html: `try{var s=localStorage.getItem('classhop-dark');if(s===null||s==='true')document.documentElement.classList.add('dark')}catch(e){}` }} />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

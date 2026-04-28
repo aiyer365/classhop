@@ -1,10 +1,17 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { unstable_cache } from "next/cache";
 
 import type { CatalogEntry, Course, OfferingRow, Semester } from "./types";
 
-async function _loadJoinedCourses(): Promise<Course[]> {
+let _cache: Course[] | null = null;
+
+export async function loadJoinedCourses(): Promise<Course[]> {
+  if (_cache) return _cache;
+  _cache = await _load();
+  return _cache;
+}
+
+async function _load(): Promise<Course[]> {
   const root = process.cwd();
   const [catalogRaw, offeringsRaw] = await Promise.all([
     fs.readFile(path.join(root, "data", "catalog.json"), "utf8"),
@@ -59,6 +66,3 @@ async function _loadJoinedCourses(): Promise<Course[]> {
   });
 }
 
-export const loadJoinedCourses = unstable_cache(_loadJoinedCourses, ["joined-courses"], {
-  revalidate: false
-});
