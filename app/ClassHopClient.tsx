@@ -17,16 +17,16 @@ const INTEREST_OPTIONS: Interest[] = [
   "Math & Data"
 ];
 
-const EARLIEST_MINUTES = 7 * 60; // 7:00 AM
+const EARLIEST_MINUTES = 8 * 60; // 8:00 AM
 const LATEST_MINUTES = 19 * 60; // 7:00 PM
 const LOCKED_WINDOW_MINUTES = 60;
 const EXCLUDED_BUILDINGS = new Set(["Internet/Online", "Off", "Unknown"]);
 
 const CAMPUS_AREAS: Record<string, Set<string>> = {
-  Southside: new Set(["Wurster", "2401 Bancroft", "2547 Bowditch", "2251 College", "Anthro/Art Practice Bldg", "Social Sciences Building", "Jacobs Hall", "Morrison", "Hertz", "Dwinelle", "Wheeler", "Pimentel"]),
-  Northside: new Set(["Hearst Mining", "Hearst Field Annex", "Physics Building", "Birge", "Morgan", "Evans", "Cory", "Soda", "Etcheverry"]),
-  Eastside: new Set(["Barker", "Genetics & Plant Bio", "Mulford", "Valley Life Sciences", "Stanley", "Li Ka Shing", "2240 Piedmont", "Latimer"]),
-  Westside: new Set(["Blum", "GSPP", "Lewis", "Haas Faculty Wing", "Cheit", "Joan and Sanford I. Weill", "Chou Hall N540 and"]),
+  Southside: new Set(["Dwinelle", "Hearst Field Annex", "Social Sciences Building", "Wheeler"]),
+  Northside: new Set(["Blum", "Cory", "Etcheverry", "Evans", "GSPP", "Hearst Mining", "Jacobs Hall", "Soda", "Stanley"]),
+  Eastside: new Set(["Anthro/Art Practice Bldg", "Birge", "Cheit", "Chou Hall", "Chou Hall N540 and", "Haas Faculty Wing", "Hertz", "Latimer", "Lewis", "Morrison", "Physics Building", "Pimentel", "Wurster"]),
+  Westside: new Set(["Barker", "Genetics & Plant Bio", "Joan and Sanford I. Weill", "Li Ka Shing", "Morgan", "Mulford", "Valley Life Sciences"]),
 };
 
 type WeekdayToken = "M" | "T" | "W" | "Tr" | "F";
@@ -347,7 +347,7 @@ function formatBuildingLabel(raw: string): string {
     Dwinelle: "Dwinelle Hall",
     Etcheverry: "Etcheverry Hall",
     Evans: "Evans Hall",
-    GSPP: "Goldman School of Public Policy",
+    GSPP: "Goldman Hall",
     "Genetics & Plant Bio": "Genetics & Plant Biology Building",
     "Haas Faculty Wing": "Haas Faculty Wing",
     "Hearst Field Annex": "Hearst Field Annex",
@@ -942,6 +942,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   freeRangeStartRef.current = freeRangeStartMinutes;
   const [selectedInterests, setSelectedInterests] = useState<Interest[]>([]);
   const [selectedArea, setSelectedArea] = useState<string | null>(null);
+  const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [expandedCodes, setExpandedCodes] = useState<Set<string>>(new Set());
   const [currentSearchSection, setCurrentSearchSection] = useState<string | null>(null);
@@ -955,7 +956,12 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      const stored = localStorage.getItem("classhop-dark");
+      return stored === null ? true : stored === "true";
+    } catch { return true; }
+  });
   const [mobileShowResults, setMobileShowResults] = useState(false);
   const [savedIds, setSavedIds] = useState<Set<string>>(() => new Set<string>());
   const savedStorageReady = useRef(false);
@@ -981,12 +987,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     savedStorageReady.current = true;
   }, []);
 
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("classhop-dark");
-      if (stored !== null) setDarkMode(stored === "true");
-    } catch { /* ignore */ }
-  }, []);
 
   useEffect(() => {
     try { localStorage.setItem("classhop-dark", String(darkMode)); } catch { /* ignore */ }
@@ -1077,6 +1077,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         if (!intersects) return false;
       }
       if (selectedArea && !CAMPUS_AREAS[selectedArea]?.has(course.building)) return false;
+      if (selectedBuilding && course.building !== selectedBuilding && !(selectedBuilding === "Chou Hall" && course.building === "Chou Hall N540 and")) return false;
       return minutesOverlapWindow(course.startMinutes, course.endMinutes, wStart, wEnd);
     });
   }, [
@@ -1086,6 +1087,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     freeRangeValid,
     selectedInterestSet,
     selectedArea,
+    selectedBuilding,
     semester,
     selectedWeekday
   ]);
@@ -1363,7 +1365,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .time-row{display:flex;align-items:center;gap:.8rem}.time-btn,.chip{font-family:var(--font-body);font-size:.9rem;border:1px solid var(--border);background:var(--chip-bg);color:var(--text);padding:.55rem 1rem;border-radius:var(--radius-pill);cursor:pointer}.time-btn.active,.chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
         .time-slider-wrap{flex:1;display:flex;align-items:center;gap:.75rem;min-width:220px}.time-slider{flex:1;appearance:none;height:6px;border-radius:999px;background:rgba(0,40,85,.15);outline:none}.time-slider::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}.time-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--navy);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:pointer}
         .time-readout{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);min-width:72px;text-align:right}
-        .chips{display:flex;flex-wrap:wrap;gap:.5rem}.cta-wrapper{margin-top:3rem}.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;background:var(--navy);color:var(--gold);border:none;border-radius:var(--radius-md);padding:1.05rem 2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.cta-btn:disabled{opacity:.6;cursor:not-allowed}
+        .chips{display:flex;flex-wrap:wrap;gap:.5rem}.building-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;animation:chips-in 180ms ease both}@keyframes chips-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}.chip--sm{font-size:.78rem;padding:.35rem .75rem}.cta-wrapper{margin-top:3rem}.cta-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:.75rem;background:var(--navy);color:var(--gold);border:none;border-radius:var(--radius-md);padding:1.05rem 2rem;font-family:var(--font-mono);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.cta-btn:disabled{opacity:.6;cursor:not-allowed}
         .prominent-message{text-align:center;font-family:var(--font-display);font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.28;color:var(--navy);letter-spacing:-.01em}.prominent-message--form{margin-top:3rem}.prominent-message--result{margin-top:1.25rem}.result-section{margin-top:3rem;animation:results-fade-in 280ms ease both}@keyframes results-fade-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.result-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
         .course-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}.card-body{padding:1.5rem 1.75rem}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem}.card-college{font-family:var(--font-display);font-size:1.2rem;line-height:1.25;color:var(--navy);margin:0 0 .3rem}.card-dept{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
         .card-time-badge{font-family:var(--font-mono);font-size:.7rem;color:var(--gold-dim);background:rgba(253,181,21,.12);border:1px solid rgba(253,181,21,.3);border-radius:var(--radius-pill);padding:.25rem .7rem;white-space:nowrap}.card-title{font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.65rem);font-weight:300;line-height:1.2;color:var(--navy);margin-bottom:.4rem}
@@ -1705,10 +1707,33 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                       key={area}
                       type="button"
                       className={`chip ${selectedArea === area ? "active" : ""}`}
-                      onClick={() => setSelectedArea(selectedArea === area ? null : area)}
+                      onClick={() => {
+                        if (selectedArea === area) {
+                          setSelectedArea(null);
+                          setSelectedBuilding(null);
+                        } else {
+                          setSelectedArea(area);
+                          setSelectedBuilding(null);
+                        }
+                      }}
                     >{area}</button>
                   ))}
                 </div>
+                {selectedArea && (
+                  <div className="building-chips">
+                    {[...CAMPUS_AREAS[selectedArea]]
+                      .filter((b) => b !== "Chou Hall N540 and")
+                      .sort((a, b) => formatBuildingLabel(a).localeCompare(formatBuildingLabel(b)))
+                      .map((b) => (
+                        <button
+                          key={b}
+                          type="button"
+                          className={`chip chip--sm ${selectedBuilding === b ? "active" : ""}`}
+                          onClick={() => setSelectedBuilding(selectedBuilding === b ? null : b)}
+                        >{formatBuildingLabel(b)}</button>
+                      ))}
+                  </div>
+                )}
               </div>
               <div className="cta-wrapper">
                 <button className="cta-btn" type="button" onClick={handleFindClass} disabled={!freeRangeValid}><span>Find classes</span></button>
@@ -1725,7 +1750,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
               )}
               {lastPool.length > 0 && (
                 <div className="result-section" key={resultsKey}>
-                  <p className="result-count">{sortedPool.length} {sortedPool.length === 1 ? "class" : "classes"} available · showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, sortedPool.length)} · click a row to expand</p>
+                  <p className="result-count">{sortedPool.length} {sortedPool.length === 1 ? "class" : "classes"} available · Showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, sortedPool.length)} · Click a row to expand</p>
                   <div className="results-table-wrap">
                     <table className="results-table">
                       <thead>
@@ -1829,7 +1854,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
                 <p className="saved-empty">No saved classes yet — bookmark a row from your search results.</p>
               ) : (
                 <div className="result-section">
-                  <p className="result-count">{savedCourses.length} saved {savedCourses.length === 1 ? "class" : "classes"} · click a row to expand</p>
+                  <p className="result-count">{savedCourses.length} saved {savedCourses.length === 1 ? "class" : "classes"} · Click a row to expand</p>
                   <div className="results-table-wrap">
                     <table className="results-table">
                       <thead>
