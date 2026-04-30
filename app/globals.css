@@ -49,7 +49,7 @@ body { background-color: var(--cream); color: var(--text); font-family: var(--fo
 .mobile-menu { display: none; }
 
 /* ─── Main ─── */
-.redesign-main { flex: 1; max-width: 680px; width: 100%; margin: 0 auto; padding: 0.5rem 2rem 6rem; overflow-x: hidden; }
+.redesign-main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 0.5rem 2rem 6rem; overflow-x: hidden; }
 .redesign-main.is-expanded { max-width: none; padding: 2.75rem 2.5rem 6rem; }
 .eyebrow { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.5rem; }
 .hero-title { font-family: var(--font-display); font-size: clamp(2.6rem,6vw,3.75rem); font-weight: 300; line-height: 1.08; color: var(--navy); letter-spacing: -.02em; margin-bottom: .75rem; }
