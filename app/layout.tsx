@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} dark`}
+      className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body>{children}</body>
     </html>

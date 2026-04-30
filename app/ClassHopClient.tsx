@@ -956,7 +956,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   const [mobileShowResults, setMobileShowResults] = useState(false);
   const [savedIds, setSavedIds] = useState<Set<string>>(() => new Set<string>());
   const savedStorageReady = useRef(false);
@@ -983,18 +982,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   }, []);
 
 
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("classhop-dark");
-      if (stored !== null) setDarkMode(stored === "true");
-    } catch { /* ignore */ }
-  }, []);
-
-  useEffect(() => {
-    try { localStorage.setItem("classhop-dark", String(darkMode)); } catch { /* ignore */ }
-    if (darkMode) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-  }, [darkMode]);
 
   useEffect(() => {
     if (!savedStorageReady.current) return;
@@ -1298,44 +1285,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         body,body *{transition:background-color 300ms ease,color 300ms ease,border-color 300ms ease,box-shadow 300ms ease;}
         .redesign-root nav{display:flex;align-items:center;justify-content:space-between;padding:1.125rem 2.5rem;border-bottom:1px solid var(--border);background:var(--cream);position:sticky;top:0;z-index:10}
         .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}.logo-mark{width:32px;height:32px;background:var(--navy);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center}.logo-wordmark{font-weight:500;font-size:1rem;color:var(--navy);letter-spacing:-.01em}
-        .dark .logo-wordmark{color:var(--text)}
-        .theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:var(--radius-pill);border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);transition:color 120ms,border-color 120ms,background 120ms;flex-shrink:0}.theme-toggle:hover{color:var(--text);background:rgba(128,128,128,.1)}
-        html.dark{--cream:#0e1520;--cream-dark:#172030;--text:#dde4ed;--muted:#a0b5cc;--border:rgba(255,255,255,0.1);--chip-bg:#172030;--gold-dim:#e0a020}
-        html.dark body,html.dark .redesign-root{background:var(--cream);color:var(--text)}
-        html.dark .logo-wordmark{color:var(--text)}
-        html.dark .results-table{background:var(--cream-dark)}
-        html.dark .results-table tbody tr:hover{background:rgba(255,255,255,.04)}
-        html.dark .results-table tbody tr.row-active{background:rgba(255,255,255,.06)}
-        html.dark .course-card{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .card-actions{background:var(--cream);border-color:var(--border)}
-        html.dark .expanded-card-wrap{background:rgba(255,255,255,.03);border-top-color:rgba(255,255,255,.1)}
-        html.dark .building-dropdown{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .building-option:hover,html.dark .building-option.active{background:rgba(255,255,255,.06)}
-        html.dark .building-input-wrap{background:var(--cream-dark)}
-        html.dark .search-input{background:var(--cream-dark);color:var(--text);border-color:var(--border)}
-        html.dark .search-group{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .editor-panel{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .editor-stat{background:var(--cream);border-color:var(--border)}
-        html.dark .top-tab-btn.active{background:rgba(255,255,255,.1);color:var(--text)}
-        html.dark .semester-btn.active{background:rgba(255,255,255,.1);color:var(--text);box-shadow:none}
-        html.dark .btn-secondary{border-color:var(--border);color:var(--text)}
-        html.dark .rt-title,html.dark .hero-title,html.dark .section-title,html.dark .card-college,html.dark .card-title,html.dark .search-group-title,html.dark .prominent-message{color:var(--text)}
-        html.dark .cal-modal{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .cal-modal h3{color:var(--text)}
-        html.dark .cal-modal-btn{background:var(--cream);border-color:var(--border);color:var(--text)}
-        html.dark .mobile-menu{background:var(--cream-dark);border-color:var(--border)}
-        html.dark .mobile-nav-btn{color:var(--text);border-bottom-color:var(--border)}
-        html.dark .hamburger span{background:var(--text)}
-        html.dark .dual-range-thumb{background:#1e3a5f;border:2.5px solid #fff;box-shadow:0 0 0 1.5px rgba(255,255,255,0.35),0 2px 6px rgba(0,0,0,.4)}
-        html.dark .card-instructor-link,html.dark .card-location a{color:var(--text);border-bottom-color:rgba(255,255,255,.2)}
-        html.dark .time-range-readout-line{color:var(--text);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
-        html.dark .dual-range-bg{background:rgba(255,255,255,.15)}
-        html.dark .time-slider{background:rgba(255,255,255,.15)}
-        html.dark .editor-stat-value{color:var(--text)}
-        html.dark .building-option.selected{color:var(--text);background:rgba(255,255,255,.07)}
-        html.dark .building-input-wrap.has-value{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04)}
-        html.dark .search-section-active{background:rgba(255,255,255,.06)}
-        html.dark .search-section:hover,html.dark .search-group-header:hover{background:rgba(255,255,255,.04)}
         .header-right{display:flex;align-items:center;gap:.75rem}
         .top-tabs{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:var(--radius-pill);background:rgba(0,40,85,.03);padding:3px}
         .top-tab-btn{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.04em;color:var(--muted);background:transparent;border:none;border-radius:var(--radius-pill);padding:.3rem .75rem;cursor:pointer}
@@ -1351,7 +1300,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
         .time-range-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:.35rem}
         .label-opt{opacity:0.45;font-size:.85em}
         .chip.active,.time-btn.active,.day-btn.active{box-shadow:0 0 14px rgba(253,181,21,.18)}
-        html.dark .chip.active,html.dark .time-btn.active,html.dark .day-btn.active{box-shadow:0 0 18px rgba(253,181,21,.28)}
         .dual-range-thumb--end-locked{box-shadow:0 0 0 1px rgba(42,143,92,.4)}
         .time-range-dual{flex:1;min-width:0;display:flex;flex-direction:column;gap:.45rem}
         .dual-range{position:relative;height:56px;width:100%;align-self:stretch;cursor:pointer}
@@ -1523,7 +1471,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
           /* ── CTA button ── */
           .cta-wrapper{margin-top:2.5rem}
           .cta-btn{border-radius:var(--radius-pill);padding:1.1rem 2rem;font-size:.72rem;letter-spacing:.22em;box-shadow:0 4px 24px rgba(0,40,85,.25)}
-          html.dark .cta-btn{box-shadow:0 4px 32px rgba(253,181,21,.12)}
 
           /* ── Results table → stacked rows ── */
           .results-table-wrap{border-radius:var(--radius-md);overflow:hidden}
@@ -1582,18 +1529,6 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
               </div>
               <span className="logo-wordmark">ClassHop</span>
             </a>
-            <button
-              type="button"
-              className="theme-toggle"
-              onClick={() => setDarkMode(d => !d)}
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-              title={darkMode ? "Light mode" : "Dark mode"}
-            >
-              {darkMode
-                ? <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                : <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-              }
-            </button>
           </div>
           <div className="header-right">
             <Link href="/categories" className="categories-link" style={{fontFamily:"var(--font-mono)",fontSize:".68rem",letterSpacing:".06em",color:"var(--muted)",textDecoration:"none",border:"1px solid var(--border)",borderRadius:"var(--radius-pill)",padding:".3rem .85rem"}}>
