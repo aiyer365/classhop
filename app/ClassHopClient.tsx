@@ -956,12 +956,7 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [pendingCalendarCourse, setPendingCalendarCourse] = useState<Course | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    try {
-      const stored = localStorage.getItem("classhop-dark");
-      return stored === null ? true : stored === "true";
-    } catch { return true; }
-  });
+  const [darkMode, setDarkMode] = useState(true);
   const [mobileShowResults, setMobileShowResults] = useState(false);
   const [savedIds, setSavedIds] = useState<Set<string>>(() => new Set<string>());
   const savedStorageReady = useRef(false);
@@ -987,6 +982,13 @@ export function ClassHopClient({ initialCourses }: { initialCourses: Course[] })
     savedStorageReady.current = true;
   }, []);
 
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("classhop-dark");
+      if (stored !== null) setDarkMode(stored === "true");
+    } catch { /* ignore */ }
+  }, []);
 
   useEffect(() => {
     try { localStorage.setItem("classhop-dark", String(darkMode)); } catch { /* ignore */ }

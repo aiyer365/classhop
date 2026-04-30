@@ -37,12 +37,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable}`}
+      className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} dark`}
     >
-      <head>
-        {/* eslint-disable-next-line @next/next/no-before-interactive-script-component */}
-        <script dangerouslySetInnerHTML={{ __html: `try{var s=localStorage.getItem('classhop-dark');if(s===null||s==='true')document.documentElement.classList.add('dark')}catch(e){}` }} />
-      </head>
       <body>{children}</body>
     </html>
   );
